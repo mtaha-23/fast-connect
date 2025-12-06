@@ -4,13 +4,16 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown, LayoutDashboard } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { cn } from "@/lib/utils"
+import { getFirebaseAuth } from "@/lib/firebase"
+import { onAuthStateChanged, type User } from "firebase/auth"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +21,14 @@ export function Navbar() {
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const auth = getFirebaseAuth()
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user)
+    })
+    return () => unsubscribe()
   }, [])
 
   const navLinks = [
@@ -77,17 +88,28 @@ export function Navbar() {
 
           <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
-            <Link href="/login">
-              <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-accent/50 px-5">
-                Sign in
-              </Button>
-            </Link>
-            <Link href="/signup">
-              <Button className="relative bg-primary hover:bg-primary/90 text-primary-foreground border-0 px-6 rounded-lg shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300">
-                Sign up
-                <span className="ml-2">→</span>
-              </Button>
-            </Link>
+            {user ? (
+              <Link href="/dashboard">
+                <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-accent/50 px-5">
+                  <LayoutDashboard className="w-4 h-4 mr-2" />
+                  Dashboard
+                </Button>
+              </Link>
+            ) : (
+              <>
+                <Link href="/login">
+                  <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-accent/50 px-5">
+                    Sign in
+                  </Button>
+                </Link>
+                <Link href="/signup">
+                  <Button className="relative bg-primary hover:bg-primary/90 text-primary-foreground border-0 px-6 rounded-lg shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300">
+                    Sign up
+                    <span className="ml-2">→</span>
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -120,17 +142,31 @@ export function Navbar() {
               </Link>
             ))}
             <div className="pt-4 space-y-2 border-t border-border">
-              <Link href="/login" className="block">
-                <Button
-                  variant="ghost"
-                  className="w-full justify-start text-muted-foreground hover:text-foreground hover:bg-accent/50"
-                >
-                  Sign in
-                </Button>
-              </Link>
-              <Link href="/signup" className="block">
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">Sign up →</Button>
-              </Link>
+              {user ? (
+                <Link href="/dashboard" className="block">
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                  >
+                    <LayoutDashboard className="w-4 h-4 mr-2" />
+                    Dashboard
+                  </Button>
+                </Link>
+              ) : (
+                <>
+                  <Link href="/login" className="block">
+                    <Button
+                      variant="ghost"
+                      className="w-full justify-start text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                    >
+                      Sign in
+                    </Button>
+                  </Link>
+                  <Link href="/signup" className="block">
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">Sign up →</Button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>

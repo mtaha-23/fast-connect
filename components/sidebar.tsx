@@ -21,6 +21,7 @@ import {
   ChevronLeft,
   User,
   Bell,
+  LayoutDashboard,
 } from "lucide-react"
 import {
   DropdownMenu,
@@ -33,9 +34,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const navItems = [
   {
+    title: "Home",
+    href: "/",
+    icon: Home,
+  },
+  {
     title: "Dashboard",
     href: "/dashboard",
-    icon: Home,
+    icon: LayoutDashboard,
   },
   {
     title: "AI Chatbot",
