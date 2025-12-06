@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 const footerLinks = {
   Product: [
@@ -28,16 +29,17 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+              <div className="relative">
+                <div className="w-10 h-10 rounded-xl bg-[#0a0a12]/90 backdrop-blur-sm border border-white/10 flex items-center justify-center shadow-lg shadow-black/20 overflow-hidden">
+                  <Image
+                    src="/logo.png"
+                    alt="FASTConnect Logo"
+                    width={40}
+                    height={40}
+                    className="object-contain p-1.5"
+                  />
+                </div>
+                <div className="absolute inset-0 rounded-xl bg-[#0a0a12]/30 blur-lg opacity-50 transition-opacity" />
               </div>
               <span className="text-xl font-bold text-white">
                 FAST<span className="text-blue-400">Connect</span>

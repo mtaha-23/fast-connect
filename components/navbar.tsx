@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
@@ -36,24 +37,21 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg shadow-blue-500/25">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+              <div className="w-10 h-10 rounded-xl bg-[#0a0a12]/90 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg shadow-black/20 overflow-hidden">
+                <Image
+                  src="/logo.png"
+                  alt="FASTConnect Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain p-1.5"
+                />
               </div>
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
+              <div className="absolute inset-0 rounded-xl bg-[#0a0a12]/30 blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold tracking-tight text-white">
                 FAST<span className="text-blue-400">Connect</span>
               </span>
-              <span className="text-[10px] text-white/40 tracking-widest uppercase">University Platform</span>
             </div>
           </Link>
 

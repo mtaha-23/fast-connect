@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
@@ -90,10 +91,17 @@ export function Sidebar() {
             href="/dashboard"
             className={cn("flex items-center gap-3 transition-opacity", isCollapsed && "opacity-0")}
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shrink-0 shadow-lg shadow-blue-500/20">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+            <div className="relative">
+              <div className="w-9 h-9 rounded-xl bg-[#0a0a12]/90 backdrop-blur-sm border border-white/10 flex items-center justify-center shrink-0 shadow-lg shadow-black/20 overflow-hidden">
+                <Image
+                  src="/logo.png"
+                  alt="FASTConnect Logo"
+                  width={36}
+                  height={36}
+                  className="object-contain p-1"
+                />
+              </div>
+              <div className="absolute inset-0 rounded-xl bg-[#0a0a12]/30 blur-lg opacity-50 transition-opacity" />
             </div>
             <span className="font-bold text-lg whitespace-nowrap text-white">
               FAST<span className="text-blue-400">Connect</span>

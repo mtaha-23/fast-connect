@@ -2,6 +2,7 @@
 
 import type React from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 interface AuthLayoutProps {
   children: React.ReactNode
@@ -54,10 +55,17 @@ export function AuthLayout({ children, title, description }: AuthLayoutProps) {
       <div className="relative w-full max-w-md">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 mb-10 justify-center">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-500/25">
-            <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
+          <div className="relative">
+            <div className="w-12 h-12 rounded-xl bg-[#0a0a12]/90 backdrop-blur-sm border border-white/10 flex items-center justify-center shadow-lg shadow-black/20 overflow-hidden">
+              <Image
+                src="/logo.png"
+                alt="FASTConnect Logo"
+                width={48}
+                height={48}
+                className="object-contain p-1.5"
+              />
+            </div>
+            <div className="absolute inset-0 rounded-xl bg-[#0a0a12]/30 blur-lg opacity-50 transition-opacity" />
           </div>
           <span className="text-3xl font-bold text-white">
             FAST<span className="text-blue-400">Connect</span>
