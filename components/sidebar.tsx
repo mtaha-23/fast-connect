@@ -120,7 +120,7 @@ export function Sidebar() {
             <Button
               variant="ghost"
               size="icon"
-              className="shrink-0 text-muted-foreground hover:text-foreground hover:bg-accent/50"
+              className="shrink-0 text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary"
               onClick={() => setIsCollapsed(!isCollapsed)}
             >
               <ChevronLeft className={cn("w-5 h-5 transition-transform", isCollapsed && "rotate-180")} />
@@ -140,7 +140,7 @@ export function Sidebar() {
                   "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200",
                   isActive
                     ? "bg-primary/20 text-primary border border-primary/30"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent/50",
+                    : "text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary",
                   isCollapsed && "justify-center px-2",
                 )}
                 title={isCollapsed ? item.title : undefined}
@@ -158,7 +158,7 @@ export function Sidebar() {
             href="/dashboard/settings"
             className={cn(
               "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all",
-              "hover:bg-accent/50 text-muted-foreground hover:text-foreground",
+              "hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary text-muted-foreground hover:text-foreground",
               isCollapsed && "justify-center px-2",
             )}
           >
@@ -171,7 +171,7 @@ export function Sidebar() {
             <DropdownMenuTrigger asChild>
               <button
                 className={cn(
-                  "flex items-center gap-3 w-full px-3 py-2.5 rounded-xl transition-all hover:bg-accent/50",
+                  "flex items-center gap-3 w-full px-3 py-2.5 rounded-xl transition-all hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary",
                   isCollapsed && "justify-center px-2",
                 )}
               >
@@ -190,11 +190,11 @@ export function Sidebar() {
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56 bg-popover border-border">
-              <DropdownMenuItem className="text-foreground hover:bg-accent/50">
+              <DropdownMenuItem className="text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary">
                 <User className="w-4 h-4 mr-2" />
                 Profile
               </DropdownMenuItem>
-              <DropdownMenuItem className="text-foreground hover:bg-accent/50">
+              <DropdownMenuItem className="text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary">
                 <Bell className="w-4 h-4 mr-2" />
                 Notifications
               </DropdownMenuItem>

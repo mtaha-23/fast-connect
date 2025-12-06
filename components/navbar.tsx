@@ -75,12 +75,12 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent/50"
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary"
               >
                 {link.label}
               </Link>
             ))}
-            <button className="flex items-center gap-1 px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent/50">
+            <button className="flex items-center gap-1 px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary">
               Resources
               <ChevronDown className="w-4 h-4" />
             </button>
@@ -90,7 +90,7 @@ export function Navbar() {
             <ThemeToggle />
             {user ? (
               <Link href="/dashboard">
-                <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-accent/50 px-5">
+                <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary px-5">
                   <LayoutDashboard className="w-4 h-4 mr-2" />
                   Dashboard
                 </Button>
@@ -98,7 +98,7 @@ export function Navbar() {
             ) : (
               <>
                 <Link href="/login">
-                  <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-accent/50 px-5">
+                  <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary px-5">
                     Sign in
                   </Button>
                 </Link>
@@ -119,7 +119,7 @@ export function Navbar() {
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-muted-foreground hover:text-foreground hover:bg-accent/50"
+              className="text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
@@ -135,7 +135,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded-lg transition-colors"
+                className="block px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary rounded-lg transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
@@ -146,7 +146,7 @@ export function Navbar() {
                 <Link href="/dashboard" className="block">
                   <Button
                     variant="ghost"
-                    className="w-full justify-start text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                    className="w-full justify-start text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary"
                   >
                     <LayoutDashboard className="w-4 h-4 mr-2" />
                     Dashboard
@@ -157,7 +157,7 @@ export function Navbar() {
                   <Link href="/login" className="block">
                     <Button
                       variant="ghost"
-                      className="w-full justify-start text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                      className="w-full justify-start text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary"
                     >
                       Sign in
                     </Button>

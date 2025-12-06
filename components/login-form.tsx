@@ -184,7 +184,7 @@ export function LoginForm() {
               variant="outline"
               onClick={handleResendVerification}
               disabled={isResendingEmail || isLoading}
-              className="w-full h-10 bg-card border-border text-foreground hover:bg-accent/50 hover:border-border"
+              className="w-full h-10 bg-card border-border text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary dark:hover:border-primary/50 hover:border-border"
             >
               {isResendingEmail ? (
                 <>
@@ -233,7 +233,7 @@ export function LoginForm() {
         <Button
           variant="outline"
           type="button"
-          className="h-12 bg-card border-border text-foreground hover:bg-accent/50 hover:border-border transition-all"
+          className="h-12 bg-card border-border text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary dark:hover:border-primary/50 hover:border-border transition-all"
           onClick={handleGoogleSignIn}
           disabled={isLoading}
         >

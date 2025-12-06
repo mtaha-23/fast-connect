@@ -108,7 +108,7 @@ export function ModulesSection() {
               <Link href={module.href}>
                 <Button
                   variant="ghost"
-                  className="w-full justify-between text-muted-foreground hover:text-foreground hover:bg-accent/50 border border-border hover:border-primary/30 transition-all"
+                  className="w-full justify-between text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary border border-border hover:border-primary/30 transition-all"
                 >
                   Try it out!
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

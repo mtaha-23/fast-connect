@@ -39,7 +39,7 @@ export function RecentActivity() {
 
       <div className="space-y-4">
         {activities.map((activity, index) => (
-          <div key={index} className="flex items-start gap-4 p-3 rounded-xl hover:bg-accent/50 transition-colors">
+          <div key={index} className="flex items-start gap-4 p-3 rounded-xl hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary transition-colors">
             <div className={cn("p-2 rounded-lg shrink-0", activity.color)}>
               <activity.icon className="w-4 h-4 text-white" />
             </div>

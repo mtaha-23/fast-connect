@@ -38,7 +38,7 @@ export function DashboardHeader({ title, description }: DashboardHeaderProps) {
           {/* Notifications */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="relative text-muted-foreground hover:text-foreground hover:bg-accent/50">
+              <Button variant="ghost" size="icon" className="relative text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary">
                 <Bell className="w-5 h-5" />
                 <span className="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full" />
               </Button>
@@ -54,7 +54,7 @@ export function DashboardHeader({ title, description }: DashboardHeaderProps) {
                   ].map((notif, i) => (
                     <div
                       key={i}
-                      className="flex gap-3 p-3 rounded-lg hover:bg-accent/50 cursor-pointer transition-colors"
+                      className="flex gap-3 p-3 rounded-lg hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary cursor-pointer transition-colors"
                     >
                       <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
                       <div className="flex-1 min-w-0">
