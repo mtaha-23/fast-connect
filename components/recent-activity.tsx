@@ -34,20 +34,20 @@ const activities = [
 
 export function RecentActivity() {
   return (
-    <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6">
-      <h3 className="font-semibold text-lg mb-6 text-white">Recent Activity</h3>
+    <div className="bg-card border border-border rounded-2xl p-6">
+      <h3 className="font-semibold text-lg mb-6 text-foreground">Recent Activity</h3>
 
       <div className="space-y-4">
         {activities.map((activity, index) => (
-          <div key={index} className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors">
+          <div key={index} className="flex items-start gap-4 p-3 rounded-xl hover:bg-accent/50 transition-colors">
             <div className={cn("p-2 rounded-lg shrink-0", activity.color)}>
               <activity.icon className="w-4 h-4 text-white" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="font-medium text-sm text-white">{activity.title}</p>
-              <p className="text-sm text-white/40 truncate">{activity.description}</p>
+              <p className="font-medium text-sm text-foreground">{activity.title}</p>
+              <p className="text-sm text-muted-foreground truncate">{activity.description}</p>
             </div>
-            <span className="text-xs text-white/30 whitespace-nowrap">{activity.time}</span>
+            <span className="text-xs text-muted-foreground whitespace-nowrap">{activity.time}</span>
           </div>
         ))}
       </div>

@@ -110,7 +110,7 @@ export default function DashboardPage() {
 
         {/* Quick Actions */}
         <div>
-          <h2 className="text-xl font-semibold mb-4 text-white">Quick Actions</h2>
+          <h2 className="text-xl font-semibold mb-4 text-foreground">Quick Actions</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {quickActions.map((action) => (
               <QuickActionCard key={action.title} {...action} />

@@ -15,8 +15,8 @@ export function QuickActionCard({ title, description, icon: Icon, href, gradient
     <Link href={href}>
       <div
         className={cn(
-          "group relative bg-white/[0.02] border border-white/5 rounded-2xl p-6 transition-all duration-300",
-          "hover:-translate-y-1 hover:border-blue-500/30 overflow-hidden",
+          "group relative bg-card border border-border rounded-2xl p-6 transition-all duration-300",
+          "hover:-translate-y-1 hover:border-primary/30 overflow-hidden",
         )}
       >
         {/* Background Gradient on Hover */}
@@ -39,10 +39,10 @@ export function QuickActionCard({ title, description, icon: Icon, href, gradient
             <Icon className="w-6 h-6 text-white" />
           </div>
 
-          <h3 className="font-semibold text-lg mb-1 text-white">{title}</h3>
-          <p className="text-sm text-white/40 mb-4">{description}</p>
+          <h3 className="font-semibold text-lg mb-1 text-foreground">{title}</h3>
+          <p className="text-sm text-muted-foreground mb-4">{description}</p>
 
-          <div className="flex items-center text-sm font-medium text-blue-400">
+          <div className="flex items-center text-sm font-medium text-primary">
             <span>Get Started</span>
             <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
           </div>

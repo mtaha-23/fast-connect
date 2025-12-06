@@ -1,6 +1,7 @@
 "use client"
 
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from "recharts"
+import { useTheme } from "next-themes"
 
 const data = [
   { name: "Mon", score: 65, tests: 2 },
@@ -13,17 +14,26 @@ const data = [
 ]
 
 export function ActivityChart() {
+  const { theme } = useTheme()
+  // Use theme-aware colors - light blue for light mode, brighter blue for dark
+  const primaryColor = theme === "dark" ? "#6366f1" : "#4A90E2"
+  const borderColor = theme === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"
+  const textColor = theme === "dark" ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.6)"
+  const popoverBg = theme === "dark" ? "#1a1a2e" : "#ffffff"
+  const popoverBorder = theme === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"
+  const foregroundColor = theme === "dark" ? "#ffffff" : "#000000"
+
   return (
-    <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6">
+    <div className="bg-card border border-border rounded-2xl p-6">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h3 className="font-semibold text-lg text-white">Performance Overview</h3>
-          <p className="text-sm text-white/40">Your test scores this week</p>
+          <h3 className="font-semibold text-lg text-foreground">Performance Overview</h3>
+          <p className="text-sm text-muted-foreground">Your test scores this week</p>
         </div>
         <div className="flex items-center gap-4 text-sm">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-blue-500" />
-            <span className="text-white/50">Score</span>
+            <div className="w-3 h-3 rounded-full bg-primary" />
+            <span className="text-muted-foreground">Score</span>
           </div>
         </div>
       </div>
@@ -33,36 +43,36 @@ export function ActivityChart() {
           <AreaChart data={data}>
             <defs>
               <linearGradient id="colorScore" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.4} />
-                <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+                <stop offset="5%" stopColor={primaryColor} stopOpacity={0.4} />
+                <stop offset="95%" stopColor={primaryColor} stopOpacity={0} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.05)" />
+            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={borderColor} />
             <XAxis
               dataKey="name"
               axisLine={false}
               tickLine={false}
-              tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 12 }}
+              tick={{ fill: textColor, fontSize: 12 }}
             />
             <YAxis
               axisLine={false}
               tickLine={false}
-              tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 12 }}
+              tick={{ fill: textColor, fontSize: 12 }}
               domain={[0, 100]}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: "#14141f",
-                border: "1px solid rgba(255,255,255,0.1)",
+                backgroundColor: popoverBg,
+                border: `1px solid ${popoverBorder}`,
                 borderRadius: "12px",
               }}
-              labelStyle={{ color: "#fff" }}
-              itemStyle={{ color: "#3b82f6" }}
+              labelStyle={{ color: foregroundColor }}
+              itemStyle={{ color: primaryColor }}
             />
             <Area
               type="monotone"
               dataKey="score"
-              stroke="#3b82f6"
+              stroke={primaryColor}
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorScore)"

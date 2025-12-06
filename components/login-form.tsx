@@ -114,7 +114,7 @@ export function LoginForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Email Field */}
       <div className="space-y-2">
-        <Label htmlFor="email" className="text-white/70">
+        <Label htmlFor="email" className="text-muted-foreground">
           Email
         </Label>
         <div className="relative">
@@ -124,20 +124,20 @@ export function LoginForm() {
             placeholder="you@example.com"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="h-12 pl-10 bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-blue-500/50 focus:ring-blue-500/20"
+            className="h-12 pl-10 bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20"
             required
           />
-          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
+          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
         </div>
       </div>
 
       {/* Password Field */}
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <Label htmlFor="password" className="text-white/70">
+          <Label htmlFor="password" className="text-muted-foreground">
             Password
           </Label>
-          <Link href="/forgot-password" className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+          <Link href="/forgot-password" className="text-sm text-primary hover:text-primary/80 transition-colors">
             Forgot password?
           </Link>
         </div>
@@ -148,13 +148,13 @@ export function LoginForm() {
             placeholder="Enter your password"
             value={formData.password}
             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-            className="h-12 pr-10 bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-blue-500/50 focus:ring-blue-500/20"
+            className="h-12 pr-10 bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20"
             required
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
           >
             {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
           </button>
@@ -167,9 +167,9 @@ export function LoginForm() {
           id="remember"
           checked={formData.rememberMe}
           onCheckedChange={(checked) => setFormData({ ...formData, rememberMe: checked as boolean })}
-          className="border-white/20 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500"
+          className="border-border data-[state=checked]:bg-primary data-[state=checked]:border-primary"
         />
-        <Label htmlFor="remember" className="text-sm font-normal cursor-pointer text-white/50">
+        <Label htmlFor="remember" className="text-sm font-normal cursor-pointer text-muted-foreground">
           Remember me for 30 days
         </Label>
       </div>
@@ -177,14 +177,14 @@ export function LoginForm() {
       {/* Error Message */}
       {error && (
         <div className="space-y-3">
-          <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/30 rounded-lg px-3 py-2">{error}</p>
+          <p className="text-sm text-destructive bg-destructive/10 border border-destructive/30 rounded-lg px-3 py-2">{error}</p>
           {needsVerification && (
             <Button
               type="button"
               variant="outline"
               onClick={handleResendVerification}
               disabled={isResendingEmail || isLoading}
-              className="w-full h-10 bg-white/5 border-white/10 text-white hover:bg-white/10 hover:border-white/20"
+              className="w-full h-10 bg-card border-border text-foreground hover:bg-accent/50 hover:border-border"
             >
               {isResendingEmail ? (
                 <>
@@ -205,7 +205,7 @@ export function LoginForm() {
       {/* Submit Button */}
       <Button
         type="submit"
-        className="w-full h-12 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white border-0 rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
+        className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground border-0 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300"
         disabled={isLoading}
       >
         {isLoading ? (
@@ -221,10 +221,10 @@ export function LoginForm() {
       {/* Divider */}
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t border-white/10" />
+          <span className="w-full border-t border-border" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-[#0a0a12] px-2 text-white/30">Or continue with</span>
+          <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
         </div>
       </div>
 
@@ -233,7 +233,7 @@ export function LoginForm() {
         <Button
           variant="outline"
           type="button"
-          className="h-12 bg-white/5 border-white/10 text-white hover:bg-white/10 hover:border-white/20 transition-all"
+          className="h-12 bg-card border-border text-foreground hover:bg-accent/50 hover:border-border transition-all"
           onClick={handleGoogleSignIn}
           disabled={isLoading}
         >
@@ -260,9 +260,9 @@ export function LoginForm() {
       </div>
 
       {/* Sign Up Link */}
-      <p className="text-center text-sm text-white/40">
+      <p className="text-center text-sm text-muted-foreground">
         Don't have an account?{" "}
-        <Link href="/signup" className="text-blue-400 hover:text-blue-300 font-medium transition-colors">
+        <Link href="/signup" className="text-primary hover:text-primary/80 font-medium transition-colors">
           Sign up
         </Link>
       </p>

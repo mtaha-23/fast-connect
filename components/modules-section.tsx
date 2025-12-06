@@ -55,20 +55,20 @@ export function ModulesSection() {
   return (
     <section id="modules" className="py-32 relative">
       {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/[0.02] to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-medium mb-6">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
             Modules
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-foreground">
             Powerful tools for{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80">
               every need
             </span>
           </h2>
-          <p className="text-lg text-white/50 leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             Explore our comprehensive suite of tools designed to support your journey to FAST University.
           </p>
         </div>
@@ -77,28 +77,28 @@ export function ModulesSection() {
           {modules.map((module) => (
             <div
               key={module.title}
-              className="group relative bg-white/[0.02] border border-white/5 rounded-2xl p-6 hover:border-blue-500/30 transition-all duration-500"
+              className="group relative bg-card/50 border border-border rounded-2xl p-6 hover:border-primary/30 transition-all duration-500"
             >
               {/* Icon & Title */}
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/10 to-indigo-500/10 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-blue-500/30 transition-colors">
-                  <module.icon className="w-6 h-6 text-blue-400" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-border flex items-center justify-center shrink-0 group-hover:border-primary/30 transition-colors">
+                  <module.icon className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                     {module.title}
                   </h3>
                 </div>
               </div>
 
               {/* Description */}
-              <p className="text-white/40 mb-4 leading-relaxed text-sm">{module.description}</p>
+              <p className="text-muted-foreground mb-4 leading-relaxed text-sm">{module.description}</p>
 
               {/* Features */}
               <ul className="space-y-2 mb-6">
                 {module.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm text-white/30">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                  <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                     {feature}
                   </li>
                 ))}
@@ -108,7 +108,7 @@ export function ModulesSection() {
               <Link href={module.href}>
                 <Button
                   variant="ghost"
-                  className="w-full justify-between text-white/60 hover:text-white hover:bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all"
+                  className="w-full justify-between text-muted-foreground hover:text-foreground hover:bg-accent/50 border border-border hover:border-primary/30 transition-all"
                 >
                   Try it out!
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -116,7 +116,7 @@ export function ModulesSection() {
               </Link>
 
               {/* Hover glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 via-transparent to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             </div>
           ))}
         </div>
