@@ -45,7 +45,7 @@ export function Footer() {
                 FAST<span className="text-blue-400">Connect</span>
               </span>
             </Link>
-            <p className="text-sm text-white/40 leading-relaxed">Your AI-powered gateway to FAST University success.</p>
+            <p className="text-sm text-white/40 leading-relaxed">where every student finds a path.</p>
           </div>
 
           {/* Links */}

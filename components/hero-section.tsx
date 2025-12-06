@@ -9,12 +9,7 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/50 border border-border text-sm text-muted-foreground mb-8 backdrop-blur-sm">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span>Powered by Advanced AI Technology</span>
-            <span className="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-xs font-medium">New</span>
-          </div>
-
+          
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 text-balance leading-[1.1]">
             <span className="text-foreground">Your Gateway to</span>
             <br />
