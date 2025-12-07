@@ -1,12 +1,43 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play, Sparkles } from "lucide-react"
 import Link from "next/link"
 
 export function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    // Ensure video plays (some browsers require this)
+    const video = videoRef.current
+    if (video) {
+      video.play().catch((error) => {
+        console.log("Video autoplay prevented:", error)
+      })
+    }
+  }, [])
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* Video Background - Only in Hero Section */}
+      <div className="absolute inset-0 w-full h-full -z-10">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectFit: "cover" }}
+        >
+          <source src="/bg%20video.mp4" type="video/mp4" />
+          <source src="/new video.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for better text readability - theme aware */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/70 to-background/80 dark:from-[#0a0a12]/80 dark:via-[#0d0d1a]/85 dark:to-[#0a0a12]/90" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center max-w-5xl mx-auto">
           
@@ -43,43 +74,6 @@ export function HeroSection() {
                 Watch Demo
               </Button>
             </Link>
-          </div>
-
-          <div className="relative max-w-3xl mx-auto">
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary/10 rounded-2xl blur-2xl" />
-            <div className="relative glass-card rounded-2xl overflow-hidden border border-border">
-              {/* Terminal header */}
-              <div className="flex items-center gap-2 px-4 py-3 bg-card/50 border-b border-border">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                </div>
-                <span className="text-xs text-muted-foreground ml-2 font-mono">fastconnect ~ assistant</span>
-              </div>
-              {/* Terminal content */}
-              <div className="p-6 font-mono text-sm text-left">
-                <div className="flex items-start gap-3 mb-4">
-                  <span className="text-primary">→</span>
-                  <span className="text-foreground">What programs does FAST University offer?</span>
-                </div>
-                <div className="flex items-start gap-3 pl-6 text-muted-foreground">
-                  <span className="text-[oklch(0.7_0.2_120)]">AI:</span>
-                  <div className="space-y-1">
-                    <p>FAST-NUCES offers undergraduate programs in:</p>
-                    <p className="text-primary">• Computer Science (BS-CS)</p>
-                    <p className="text-primary">• Software Engineering (BS-SE)</p>
-                    <p className="text-primary">• Artificial Intelligence (BS-AI)</p>
-                    <p className="text-primary">• Data Science (BS-DS)</p>
-                    <p className="text-muted-foreground">+ 8 more programs...</p>
-                  </div>
-                </div>
-                <div className="mt-4 pt-4 border-t border-border flex items-center gap-2">
-                  <div className="w-2 h-4 bg-primary animate-pulse" />
-                  <span className="text-muted-foreground">Ask me anything...</span>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-12 border-t border-border">
