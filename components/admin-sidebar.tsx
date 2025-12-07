@@ -1,9 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
+import { signOutUser } from "@/lib/services/auth.service"
 import { Button } from "@/components/ui/button"
 import { Home, Users, FileText, MessageSquare, Settings, LogOut, ChevronLeft, BarChart3, Shield } from "lucide-react"
 import {
@@ -14,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { useAuth } from "@/lib/hooks/use-auth"
 
 const navItems = [
   { title: "Dashboard", href: "/admin", icon: Home },
@@ -25,7 +27,28 @@ const navItems = [
 
 export function Sidebar() {
   const pathname = usePathname()
+  const router = useRouter()
   const [isCollapsed, setIsCollapsed] = useState(false)
+  const { userData } = useAuth()
+
+  const handleLogout = async () => {
+    try {
+      await signOutUser()
+      router.push("/")
+    } catch (error) {
+      console.error("Logout failed:", error)
+    }
+  }
+
+  // Get user display info
+  const userName = userData?.name || "Admin User"
+  const userEmail = userData?.email || "admin@fast.edu.pk"
+  const userInitials = userName
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2) || "AD"
 
   return (
     <aside
@@ -92,18 +115,6 @@ export function Sidebar() {
             {!isCollapsed && <span>Settings</span>}
           </Link>
 
-          <Link
-            href="/"
-            className={cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all",
-              "hover:bg-white/5 text-white/50 hover:text-white",
-              isCollapsed && "justify-center px-2",
-            )}
-          >
-            <LogOut className="w-5 h-5 shrink-0" />
-            {!isCollapsed && <span>Exit Admin</span>}
-          </Link>
-
           {/* Admin User */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -114,15 +125,15 @@ export function Sidebar() {
                 )}
               >
                 <Avatar className="w-8 h-8 shrink-0 border border-white/10">
-                  <AvatarImage src="/placeholder.svg" />
+                  <AvatarImage src={userData?.photoURL || "/placeholder.svg"} />
                   <AvatarFallback className="bg-gradient-to-br from-red-500 to-orange-600 text-white text-xs">
-                    AD
+                    {userInitials}
                   </AvatarFallback>
                 </Avatar>
                 {!isCollapsed && (
                   <div className="flex-1 text-left">
-                    <p className="text-sm font-medium text-white">Admin User</p>
-                    <p className="text-xs text-white/40 truncate">admin@fast.edu.pk</p>
+                    <p className="text-sm font-medium text-white">{userName}</p>
+                    <p className="text-xs text-white/40 truncate">{userEmail}</p>
                   </div>
                 )}
               </button>
@@ -133,7 +144,11 @@ export function Sidebar() {
                 Notifications
               </DropdownMenuItem>
               <DropdownMenuSeparator className="bg-white/10" />
-              <DropdownMenuItem className="text-red-400 hover:text-red-300 hover:bg-red-500/10">
+              <DropdownMenuItem 
+                className="text-red-400 hover:text-red-300 hover:bg-red-500/10"
+                onClick={handleLogout}
+              >
+                <LogOut className="w-5 h-5 shrink-0 mr-2" />
                 Log out
               </DropdownMenuItem>
             </DropdownMenuContent>

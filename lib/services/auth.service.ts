@@ -14,10 +14,13 @@ import {
 import { doc, setDoc, getDoc } from "firebase/firestore"
 import { getFirebaseAuth, getGoogleProvider, getFirestoreDB } from "@/lib/firebase"
 
+export type UserRole = "admin" | "student"
+
 export interface SignupData {
   name: string
   email: string
   password: string
+  role: UserRole
 }
 
 export interface LoginData {
@@ -30,6 +33,7 @@ export interface UserData {
   name: string
   email: string
   emailVerified: boolean
+  role: UserRole
   photoURL?: string | null
   createdAt: string
   updatedAt: string
@@ -51,6 +55,7 @@ export async function signUpWithEmail(data: SignupData): Promise<{ user: User; u
       name: data.name,
       email: data.email,
       emailVerified: false,
+      role: data.role,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     }
@@ -71,15 +76,22 @@ export async function signUpWithEmail(data: SignupData): Promise<{ user: User; u
 /**
  * Sign in with email and password
  */
-export async function signInWithEmail(data: LoginData): Promise<{ user: User; emailVerified: boolean }> {
+export async function signInWithEmail(data: LoginData): Promise<{ user: User; emailVerified: boolean; role: UserRole }> {
   try {
     const auth = getFirebaseAuth()
     const userCredential = await signInWithEmailAndPassword(auth, data.email, data.password)
     const user = userCredential.user
 
+    // Fetch user role from Firestore
+    const db = getFirestoreDB()
+    const userDoc = await getDoc(doc(db, "users", user.uid))
+    const userData = userDoc.exists() ? (userDoc.data() as UserData) : null
+    const role = userData?.role || "student" // Default to student if role not found
+
     return {
       user,
       emailVerified: user.emailVerified,
+      role,
     }
   } catch (error) {
     throw new Error(
@@ -91,7 +103,7 @@ export async function signInWithEmail(data: LoginData): Promise<{ user: User; em
 /**
  * Sign in with Google
  */
-export async function signInWithGoogle(name?: string): Promise<{ user: User; userData: UserData }> {
+export async function signInWithGoogle(name?: string): Promise<{ user: User; userData: UserData; role: UserRole }> {
   try {
     const auth = getFirebaseAuth()
     const provider = getGoogleProvider()
@@ -100,19 +112,25 @@ export async function signInWithGoogle(name?: string): Promise<{ user: User; use
 
     // Save or update user data in Firestore
     const db = getFirestoreDB()
+    
+    // Check if user already exists to preserve their role
+    const existingUserDoc = await getDoc(doc(db, "users", user.uid))
+    const existingRole = existingUserDoc.exists() ? (existingUserDoc.data() as UserData).role : "student"
+    
     const userData: UserData = {
       uid: user.uid,
       name: user.displayName || name || "User",
       email: user.email || "",
       emailVerified: user.emailVerified,
+      role: existingRole, // Preserve existing role or default to student
       photoURL: user.photoURL || null,
-      createdAt: new Date().toISOString(),
+      createdAt: existingUserDoc.exists() ? (existingUserDoc.data() as UserData).createdAt : new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     }
 
     await setDoc(doc(db, "users", user.uid), userData, { merge: true })
 
-    return { user, userData }
+    return { user, userData, role: existingRole }
   } catch (error) {
     throw new Error(
       error instanceof Error ? error.message : "Google sign-in failed. Please try again."

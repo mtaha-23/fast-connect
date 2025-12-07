@@ -82,19 +82,11 @@ export function Navbar() {
                 </Button>
               </Link>
             ) : (
-              <>
-                <Link href="/login">
-                  <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary px-5">
-                    Sign in
-                  </Button>
-                </Link>
-                <Link href="/signup">
-                  <Button className="relative bg-primary hover:bg-primary/90 text-primary-foreground border-0 px-6 rounded-lg shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300">
-                    Sign up
-                    <span className="ml-2">→</span>
-                  </Button>
-                </Link>
-              </>
+              <Link href="/login">
+                <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary px-5">
+                  Sign in
+                </Button>
+              </Link>
             )}
           </div>
 
@@ -139,19 +131,14 @@ export function Navbar() {
                   </Button>
                 </Link>
               ) : (
-                <>
-                  <Link href="/login" className="block">
-                    <Button
-                      variant="ghost"
-                      className="w-full justify-start text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary"
-                    >
-                      Sign in
-                    </Button>
-                  </Link>
-                  <Link href="/signup" className="block">
-                    <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">Sign up →</Button>
-                  </Link>
-                </>
+                <Link href="/login" className="block">
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary"
+                  >
+                    Sign in
+                  </Button>
+                </Link>
               )}
             </div>
           </div>

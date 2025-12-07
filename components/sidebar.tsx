@@ -2,9 +2,10 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
+import { signOutUser } from "@/lib/services/auth.service"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import {
@@ -31,6 +32,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { useAuth } from "@/lib/hooks/use-auth"
 
 const navItems = [
   {
@@ -82,7 +84,28 @@ const navItems = [
 
 export function Sidebar() {
   const pathname = usePathname()
+  const router = useRouter()
   const [isCollapsed, setIsCollapsed] = useState(false)
+  const { userData } = useAuth()
+  
+  // Get user display info
+  const userName = userData?.name || "User"
+  const userEmail = userData?.email || ""
+  const userInitials = userName
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2) || "U"
+
+  const handleLogout = async () => {
+    try {
+      await signOutUser()
+      router.push("/")
+    } catch (error) {
+      console.error("Logout failed:", error)
+    }
+  }
 
   return (
     <aside
@@ -176,15 +199,15 @@ export function Sidebar() {
                 )}
               >
                 <Avatar className="w-8 h-8 shrink-0 border border-border">
-                  <AvatarImage src="/diverse-avatars.png" />
+                  <AvatarImage src={userData?.photoURL || "/diverse-avatars.png"} />
                   <AvatarFallback className="bg-primary text-primary-foreground text-xs">
-                    JD
+                    {userInitials}
                   </AvatarFallback>
                 </Avatar>
                 {!isCollapsed && (
                   <div className="flex-1 text-left">
-                    <p className="text-sm font-medium text-foreground">John Doe</p>
-                    <p className="text-xs text-muted-foreground truncate">john@example.com</p>
+                    <p className="text-sm font-medium text-foreground">{userName}</p>
+                    <p className="text-xs text-muted-foreground truncate">{userEmail}</p>
                   </div>
                 )}
               </button>
@@ -199,7 +222,10 @@ export function Sidebar() {
                 Notifications
               </DropdownMenuItem>
               <DropdownMenuSeparator className="bg-border" />
-              <DropdownMenuItem className="text-destructive hover:text-destructive hover:bg-destructive/10">
+              <DropdownMenuItem 
+                className="text-destructive hover:text-destructive hover:bg-destructive/10"
+                onClick={handleLogout}
+              >
                 <LogOut className="w-4 h-4 mr-2" />
                 Log out
               </DropdownMenuItem>

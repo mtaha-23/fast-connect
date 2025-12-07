@@ -8,14 +8,14 @@ const teamMembers = [
   {
     name: "Muhammad Taha",
     role: "Developer",
-    image: "/Muhammad Taha.jpg",
+    image: "/Muhammad Taha.png",
     linkedin: "https://www.linkedin.com/in/muhammad--taha/",
     github: "https://github.com/mtaha-23",
   },
   {
     name: "Sharjeel Khan",
     role: "Developer",
-    image: "/Muhammad Taha.jpg", // Placeholder - update when image is available
+    image: "/Muhammad Taha.png", // Placeholder - update when image is available
     linkedin: "https://linkedin.com/in/sharjeel-khan",
     github: "https://github.com/sharjeel-khan",
   }

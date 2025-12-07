@@ -1,11 +1,16 @@
+"use client"
+
 import { DashboardHeader } from "@/components/header"
 import { StatsCard } from "@/components/stats-card"
 import { QuickActionCard } from "@/components/quick-action-card"
 import { ActivityChart } from "@/components/activity-chart"
 import { RecentActivity } from "@/components/recent-activity"
 import { Bot, GraduationCap, BarChart3, FileText, Globe, Brain, Target, TrendingUp, Clock } from "lucide-react"
+import { useAuth } from "@/lib/hooks/use-auth"
 
 export default function DashboardPage() {
+  const { userData, loading } = useAuth()
+  const userName = userData?.name || "User"
   const stats = [
     {
       title: "Tests Completed",
@@ -88,7 +93,7 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen">
-      <DashboardHeader title="Welcome back, John!" description="Here's what's happening with your preparation" />
+      <DashboardHeader title={`Welcome back, ${userName}!`} description="Here's what's happening with your preparation" />
 
       <div className="p-6 space-y-6">
         {/* Stats Grid */}

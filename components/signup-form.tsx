@@ -41,10 +41,12 @@ export function SignupForm() {
 
     try {
       // Call backend service - business logic is in lib/services/auth.service.ts
+      // All new signups default to "student" role - admins are set manually in database
       await signUpWithEmail({
         name: formData.name,
         email: formData.email,
         password: formData.password,
+        role: "student", // Default role - admins are set manually
       })
 
       // Show verification modal after successful signup
@@ -64,8 +66,13 @@ export function SignupForm() {
 
     try {
       // Call backend service - business logic is in lib/services/auth.service.ts
-      await signInWithGoogle(formData.name)
-      router.push("/dashboard")
+      const result = await signInWithGoogle(formData.name)
+      // Redirect based on role (Google signup defaults to student)
+      if (result.role === "admin") {
+        router.push("/admin")
+      } else {
+        router.push("/dashboard")
+      }
     } catch (err: unknown) {
       const message =
         err instanceof Error ? err.message : "Google sign-up failed. Please try again."

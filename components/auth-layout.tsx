@@ -1,8 +1,7 @@
 "use client"
 
 import type React from "react"
-import Link from "next/link"
-import Image from "next/image"
+import { Navbar } from "@/components/navbar"
 
 interface AuthLayoutProps {
   children: React.ReactNode
@@ -12,7 +11,9 @@ interface AuthLayoutProps {
 
 export function AuthLayout({ children, title, description }: AuthLayoutProps) {
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-background px-4 py-12 overflow-hidden">
+    <div className="relative min-h-screen bg-background">
+      <Navbar />
+      <div className="relative flex items-center justify-center min-h-[calc(100vh-80px)] px-4 pt-24 pb-12 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px]" />
@@ -70,25 +71,6 @@ export function AuthLayout({ children, title, description }: AuthLayoutProps) {
       </div>
 
       <div className="relative w-full max-w-md">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 mb-10 justify-center">
-          <div className="relative">
-            <div className="w-12 h-12 rounded-xl bg-card backdrop-blur-sm border border-border flex items-center justify-center shadow-lg dark:shadow-black/20 overflow-hidden">
-              <Image
-                src="/logo.png"
-                alt="FASTConnect Logo"
-                width={48}
-                height={48}
-                className="object-contain p-1.5"
-              />
-            </div>
-            <div className="absolute inset-0 rounded-xl bg-primary/20 blur-lg opacity-50 transition-opacity" />
-          </div>
-          <span className="text-3xl font-bold text-foreground">
-            FAST<span className="text-primary">Connect</span>
-          </span>
-        </Link>
-
         {/* Header */}
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight text-foreground">{title}</h1>
@@ -99,6 +81,7 @@ export function AuthLayout({ children, title, description }: AuthLayoutProps) {
         <div className="bg-card/50 border border-border rounded-2xl p-6 shadow-2xl backdrop-blur-xl">
           {children}
         </div>
+      </div>
       </div>
     </div>
   )

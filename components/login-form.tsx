@@ -47,8 +47,12 @@ export function LoginForm() {
         return
       }
 
-      // Email is verified, proceed to dashboard
-      router.push("/dashboard")
+      // Email is verified, redirect based on role
+      if (result.role === "admin") {
+        router.push("/admin")
+      } else {
+        router.push("/dashboard")
+      }
     } catch (err: unknown) {
       const message =
         err instanceof Error ? err.message : "Failed to sign in. Please check your credentials and try again."
@@ -82,8 +86,13 @@ export function LoginForm() {
 
     try {
       // Call backend service - business logic is in lib/services/auth.service.ts
-      await signInWithGoogle()
-      router.push("/dashboard")
+      const result = await signInWithGoogle()
+      // Redirect based on role
+      if (result.role === "admin") {
+        router.push("/admin")
+      } else {
+        router.push("/dashboard")
+      }
     } catch (err: unknown) {
       const message =
         err instanceof Error ? err.message : "Google sign-in failed. Please try again."
