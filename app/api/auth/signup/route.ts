@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { signUpWithEmail } from "@/lib/services/auth.service"
+import { signUpWithEmail, signOutUser } from "@/lib/services/auth.service"
 import type { SignupData } from "@/lib/services/auth.service"
 
 /**
@@ -27,6 +27,12 @@ export async function POST(request: NextRequest) {
     }
 
     const result = await signUpWithEmail(body)
+
+    // Sign out the user since email is not verified yet
+    // This prevents them from accessing dashboard before verification
+    if (!result.user.emailVerified) {
+      await signOutUser()
+    }
 
     return NextResponse.json(
       {

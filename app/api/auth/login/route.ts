@@ -38,6 +38,7 @@ export async function POST(request: NextRequest) {
           uid: result.user.uid,
           email: result.user.email,
           emailVerified: result.emailVerified,
+          role: result.role,
         },
       },
       { status: 200 }

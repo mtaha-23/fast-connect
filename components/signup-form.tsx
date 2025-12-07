@@ -11,7 +11,6 @@ import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Eye, EyeOff, Loader2, Mail, User } from "lucide-react"
 import { OTPModal } from "./otp-modal"
-import { signUpWithEmail, signInWithGoogle, signOutUser } from "@/lib/services/auth.service"
 
 export function SignupForm() {
   const router = useRouter()
@@ -40,19 +39,24 @@ export function SignupForm() {
     setIsLoading(true)
 
     try {
-      // Call backend service - business logic is in lib/services/auth.service.ts
-      // All new signups default to "student" role - admins are set manually in database
-      const result = await signUpWithEmail({
-        name: formData.name,
-        email: formData.email,
-        password: formData.password,
-        role: "student", // Default role - admins are set manually
+      // Call API route - backend logic is in app/api/auth/signup/route.ts
+      const response = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+          role: "student", // Default role - admins are set manually
+        }),
       })
 
-      // Sign out the user since email is not verified yet
-      // This prevents them from accessing dashboard before verification
-      if (!result.user.emailVerified) {
-        await signOutUser()
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to create account")
       }
 
       // Show verification modal after successful signup
@@ -71,7 +75,9 @@ export function SignupForm() {
     setIsLoading(true)
 
     try {
-      // Call backend service - business logic is in lib/services/auth.service.ts
+      // For Google signup, we still use the service directly since it's client-side OAuth
+      // This could be moved to an API route if needed
+      const { signInWithGoogle } = await import("@/lib/services/auth.service")
       const result = await signInWithGoogle(formData.name)
       // Redirect based on role (Google signup defaults to student)
       if (result.role === "admin") {

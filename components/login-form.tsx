@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Eye, EyeOff, Loader2, Mail } from "lucide-react"
-import { signInWithEmail, signInWithGoogle, resendEmailVerification } from "@/lib/services/auth.service"
 
 export function LoginForm() {
   const router = useRouter()
@@ -31,24 +30,29 @@ export function LoginForm() {
     setIsLoading(true)
 
     try {
-      // Call backend service - business logic is in lib/services/auth.service.ts
-      const result = await signInWithEmail({
-        email: formData.email,
-        password: formData.password,
+      // Call API route - backend logic is in app/api/auth/login/route.ts
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
       })
 
-      // Check if email is verified
-      if (!result.emailVerified) {
-        // Sign out the user since email is not verified
-        const { signOutUser } = await import("@/lib/services/auth.service")
-        await signOutUser()
-        setNeedsVerification(true)
-        setError("Please verify your email before signing in. Check your inbox for the verification link.")
-        return
+      const data = await response.json()
+
+      if (!response.ok) {
+        if (data.emailVerified === false) {
+          setNeedsVerification(true)
+        }
+        throw new Error(data.error || "Failed to sign in")
       }
 
       // Email is verified, redirect based on role
-      if (result.role === "admin") {
+      if (data.user.role === "admin") {
         router.push("/admin")
       } else {
         router.push("/dashboard")
@@ -67,7 +71,9 @@ export function LoginForm() {
     setError(null)
 
     try {
-      // Call backend service - business logic is in lib/services/auth.service.ts
+      // For resend verification, we use the service directly since it needs to sign in temporarily
+      // This could be moved to an API route if needed
+      const { resendEmailVerification } = await import("@/lib/services/auth.service")
       await resendEmailVerification(formData.email, formData.password)
       setError(null)
       alert("Verification email sent! Please check your inbox.")
@@ -85,7 +91,9 @@ export function LoginForm() {
     setIsLoading(true)
 
     try {
-      // Call backend service - business logic is in lib/services/auth.service.ts
+      // For Google sign-in, we use the service directly since it's client-side OAuth popup
+      // This could be moved to an API route if needed
+      const { signInWithGoogle } = await import("@/lib/services/auth.service")
       const result = await signInWithGoogle()
       // Redirect based on role
       if (result.role === "admin") {
