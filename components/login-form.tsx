@@ -4,13 +4,12 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { signInWithEmailAndPassword, signInWithPopup, signOut, sendEmailVerification } from "firebase/auth"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Eye, EyeOff, Loader2, Mail } from "lucide-react"
-import { getFirebaseAuth, getGoogleProvider } from "@/lib/firebase"
+import { signInWithEmail, signInWithGoogle, resendEmailVerification } from "@/lib/services/auth.service"
 
 export function LoginForm() {
   const router = useRouter()
@@ -32,14 +31,17 @@ export function LoginForm() {
     setIsLoading(true)
 
     try {
-      const auth = getFirebaseAuth()
-      const userCredential = await signInWithEmailAndPassword(auth, formData.email, formData.password)
-      const user = userCredential.user
+      // Call backend service - business logic is in lib/services/auth.service.ts
+      const result = await signInWithEmail({
+        email: formData.email,
+        password: formData.password,
+      })
 
       // Check if email is verified
-      if (!user.emailVerified) {
+      if (!result.emailVerified) {
         // Sign out the user since email is not verified
-        await signOut(auth)
+        const { signOutUser } = await import("@/lib/services/auth.service")
+        await signOutUser()
         setNeedsVerification(true)
         setError("Please verify your email before signing in. Check your inbox for the verification link.")
         return
@@ -48,11 +50,8 @@ export function LoginForm() {
       // Email is verified, proceed to dashboard
       router.push("/dashboard")
     } catch (err: unknown) {
-      console.error(err)
       const message =
-        err && typeof err === "object" && "message" in err && typeof (err as any).message === "string"
-          ? (err as any).message
-          : "Failed to sign in. Please check your credentials and try again."
+        err instanceof Error ? err.message : "Failed to sign in. Please check your credentials and try again."
       setError(message)
     } finally {
       setIsLoading(false)
@@ -64,25 +63,13 @@ export function LoginForm() {
     setError(null)
 
     try {
-      const auth = getFirebaseAuth()
-      // Try to sign in temporarily to get the user
-      const userCredential = await signInWithEmailAndPassword(auth, formData.email, formData.password)
-      const user = userCredential.user
-
-      if (!user.emailVerified) {
-        await sendEmailVerification(user)
-        setError(null)
-        alert("Verification email sent! Please check your inbox.")
-      }
-
-      // Sign out after sending email
-      await signOut(auth)
+      // Call backend service - business logic is in lib/services/auth.service.ts
+      await resendEmailVerification(formData.email, formData.password)
+      setError(null)
+      alert("Verification email sent! Please check your inbox.")
     } catch (err: unknown) {
-      console.error(err)
       const message =
-        err && typeof err === "object" && "message" in err && typeof (err as any).message === "string"
-          ? (err as any).message
-          : "Failed to resend verification email. Please try again."
+        err instanceof Error ? err.message : "Failed to resend verification email. Please try again."
       setError(message)
     } finally {
       setIsResendingEmail(false)
@@ -94,16 +81,12 @@ export function LoginForm() {
     setIsLoading(true)
 
     try {
-      const auth = getFirebaseAuth()
-      const provider = getGoogleProvider()
-      await signInWithPopup(auth, provider)
+      // Call backend service - business logic is in lib/services/auth.service.ts
+      await signInWithGoogle()
       router.push("/dashboard")
     } catch (err: unknown) {
-      console.error(err)
       const message =
-        err && typeof err === "object" && "message" in err && typeof (err as any).message === "string"
-          ? (err as any).message
-          : "Google sign-in failed. Please try again."
+        err instanceof Error ? err.message : "Google sign-in failed. Please try again."
       setError(message)
     } finally {
       setIsLoading(false)

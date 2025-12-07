@@ -7,13 +7,12 @@ import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown, LayoutDashboard } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { cn } from "@/lib/utils"
-import { getFirebaseAuth } from "@/lib/firebase"
-import { onAuthStateChanged, type User } from "firebase/auth"
+import { useAuth } from "@/lib/hooks/use-auth"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [user, setUser] = useState<User | null>(null)
+  const { user } = useAuth()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,14 +20,6 @@ export function Navbar() {
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  useEffect(() => {
-    const auth = getFirebaseAuth()
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user)
-    })
-    return () => unsubscribe()
   }, [])
 
   const navLinks = [

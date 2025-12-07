@@ -5,15 +5,13 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { createUserWithEmailAndPassword, sendEmailVerification, signInWithPopup } from "firebase/auth"
-import { doc, setDoc } from "firebase/firestore"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Eye, EyeOff, Loader2, Mail, User } from "lucide-react"
 import { OTPModal } from "./otp-modal"
-import { getFirebaseAuth, getGoogleProvider, getFirestoreDB } from "@/lib/firebase"
+import { signUpWithEmail, signInWithGoogle } from "@/lib/services/auth.service"
 
 export function SignupForm() {
   const router = useRouter()
@@ -33,6 +31,7 @@ export function SignupForm() {
     e.preventDefault()
     setError(null)
 
+    // Client-side validation
     if (formData.password !== formData.confirmPassword) {
       setError("Passwords do not match.")
       return
@@ -41,32 +40,18 @@ export function SignupForm() {
     setIsLoading(true)
 
     try {
-      const auth = getFirebaseAuth()
-      const credential = await createUserWithEmailAndPassword(auth, formData.email, formData.password)
-
-      if (credential.user) {
-        // Save user data to Firestore users collection
-        const db = getFirestoreDB()
-        await setDoc(doc(db, "users", credential.user.uid), {
-          name: formData.name,
-          email: formData.email,
-          emailVerified: false,
-          createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString(),
-        })
-
-        // Send real verification email via Firebase
-        await sendEmailVerification(credential.user)
-      }
+      // Call backend service - business logic is in lib/services/auth.service.ts
+      await signUpWithEmail({
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+      })
 
       // Show verification modal after successful signup
       setShowOTP(true)
     } catch (err: unknown) {
-      console.error(err)
       const message =
-        err && typeof err === "object" && "message" in err && typeof (err as any).message === "string"
-          ? (err as any).message
-          : "Failed to create account. Please try again."
+        err instanceof Error ? err.message : "Failed to create account. Please try again."
       setError(message)
     } finally {
       setIsLoading(false)
@@ -78,33 +63,12 @@ export function SignupForm() {
     setIsLoading(true)
 
     try {
-      const auth = getFirebaseAuth()
-      const provider = getGoogleProvider()
-      const result = await signInWithPopup(auth, provider)
-      const user = result.user
-
-      // Save user data to Firestore users collection
-      const db = getFirestoreDB()
-      await setDoc(
-        doc(db, "users", user.uid),
-        {
-          name: user.displayName || formData.name || "User",
-          email: user.email,
-          emailVerified: user.emailVerified,
-          photoURL: user.photoURL || null,
-          createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString(),
-        },
-        { merge: true } // Merge if user already exists
-      )
-
+      // Call backend service - business logic is in lib/services/auth.service.ts
+      await signInWithGoogle(formData.name)
       router.push("/dashboard")
     } catch (err: unknown) {
-      console.error(err)
       const message =
-        err && typeof err === "object" && "message" in err && typeof (err as any).message === "string"
-          ? (err as any).message
-          : "Google sign-up failed. Please try again."
+        err instanceof Error ? err.message : "Google sign-up failed. Please try again."
       setError(message)
     } finally {
       setIsLoading(false)
