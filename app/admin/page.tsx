@@ -40,16 +40,16 @@ const systemStatus = [
 
 export default function AdminDashboard() {
   return (
-    <div className="min-h-screen bg-[#0a0a12]">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-30 bg-[#0a0a12]/80 backdrop-blur-xl border-b border-white/5">
+      <header className="sticky top-0 z-30 bg-background/80 backdrop-blur-xl border-b border-border">
         <div className="flex items-center justify-between h-16 px-6">
           <div>
-            <h1 className="text-xl font-semibold text-white">Admin Dashboard</h1>
-            <p className="text-sm text-white/50">System overview and management</p>
+            <h1 className="text-xl font-semibold text-foreground">Admin Dashboard</h1>
+            <p className="text-sm text-muted-foreground">System overview and management</p>
           </div>
           <div className="flex items-center gap-3">
-            <Button variant="outline" size="sm" className="bg-white/5 border-white/10 text-white hover:bg-white/10">
+            <Button variant="outline" size="sm" className="bg-card border-border text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary">
               <Bell className="w-4 h-4 mr-2" />
               Notifications
               <Badge className="ml-2 bg-red-500 border-0">3</Badge>
@@ -67,18 +67,18 @@ export default function AdminDashboard() {
             { title: "Resources", value: "89", sub: "23.5K downloads", icon: FileText, color: "bg-pink-500" },
             { title: "Tests Taken", value: "8,432", change: "+24%", icon: TrendingUp, color: "bg-indigo-500" },
           ].map((stat, i) => (
-            <div key={i} className="bg-white/[0.02] border border-white/5 rounded-2xl p-6">
+            <div key={i} className="bg-card/50 border border-border rounded-2xl p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-white/50">{stat.title}</p>
-                  <p className="text-3xl font-bold text-white">{stat.value}</p>
+                  <p className="text-sm text-muted-foreground">{stat.title}</p>
+                  <p className="text-3xl font-bold text-foreground">{stat.value}</p>
                   {stat.change && (
-                    <p className="text-sm text-emerald-400 flex items-center gap-1 mt-1">
+                    <p className="text-sm text-emerald-600 dark:text-emerald-400 flex items-center gap-1 mt-1">
                       <ArrowUp className="w-3 h-3" />
                       {stat.change} this month
                     </p>
                   )}
-                  {stat.sub && <p className="text-sm text-white/40 mt-1">{stat.sub}</p>}
+                  {stat.sub && <p className="text-sm text-muted-foreground mt-1">{stat.sub}</p>}
                 </div>
                 <div className={cn("p-3 rounded-xl", stat.color)}>
                   <stat.icon className="w-6 h-6 text-white" />
@@ -91,10 +91,10 @@ export default function AdminDashboard() {
         {/* Charts Row */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* User Activity Chart */}
-          <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6">
+          <div className="bg-card/50 border border-border rounded-2xl p-6">
             <div className="mb-6">
-              <h3 className="font-semibold text-lg text-white">User Activity</h3>
-              <p className="text-sm text-white/40">Daily active users this week</p>
+              <h3 className="font-semibold text-lg text-foreground">User Activity</h3>
+              <p className="text-sm text-muted-foreground">Daily active users this week</p>
             </div>
             <div className="h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
@@ -135,10 +135,10 @@ export default function AdminDashboard() {
           </div>
 
           {/* Resource Downloads */}
-          <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6">
+          <div className="bg-card/50 border border-border rounded-2xl p-6">
             <div className="mb-6">
-              <h3 className="font-semibold text-lg text-white">Resource Downloads</h3>
-              <p className="text-sm text-white/40">Downloads by category this week</p>
+              <h3 className="font-semibold text-lg text-foreground">Resource Downloads</h3>
+              <p className="text-sm text-muted-foreground">Downloads by category this week</p>
             </div>
             <div className="h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
@@ -176,21 +176,21 @@ export default function AdminDashboard() {
         {/* Bottom Row */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Recent Users */}
-          <div className="lg:col-span-2 bg-white/[0.02] border border-white/5 rounded-2xl p-6">
+          <div className="lg:col-span-2 bg-card/50 border border-border rounded-2xl p-6">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h3 className="font-semibold text-lg text-white">Recent Registrations</h3>
-                <p className="text-sm text-white/40">New users who joined recently</p>
+                <h3 className="font-semibold text-lg text-foreground">Recent Registrations</h3>
+                <p className="text-sm text-muted-foreground">New users who joined recently</p>
               </div>
-              <Button variant="outline" size="sm" className="bg-white/5 border-white/10 text-white hover:bg-white/10">
+              <Button variant="outline" size="sm" className="bg-card border-border text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary">
                 View All
               </Button>
             </div>
             <div className="space-y-3">
               {recentUsers.map((user, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-white/5 rounded-xl">
+                <div key={index} className="flex items-center justify-between p-3 bg-card/50 rounded-xl">
                   <div className="flex items-center gap-3">
-                    <Avatar className="border border-white/10">
+                    <Avatar className="border border-border">
                       <AvatarImage src="/placeholder.svg" />
                       <AvatarFallback className="bg-gradient-to-br from-blue-500 to-indigo-600 text-white text-xs">
                         {user.name
@@ -200,8 +200,8 @@ export default function AdminDashboard() {
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <p className="font-medium text-white">{user.name}</p>
-                      <p className="text-sm text-white/40">{user.email}</p>
+                      <p className="font-medium text-foreground">{user.name}</p>
+                      <p className="text-sm text-muted-foreground">{user.email}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -214,7 +214,7 @@ export default function AdminDashboard() {
                     >
                       {user.status}
                     </Badge>
-                    <span className="text-sm text-white/30">{user.date}</span>
+                    <span className="text-sm text-muted-foreground">{user.date}</span>
                   </div>
                 </div>
               ))}
@@ -222,14 +222,14 @@ export default function AdminDashboard() {
           </div>
 
           {/* System Status */}
-          <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6">
+          <div className="bg-card/50 border border-border rounded-2xl p-6">
             <div className="mb-6">
-              <h3 className="font-semibold text-lg text-white">System Status</h3>
-              <p className="text-sm text-white/40">Service health monitoring</p>
+              <h3 className="font-semibold text-lg text-foreground">System Status</h3>
+              <p className="text-sm text-muted-foreground">Service health monitoring</p>
             </div>
             <div className="space-y-3">
               {systemStatus.map((service, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-white/5 rounded-xl">
+                <div key={index} className="flex items-center justify-between p-3 bg-card/50 rounded-xl">
                   <div className="flex items-center gap-3">
                     <div
                       className={cn(
@@ -237,7 +237,7 @@ export default function AdminDashboard() {
                         service.status === "operational" ? "bg-emerald-500" : "bg-yellow-500",
                       )}
                     />
-                    <span className="font-medium text-sm text-white">{service.name}</span>
+                    <span className="font-medium text-sm text-foreground">{service.name}</span>
                   </div>
                   <div className="text-right">
                     <Badge
@@ -249,13 +249,13 @@ export default function AdminDashboard() {
                     >
                       {service.status}
                     </Badge>
-                    <p className="text-xs text-white/30 mt-1">{service.uptime} uptime</p>
+                    <p className="text-xs text-muted-foreground mt-1">{service.uptime} uptime</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <Button variant="outline" className="w-full mt-4 bg-white/5 border-white/10 text-white hover:bg-white/10">
+            <Button variant="outline" className="w-full mt-4 bg-card border-border text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary">
               <Activity className="w-4 h-4 mr-2" />
               View Full Status
             </Button>

@@ -9,7 +9,7 @@ export default function AdminLayout({
 }) {
   return (
     <AuthGuard requiredRole="admin">
-      <div className="min-h-screen bg-[#0a0a12]">
+      <div className="min-h-screen bg-background">
         <Sidebar />
         <main className="pl-[260px] transition-all duration-300">{children}</main>
       </div>

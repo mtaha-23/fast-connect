@@ -3,7 +3,7 @@
  * Handles all post-related business logic
  */
 
-import { collection, query, orderBy, getDocs, doc, getDoc, updateDoc, arrayUnion, arrayRemove, Timestamp } from "firebase/firestore"
+import { collection, query, orderBy, getDocs, doc, getDoc, updateDoc, deleteDoc, addDoc, arrayUnion, arrayRemove, Timestamp } from "firebase/firestore"
 import { getFirestoreDB } from "@/lib/firebase"
 
 export interface PostAuthor {
@@ -114,6 +114,137 @@ export async function togglePostLike(postId: string, userId: string): Promise<{ 
   } catch (error) {
     throw new Error(
       error instanceof Error ? error.message : "Failed to toggle like."
+    )
+  }
+}
+
+/**
+ * Create a new post
+ */
+export async function createPost(data: {
+  author: PostAuthor
+  content: string
+  image?: string
+  type: "announcement" | "event" | "news" | "update"
+  isPinned?: boolean
+}): Promise<string> {
+  try {
+    const db = getFirestoreDB()
+    const postsRef = collection(db, "posts")
+    
+    const postData = {
+      author: data.author,
+      content: data.content,
+      image: data.image || null,
+      type: data.type,
+      isPinned: data.isPinned || false,
+      likes: 0,
+      likedBy: [],
+      comments: 0,
+      createdAt: Timestamp.now(),
+      updatedAt: Timestamp.now(),
+    }
+    
+    const docRef = await addDoc(postsRef, postData)
+    return docRef.id
+  } catch (error) {
+    throw new Error(
+      error instanceof Error ? error.message : "Failed to create post."
+    )
+  }
+}
+
+/**
+ * Update an existing post
+ */
+export async function updatePost(
+  postId: string,
+  data: {
+    content?: string
+    image?: string
+    type?: "announcement" | "event" | "news" | "update"
+    isPinned?: boolean
+  }
+): Promise<void> {
+  try {
+    const db = getFirestoreDB()
+    const postRef = doc(db, "posts", postId)
+    const postDoc = await getDoc(postRef)
+    
+    if (!postDoc.exists()) {
+      throw new Error("Post not found")
+    }
+    
+    const updateData: any = {
+      updatedAt: Timestamp.now(),
+    }
+    
+    if (data.content !== undefined) updateData.content = data.content
+    if (data.image !== undefined) updateData.image = data.image || null
+    if (data.type !== undefined) updateData.type = data.type
+    if (data.isPinned !== undefined) updateData.isPinned = data.isPinned
+    
+    await updateDoc(postRef, updateData)
+  } catch (error) {
+    throw new Error(
+      error instanceof Error ? error.message : "Failed to update post."
+    )
+  }
+}
+
+/**
+ * Delete a post
+ */
+export async function deletePost(postId: string): Promise<void> {
+  try {
+    const db = getFirestoreDB()
+    const postRef = doc(db, "posts", postId)
+    const postDoc = await getDoc(postRef)
+    
+    if (!postDoc.exists()) {
+      throw new Error("Post not found")
+    }
+    
+    await deleteDoc(postRef)
+  } catch (error) {
+    throw new Error(
+      error instanceof Error ? error.message : "Failed to delete post."
+    )
+  }
+}
+
+/**
+ * Get a single post by ID
+ */
+export async function getPostById(postId: string): Promise<Post | null> {
+  try {
+    const db = getFirestoreDB()
+    const postRef = doc(db, "posts", postId)
+    const postDoc = await getDoc(postRef)
+    
+    if (!postDoc.exists()) {
+      return null
+    }
+    
+    const data = postDoc.data()
+    const createdAt = data.createdAt || Timestamp.now()
+    
+    return {
+      id: postDoc.id,
+      author: data.author,
+      content: data.content,
+      image: data.image,
+      timestamp: formatTimestamp(createdAt),
+      createdAt: createdAt,
+      likes: data.likes || 0,
+      likedBy: data.likedBy || [],
+      comments: data.comments || 0,
+      isPinned: data.isPinned || false,
+      type: data.type || "announcement",
+    }
+  } catch (error) {
+    throw new Error(
+      error instanceof Error ? error.message : "Failed to fetch post."
     )
   }
 }
