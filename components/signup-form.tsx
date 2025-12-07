@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Eye, EyeOff, Loader2, Mail, User } from "lucide-react"
 import { OTPModal } from "./otp-modal"
-import { signUpWithEmail, signInWithGoogle } from "@/lib/services/auth.service"
+import { signUpWithEmail, signInWithGoogle, signOutUser } from "@/lib/services/auth.service"
 
 export function SignupForm() {
   const router = useRouter()
@@ -42,12 +42,18 @@ export function SignupForm() {
     try {
       // Call backend service - business logic is in lib/services/auth.service.ts
       // All new signups default to "student" role - admins are set manually in database
-      await signUpWithEmail({
+      const result = await signUpWithEmail({
         name: formData.name,
         email: formData.email,
         password: formData.password,
         role: "student", // Default role - admins are set manually
       })
+
+      // Sign out the user since email is not verified yet
+      // This prevents them from accessing dashboard before verification
+      if (!result.user.emailVerified) {
+        await signOutUser()
+      }
 
       // Show verification modal after successful signup
       setShowOTP(true)

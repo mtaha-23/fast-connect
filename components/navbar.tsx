@@ -13,6 +13,9 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { user } = useAuth()
+  
+  // Only show dashboard if user is logged in AND email is verified
+  const canAccessDashboard = user && user.emailVerified
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,7 +77,7 @@ export function Navbar() {
 
           <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
-            {user ? (
+            {canAccessDashboard ? (
               <Link href="/dashboard">
                 <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary px-5">
                   <LayoutDashboard className="w-4 h-4 mr-2" />
@@ -120,7 +123,7 @@ export function Navbar() {
               </Link>
             ))}
             <div className="pt-4 space-y-2 border-t border-border">
-              {user ? (
+              {canAccessDashboard ? (
                 <Link href="/dashboard" className="block">
                   <Button
                     variant="ghost"
