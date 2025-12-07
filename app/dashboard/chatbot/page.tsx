@@ -7,7 +7,7 @@ import { ChatInput } from "@/components/chat-input"
 import { SuggestedPrompts } from "@/components/suggested-prompts"
 import { Bot, Sparkles, RotateCcw, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { processChatMessage, type ChatMessage } from "@/lib/services/chat.service"
+import { processChatMessage } from "@/lib/services/chat.service"
 
 interface Message {
   id: string
