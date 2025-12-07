@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Bot, GraduationCap, BarChart3, FileText, Globe, Users, ArrowRight } from "lucide-react"
+import { Bot, GraduationCap, FileText, Globe, Users, Brain, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 const modules = [
@@ -17,16 +17,16 @@ const modules = [
     icon: GraduationCap,
     title: "Entry Test Practice",
     description:
-      "Comprehensive test preparation with timed practice sessions, detailed explanations, and progress tracking.",
-    features: ["10,000+ questions", "Timed mock tests", "Detailed analytics"],
+      "Comprehensive test preparation with timed practice sessions, detailed explanations, progress tracking, and predictive analytics.",
+    features: ["10,000+ questions", "Timed mock tests", "Score predictions & admission probability", "Improvement suggestions"],
     href: "/dashboard/test-practice",
   },
   {
-    icon: BarChart3,
-    title: "Predictive Analytics",
-    description: "Get data-driven insights about your admission probability based on your test scores and performance.",
-    features: ["Score predictions", "Admission probability", "Improvement suggestions"],
-    href: "/dashboard/analytics",
+    icon: Brain,
+    title: "AI Batch Advisor",
+    description: "Get personalized batch recommendations based on your interests, academic performance, and test scores.",
+    features: ["Personalized recommendations", "Based on your performance", "Multiple batch options", "Career guidance"],
+    href: "/dashboard/batch-advisor",
   },
   {
     icon: FileText,
@@ -53,23 +53,23 @@ const modules = [
 
 export function ModulesSection() {
   return (
-    <section id="modules" className="py-32 relative">
+    <section id="services" className="py-32 relative">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-            Modules
+            Services
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-foreground">
-            Powerful tools for{" "}
+            Everything we{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80">
-              every need
+              provide
             </span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Explore our comprehensive suite of tools designed to support your journey to FAST University.
+            Explore our comprehensive suite of services designed to support your journey to FAST University.
           </p>
         </div>
 

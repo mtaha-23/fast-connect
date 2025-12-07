@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/navbar"
 import { AnimatedBackground } from "@/components/animated-background"
 import { HeroSection } from "@/components/hero-section"
-import { FeaturesSection } from "@/components/features-section"
 import { ModulesSection } from "@/components/modules-section"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
@@ -12,7 +11,6 @@ export default function Home() {
       <AnimatedBackground />
       <Navbar />
       <HeroSection />
-      <FeaturesSection />
       <ModulesSection />
       <CTASection />
       <Footer />
