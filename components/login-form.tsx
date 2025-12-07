@@ -30,32 +30,29 @@ export function LoginForm() {
     setIsLoading(true)
 
     try {
-      // Call API route - backend logic is in app/api/auth/login/route.ts
-      const response = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-        }),
+      // Sign in on client side - Firebase Auth needs to be on client
+      const { signInWithEmail } = await import("@/lib/services/auth.service")
+      const result = await signInWithEmail({
+        email: formData.email,
+        password: formData.password,
       })
 
-      const data = await response.json()
-
-      if (!response.ok) {
-        if (data.emailVerified === false) {
-          setNeedsVerification(true)
-        }
-        throw new Error(data.error || "Failed to sign in")
+      // Check if email is verified
+      if (!result.emailVerified) {
+        // Sign out the user since email is not verified
+        const { signOutUser } = await import("@/lib/services/auth.service")
+        await signOutUser()
+        setNeedsVerification(true)
+        setError("Please verify your email before signing in. Check your inbox for the verification link.")
+        return
       }
 
       // Email is verified, redirect based on role
-      if (data.user.role === "admin") {
-        router.push("/admin")
+      // Use window.location for hard redirect to ensure auth state is checked
+      if (result.role === "admin") {
+        window.location.href = "/admin"
       } else {
-        router.push("/dashboard")
+        window.location.href = "/dashboard"
       }
     } catch (err: unknown) {
       const message =
@@ -95,11 +92,11 @@ export function LoginForm() {
       // This could be moved to an API route if needed
       const { signInWithGoogle } = await import("@/lib/services/auth.service")
       const result = await signInWithGoogle()
-      // Redirect based on role
+      // Redirect based on role - use window.location for hard redirect
       if (result.role === "admin") {
-        router.push("/admin")
+        window.location.href = "/admin"
       } else {
-        router.push("/dashboard")
+        window.location.href = "/dashboard"
       }
     } catch (err: unknown) {
       const message =
