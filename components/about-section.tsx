@@ -15,7 +15,7 @@ const teamMembers = [
   {
     name: "Sharjeel Khan",
     role: "Developer",
-    image: "/Muhammad Taha.png", // Placeholder - update when image is available
+    image: "/Sharjeel Khan.jpg", // Placeholder - update when image is available
     linkedin: "https://linkedin.com/in/sharjeel-khan",
     github: "https://github.com/sharjeel-khan",
   }

@@ -86,7 +86,7 @@ export function Navbar() {
               </Link>
             ) : (
               <Link href="/login">
-                <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary px-5">
+                <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary px-5 border-b-2 border-primary">
                   Sign in
                 </Button>
               </Link>
@@ -137,7 +137,7 @@ export function Navbar() {
                 <Link href="/login" className="block">
                   <Button
                     variant="ghost"
-                    className="w-full justify-start text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary"
+                    className="w-full justify-start text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary border-b-2 border-primary"
                   >
                     Sign in
                   </Button>
