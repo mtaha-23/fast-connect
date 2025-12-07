@@ -85,13 +85,13 @@ export default function TourPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-background">
       <DashboardHeader title="360° Campus Tour" description="Explore FAST University campus virtually" />
 
       <div className="p-6">
         <div className="max-w-6xl mx-auto space-y-6">
           {/* Main Viewer */}
-          <div className="bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden">
+          <div className="bg-card border border-border rounded-2xl overflow-hidden">
             <div className="relative aspect-video">
               <img
                 src={location.image || "/placeholder.svg"}
@@ -103,7 +103,7 @@ export default function TourPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40">
                 {/* Top Bar */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                  <Badge className="bg-black/50 border-white/10 text-white backdrop-blur-sm">
+                  <Badge className="bg-background/80 border-border text-foreground backdrop-blur-sm">
                     <MapPin className="w-3 h-3 mr-1" />
                     {location.name}
                   </Badge>
@@ -111,7 +111,7 @@ export default function TourPage() {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm"
+                      className="bg-background/80 hover:bg-background/90 text-foreground backdrop-blur-sm"
                       onClick={() => setShowInfo(!showInfo)}
                     >
                       <Info className="w-5 h-5" />
@@ -119,7 +119,7 @@ export default function TourPage() {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm"
+                      className="bg-background/80 hover:bg-background/90 text-foreground backdrop-blur-sm"
                     >
                       <Expand className="w-5 h-5" />
                     </Button>
@@ -145,7 +145,7 @@ export default function TourPage() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/90 text-foreground backdrop-blur-sm"
                   onClick={handlePrevious}
                 >
                   <ChevronLeft className="w-6 h-6" />
@@ -153,7 +153,7 @@ export default function TourPage() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/90 text-foreground backdrop-blur-sm"
                   onClick={handleNext}
                 >
                   <ChevronRight className="w-6 h-6" />
@@ -162,9 +162,9 @@ export default function TourPage() {
                 {/* Bottom Bar */}
                 <div className="absolute bottom-4 left-4 right-4">
                   {showInfo && (
-                    <div className="bg-black/70 backdrop-blur-sm rounded-xl p-4 mb-4 border border-white/10">
-                      <h3 className="text-white font-semibold text-lg mb-1">{location.name}</h3>
-                      <p className="text-white/70 text-sm">{location.description}</p>
+                    <div className="bg-background/80 backdrop-blur-sm rounded-xl p-4 mb-4 border border-border">
+                      <h3 className="text-foreground font-semibold text-lg mb-1">{location.name}</h3>
+                      <p className="text-muted-foreground text-sm">{location.description}</p>
                     </div>
                   )}
 
@@ -172,7 +172,7 @@ export default function TourPage() {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="bg-black/50 hover:bg-black/70 text-white shrink-0 backdrop-blur-sm"
+                      className="bg-background/80 hover:bg-background/90 text-foreground shrink-0 backdrop-blur-sm"
                       onClick={() => setIsMuted(!isMuted)}
                     >
                       {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
@@ -185,13 +185,13 @@ export default function TourPage() {
                           onClick={() => setCurrentLocation(index)}
                           className={cn(
                             "flex-1 h-1.5 rounded-full transition-all",
-                            index === currentLocation ? "bg-blue-500" : "bg-white/30 hover:bg-white/50",
+                            index === currentLocation ? "bg-primary" : "bg-muted-foreground/30 hover:bg-muted-foreground/50",
                           )}
                         />
                       ))}
                     </div>
 
-                    <span className="text-white text-sm shrink-0">
+                    <span className="text-foreground text-sm shrink-0">
                       {currentLocation + 1} / {tourLocations.length}
                     </span>
                   </div>
@@ -202,7 +202,7 @@ export default function TourPage() {
 
           {/* Location Selector */}
           <div>
-            <h2 className="text-xl font-semibold mb-4 text-white">Explore Locations</h2>
+            <h2 className="text-xl font-semibold mb-4 text-foreground">Explore Locations</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {tourLocations.map((loc, index) => (
                 <div
@@ -210,24 +210,24 @@ export default function TourPage() {
                   className={cn(
                     "cursor-pointer transition-all overflow-hidden rounded-xl border",
                     currentLocation === index
-                      ? "border-blue-500/50 ring-2 ring-blue-500/20"
-                      : "border-white/5 hover:border-white/20",
+                      ? "border-primary/50 ring-2 ring-primary/20"
+                      : "border-border hover:border-primary/30",
                   )}
                   onClick={() => setCurrentLocation(index)}
                 >
                   <div className="aspect-square relative">
                     <img src={loc.image || "/placeholder.svg"} alt={loc.name} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-3">
                       <div
                         className={cn(
                           "w-8 h-8 rounded-lg flex items-center justify-center mb-2",
-                          currentLocation === index ? "bg-blue-500" : "bg-white/20",
+                          currentLocation === index ? "bg-primary" : "bg-muted/50",
                         )}
                       >
-                        <loc.icon className="w-4 h-4 text-white" />
+                        <loc.icon className="w-4 h-4 text-primary-foreground" />
                       </div>
-                      <p className="text-white text-sm font-medium line-clamp-1">{loc.name}</p>
+                      <p className="text-foreground text-sm font-medium line-clamp-1">{loc.name}</p>
                     </div>
                   </div>
                 </div>
@@ -236,23 +236,23 @@ export default function TourPage() {
           </div>
 
           {/* Campus Stats */}
-          <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6">
+          <div className="bg-card border border-border rounded-2xl p-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <p className="text-3xl font-bold text-blue-400">50+</p>
-                <p className="text-sm text-white/50">Buildings</p>
+                <p className="text-3xl font-bold text-primary">50+</p>
+                <p className="text-sm text-muted-foreground">Buildings</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-blue-400">100+</p>
-                <p className="text-sm text-white/50">Acres</p>
+                <p className="text-3xl font-bold text-primary">100+</p>
+                <p className="text-sm text-muted-foreground">Acres</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-blue-400">25+</p>
-                <p className="text-sm text-white/50">Labs</p>
+                <p className="text-3xl font-bold text-primary">25+</p>
+                <p className="text-sm text-muted-foreground">Labs</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-blue-400">5</p>
-                <p className="text-sm text-white/50">Campuses</p>
+                <p className="text-3xl font-bold text-primary">5</p>
+                <p className="text-sm text-muted-foreground">Campuses</p>
               </div>
             </div>
           </div>

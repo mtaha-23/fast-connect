@@ -113,7 +113,7 @@ export default function FeedPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-background">
       <DashboardHeader title="Social Feed" description="Stay updated with FAST University announcements" />
 
       <div className="p-6">
@@ -124,27 +124,27 @@ export default function FeedPage() {
               <div
                 key={post.id}
                 className={cn(
-                  "bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden hover:border-white/10 transition-all",
-                  post.isPinned && "border-blue-500/30",
+                  "bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 transition-all",
+                  post.isPinned && "border-primary/50",
                 )}
               >
                 <div className="p-5">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <Avatar className="w-10 h-10 border border-white/10">
+                      <Avatar className="w-10 h-10 border border-border">
                         <AvatarImage src={post.author.avatar || "/placeholder.svg"} />
-                        <AvatarFallback className="bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
+                        <AvatarFallback className="bg-gradient-to-br from-blue-500 to-indigo-600 text-primary-foreground">
                           {post.author.name.charAt(0)}
                         </AvatarFallback>
                       </Avatar>
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="font-semibold text-white">{post.author.name}</span>
-                          <Badge variant="secondary" className="text-xs bg-white/5 text-white/50 border-0">
+                          <span className="font-semibold text-foreground">{post.author.name}</span>
+                          <Badge variant="secondary" className="text-xs bg-muted text-muted-foreground border-0">
                             {post.author.role}
                           </Badge>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-white/40">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
                           <Clock className="w-3 h-3" />
                           {post.timestamp}
                         </div>
@@ -158,16 +158,16 @@ export default function FeedPage() {
                           <Button
                             variant="ghost"
                             size="icon"
-                            className="h-8 w-8 text-white/40 hover:text-white hover:bg-white/5"
+                            className="h-8 w-8 text-muted-foreground hover:text-foreground hover:bg-accent"
                           >
                             <MoreHorizontal className="w-4 h-4" />
                           </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="bg-[#14141f] border-white/10">
-                          <DropdownMenuItem className="text-white/70 hover:text-white hover:bg-white/5">
+                        <DropdownMenuContent align="end" className="bg-popover border-border">
+                          <DropdownMenuItem className="text-foreground hover:bg-accent">
                             Save Post
                           </DropdownMenuItem>
-                          <DropdownMenuItem className="text-white/70 hover:text-white hover:bg-white/5">
+                          <DropdownMenuItem className="text-foreground hover:bg-accent">
                             Copy Link
                           </DropdownMenuItem>
                         </DropdownMenuContent>
@@ -175,7 +175,7 @@ export default function FeedPage() {
                     </div>
                   </div>
 
-                  <p className="text-sm text-white/70 whitespace-pre-line mb-4">{post.content}</p>
+                  <p className="text-sm text-foreground whitespace-pre-line mb-4">{post.content}</p>
 
                   {post.image && (
                     <div className="rounded-xl overflow-hidden mb-4">
@@ -183,26 +183,26 @@ export default function FeedPage() {
                     </div>
                   )}
 
-                  <div className="flex items-center justify-between pt-4 border-t border-white/5">
+                  <div className="flex items-center justify-between pt-4 border-t border-border">
                     <div className="flex items-center gap-1">
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={() => handleLike(post.id)}
                         className={cn(
-                          "text-white/50 hover:text-white hover:bg-white/5",
-                          likedPosts.includes(post.id) && "text-red-400",
+                          "text-muted-foreground hover:text-foreground hover:bg-accent",
+                          likedPosts.includes(post.id) && "text-red-500",
                         )}
                       >
-                        <Heart className={cn("w-4 h-4 mr-1", likedPosts.includes(post.id) && "fill-red-400")} />
+                        <Heart className={cn("w-4 h-4 mr-1", likedPosts.includes(post.id) && "fill-red-500")} />
                         {post.likes + (likedPosts.includes(post.id) ? 1 : 0)}
                       </Button>
-                      <Button variant="ghost" size="sm" className="text-white/50 hover:text-white hover:bg-white/5">
+                      <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground hover:bg-accent">
                         <MessageCircle className="w-4 h-4 mr-1" />
                         {post.comments}
                       </Button>
                     </div>
-                    <Button variant="ghost" size="sm" className="text-white/50 hover:text-white hover:bg-white/5">
+                    <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground hover:bg-accent">
                       <Share2 className="w-4 h-4 mr-1" />
                       Share
                     </Button>
@@ -215,17 +215,17 @@ export default function FeedPage() {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Upcoming Events */}
-            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-5">
+            <div className="bg-card border border-border rounded-2xl p-5">
               <div className="flex items-center gap-2 mb-4">
-                <Calendar className="w-5 h-5 text-blue-400" />
-                <h3 className="font-semibold text-white">Upcoming Events</h3>
+                <Calendar className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold text-foreground">Upcoming Events</h3>
               </div>
               <div className="space-y-3">
                 {upcomingEvents.map((event, index) => (
-                  <div key={index} className="p-3 bg-white/5 rounded-xl">
-                    <p className="font-medium text-sm text-white">{event.title}</p>
-                    <p className="text-xs text-white/40">{event.date}</p>
-                    <p className="text-xs text-white/30 flex items-center gap-1 mt-1">
+                  <div key={index} className="p-3 bg-muted rounded-xl">
+                    <p className="font-medium text-sm text-foreground">{event.title}</p>
+                    <p className="text-xs text-muted-foreground">{event.date}</p>
+                    <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
                       <MapPin className="w-3 h-3" />
                       {event.location}
                     </p>
@@ -235,42 +235,42 @@ export default function FeedPage() {
             </div>
 
             {/* Trending */}
-            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-5">
+            <div className="bg-card border border-border rounded-2xl p-5">
               <div className="flex items-center gap-2 mb-4">
-                <TrendingUp className="w-5 h-5 text-blue-400" />
-                <h3 className="font-semibold text-white">Trending</h3>
+                <TrendingUp className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold text-foreground">Trending</h3>
               </div>
               <div className="space-y-2">
                 {trendingTopics.map((topic, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between p-2 rounded-lg hover:bg-white/5 cursor-pointer transition-colors"
+                    className="flex items-center justify-between p-2 rounded-lg hover:bg-accent cursor-pointer transition-colors"
                   >
-                    <span className="text-sm font-medium text-blue-400">{topic.tag}</span>
-                    <span className="text-xs text-white/30">{topic.posts} posts</span>
+                    <span className="text-sm font-medium text-primary">{topic.tag}</span>
+                    <span className="text-xs text-muted-foreground">{topic.posts} posts</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Community Stats */}
-            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-5">
+            <div className="bg-card border border-border rounded-2xl p-5">
               <div className="flex items-center gap-2 mb-4">
-                <Users className="w-5 h-5 text-blue-400" />
-                <h3 className="font-semibold text-white">Community</h3>
+                <Users className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold text-foreground">Community</h3>
               </div>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-white/50">Active Users</span>
-                  <span className="font-semibold text-white">12.5K</span>
+                  <span className="text-sm text-muted-foreground">Active Users</span>
+                  <span className="font-semibold text-foreground">12.5K</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-white/50">Posts Today</span>
-                  <span className="font-semibold text-white">156</span>
+                  <span className="text-sm text-muted-foreground">Posts Today</span>
+                  <span className="font-semibold text-foreground">156</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-white/50">New Members</span>
-                  <span className="font-semibold text-white">234</span>
+                  <span className="text-sm text-muted-foreground">New Members</span>
+                  <span className="font-semibold text-foreground">234</span>
                 </div>
               </div>
             </div>
