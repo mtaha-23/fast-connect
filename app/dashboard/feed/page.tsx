@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { DashboardHeader } from "@/components/header"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -10,96 +10,95 @@ import {
   MessageCircle,
   Share2,
   MoreHorizontal,
-  Calendar,
-  MapPin,
   Clock,
   Pin,
-  TrendingUp,
-  Users,
+  Loader2,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { useAuth } from "@/lib/hooks/use-auth"
+import type { Post } from "@/lib/services/post.service"
 
-interface Post {
-  id: number
-  author: {
-    name: string
-    role: string
-    avatar: string
-  }
-  content: string
-  image?: string
-  timestamp: string
-  likes: number
-  comments: number
-  isPinned?: boolean
-  type: "announcement" | "event" | "news" | "update"
+interface PostWithLiked extends Post {
+  isLiked?: boolean
 }
 
-const posts: Post[] = [
-  {
-    id: 1,
-    author: {
-      name: "FAST Admissions",
-      role: "Official",
-      avatar: "/generic-university-logo.png",
-    },
-    content:
-      "Entry Test dates announced for Fall 2024 admissions! Register now on our portal. Early bird registration ends on May 15th. Don't miss this opportunity to join FAST University!\n\n📅 Test Date: June 15, 2024\n📍 All campuses\n⏰ Registration deadline: May 30, 2024",
-    timestamp: "2 hours ago",
-    likes: 245,
-    comments: 32,
-    isPinned: true,
-    type: "announcement",
-  },
-  {
-    id: 2,
-    author: {
-      name: "FAST Events",
-      role: "Official",
-      avatar: "/events-logo.jpg",
-    },
-    content:
-      "Join us for the Annual Tech Fest 2024! Experience cutting-edge technology, workshops, and competitions. Open to all students and aspiring tech enthusiasts.",
-    image: "/tech-fest-event-banner.jpg",
-    timestamp: "5 hours ago",
-    likes: 189,
-    comments: 24,
-    type: "event",
-  },
-  {
-    id: 3,
-    author: {
-      name: "FAST News",
-      role: "Official",
-      avatar: "/generic-news-logo.png",
-    },
-    content:
-      "Congratulations to our students for winning first place at the National Programming Competition! 🏆 Our CS team beat 50+ universities to claim the top spot. Proud moment for the FAST family!",
-    timestamp: "1 day ago",
-    likes: 512,
-    comments: 78,
-    type: "news",
-  },
-]
-
-const upcomingEvents = [
-  { title: "Entry Test", date: "June 15", location: "All Campuses" },
-  { title: "Tech Fest 2024", date: "July 20-22", location: "Islamabad" },
-  { title: "Career Fair", date: "August 5", location: "Lahore" },
-]
-
-const trendingTopics = [
-  { tag: "#FASTAdmissions2024", posts: 1234 },
-  { tag: "#TechFest", posts: 567 },
-  { tag: "#ProgrammingChampions", posts: 345 },
-]
-
 export default function FeedPage() {
-  const [likedPosts, setLikedPosts] = useState<number[]>([])
+  const { user } = useAuth()
+  const [posts, setPosts] = useState<PostWithLiked[]>([])
+  const [loading, setLoading] = useState(true)
+  const [likingPostId, setLikingPostId] = useState<string | null>(null)
 
-  const handleLike = (postId: number) => {
-    setLikedPosts((prev) => (prev.includes(postId) ? prev.filter((id) => id !== postId) : [...prev, postId]))
+  // Fetch posts on component mount
+  useEffect(() => {
+    fetchPosts()
+  }, [])
+
+  const fetchPosts = async () => {
+    try {
+      setLoading(true)
+      const response = await fetch("/api/posts")
+      if (!response.ok) {
+        throw new Error("Failed to fetch posts")
+      }
+      const data = await response.json()
+      
+      // Mark posts as liked based on likedBy array
+      // Note: createdAt is now a string from API, not a Timestamp
+      const postsWithLiked: PostWithLiked[] = data.posts.map((post: any) => ({
+        ...post,
+        isLiked: user ? (post.likedBy || []).includes(user.uid) : false,
+      }))
+      
+      setPosts(postsWithLiked)
+    } catch (error) {
+      console.error("Error fetching posts:", error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleLike = async (postId: string) => {
+    if (!user) {
+      return
+    }
+
+    try {
+      setLikingPostId(postId)
+      const response = await fetch(`/api/posts/${postId}/like`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId: user.uid }),
+      })
+
+      if (!response.ok) {
+        throw new Error("Failed to toggle like")
+      }
+
+      const result = await response.json()
+
+      // Update the post in the local state
+      setPosts((prevPosts) =>
+        prevPosts.map((post) =>
+          post.id === postId
+            ? {
+                ...post,
+                likes: result.likes,
+                isLiked: result.isLiked,
+                likedBy: result.isLiked
+                  ? [...(post.likedBy || []), user.uid]
+                  : post.likedBy?.filter((uid) => uid !== user.uid) || [],
+              }
+            : post
+        )
+      )
+    } catch (error) {
+      console.error("Error toggling like:", error)
+    } finally {
+      setLikingPostId(null)
+    }
   }
 
   const getTypeBadge = (type: Post["type"]) => {
@@ -117,10 +116,19 @@ export default function FeedPage() {
       <DashboardHeader title="Social Feed" description="Stay updated with FAST University announcements" />
 
       <div className="p-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="max-w-4xl mx-auto">
           {/* Main Feed */}
-          <div className="lg:col-span-2 space-y-6">
-            {posts.map((post) => (
+          <div className="space-y-6">
+            {loading ? (
+              <div className="flex items-center justify-center py-12">
+                <Loader2 className="w-8 h-8 animate-spin text-primary" />
+              </div>
+            ) : posts.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">No posts available yet.</p>
+              </div>
+            ) : (
+              posts.map((post) => (
               <div
                 key={post.id}
                 className={cn(
@@ -132,9 +140,9 @@ export default function FeedPage() {
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <Avatar className="w-10 h-10 border border-border">
-                        <AvatarImage src={post.author.avatar || "/placeholder.svg"} />
+                        <AvatarImage src={post.author.avatar} />
                         <AvatarFallback className="bg-gradient-to-br from-blue-500 to-indigo-600 text-primary-foreground">
-                          {post.author.name.charAt(0)}
+                          {post.author.name.charAt(0).toUpperCase()}
                         </AvatarFallback>
                       </Avatar>
                       <div>
@@ -189,13 +197,18 @@ export default function FeedPage() {
                         variant="ghost"
                         size="sm"
                         onClick={() => handleLike(post.id)}
+                        disabled={!user || likingPostId === post.id}
                         className={cn(
                           "text-muted-foreground hover:text-foreground hover:bg-accent",
-                          likedPosts.includes(post.id) && "text-red-500",
+                          post.isLiked && "text-red-500",
                         )}
                       >
-                        <Heart className={cn("w-4 h-4 mr-1", likedPosts.includes(post.id) && "fill-red-500")} />
-                        {post.likes + (likedPosts.includes(post.id) ? 1 : 0)}
+                        {likingPostId === post.id ? (
+                          <Loader2 className="w-4 h-4 mr-1 animate-spin" />
+                        ) : (
+                          <Heart className={cn("w-4 h-4 mr-1", post.isLiked && "fill-red-500")} />
+                        )}
+                        {post.likes}
                       </Button>
                       <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground hover:bg-accent">
                         <MessageCircle className="w-4 h-4 mr-1" />
@@ -209,71 +222,8 @@ export default function FeedPage() {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Upcoming Events */}
-            <div className="bg-card border border-border rounded-2xl p-5">
-              <div className="flex items-center gap-2 mb-4">
-                <Calendar className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold text-foreground">Upcoming Events</h3>
-              </div>
-              <div className="space-y-3">
-                {upcomingEvents.map((event, index) => (
-                  <div key={index} className="p-3 bg-muted rounded-xl">
-                    <p className="font-medium text-sm text-foreground">{event.title}</p>
-                    <p className="text-xs text-muted-foreground">{event.date}</p>
-                    <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
-                      <MapPin className="w-3 h-3" />
-                      {event.location}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Trending */}
-            <div className="bg-card border border-border rounded-2xl p-5">
-              <div className="flex items-center gap-2 mb-4">
-                <TrendingUp className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold text-foreground">Trending</h3>
-              </div>
-              <div className="space-y-2">
-                {trendingTopics.map((topic, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-between p-2 rounded-lg hover:bg-accent cursor-pointer transition-colors"
-                  >
-                    <span className="text-sm font-medium text-primary">{topic.tag}</span>
-                    <span className="text-xs text-muted-foreground">{topic.posts} posts</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Community Stats */}
-            <div className="bg-card border border-border rounded-2xl p-5">
-              <div className="flex items-center gap-2 mb-4">
-                <Users className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold text-foreground">Community</h3>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Active Users</span>
-                  <span className="font-semibold text-foreground">12.5K</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Posts Today</span>
-                  <span className="font-semibold text-foreground">156</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">New Members</span>
-                  <span className="font-semibold text-foreground">234</span>
-                </div>
-              </div>
-            </div>
+              ))
+            )}
           </div>
         </div>
       </div>
