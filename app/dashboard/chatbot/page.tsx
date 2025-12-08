@@ -5,7 +5,7 @@ import { DashboardHeader } from "@/components/header"
 import { ChatMessage } from "@/components/chat-message"
 import { ChatInput } from "@/components/chat-input"
 import { SuggestedPrompts } from "@/components/suggested-prompts"
-import { Bot, Sparkles, RotateCcw, Download } from "lucide-react"
+import { Bot, Sparkles, RotateCcw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { processChatMessage } from "@/lib/services/chat.service"
 
@@ -113,10 +113,6 @@ export default function ChatbotPage() {
             <Button variant="outline" size="sm" onClick={handleNewChat}>
               <RotateCcw className="w-4 h-4 mr-2" />
               New Chat
-            </Button>
-            <Button variant="outline" size="sm">
-              <Download className="w-4 h-4 mr-2" />
-              Export
             </Button>
           </div>
         </div>

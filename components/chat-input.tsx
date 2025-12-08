@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { Send, Paperclip, Mic, Sparkles } from "lucide-react"
+import { Send, Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface ChatInputProps {
@@ -43,11 +43,6 @@ export function ChatInput({ onSendMessage, isLoading }: ChatInputProps) {
   return (
     <form onSubmit={handleSubmit} className="relative bg-muted/50 rounded-2xl border border-border p-2">
       <div className="flex items-end gap-2">
-        {/* Attachments Button */}
-        <Button type="button" variant="ghost" size="icon" className="shrink-0 h-10 w-10 rounded-xl">
-          <Paperclip className="w-5 h-5 text-muted-foreground" />
-        </Button>
-
         {/* Text Input */}
         <Textarea
           ref={textareaRef}
@@ -58,11 +53,6 @@ export function ChatInput({ onSendMessage, isLoading }: ChatInputProps) {
           className="flex-1 min-h-[44px] max-h-[200px] resize-none border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 py-3"
           rows={1}
         />
-
-        {/* Voice Input */}
-        <Button type="button" variant="ghost" size="icon" className="shrink-0 h-10 w-10 rounded-xl">
-          <Mic className="w-5 h-5 text-muted-foreground" />
-        </Button>
 
         {/* Send Button */}
         <Button
