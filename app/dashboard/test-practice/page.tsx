@@ -2,8 +2,6 @@
 import { DashboardHeader } from "@/components/header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Progress } from "@/components/ui/progress"
 import { BookOpen, Clock, Target, TrendingUp, Play, ChevronRight, Calculator, Languages, Brain } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
@@ -15,9 +13,6 @@ const testCategories = [
     description: "Algebra, Calculus, Geometry, Trigonometry",
     icon: Calculator,
     color: "bg-blue-500",
-    totalQuestions: 500,
-    completed: 125,
-    avgScore: 78,
   },
   {
     id: "english",
@@ -25,9 +20,6 @@ const testCategories = [
     description: "Grammar, Vocabulary, Comprehension",
     icon: Languages,
     color: "bg-emerald-500",
-    totalQuestions: 400,
-    completed: 200,
-    avgScore: 82,
   },
   {
     id: "analytical",
@@ -35,53 +27,17 @@ const testCategories = [
     description: "Logical Reasoning, Pattern Recognition",
     icon: Brain,
     color: "bg-pink-500",
-    totalQuestions: 300,
-    completed: 75,
-    avgScore: 70,
   },
 ]
 
 const mockTests = [
   {
     id: "mock-1",
-    title: "Full Mock Test #1",
+    title: "Full Mock Test",
     duration: "120 min",
     questions: 100,
-    difficulty: "Medium",
-    attempted: true,
-    score: 75,
-  },
-  {
-    id: "mock-2",
-    title: "Full Mock Test #2",
-    duration: "120 min",
-    questions: 100,
-    difficulty: "Hard",
-    attempted: true,
-    score: 68,
-  },
-  {
-    id: "mock-3",
-    title: "Full Mock Test #3",
-    duration: "120 min",
-    questions: 100,
-    difficulty: "Medium",
     attempted: false,
-  },
-  {
-    id: "mock-4",
-    title: "Full Mock Test #4",
-    duration: "120 min",
-    questions: 100,
-    difficulty: "Easy",
-    attempted: false,
-  },
-]
-
-const recentTests = [
-  { name: "Math Quiz #12", score: 85, date: "Today", questions: 20 },
-  { name: "English Practice #8", score: 90, date: "Yesterday", questions: 25 },
-  { name: "Full Mock Test #2", score: 68, date: "2 days ago", questions: 100 },
+  }
 ]
 
 export default function TestPracticePage() {
@@ -110,7 +66,7 @@ export default function TestPracticePage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Avg Score</p>
-                  <p className="text-3xl font-bold">76%</p>
+                  <p className="text-3xl font-bold">78%</p>
                 </div>
                 <div className="p-3 bg-emerald-500 rounded-xl">
                   <Target className="w-6 h-6 text-white" />
@@ -157,22 +113,14 @@ export default function TestPracticePage() {
                     <div className={cn("p-3 rounded-xl", category.color)}>
                       <category.icon className="w-6 h-6 text-white" />
                     </div>
-                    <Badge variant="secondary">{category.avgScore}% avg</Badge>
                   </div>
                   <CardTitle className="mt-4">{category.title}</CardTitle>
                   <CardDescription>{category.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Progress</span>
-                      <span className="font-medium">
-                        {category.completed}/{category.totalQuestions}
-                      </span>
-                    </div>
-                    <Progress value={(category.completed / category.totalQuestions) * 100} className="h-2" />
                     <Link href={`/dashboard/test-practice/quiz?subject=${category.id}`}>
-                      <Button className="w-full mt-2 group-hover:bg-primary">
+                      <Button className="w-full group-hover:bg-primary">
                         Start Practice
                         <ChevronRight className="w-4 h-4 ml-2" />
                       </Button>
@@ -194,20 +142,7 @@ export default function TestPracticePage() {
                 className={cn("hover:shadow-lg transition-shadow", test.attempted && "border-primary/20")}
               >
                 <CardHeader className="pb-3">
-                  <div className="flex items-center justify-between">
-                    <Badge
-                      variant={
-                        test.difficulty === "Easy"
-                          ? "secondary"
-                          : test.difficulty === "Medium"
-                            ? "default"
-                            : "destructive"
-                      }
-                    >
-                      {test.difficulty}
-                    </Badge>
-                    {test.attempted && <span className="text-sm font-semibold text-primary">{test.score}%</span>}
-                  </div>
+                 
                   <CardTitle className="text-lg">{test.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -233,44 +168,6 @@ export default function TestPracticePage() {
           </div>
         </div>
 
-        {/* Recent Activity */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Recent Tests</CardTitle>
-            <CardDescription>Your latest test attempts</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {recentTests.map((test, index) => (
-                <div key={index} className="flex items-center justify-between p-4 bg-muted/50 rounded-lg">
-                  <div className="flex items-center gap-4">
-                    <div
-                      className={cn(
-                        "w-10 h-10 rounded-lg flex items-center justify-center",
-                        test.score >= 80
-                          ? "bg-emerald-500/10 text-emerald-500"
-                          : test.score >= 60
-                            ? "bg-blue-500/10 text-blue-500"
-                            : "bg-red-500/10 text-red-500",
-                      )}
-                    >
-                      {test.score}%
-                    </div>
-                    <div>
-                      <p className="font-medium">{test.name}</p>
-                      <p className="text-sm text-muted-foreground">
-                        {test.questions} questions • {test.date}
-                      </p>
-                    </div>
-                  </div>
-                  <Button variant="ghost" size="sm">
-                    View Details
-                  </Button>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   )

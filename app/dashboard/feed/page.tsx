@@ -164,22 +164,22 @@ export default function FeedPage() {
                   )}
 
                   <div className="flex items-center gap-2 pt-4 border-t border-border">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => handleLike(post.id)}
-                      disabled={!user || likingPostId === post.id}
-                      className={cn(
-                        "text-muted-foreground hover:text-foreground hover:bg-accent",
-                        post.isLiked && "text-red-500",
-                      )}
-                    >
-                      {likingPostId === post.id ? (
-                        <Loader2 className="w-4 h-4 mr-1 animate-spin" />
-                      ) : (
-                        <Heart className={cn("w-4 h-4 mr-1", post.isLiked && "fill-red-500")} />
-                      )}
-                      {post.likes}
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => handleLike(post.id)}
+                        disabled={!user || likingPostId === post.id}
+                        className={cn(
+                          "text-muted-foreground hover:text-foreground hover:bg-accent",
+                          post.isLiked && "text-red-500",
+                        )}
+                      >
+                        {likingPostId === post.id ? (
+                          <Loader2 className="w-4 h-4 mr-1 animate-spin" />
+                        ) : (
+                          <Heart className={cn("w-4 h-4 mr-1", post.isLiked && "fill-red-500")} />
+                        )}
+                        {post.likes}
                     </Button>
                   </div>
                 </div>
