@@ -100,7 +100,7 @@ export default function BatchAdvisorPage() {
     } catch (err: any) {
       setError(err.message || "Something went wrong")
     } finally {
-      setIsAnalyzing(false)
+    setIsAnalyzing(false)
     }
   }
 
@@ -126,156 +126,133 @@ export default function BatchAdvisorPage() {
       <div className="p-4">
         {!showResults ? (
           <div className="max-w-4xl mx-auto space-y-4">
-            <Card className="border-primary/20">
-              <CardContent className="py-4">
-                <div className="flex flex-wrap items-center gap-3">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Brain className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="flex-1 min-w-[220px]">
-                    <h2 className="text-lg font-semibold leading-tight">Advisor connected to course dataset</h2>
-                    <p className="text-sm text-muted-foreground">
-                      Uses the logic in <code>public/process.py</code> with <code>data.csv</code> to suggest next courses.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
             {error && (
-              <Card className="mb-4 border-destructive/30">
-                <CardContent className="flex items-center gap-3 py-4">
+              <Card className="border-destructive/30">
+                <CardContent className="flex items-center gap-3 py-3">
                   <AlertTriangle className="w-5 h-5 text-destructive" />
                   <div className="text-sm text-destructive"> {error}</div>
                 </CardContent>
               </Card>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-5">
-            <Card>
-              <CardHeader className="py-3">
-                <CardTitle className="text-base">Academic Snapshot</CardTitle>
-                <CardDescription className="text-xs">Key signals for scoring.</CardDescription>
-              </CardHeader>
-              <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
-                <div className="space-y-1.5">
-                  <Label htmlFor="currentSemester">Current Semester</Label>
-                  <Input
-                    id="currentSemester"
-                    type="number"
-                    min={1}
-                    max={8}
-                    placeholder="e.g., 5"
-                    value={formData.currentSemester}
-                    onChange={(e) => setFormData({ ...formData, currentSemester: e.target.value })}
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="gpa">CGPA</Label>
-                  <Input
-                    id="gpa"
-                    type="number"
-                    step="0.01"
-                    min={0}
-                    max={4}
-                    placeholder="e.g., 2.9"
-                    value={formData.gpa}
-                    onChange={(e) => setFormData({ ...formData, gpa: e.target.value })}
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="warningCount">Active Warnings</Label>
-                  <Select
-                    value={formData.warningCount}
-                    onValueChange={(value) => setFormData({ ...formData, warningCount: value })}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Warnings" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="0">0</SelectItem>
-                      <SelectItem value="1">1</SelectItem>
-                      <SelectItem value="2">2</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="creditEarned">Credit Hours Earned</Label>
-                  <Input
-                    id="creditEarned"
-                    type="number"
-                    min={0}
-                    placeholder="e.g., 80"
-                    value={formData.creditEarned}
-                    onChange={(e) => setFormData({ ...formData, creditEarned: e.target.value })}
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="maxCourses">Max Courses</Label>
-                  <Input
-                    id="maxCourses"
-                    type="number"
-                    min={1}
-                    max={7}
-                    placeholder="e.g., 5"
-                    value={formData.maxCourses}
-                    onChange={(e) => setFormData({ ...formData, maxCourses: e.target.value })}
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <Label>Policy awareness</Label>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <ShieldCheck className="w-4 h-4 text-emerald-500" />
-                    Uses catalog rules & prerequisites.
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <Card>
+                <CardHeader className="py-3">
+                  <CardTitle className="text-base">Academic Info</CardTitle>
+                  <CardDescription className="text-xs">Fill only what applies.</CardDescription>
+                </CardHeader>
+                <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+                  <div className="space-y-1.5">
+                    <Label htmlFor="currentSemester">Current Semester</Label>
+                    <Input
+                      id="currentSemester"
+                      type="number"
+                      min={1}
+                      max={8}
+                      placeholder="e.g., 5"
+                      value={formData.currentSemester}
+                      onChange={(e) => setFormData({ ...formData, currentSemester: e.target.value })}
+                    />
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="gpa">CGPA</Label>
+                    <Input
+                      id="gpa"
+                      type="number"
+                      step="0.01"
+                      min={0}
+                      max={4}
+                      placeholder="e.g., 2.9"
+                      value={formData.gpa}
+                      onChange={(e) => setFormData({ ...formData, gpa: e.target.value })}
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="warningCount">Active Warnings</Label>
+                    <Select
+                      value={formData.warningCount}
+                      onValueChange={(value) => setFormData({ ...formData, warningCount: value })}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Warnings" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="0">0</SelectItem>
+                        <SelectItem value="1">1</SelectItem>
+                        <SelectItem value="2">2</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="creditEarned">Credits Earned</Label>
+                    <Input
+                      id="creditEarned"
+                      type="number"
+                      min={0}
+                      placeholder="e.g., 80"
+                      value={formData.creditEarned}
+                      onChange={(e) => setFormData({ ...formData, creditEarned: e.target.value })}
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="maxCourses">Max Courses</Label>
+                    <Input
+                      id="maxCourses"
+                      type="number"
+                      min={1}
+                      max={7}
+                      placeholder="e.g., 5"
+                      value={formData.maxCourses}
+                      onChange={(e) => setFormData({ ...formData, maxCourses: e.target.value })}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Course History</CardTitle>
-                <CardDescription>Pick from the catalog; semesters auto-filter by your current semester.</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {courseFetchError ? (
-                  <div className="flex items-center gap-2 text-sm text-destructive">
-                    <AlertTriangle className="w-4 h-4" />
-                    {courseFetchError}
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-1 gap-3">
-                    <CoursePicker
-                      label="Passed"
-                      help="Already cleared"
-                      semesters={visibleSemesters}
-                      allCourses={courseOptions}
-                      selected={passedSelected}
-                      onToggle={(id) => toggleCourse(id, passedSelected, setPassedSelected)}
-                      onSetSelected={(ids) => setPassedSelected(ids)}
-                    />
-                    <CoursePicker
-                      label="Failed / Retake"
-                      help="Needs a repeat"
-                      semesters={visibleSemesters}
-                      allCourses={courseOptions}
-                      selected={failedSelected}
-                      onToggle={(id) => toggleCourse(id, failedSelected, setFailedSelected)}
-                      onSetSelected={(ids) => setFailedSelected(ids)}
-                    />
-                    <CoursePicker
-                      label="Low Grade"
-                      help="Improve C or below"
-                      semesters={visibleSemesters}
-                      allCourses={courseOptions}
-                      selected={lowSelected}
-                      onToggle={(id) => toggleCourse(id, lowSelected, setLowSelected)}
-                      onSetSelected={(ids) => setLowSelected(ids)}
-                    />
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+              <Card>
+                <CardHeader className="py-3">
+                  <CardTitle className="text-base">Course History</CardTitle>
+                  <CardDescription className="text-xs">Select completed / failed / low-grade.</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  {courseFetchError ? (
+                    <div className="flex items-center gap-2 text-sm text-destructive">
+                      <AlertTriangle className="w-4 h-4" />
+                      {courseFetchError}
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 gap-3">
+                      <CoursePicker
+                        label="Passed"
+                        help="Already cleared"
+                        semesters={visibleSemesters}
+                        allCourses={courseOptions}
+                        selected={passedSelected}
+                        onToggle={(id) => toggleCourse(id, passedSelected, setPassedSelected)}
+                        onSetSelected={(ids) => setPassedSelected(ids)}
+                      />
+                      <CoursePicker
+                        label="Failed / Retake"
+                        help="Needs a repeat"
+                        semesters={visibleSemesters}
+                        allCourses={courseOptions}
+                        selected={failedSelected}
+                        onToggle={(id) => toggleCourse(id, failedSelected, setFailedSelected)}
+                        onSetSelected={(ids) => setFailedSelected(ids)}
+                      />
+                      <CoursePicker
+                        label="Low Grade"
+                        help="Improve C or below"
+                        semesters={visibleSemesters}
+                        allCourses={courseOptions}
+                        selected={lowSelected}
+                        onToggle={(id) => toggleCourse(id, lowSelected, setLowSelected)}
+                        onSetSelected={(ids) => setLowSelected(ids)}
+                      />
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
 
               <Button type="submit" size="sm" className="w-full h-10" disabled={isSubmitDisabled}>
                 {isAnalyzing ? (

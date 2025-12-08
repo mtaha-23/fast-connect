@@ -144,9 +144,9 @@ def main():
         print(json.dumps({"recommendations": format_recommendations(recs)}))
         return
 
-    current_semester = 5
-    passed_courses = [
-        # Semester 1
+current_semester = 5
+passed_courses = [
+    # Semester 1
         "NS1001",
         "MT1003",
         "SS1012",
@@ -154,7 +154,7 @@ def main():
         "CL1000",
         "SS1015",
         "CS1002",
-        # Semester 2
+    # Semester 2
         "SS3002",
         "EE1005",
         "SS1014",
@@ -162,26 +162,26 @@ def main():
         "MT1006",
         "CS1004",
         "SS1019",
-        # Semester 3
+    # Semester 3
         "EE2003",
         "CS2001",
         "CS1005",
         "MT1004",
         "CSXXXX",
         "SS1021",
-        # Semester 4
+    # Semester 4 
         "CS2005",
         "MT2005",
         "CS3005",
         "SS1022",
         "MGXXXX",
-    ]
+]
     failed_courses = ["CS2006"]  # failed OS
     low_grade_courses = ["CS2005"]  # e.g got C-
-    gpa = 2.7
-    warning_count = 0
-    credit_earned = 80
-    max_courses = 5
+gpa = 2.7
+warning_count = 0  
+credit_earned = 80
+max_courses = 5
 
     recommendations = ai_batch_advisor(
         current_semester,
@@ -194,9 +194,9 @@ def main():
         max_courses,
     )
 
-    print("Recommended Courses:")
-    for cid, name, score in recommendations:
-        print(f"{cid} - {name} (Score: {score})")
+print("Recommended Courses:")
+for cid, name, score in recommendations:
+    print(f"{cid} - {name} (Score: {score})")
 
 
 if __name__ == "__main__":

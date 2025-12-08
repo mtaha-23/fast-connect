@@ -5,17 +5,8 @@ import { DashboardHeader } from "@/components/header"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
-import {
-  Heart,
-  MessageCircle,
-  Share2,
-  MoreHorizontal,
-  Clock,
-  Pin,
-  Loader2,
-} from "lucide-react"
+import { Heart, MoreHorizontal, Clock, Pin, Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { useAuth } from "@/lib/hooks/use-auth"
 import type { Post } from "@/lib/services/post.service"
 
@@ -161,25 +152,6 @@ export default function FeedPage() {
                     <div className="flex items-center gap-2">
                       {post.isPinned && <Pin className="w-4 h-4 text-blue-400 fill-blue-400" />}
                       {getTypeBadge(post.type)}
-                      <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            className="h-8 w-8 text-muted-foreground hover:text-foreground hover:bg-accent"
-                          >
-                            <MoreHorizontal className="w-4 h-4" />
-                          </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="bg-popover border-border">
-                          <DropdownMenuItem className="text-foreground hover:bg-accent">
-                            Save Post
-                          </DropdownMenuItem>
-                          <DropdownMenuItem className="text-foreground hover:bg-accent">
-                            Copy Link
-                          </DropdownMenuItem>
-                        </DropdownMenuContent>
-                      </DropdownMenu>
                     </div>
                   </div>
 
@@ -191,33 +163,23 @@ export default function FeedPage() {
                     </div>
                   )}
 
-                  <div className="flex items-center justify-between pt-4 border-t border-border">
-                    <div className="flex items-center gap-1">
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => handleLike(post.id)}
-                        disabled={!user || likingPostId === post.id}
-                        className={cn(
-                          "text-muted-foreground hover:text-foreground hover:bg-accent",
-                          post.isLiked && "text-red-500",
-                        )}
-                      >
-                        {likingPostId === post.id ? (
-                          <Loader2 className="w-4 h-4 mr-1 animate-spin" />
-                        ) : (
-                          <Heart className={cn("w-4 h-4 mr-1", post.isLiked && "fill-red-500")} />
-                        )}
-                        {post.likes}
-                      </Button>
-                      <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground hover:bg-accent">
-                        <MessageCircle className="w-4 h-4 mr-1" />
-                        {post.comments}
-                      </Button>
-                    </div>
-                    <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground hover:bg-accent">
-                      <Share2 className="w-4 h-4 mr-1" />
-                      Share
+                  <div className="flex items-center gap-2 pt-4 border-t border-border">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => handleLike(post.id)}
+                      disabled={!user || likingPostId === post.id}
+                      className={cn(
+                        "text-muted-foreground hover:text-foreground hover:bg-accent",
+                        post.isLiked && "text-red-500",
+                      )}
+                    >
+                      {likingPostId === post.id ? (
+                        <Loader2 className="w-4 h-4 mr-1 animate-spin" />
+                      ) : (
+                        <Heart className={cn("w-4 h-4 mr-1", post.isLiked && "fill-red-500")} />
+                      )}
+                      {post.likes}
                     </Button>
                   </div>
                 </div>
