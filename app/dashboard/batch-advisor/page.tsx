@@ -1,125 +1,131 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { DashboardHeader } from "@/components/header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import {
-  Brain,
-  Sparkles,
-  Loader2,
-  Code,
-  Database,
-  Cpu,
-  BarChart3,
-  Briefcase,
-  Users,
-  Clock,
-  CheckCircle2,
-} from "lucide-react"
+import { Checkbox } from "@/components/ui/checkbox"
+import { AlertTriangle, Brain, Loader2, ShieldCheck, Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-const interests = [
-  { id: "programming", label: "Programming & Development", icon: Code },
-  { id: "data", label: "Data Science & Analytics", icon: Database },
-  { id: "ai", label: "Artificial Intelligence", icon: Cpu },
-  { id: "business", label: "Business & Management", icon: Briefcase },
-  { id: "security", label: "Cybersecurity", icon: BarChart3 },
-]
-
 interface Recommendation {
-  program: string
-  description: string
-  matchScore: number
-  duration: string
-  careers: string[]
-  reasons: string[]
-  icon: React.ElementType
-  color: string
+  courseId: string
+  courseName: string
+  score: number
+  isCore?: boolean
 }
 
-const mockRecommendations: Recommendation[] = [
-  {
-    program: "BS Computer Science",
-    description: "Comprehensive program covering software development, algorithms, and computing theory.",
-    matchScore: 95,
-    duration: "4 years",
-    careers: ["Software Engineer", "Full Stack Developer", "Systems Architect"],
-    reasons: [
-      "Strong match with your programming interest",
-      "Excellent analytical scores in tests",
-      "High demand in job market",
-    ],
-    icon: Code,
-    color: "bg-blue-500",
-  },
-  {
-    program: "BS Data Science",
-    description: "Focus on statistical analysis, machine learning, and data-driven decision making.",
-    matchScore: 88,
-    duration: "4 years",
-    careers: ["Data Scientist", "ML Engineer", "Business Analyst"],
-    reasons: [
-      "Aligns with data analytics interest",
-      "Growing field with excellent opportunities",
-      "Good mathematics foundation",
-    ],
-    icon: Database,
-    color: "bg-emerald-500",
-  },
-  {
-    program: "BS Artificial Intelligence",
-    description: "Specialized program in AI, deep learning, and intelligent systems.",
-    matchScore: 82,
-    duration: "4 years",
-    careers: ["AI Engineer", "Research Scientist", "Robotics Engineer"],
-    reasons: ["Matches AI interest", "Cutting-edge curriculum", "Strong analytical abilities"],
-    icon: Cpu,
-    color: "bg-pink-500",
-  },
-]
+type CourseMap = Record<string, { courseId: string; courseName: string }[]>
 
 export default function BatchAdvisorPage() {
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [showResults, setShowResults] = useState(false)
-  const [selectedInterests, setSelectedInterests] = useState<string[]>([])
+  const [recommendations, setRecommendations] = useState<Recommendation[]>([])
+  const [error, setError] = useState<string | null>(null)
+  const [courseOptions, setCourseOptions] = useState<CourseMap>({})
+  const [courseFetchError, setCourseFetchError] = useState<string | null>(null)
   const [formData, setFormData] = useState({
-    fscMarks: "",
-    entrytestScore: "",
-    preferredCampus: "",
-    additionalInfo: "",
+    currentSemester: "",
+    gpa: "",
+    warningCount: "0",
+    creditEarned: "",
+    maxCourses: "5",
   })
+  const [passedSelected, setPassedSelected] = useState<string[]>([])
+  const [failedSelected, setFailedSelected] = useState<string[]>([])
+  const [lowSelected, setLowSelected] = useState<string[]>([])
 
-  const handleInterestToggle = (id: string) => {
-    setSelectedInterests((prev) => (prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]))
-  }
+  useEffect(() => {
+    const loadCourses = async () => {
+      try {
+        const res = await fetch("/api/batch-advisor")
+        if (!res.ok) throw new Error("Could not load course list")
+        const data = await res.json()
+        setCourseOptions(data.semesters || {})
+      } catch (err: any) {
+        setCourseFetchError(err.message || "Failed to load courses")
+      }
+    }
+    loadCourses()
+  }, [])
+
+  const numericSemester = Number(formData.currentSemester || 0)
+  const visibleSemesters = useMemo(
+    () =>
+      Object.keys(courseOptions).filter((sem) => {
+        const num = Number(sem)
+        if (Number.isNaN(num)) return false
+        // If student is in semester N, only show semesters strictly before N
+        if (numericSemester && numericSemester > 0) return num < numericSemester
+        return true
+      }),
+    [courseOptions, numericSemester],
+  )
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsAnalyzing(true)
+    setError(null)
 
-    // Simulate AI analysis
-    await new Promise((resolve) => setTimeout(resolve, 2500))
+    try {
+      const payload = {
+        currentSemester: Number(formData.currentSemester || 0),
+        gpa: Number(formData.gpa || 0),
+        warningCount: Number(formData.warningCount || 0),
+        creditEarned: Number(formData.creditEarned || 0),
+        maxCourses: Number(formData.maxCourses || 5),
+        passedCourses: passedSelected,
+        failedCourses: failedSelected,
+        lowGradeCourses: lowSelected,
+      }
 
-    setIsAnalyzing(false)
-    setShowResults(true)
+      const res = await fetch("/api/batch-advisor", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+
+      if (!res.ok) {
+        const detail = await res.json().catch(() => ({}))
+        throw new Error(detail?.error || "Could not generate recommendations")
+      }
+
+      const data = await res.json()
+      setRecommendations(data.recommendations || [])
+      setShowResults(true)
+    } catch (err: any) {
+      setError(err.message || "Something went wrong")
+    } finally {
+      setIsAnalyzing(false)
+    }
+  }
+
+  const isSubmitDisabled =
+    isAnalyzing ||
+    !formData.currentSemester ||
+    !formData.gpa ||
+    !formData.creditEarned ||
+    !formData.maxCourses ||
+    courseFetchError !== null
+
+  const toggleCourse = (value: string, list: string[], setter: (v: string[]) => void) => {
+    setter(list.includes(value) ? list.filter((c) => c !== value) : [...list, value])
   }
 
   return (
     <div className="min-h-screen">
-      <DashboardHeader title="AI Batch Advisor" description="Get personalized program recommendations" />
+      <DashboardHeader
+        title="AI Batch Advisor"
+        description="Get course recommendations powered by your academic history"
+      />
 
       <div className="p-6">
         {!showResults ? (
-          <div className="max-w-3xl mx-auto">
-            {/* Header Card */}
+          <div className="max-w-4xl mx-auto">
             <Card className="mb-8 border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
@@ -127,272 +133,348 @@ export default function BatchAdvisorPage() {
                     <Brain className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-semibold mb-2">Let AI Find Your Perfect Program</h2>
+                    <h2 className="text-xl font-semibold mb-2">Advisor connected to course dataset</h2>
                     <p className="text-muted-foreground">
-                      Answer a few questions about your interests and academic background, and our AI will recommend the
-                      best programs for you at FAST University.
+                      We use the rules defined in <code>public/process.py</code> and the <code>data.csv</code> catalog to
+                      suggest the safest set of courses for your next semester.
                     </p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-8">
-              {/* Interests */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Select Your Interests</CardTitle>
-                  <CardDescription>Choose areas that interest you the most</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {interests.map((interest) => (
-                      <button
-                        key={interest.id}
-                        type="button"
-                        onClick={() => handleInterestToggle(interest.id)}
-                        className={cn(
-                          "flex items-center gap-3 p-4 rounded-xl border-2 transition-all text-left",
-                          selectedInterests.includes(interest.id)
-                            ? "border-primary bg-primary/5"
-                            : "border-border hover:border-primary/50",
-                        )}
-                      >
-                        <div
-                          className={cn(
-                            "p-2 rounded-lg",
-                            selectedInterests.includes(interest.id) ? "bg-primary text-primary-foreground" : "bg-muted",
-                          )}
-                        >
-                          <interest.icon className="w-5 h-5" />
-                        </div>
-                        <span className="font-medium">{interest.label}</span>
-                        {selectedInterests.includes(interest.id) && (
-                          <CheckCircle2 className="w-5 h-5 text-primary ml-auto" />
-                        )}
-                      </button>
-                    ))}
-                  </div>
+            {error && (
+              <Card className="mb-4 border-destructive/30">
+                <CardContent className="flex items-center gap-3 py-4">
+                  <AlertTriangle className="w-5 h-5 text-destructive" />
+                  <div className="text-sm text-destructive"> {error}</div>
                 </CardContent>
               </Card>
+            )}
 
-              {/* Academic Info */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Academic Background</CardTitle>
-                  <CardDescription>Tell us about your academic performance</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="fscMarks">FSc/A-Level Marks (%)</Label>
-                      <Input
-                        id="fscMarks"
-                        type="number"
-                        placeholder="e.g., 85"
-                        value={formData.fscMarks}
-                        onChange={(e) => setFormData({ ...formData, fscMarks: e.target.value })}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="entrytestScore">Entry Test Score (if taken)</Label>
-                      <Input
-                        id="entrytestScore"
-                        type="number"
-                        placeholder="e.g., 75"
-                        value={formData.entrytestScore}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            entrytestScore: e.target.value,
-                          })
-                        }
-                      />
-                    </div>
+            <form onSubmit={handleSubmit} className="space-y-8">
+            <Card>
+              <CardHeader>
+                <CardTitle>Academic Snapshot</CardTitle>
+                <CardDescription>Fast inputs for advisor scoring.</CardDescription>
+              </CardHeader>
+              <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="currentSemester">Current Semester</Label>
+                  <Input
+                    id="currentSemester"
+                    type="number"
+                    min={1}
+                    max={8}
+                    placeholder="e.g., 5"
+                    value={formData.currentSemester}
+                    onChange={(e) => setFormData({ ...formData, currentSemester: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="gpa">CGPA</Label>
+                  <Input
+                    id="gpa"
+                    type="number"
+                    step="0.01"
+                    min={0}
+                    max={4}
+                    placeholder="e.g., 2.9"
+                    value={formData.gpa}
+                    onChange={(e) => setFormData({ ...formData, gpa: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="warningCount">Active Warnings</Label>
+                  <Select
+                    value={formData.warningCount}
+                    onValueChange={(value) => setFormData({ ...formData, warningCount: value })}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Warnings" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="0">0</SelectItem>
+                      <SelectItem value="1">1</SelectItem>
+                      <SelectItem value="2">2</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="creditEarned">Credit Hours Earned</Label>
+                  <Input
+                    id="creditEarned"
+                    type="number"
+                    min={0}
+                    placeholder="e.g., 80"
+                    value={formData.creditEarned}
+                    onChange={(e) => setFormData({ ...formData, creditEarned: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="maxCourses">Max Courses</Label>
+                  <Input
+                    id="maxCourses"
+                    type="number"
+                    min={1}
+                    max={7}
+                    placeholder="e.g., 5"
+                    value={formData.maxCourses}
+                    onChange={(e) => setFormData({ ...formData, maxCourses: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label>Policy awareness</Label>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <ShieldCheck className="w-4 h-4 text-emerald-500" />
+                    Uses catalog rules & prerequisites.
                   </div>
+                </div>
+              </CardContent>
+            </Card>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="preferredCampus">Preferred Campus</Label>
-                    <Select
-                      value={formData.preferredCampus}
-                      onValueChange={(value) => setFormData({ ...formData, preferredCampus: value })}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select a campus" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="islamabad">Islamabad</SelectItem>
-                        <SelectItem value="lahore">Lahore</SelectItem>
-                        <SelectItem value="karachi">Karachi</SelectItem>
-                        <SelectItem value="peshawar">Peshawar</SelectItem>
-                        <SelectItem value="chiniot">Chiniot-Faisalabad</SelectItem>
-                      </SelectContent>
-                    </Select>
+            <Card>
+              <CardHeader>
+                <CardTitle>Course History</CardTitle>
+                <CardDescription>Pick from the catalog; semesters auto-filter by your current semester.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {courseFetchError ? (
+                  <div className="flex items-center gap-2 text-sm text-destructive">
+                    <AlertTriangle className="w-4 h-4" />
+                    {courseFetchError}
                   </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="additionalInfo">Additional Information (Optional)</Label>
-                    <Textarea
-                      id="additionalInfo"
-                      placeholder="Tell us about any specific goals, skills, or preferences..."
-                      value={formData.additionalInfo}
-                      onChange={(e) =>
-                        setFormData({
-                          ...formData,
-                          additionalInfo: e.target.value,
-                        })
-                      }
-                      rows={4}
+                ) : (
+                  <div className="grid grid-cols-1 gap-3">
+                    <CoursePicker
+                      label="Passed"
+                      help="Already cleared"
+                      semesters={visibleSemesters}
+                      allCourses={courseOptions}
+                      selected={passedSelected}
+                      onToggle={(id) => toggleCourse(id, passedSelected, setPassedSelected)}
+                      onSetSelected={(ids) => setPassedSelected(ids)}
+                    />
+                    <CoursePicker
+                      label="Failed / Retake"
+                      help="Needs a repeat"
+                      semesters={visibleSemesters}
+                      allCourses={courseOptions}
+                      selected={failedSelected}
+                      onToggle={(id) => toggleCourse(id, failedSelected, setFailedSelected)}
+                      onSetSelected={(ids) => setFailedSelected(ids)}
+                    />
+                    <CoursePicker
+                      label="Low Grade"
+                      help="Improve C or below"
+                      semesters={visibleSemesters}
+                      allCourses={courseOptions}
+                      selected={lowSelected}
+                      onToggle={(id) => toggleCourse(id, lowSelected, setLowSelected)}
+                      onSetSelected={(ids) => setLowSelected(ids)}
                     />
                   </div>
-                </CardContent>
-              </Card>
+                )}
+              </CardContent>
+            </Card>
 
-              {/* Submit */}
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full h-12"
-                disabled={isAnalyzing || selectedInterests.length === 0}
-              >
+              <Button type="submit" size="lg" className="w-full h-12" disabled={isSubmitDisabled}>
                 {isAnalyzing ? (
                   <>
                     <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                    Analyzing Your Profile...
+                    Generating course plan...
                   </>
                 ) : (
                   <>
                     <Sparkles className="w-5 h-5 mr-2" />
-                    Get AI Recommendations
+                    Get Batch Advice
                   </>
                 )}
               </Button>
             </form>
           </div>
         ) : (
-          /* Results */
-          <div className="max-w-4xl mx-auto space-y-6">
-            {/* Results Header */}
-            <div className="text-center mb-8">
-              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Sparkles className="w-8 h-8 text-primary" />
+          <div className="max-w-2xl mx-auto space-y-3">
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-primary" />
               </div>
-              <h2 className="text-2xl font-bold mb-2">Your Personalized Recommendations</h2>
-              <p className="text-muted-foreground">
-                Based on your interests and academic background, here are the best programs for you
-              </p>
+              <div>
+                <h2 className="text-lg font-semibold leading-tight">Recommended courses</h2>
+                <p className="text-xs text-muted-foreground">
+                  Ranked by <code>process.py</code> using your inputs.
+                </p>
+              </div>
             </div>
 
-            {/* Recommendations */}
-            <div className="space-y-4">
-              {mockRecommendations.map((rec, index) => (
-                <Card
-                  key={rec.program}
-                  className={cn("overflow-hidden", index === 0 && "border-primary/30 ring-1 ring-primary/20")}
-                >
-                  <CardContent className="p-0">
-                    <div className="flex flex-col md:flex-row">
-                      {/* Left Side */}
-                      <div className="flex-1 p-6">
-                        <div className="flex items-start gap-4">
-                          <div className={cn("p-3 rounded-xl", rec.color)}>
-                            <rec.icon className="w-6 h-6 text-white" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-1">
-                              <h3 className="text-xl font-semibold">{rec.program}</h3>
-                              {index === 0 && <Badge className="bg-primary">Best Match</Badge>}
-                            </div>
-                            <p className="text-muted-foreground mb-4">{rec.description}</p>
-
-                            {/* Meta Info */}
-                            <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
-                              <span className="flex items-center gap-1">
-                                <Clock className="w-4 h-4" />
-                                {rec.duration}
-                              </span>
-                              <span className="flex items-center gap-1">
-                                <Users className="w-4 h-4" />
-                                {rec.careers.length} career paths
-                              </span>
-                            </div>
-
-                            {/* Careers */}
-                            <div className="flex flex-wrap gap-2">
-                              {rec.careers.map((career) => (
-                                <Badge key={career} variant="secondary">
-                                  {career}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Reasons */}
-                        <div className="mt-6 pt-4 border-t border-border">
-                          <h4 className="text-sm font-medium mb-3">Why this program?</h4>
-                          <ul className="space-y-2">
-                            {rec.reasons.map((reason, i) => (
-                              <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                                {reason}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-
-                      {/* Right Side - Match Score */}
-                      <div className="md:w-48 p-6 bg-muted/50 flex flex-col items-center justify-center border-t md:border-t-0 md:border-l border-border">
-                        <div className="relative w-24 h-24 mb-3">
-                          <svg className="w-24 h-24 transform -rotate-90">
-                            <circle
-                              cx="48"
-                              cy="48"
-                              r="42"
-                              stroke="currentColor"
-                              strokeWidth="8"
-                              fill="none"
-                              className="text-muted"
-                            />
-                            <circle
-                              cx="48"
-                              cy="48"
-                              r="42"
-                              stroke="currentColor"
-                              strokeWidth="8"
-                              fill="none"
-                              strokeDasharray={`${rec.matchScore * 2.64} 264`}
-                              className="text-primary"
-                              strokeLinecap="round"
-                            />
-                          </svg>
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <span className="text-2xl font-bold">{rec.matchScore}%</span>
-                          </div>
-                        </div>
-                        <span className="text-sm text-muted-foreground">Match Score</span>
-                        <Button className="mt-4 w-full" size="sm">
-                          Learn More
-                        </Button>
-                      </div>
-                    </div>
+            <div className="space-y-1">
+              {recommendations.length === 0 ? (
+                <Card>
+                  <CardContent className="py-3 text-center text-muted-foreground text-xs">
+                    No recommendations were returned. Try lowering the max courses or revisiting your inputs.
                   </CardContent>
                 </Card>
-              ))}
+              ) : (
+                recommendations.map((rec, index) => (
+                  <Card
+                    key={rec.courseId}
+                    className={cn(
+                      "overflow-hidden border-border/70 shadow-sm",
+                      index === 0 && "border-primary/50"
+                    )}
+                  >
+                    <CardContent className="flex items-center justify-between gap-2 p-3">
+                      <div className="space-y-0.5">
+                        <div className="flex items-center gap-1.5">
+                          <h3 className="text-sm font-semibold leading-tight">{rec.courseId}</h3>
+                          {rec.isCore && <Badge className="text-[11px]">Core</Badge>}
+                          {index === 0 && <Badge variant="secondary" className="text-[11px]">Top</Badge>}
+                        </div>
+                        <p className="text-xs text-muted-foreground line-clamp-1">{rec.courseName}</p>
+                      </div>
+                      <Badge variant="outline" className="text-[11px] px-2 py-0.5">
+                        {rec.score}
+                      </Badge>
+                    </CardContent>
+                  </Card>
+                ))
+              )}
             </div>
 
-            {/* Actions */}
-            <div className="flex justify-center gap-4 pt-4">
-              <Button variant="outline" onClick={() => setShowResults(false)}>
-                Update Preferences
+            <div className="flex justify-center gap-2 pt-3">
+              <Button variant="outline" size="sm" onClick={() => setShowResults(false)}>
+                Edit inputs
               </Button>
-              <Button>Apply Now</Button>
             </div>
           </div>
         )}
       </div>
+    </div>
+  )
+}
+
+type CoursePickerProps = {
+  label: string
+  help: string
+  semesters: string[]
+  allCourses: CourseMap
+  selected: string[]
+  onToggle: (courseId: string) => void
+  onSetSelected: (courseIds: string[]) => void
+}
+
+function CoursePicker({ label, help, semesters, allCourses, selected, onToggle, onSetSelected }: CoursePickerProps) {
+  const semesterKeys = semesters.length ? semesters : Object.keys(allCourses)
+  const [openSem, setOpenSem] = useState<string>(() => semesterKeys[0] || "")
+  const initialSet = useRef(false)
+
+  const onToggleSem = (ids: string[]) => onSetSelected(ids)
+
+  useEffect(() => {
+    if (!initialSet.current && semesterKeys[0]) {
+      setOpenSem(semesterKeys[0])
+      initialSet.current = true
+      return
+    }
+    if (openSem && !semesterKeys.includes(openSem)) {
+      setOpenSem(semesterKeys[0] || "")
+    }
+  }, [semesterKeys, openSem])
+
+  return (
+    <CollapsibleSection title={label} badgeText={`${selected.length} selected`}>
+      <p className="text-sm text-muted-foreground mb-2">{help}</p>
+      <span className="text-xs text-muted-foreground block mb-3">
+        Showing {semesterKeys.length || 0} semesters
+      </span>
+      <div className="grid grid-cols-1 gap-3 max-h-72 overflow-auto pr-1">
+        {semesterKeys.map((sem) => (
+          <div key={sem} className="rounded-lg border">
+            <button
+              type="button"
+              onClick={() => setOpenSem((prev) => (prev === sem ? "" : sem))}
+              className="flex w-full items-center justify-between px-3 py-2 text-sm font-semibold hover:bg-muted"
+            >
+              <span>Semester {sem}</span>
+              <span className={cn("text-xs transition", openSem === sem ? "rotate-180" : "")}>⌃</span>
+            </button>
+            {openSem === sem && (
+              <div className="space-y-2 px-3 pb-3">
+                <label className="inline-flex items-center gap-2 text-xs text-muted-foreground">
+                  <Checkbox
+                    checked={
+                      (allCourses[sem] || []).length > 0 &&
+                      (allCourses[sem] || []).every((c) => selected.includes(c.courseId))
+                    }
+                    onCheckedChange={() => {
+                      const semIds = (allCourses[sem] || []).map((c) => c.courseId)
+                      const allInSemSelected = semIds.every((id) => selected.includes(id))
+                      if (allInSemSelected) {
+                        // deselect all from this semester
+                        const remaining = selected.filter((id) => !semIds.includes(id))
+                        onToggleSem(remaining)
+                      } else {
+                        // add all from this semester
+                        const merged = Array.from(new Set([...selected, ...semIds]))
+                        onToggleSem(merged)
+                      }
+                    }}
+                  />
+                  <span>Select all in this semester</span>
+                </label>
+                <div className="grid grid-cols-1 gap-2">
+                  {(allCourses[sem] || []).map((course) => (
+                    <label
+                      key={course.courseId}
+                      className="flex items-start gap-3 rounded-lg border p-3 hover:border-primary/50 transition bg-card"
+                    >
+                      <Checkbox
+                        checked={selected.includes(course.courseId)}
+                        onCheckedChange={() => onToggle(course.courseId)}
+                      />
+                      <div>
+                        <p className="text-sm font-medium">{course.courseId}</p>
+                        <p className="text-xs text-muted-foreground">{course.courseName}</p>
+                      </div>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+
+        {semesterKeys.length === 0 && (
+          <p className="text-sm text-muted-foreground">No courses available from the catalog.</p>
+        )}
+      </div>
+    </CollapsibleSection>
+  )
+}
+
+type CollapsibleProps = {
+  title: string
+  badgeText?: string
+  children: React.ReactNode
+}
+
+function CollapsibleSection({ title, badgeText, children }: CollapsibleProps) {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <div className="group rounded-lg border bg-card shadow-sm">
+      <button
+        type="button"
+        onClick={() => setOpen((prev) => !prev)}
+        className="flex w-full cursor-pointer items-center justify-between px-3 py-2 text-sm font-medium"
+      >
+        <span>{title}</span>
+        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+          {badgeText && <Badge variant="secondary">{badgeText}</Badge>}
+          <span className={cn("transition", open ? "rotate-180" : "")}>⌃</span>
+        </div>
+      </button>
+      {open && <div className="px-3 pb-3">{children}</div>}
     </div>
   )
 }
