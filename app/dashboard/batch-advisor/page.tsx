@@ -123,20 +123,19 @@ export default function BatchAdvisorPage() {
         description="Get course recommendations powered by your academic history"
       />
 
-      <div className="p-6">
+      <div className="p-4">
         {!showResults ? (
-          <div className="max-w-4xl mx-auto">
-            <Card className="mb-8 border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
-              <CardContent className="pt-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary rounded-xl">
-                    <Brain className="w-8 h-8 text-primary-foreground" />
+          <div className="max-w-4xl mx-auto space-y-4">
+            <Card className="border-primary/20">
+              <CardContent className="py-4">
+                <div className="flex flex-wrap items-center gap-3">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Brain className="w-6 h-6 text-primary" />
                   </div>
-                  <div>
-                    <h2 className="text-xl font-semibold mb-2">Advisor connected to course dataset</h2>
-                    <p className="text-muted-foreground">
-                      We use the rules defined in <code>public/process.py</code> and the <code>data.csv</code> catalog to
-                      suggest the safest set of courses for your next semester.
+                  <div className="flex-1 min-w-[220px]">
+                    <h2 className="text-lg font-semibold leading-tight">Advisor connected to course dataset</h2>
+                    <p className="text-sm text-muted-foreground">
+                      Uses the logic in <code>public/process.py</code> with <code>data.csv</code> to suggest next courses.
                     </p>
                   </div>
                 </div>
@@ -152,14 +151,14 @@ export default function BatchAdvisorPage() {
               </Card>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-5">
             <Card>
-              <CardHeader>
-                <CardTitle>Academic Snapshot</CardTitle>
-                <CardDescription>Fast inputs for advisor scoring.</CardDescription>
+              <CardHeader className="py-3">
+                <CardTitle className="text-base">Academic Snapshot</CardTitle>
+                <CardDescription className="text-xs">Key signals for scoring.</CardDescription>
               </CardHeader>
-              <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="space-y-2">
+              <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+                <div className="space-y-1.5">
                   <Label htmlFor="currentSemester">Current Semester</Label>
                   <Input
                     id="currentSemester"
@@ -171,7 +170,7 @@ export default function BatchAdvisorPage() {
                     onChange={(e) => setFormData({ ...formData, currentSemester: e.target.value })}
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   <Label htmlFor="gpa">CGPA</Label>
                   <Input
                     id="gpa"
@@ -184,7 +183,7 @@ export default function BatchAdvisorPage() {
                     onChange={(e) => setFormData({ ...formData, gpa: e.target.value })}
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   <Label htmlFor="warningCount">Active Warnings</Label>
                   <Select
                     value={formData.warningCount}
@@ -200,7 +199,7 @@ export default function BatchAdvisorPage() {
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   <Label htmlFor="creditEarned">Credit Hours Earned</Label>
                   <Input
                     id="creditEarned"
@@ -211,7 +210,7 @@ export default function BatchAdvisorPage() {
                     onChange={(e) => setFormData({ ...formData, creditEarned: e.target.value })}
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   <Label htmlFor="maxCourses">Max Courses</Label>
                   <Input
                     id="maxCourses"
@@ -223,9 +222,9 @@ export default function BatchAdvisorPage() {
                     onChange={(e) => setFormData({ ...formData, maxCourses: e.target.value })}
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   <Label>Policy awareness</Label>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <ShieldCheck className="w-4 h-4 text-emerald-500" />
                     Uses catalog rules & prerequisites.
                   </div>
@@ -238,7 +237,7 @@ export default function BatchAdvisorPage() {
                 <CardTitle>Course History</CardTitle>
                 <CardDescription>Pick from the catalog; semesters auto-filter by your current semester.</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3">
                 {courseFetchError ? (
                   <div className="flex items-center gap-2 text-sm text-destructive">
                     <AlertTriangle className="w-4 h-4" />
@@ -278,7 +277,7 @@ export default function BatchAdvisorPage() {
               </CardContent>
             </Card>
 
-              <Button type="submit" size="lg" className="w-full h-12" disabled={isSubmitDisabled}>
+              <Button type="submit" size="sm" className="w-full h-10" disabled={isSubmitDisabled}>
                 {isAnalyzing ? (
                   <>
                     <Loader2 className="w-5 h-5 mr-2 animate-spin" />
@@ -426,7 +425,7 @@ function CoursePicker({ label, help, semesters, allCourses, selected, onToggle, 
                   {(allCourses[sem] || []).map((course) => (
                     <label
                       key={course.courseId}
-                      className="flex items-start gap-3 rounded-lg border p-3 hover:border-primary/50 transition bg-card"
+                      className="flex items-start gap-3 rounded-lg border p-2.5 hover:border-primary/50 transition bg-card"
                     >
                       <Checkbox
                         checked={selected.includes(course.courseId)}
