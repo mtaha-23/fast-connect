@@ -239,7 +239,7 @@ export default function TourPage() {
           <div className="bg-card border border-border rounded-2xl p-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <p className="text-3xl font-bold text-primary">50+</p>
+                <p className="text-3xl font-bold text-primary">5</p>
                 <p className="text-sm text-muted-foreground">Buildings</p>
               </div>
               <div>
@@ -247,12 +247,12 @@ export default function TourPage() {
                 <p className="text-sm text-muted-foreground">Acres</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-primary">25+</p>
+                <p className="text-3xl font-bold text-primary">6+</p>
                 <p className="text-sm text-muted-foreground">Labs</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-primary">5</p>
-                <p className="text-sm text-muted-foreground">Campuses</p>
+                <p className="text-3xl font-bold text-primary">20+</p>
+                <p className="text-sm text-muted-foreground">Rooms</p>
               </div>
             </div>
           </div>
