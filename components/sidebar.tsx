@@ -11,7 +11,6 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import {
   Bot,
   GraduationCap,
-  BarChart3,
   FileText,
   Globe,
   Users,
@@ -54,11 +53,6 @@ const navItems = [
     title: "Test Practice",
     href: "/dashboard/test-practice",
     icon: GraduationCap,
-  },
-  {
-    title: "Analytics",
-    href: "/dashboard/analytics",
-    icon: BarChart3,
   },
   {
     title: "Batch Advisor",

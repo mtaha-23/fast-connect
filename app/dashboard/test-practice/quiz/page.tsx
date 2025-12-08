@@ -171,9 +171,6 @@ export default function QuizPage() {
             </div>
 
             <div className="flex gap-3 justify-center">
-              <Button variant="outline" onClick={() => router.push("/dashboard/analytics")}>
-                View Analytics
-              </Button>
               <Button onClick={() => router.push("/dashboard/test-practice")}>Back to Tests</Button>
             </div>
           </CardContent>

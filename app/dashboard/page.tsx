@@ -5,7 +5,7 @@ import { StatsCard } from "@/components/stats-card"
 import { QuickActionCard } from "@/components/quick-action-card"
 import { ActivityChart } from "@/components/activity-chart"
 import { RecentActivity } from "@/components/recent-activity"
-import { Bot, GraduationCap, BarChart3, FileText, Globe, Brain, Target, TrendingUp, Clock } from "lucide-react"
+import { Bot, GraduationCap, FileText, Globe, Brain, Target, TrendingUp, Clock } from "lucide-react"
 import { useAuth } from "@/lib/hooks/use-auth"
 
 export default function DashboardPage() {
@@ -39,7 +39,7 @@ export default function DashboardPage() {
     {
       title: "Admission Probability",
       value: "78%",
-      description: "Based on analytics",
+      description: "Based on performance",
       icon: TrendingUp,
       trend: { value: 3, isPositive: true },
       iconColor: "bg-indigo-500",
@@ -67,13 +67,6 @@ export default function DashboardPage() {
       icon: Brain,
       href: "/dashboard/batch-advisor",
       gradient: "from-orange-500 to-amber-500",
-    },
-    {
-      title: "View Analytics",
-      description: "Check your performance insights",
-      icon: BarChart3,
-      href: "/dashboard/analytics",
-      gradient: "from-pink-500 to-rose-500",
     },
     {
       title: "Resources",
