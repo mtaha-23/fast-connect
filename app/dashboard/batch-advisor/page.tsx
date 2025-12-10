@@ -277,45 +277,48 @@ export default function BatchAdvisorPage() {
               </div>
               <div>
                 <h2 className="text-lg font-semibold leading-tight">Recommended courses</h2>
-                <p className="text-xs text-muted-foreground">
-                  Ranked by <code>process.py</code> using your inputs.
-                </p>
+                
               </div>
             </div>
 
-            <div className="space-y-1">
-              {recommendations.length === 0 ? (
-                <Card>
-                  <CardContent className="py-3 text-center text-muted-foreground text-xs">
+            <Card>
+              <CardContent className="p-0">
+                {recommendations.length === 0 ? (
+                  <div className="py-8 text-center text-muted-foreground text-sm">
                     No recommendations were returned. Try lowering the max courses or revisiting your inputs.
-                  </CardContent>
-                </Card>
-              ) : (
-                recommendations.map((rec, index) => (
-                  <Card
-                    key={rec.courseId}
-                    className={cn(
-                      "overflow-hidden border-border/70 shadow-sm",
-                      index === 0 && "border-primary/50"
-                    )}
-                  >
-                    <CardContent className="flex items-center justify-between gap-2 p-3">
-                      <div className="space-y-0.5">
-                        <div className="flex items-center gap-1.5">
-                          <h3 className="text-sm font-semibold leading-tight">{rec.courseId}</h3>
-                          {rec.isCore && <Badge className="text-[11px]">Core</Badge>}
-                          {index === 0 && <Badge variant="secondary" className="text-[11px]">Top</Badge>}
-                        </div>
-                        <p className="text-xs text-muted-foreground line-clamp-1">{rec.courseName}</p>
-                      </div>
-                      <Badge variant="outline" className="text-[11px] px-2 py-0.5">
-                        {rec.score}
-                      </Badge>
-                    </CardContent>
-                  </Card>
-                ))
-              )}
-            </div>
+                  </div>
+                ) : (
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b">
+                          <th className="text-left px-4 py-3 text-sm font-semibold">Course ID</th>
+                          <th className="text-left px-4 py-3 text-sm font-semibold">Course Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {recommendations.map((rec, index) => (
+                          <tr
+                            key={rec.courseId}
+                            className={cn(
+                              "border-b last:border-b-0 hover:bg-muted/50 transition-colors",
+                              index === 0 && "bg-primary/5"
+                            )}
+                          >
+                            <td className="px-4 py-3">
+                              <span className="text-sm font-medium">{rec.courseId}</span>
+                            </td>
+                            <td className="px-4 py-3">
+                              <span className="text-sm text-muted-foreground">{rec.courseName}</span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
 
             <div className="flex justify-center gap-2 pt-3">
               <Button variant="outline" size="sm" onClick={() => setShowResults(false)}>
