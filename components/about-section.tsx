@@ -15,9 +15,16 @@ const teamMembers = [
   {
     name: "Sharjeel Khan",
     role: "Developer",
-    image: "/Sharjeel Khan.jpg", // Placeholder - update when image is available
+    image: "/Sharjeel Khan.jpg", 
     linkedin: "https://linkedin.com/in/sharjeel-khan",
     github: "https://github.com/sharjeel-khan",
+  },
+  {
+    name: "Zaid Ahmed",
+    role: "Developer",
+    image: "/Zaid Ahmed.jpg", 
+    linkedin: "https://linkedin.com/in/zaid-ahmed-123",
+    github: "https://github.com/zaid-ahmed-123",
   }
 ]
 
