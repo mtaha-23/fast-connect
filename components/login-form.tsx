@@ -149,15 +149,9 @@ export function LoginForm() {
 
       {/* Password Field */}
       <div className="space-y-2">
-        <div className="flex items-center justify-between">
-          <Label htmlFor="password" className="text-muted-foreground">
-            Password
-          </Label>
-          {/* Forgot Password Link */}
-          <Link href="/forgot-password" className="text-sm text-primary hover:text-primary/80 transition-colors">
-            Forgot password?
-          </Link>
-        </div>
+        <Label htmlFor="password" className="text-muted-foreground">
+          Password
+        </Label>
         <div className="relative">
           <Input
             id="password"
@@ -176,6 +170,12 @@ export function LoginForm() {
           >
             {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
           </button>
+        </div>
+        {/* Forgot Password Link */}
+        <div className="flex justify-end">
+          <Link href="/forgot-password" className="text-sm text-primary hover:text-primary/80 transition-colors">
+            Forgot password?
+          </Link>
         </div>
       </div>
 
