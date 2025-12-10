@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { DashboardHeader } from "@/components/header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -18,117 +18,82 @@ import {
   GraduationCap,
   Code,
   Calculator,
+  Loader2,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import type { LucideIcon } from "lucide-react"
 
-const resources = [
-  {
-    id: 1,
-    title: "FAST Entry Test Past Papers 2023",
-    type: "Past Paper",
-    category: "Entry Test",
-    subject: "All Subjects",
-    date: "2023",
-    downloads: 1250,
-    size: "2.4 MB",
-    icon: FileText,
-    color: "bg-blue-500",
-  },
-  {
-    id: 2,
-    title: "Mathematics Formula Sheet",
-    type: "Study Guide",
-    category: "Mathematics",
-    subject: "Mathematics",
-    date: "2024",
-    downloads: 890,
-    size: "1.1 MB",
-    icon: Calculator,
-    color: "bg-emerald-500",
-  },
-  {
-    id: 3,
-    title: "English Vocabulary Guide",
-    type: "Study Guide",
-    category: "English",
-    subject: "English",
-    date: "2024",
-    downloads: 756,
-    size: "3.2 MB",
-    icon: BookOpen,
-    color: "bg-pink-500",
-  },
-  {
-    id: 4,
-    title: "Computer Science Fundamentals",
-    type: "Notes",
-    category: "CS",
-    subject: "Computer Science",
-    date: "2024",
-    downloads: 1120,
-    size: "5.7 MB",
-    icon: Code,
-    color: "bg-indigo-500",
-  },
-  {
-    id: 5,
-    title: "Entry Test Sample Paper #1",
-    type: "Past Paper",
-    category: "Entry Test",
-    subject: "All Subjects",
-    date: "2022",
-    downloads: 2340,
-    size: "1.8 MB",
-    icon: FileText,
-    color: "bg-blue-500",
-  },
-  {
-    id: 6,
-    title: "Analytical Reasoning Practice",
-    type: "Practice Set",
-    category: "Analytical",
-    subject: "IQ/Analytical",
-    date: "2024",
-    downloads: 678,
-    size: "2.1 MB",
-    icon: GraduationCap,
-    color: "bg-orange-500",
-  },
-  {
-    id: 7,
-    title: "FAST Prospectus 2024",
-    type: "Official Document",
-    category: "General",
-    subject: "Information",
-    date: "2024",
-    downloads: 3450,
-    size: "8.5 MB",
-    icon: FileType,
-    color: "bg-cyan-500",
-  },
-  {
-    id: 8,
-    title: "Calculus Complete Notes",
-    type: "Notes",
-    category: "Mathematics",
-    subject: "Mathematics",
-    date: "2024",
-    downloads: 567,
-    size: "4.2 MB",
-    icon: Calculator,
-    color: "bg-emerald-500",
-  },
-]
+// Icon mapping function
+const iconMap: Record<string, LucideIcon> = {
+  FileText,
+  Calculator,
+  BookOpen,
+  Code,
+  GraduationCap,
+  FileType,
+}
+
+interface Resource {
+  id: string
+  title: string
+  type: "Past Paper" | "Study Guide" | "Notes" | "Practice Set" | "Official Document"
+  category: "Entry Test" | "Mathematics" | "English" | "CS" | "Analytical" | "General"
+  subject: string
+  date: string
+  size: string
+  icon: string
+  color: string
+  fileUrl?: string
+}
 
 const categories = ["All", "Entry Test", "Mathematics", "English", "CS", "Analytical", "General"]
 const types = ["All Types", "Past Paper", "Study Guide", "Notes", "Practice Set", "Official Document"]
 
 export default function ResourcesPage() {
+  const [resources, setResources] = useState<Resource[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [selectedType, setSelectedType] = useState("All Types")
-  const [previewResource, setPreviewResource] = useState<(typeof resources)[0] | null>(null)
+  const [previewResource, setPreviewResource] = useState<Resource | null>(null)
+
+  // Fetch resources from API
+  useEffect(() => {
+    async function fetchResources() {
+      try {
+        setLoading(true)
+        setError(null)
+        const response = await fetch("/api/resources")
+        if (!response.ok) {
+          throw new Error("Failed to fetch resources")
+        }
+        const data = await response.json()
+        setResources(data.resources || [])
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Failed to load resources")
+        console.error("Error fetching resources:", err)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchResources()
+  }, [])
+
+  // Handle download (no count tracking)
+  const handleDownload = async (resource: Resource) => {
+    try {
+      if (resource.fileUrl) {
+        window.open(resource.fileUrl, "_blank")
+      } else {
+        console.log("No file URL available for download")
+      }
+    } catch (err) {
+      console.error("Error opening resource:", err)
+    }
+  }
 
   const filteredResources = resources.filter((resource) => {
     const matchesSearch = resource.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -136,6 +101,49 @@ export default function ResourcesPage() {
     const matchesType = selectedType === "All Types" || resource.type === selectedType
     return matchesSearch && matchesCategory && matchesType
   })
+
+  // Get icon component from string
+  const getIcon = (iconName: string): LucideIcon => {
+    return iconMap[iconName] || FileText
+  }
+
+  if (loading) {
+    return (
+      <div className="min-h-screen">
+        <DashboardHeader
+          title="Campus Resources"
+          description="Access study materials, past papers, and official documents"
+        />
+        <div className="p-6 flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <Loader2 className="w-8 h-8 animate-spin text-muted-foreground mx-auto mb-4" />
+            <p className="text-muted-foreground">Loading resources...</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen">
+        <DashboardHeader
+          title="Campus Resources"
+          description="Access study materials, past papers, and official documents"
+        />
+        <div className="p-6">
+          <Card>
+            <CardContent className="pt-6">
+              <div className="text-center py-8">
+                <p className="text-destructive mb-2">Error loading resources</p>
+                <p className="text-sm text-muted-foreground">{error}</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen">
@@ -192,7 +200,7 @@ export default function ResourcesPage() {
         </Card>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           <Card>
             <CardContent className="pt-6 text-center">
               <p className="text-3xl font-bold">{resources.length}</p>
@@ -208,14 +216,8 @@ export default function ResourcesPage() {
           <Card>
             <CardContent className="pt-6 text-center">
               <p className="text-3xl font-bold">
-                {resources.reduce((acc, r) => acc + r.downloads, 0).toLocaleString()}
+                {new Set(resources.map((r) => r.category)).size}
               </p>
-              <p className="text-sm text-muted-foreground">Total Downloads</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="pt-6 text-center">
-              <p className="text-3xl font-bold">5</p>
               <p className="text-sm text-muted-foreground">Categories</p>
             </CardContent>
           </Card>
@@ -223,51 +225,55 @@ export default function ResourcesPage() {
 
         {/* Resources Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {filteredResources.map((resource) => (
-            <Card key={resource.id} className="group hover:shadow-lg transition-all hover:-translate-y-1">
-              <CardContent className="pt-6">
-                {/* Icon & Badge */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className={cn("p-3 rounded-xl", resource.color)}>
-                    <resource.icon className="w-6 h-6 text-white" />
+          {filteredResources.map((resource) => {
+            const IconComponent = getIcon(resource.icon)
+            return (
+              <Card key={resource.id} className="group hover:shadow-lg transition-all hover:-translate-y-1">
+                <CardContent className="pt-6">
+                  {/* Icon & Badge */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div className={cn("p-3 rounded-xl", resource.color)}>
+                      <IconComponent className="w-6 h-6 text-white" />
+                    </div>
+                    <Badge variant="secondary">{resource.type}</Badge>
                   </div>
-                  <Badge variant="secondary">{resource.type}</Badge>
-                </div>
 
-                {/* Title */}
-                <h3 className="font-semibold mb-2 line-clamp-2 min-h-[3rem]">{resource.title}</h3>
+                  {/* Title */}
+                  <h3 className="font-semibold mb-2 line-clamp-2 min-h-[3rem]">{resource.title}</h3>
 
-                {/* Meta */}
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                  <span className="flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
-                    {resource.date}
-                  </span>
-                  <span>{resource.size}</span>
-                </div>
+                  {/* Meta */}
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      {resource.date}
+                    </span>
+                    <span>{resource.size}</span>
+                  </div>
 
-                {/* Downloads */}
-                <p className="text-sm text-muted-foreground mb-4">{resource.downloads.toLocaleString()} downloads</p>
-
-                {/* Actions */}
-                <div className="flex gap-2">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex-1 bg-transparent"
-                    onClick={() => setPreviewResource(resource)}
-                  >
-                    <Eye className="w-4 h-4 mr-1" />
-                    Preview
-                  </Button>
-                  <Button size="sm" className="flex-1">
-                    <Download className="w-4 h-4 mr-1" />
-                    Download
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  {/* Actions */}
+                  <div className="flex gap-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 bg-transparent"
+                      onClick={() => setPreviewResource(resource)}
+                    >
+                      <Eye className="w-4 h-4 mr-1" />
+                      Preview
+                    </Button>
+                    <Button 
+                      size="sm" 
+                      className="flex-1"
+                      onClick={() => handleDownload(resource)}
+                    >
+                      <Download className="w-4 h-4 mr-1" />
+                      Download
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            )
+          })}
         </div>
 
         {/* Empty State */}
@@ -290,7 +296,12 @@ export default function ResourcesPage() {
             {/* Preview Area */}
             <div className="aspect-[4/3] bg-muted rounded-lg flex items-center justify-center">
               <div className="text-center">
-                {previewResource && <previewResource.icon className="w-16 h-16 text-muted-foreground mx-auto mb-4" />}
+                {previewResource && (
+                  (() => {
+                    const IconComponent = getIcon(previewResource.icon)
+                    return <IconComponent className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+                  })()
+                )}
                 <p className="text-muted-foreground">Preview not available. Download to view the full document.</p>
               </div>
             </div>
@@ -309,14 +320,13 @@ export default function ResourcesPage() {
                 <p className="text-muted-foreground">Size</p>
                 <p className="font-medium">{previewResource?.size}</p>
               </div>
-              <div>
-                <p className="text-muted-foreground">Downloads</p>
-                <p className="font-medium">{previewResource?.downloads.toLocaleString()}</p>
-              </div>
             </div>
 
             {/* Download Button */}
-            <Button className="w-full">
+            <Button 
+              className="w-full"
+              onClick={() => previewResource && handleDownload(previewResource)}
+            >
               <Download className="w-4 h-4 mr-2" />
               Download {previewResource?.title}
             </Button>

@@ -32,8 +32,7 @@ export function HeroSection() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectFit: "cover" }}
         >
-          <source src="/bg%20video.mp4" type="video/mp4" />
-          <source src="/new video.mp4" type="video/mp4" />
+          <source src="/IMG_4726.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay for better text readability - theme aware */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/70 to-background/80 dark:from-[#0a0a12]/80 dark:via-[#0d0d1a]/85 dark:to-[#0a0a12]/90" />
