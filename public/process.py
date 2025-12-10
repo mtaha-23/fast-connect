@@ -139,64 +139,12 @@ def main():
                 print(json.dumps({"error": "invalid input", "details": str(exc)}))
                 sys.exit(1)
 
-    if payload:
-        recs = run_from_payload(payload)
-        print(json.dumps({"recommendations": format_recommendations(recs)}))
-        return
+    if not payload:
+        print(json.dumps({"error": "no input provided"}))
+        sys.exit(1)
 
-current_semester = 5
-passed_courses = [
-    # Semester 1
-        "NS1001",
-        "MT1003",
-        "SS1012",
-        "SS1013",
-        "CL1000",
-        "SS1015",
-        "CS1002",
-    # Semester 2
-        "SS3002",
-        "EE1005",
-        "SS1014",
-        "SS1007",
-        "MT1006",
-        "CS1004",
-        "SS1019",
-    # Semester 3
-        "EE2003",
-        "CS2001",
-        "CS1005",
-        "MT1004",
-        "CSXXXX",
-        "SS1021",
-    # Semester 4 
-        "CS2005",
-        "MT2005",
-        "CS3005",
-        "SS1022",
-        "MGXXXX",
-]
-    failed_courses = ["CS2006"]  # failed OS
-    low_grade_courses = ["CS2005"]  # e.g got C-
-gpa = 2.7
-warning_count = 0  
-credit_earned = 80
-max_courses = 5
-
-    recommendations = ai_batch_advisor(
-        current_semester,
-        passed_courses,
-        failed_courses,
-        low_grade_courses,
-        gpa,
-        warning_count,
-        credit_earned,
-        max_courses,
-    )
-
-print("Recommended Courses:")
-for cid, name, score in recommendations:
-    print(f"{cid} - {name} (Score: {score})")
+    recs = run_from_payload(payload)
+    print(json.dumps({"recommendations": format_recommendations(recs)}))
 
 
 if __name__ == "__main__":
