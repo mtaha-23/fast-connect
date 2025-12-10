@@ -13,6 +13,7 @@ export interface Resource {
   category: "Entry Test" | "Mathematics" | "English" | "CS" | "Analytical" | "General"
   subject: string
   date: string
+  downloads?: number
   size: string
   icon: string // Icon name as string (e.g., "FileText", "Calculator")
   color: string // Tailwind color class (e.g., "bg-blue-500")
@@ -85,6 +86,7 @@ export async function getResourceById(resourceId: string): Promise<Resource | nu
       category: data.category,
       subject: data.subject,
       date: data.date,
+      downloads: data.downloads || 0,
       size: data.size,
       icon: data.icon || "FileText",
       color: data.color || "bg-blue-500",

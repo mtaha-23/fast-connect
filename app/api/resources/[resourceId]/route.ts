@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getResourceById, updateResource, deleteResource, incrementResourceDownloads } from "@/lib/services/resource.service"
+import { getResourceById, updateResource, deleteResource } from "@/lib/services/resource.service"
 
 /**
  * GET /api/resources/[resourceId]

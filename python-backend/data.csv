@@ -1,0 +1,56 @@
+course_id,course_name,semester_offered,credit_hours,prerequisite_course_ids,is_core,category,difficulty_level,chain_group,recommended_after,hard_block_reason,domain,eligibility_rules,notes
+NS1001,Applied Physics,1,3,,no,General Education,Medium,Science Chain,,,CS,,Intro science course
+MT1003,Calculus and Analytical Geometry,1,3,,yes,Math/Supporting,Medium,Math Chain,,,CS,,Foundation math
+SS1012,Functional English,1,3,,no,General Education,Low,Humanities Chain,,,CS,,improves writing
+SS1013,Ideology and Constitution of Pakistan,1,2,,no,General Education,Low,Humanities Chain,,,CS,,civics course
+CL1000,Introduction to ICT Lab,1,1,,no,General Education,Low,ICT Chain,,,CS,,basic ICT skills
+SS1015,Pakistan Studies,1,2,,no,General Education,Low,Humanities Chain,,,CS,,
+CS1002,Programming Fundamentals,1,4,,yes,Core Computing,Low,Programming Chain,,,CS,,foundation programming
+,,,,,,,,,,,,,
+SS3002,Civics and Community Engagement,2,2,,no,General Education,Low,Humanities Chain,,,CS,,
+EE1005,Digital Logic Design,2,4,,yes,Domain Core,Medium,Systems Chain,,,CS,,required for architecture
+SS1014,Expository Writing,2,3,SS1012,no,General Education,Low,Humanities Chain,Functional English,,CS,,
+SS1007,Islamic Studies/Ethics,2,2,,no,General Education,Low,Humanities Chain,,,CS,,
+MT1006,Multivariable Calculus,2,3,MT1003,yes,Math/Supporting,High,Math Chain,Calculus,,CS,,
+CS1004,Object Oriented Programming,2,4,CS1002,yes,Core Computing,Medium,Programming Chain,PF,PF required for OOP,CS,,
+SS1019,Understanding Sirat-Un-Nabi,2,0,,no,General Education,Low,Humanities Chain,,,CS,NC Course,
+,,,,,,,,,,,,,
+EE2003,Computer Organization and Assembly Language,3,4,EE1005,yes,Domain Core,High,Systems Chain,Digital Logic,Requires DLD,CS,,
+CS2001,Data Structures,3,4,CS1004,yes,Core Computing,High,Programming Chain,OOP,Requires OOP and PF,CS,,
+CS1005,Discrete Structures,3,3,,yes,Core Computing,High,Math Chain,,,CS,,needed for AI courses
+MT1004,Linear Algebra,3,3,MT1003,yes,Math/Supporting,Medium,Math Chain,Calculus,,CS,,
+CSXXXX,CS Elective - I,3,3,,no,Domain Elective,Medium,Elective Chain,,,CS,,placeholder elective
+SS1021,Understanding Quran - I,3,1,,no,General Education,Low,Humanities Chain,,,CS,,
+,,,,,,,,,,,,,
+CS2005,Database Systems,4,4,CS2001,yes,Core Computing,Medium,Database Chain,DSA,Needs DSA concepts,CS,,
+CS2006,Operating Systems,4,4,CS2001,yes,Core Computing,High,Systems Chain,DSA,Strong coding required,CS,,
+MT2005,Probability and Statistics,4,3,MT1006,yes,Math/Supporting,High,Math Chain,Multivariable Calculus,,CS,,
+CS3005,Theory of Automata,4,3,CS1005,yes,Core Computing,High,Theory Chain,Discrete Structures,,CS,,
+SS1022,Understanding Quran - II,4,1,SS1021,no,General Education,Low,Humanities Chain,,,CS,,
+MGXXXX,SS/MG Elective - I,4,2,,no,General Education,Low,Elective Chain,,,CS,,
+,,,,,,,,,,,,,
+CS3014,Applied Human Computer Interaction,5,3,,yes,Domain Core,Low,SE Chain,,,CS,,light course
+AI2002,Artificial Intelligence,5,4,CS1005,yes,Domain Core,High,AI Chain,Discrete Structures,Requires Discrete,CS,,
+CS4031,Compiler Construction,5,3,CS3005,yes,Domain Core,High,Systems Chain,Theory of Automata,Requires Automata,CS,,
+CS2009,Design and Analysis of Algorithms,5,3,CS2001,yes,Core Computing,High,Programming Chain,DSA,Requires strong DSA,CS,,
+CS4081,Parallel and Distributed Computing,5,3,CS2006,yes,Domain Core,High,Systems Chain,Operating Systems,Needs OS,CS,,
+,,,,,,,,,,,,,
+EE2013,Computer Architecture,6,3,EE2003,yes,Domain Core,High,Systems Chain,COAL,,CS,,
+CS3001,Computer Networks,6,4,CS2006,yes,Core Computing,Medium,Networking Chain,Operating Systems,,CS,,
+CS3009,Software Engineering,6,3,,yes,Domain Core,Low,SE Chain,,,CS,,
+SS2007,Technical and Business Writing,6,3,SS1014,no,General Education,Low,Humanities Chain,,,CS,,
+CSXXXX,CS Elective - II,6,3,,no,Domain Elective,Medium,Elective Chain,,,CS,,
+MGXXXX,SS/MG Elective - II,6,3,,no,General Education,Low,Humanities Chain,,,CS,,
+,,,,,,,,,,,,,
+CS4091,Final Year Project - I,7,3,,yes,FYP,High,FYP Chain,,,CS,95 credit hours + CGPA ≥ 2.0,
+CS4087,Advanced Database Management System,7,3,CS2005,no,Domain Elective,High,Database Chain,Database Systems,,CS,,
+CS3002,Information Security,7,3,CS3001,yes,Domain Core,Medium,Security Chain,Computer Networks,,CS,,
+MG4011,Entrepreneurship,7,3,,no,General Education,Low,Humanities Chain,,,CS,,
+CSXXXX,CS Elective - III,7,3,,no,Domain Elective,Medium,Elective Chain,,,CS,,
+,,,,,,,,,,,,,
+CS4092,Final Year Project - II,8,3,CS4091,yes,FYP,High,FYP Chain,FYP-I,,CS,Must pass FYP-I,
+CS4001,Professional Practices in IT,8,3,,yes,General Education,Low,Humanities Chain,,,CS,,
+CSXXXX,CS Elective - IV,8,3,,no,Domain Elective,Medium,Elective Chain,,,CS,,
+CSXXXX,CS Elective - V,8,3,,no,Domain Elective,Medium,Elective Chain,,,CS,,
+CSXXXX,CS Elective - VI,8,3,,no,Domain Elective,Medium,Elective Chain,,,CS,,
+CS2019,Computing Internship,02-Aug,1,,no,Internship,Low,Internship Chain,,,CS,Allowed after 2nd semester,

@@ -22,15 +22,18 @@ def ai_batch_advisor(
 ):
     recommended = []
 
+    # FYP eligibility check
     if credit_earned >= 97:
         fyp_course = courses_df[courses_df["course_id"] == "CS4091"]
         if not fyp_course.empty:
             recommended.append(("CS4091", "Final Year Project - I", 200))
 
+    # Add failed core courses with high priority
     for _, course in courses_df.iterrows():
         if course["course_id"] in failed_courses and str(course["is_core"]).lower() == "yes":
             recommended.append((course["course_id"], course["course_name"], 150))
 
+    # Add low-grade courses (prioritize low/medium difficulty if warning_count == 2)
     if warning_count == 2:
         for _, course in courses_df.iterrows():
             cid = course["course_id"]
@@ -38,7 +41,19 @@ def ai_batch_advisor(
 
             if cid in low_grade_courses and difficulty in ["low", "medium"]:
                 recommended.append((cid, course["course_name"], 120))
+    else:
+        # If warning_count is not 2, add all low-grade courses
+        for _, course in courses_df.iterrows():
+            cid = course["course_id"]
+            if cid in low_grade_courses:
+                recommended.append((cid, course["course_name"], 120))
 
+    # *** NEW LOGIC: If warning_count == 2, STOP HERE - only recommend failed/low-grade courses ***
+    if warning_count == 2:
+        recommended = sorted(recommended, key=lambda x: x[2], reverse=True)
+        return recommended[:max_courses]
+
+    # Continue with regular course recommendations only if warning_count != 2
     for _, course in courses_df.iterrows():
         cid = course["course_id"]
         sem = str(course["semester_offered"])
@@ -64,9 +79,6 @@ def ai_batch_advisor(
         )
         prereq_not_met = any(p.strip() and p not in passed_courses for p in prereq)
         if prereq_not_met:
-            continue
-
-        if warning_count == 2 and difficulty == "high":
             continue
 
         score = 0

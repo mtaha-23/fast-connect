@@ -15,8 +15,8 @@ type AdvisorRequest = {
 }
 
 const PYTHON_CMD = process.env.PYTHON_PATH || "python"
-const SCRIPT_PATH = path.join(process.cwd(), "public", "process.py")
-const WORK_DIR = path.join(process.cwd(), "public")
+const SCRIPT_PATH = path.join(process.cwd(), "python-backend", "process.py")
+const WORK_DIR = path.join(process.cwd(), "python-backend")
 const DATA_PATH = path.join(WORK_DIR, "data.csv")
 
 async function runPython(payload: AdvisorRequest) {
