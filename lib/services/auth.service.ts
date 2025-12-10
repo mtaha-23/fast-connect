@@ -1,6 +1,11 @@
 /**
  * Authentication Service
- * Handles all authentication-related business logic
+ * Handles all authentication-related business logic including:
+ * - User registration (email/password and Google OAuth)
+ * - User login (email/password and Google OAuth)
+ * - Email verification
+ * - Password reset
+ * - User data management in Firestore
  */
 
 import { 
@@ -9,13 +14,18 @@ import {
   signInWithPopup,
   signOut,
   sendEmailVerification,
+  sendPasswordResetEmail as firebaseSendPasswordResetEmail,
   type User
 } from "firebase/auth"
 import { doc, setDoc, getDoc } from "firebase/firestore"
 import { getFirebaseAuth, getGoogleProvider, getFirestoreDB } from "@/lib/firebase"
 
+// User role types
 export type UserRole = "admin" | "student"
 
+/**
+ * Signup form data interface
+ */
 export interface SignupData {
   name: string
   email: string
@@ -23,11 +33,17 @@ export interface SignupData {
   role: UserRole
 }
 
+/**
+ * Login form data interface
+ */
 export interface LoginData {
   email: string
   password: string
 }
 
+/**
+ * User data stored in Firestore
+ */
 export interface UserData {
   uid: string
   name: string
@@ -41,6 +57,10 @@ export interface UserData {
 
 /**
  * Create a new user account with email and password
+ * Creates Firebase Auth user and saves user data to Firestore
+ * Sends email verification automatically
+ * @param data - User signup data (name, email, password, role)
+ * @returns User object and user data
  */
 export async function signUpWithEmail(data: SignupData): Promise<{ user: User; userData: UserData }> {
   try {
@@ -75,6 +95,9 @@ export async function signUpWithEmail(data: SignupData): Promise<{ user: User; u
 
 /**
  * Sign in with email and password
+ * Authenticates user and retrieves their role from Firestore
+ * @param data - Login credentials (email, password)
+ * @returns User object, email verification status, and role
  */
 export async function signInWithEmail(data: LoginData): Promise<{ user: User; emailVerified: boolean; role: UserRole }> {
   try {
@@ -101,7 +124,11 @@ export async function signInWithEmail(data: LoginData): Promise<{ user: User; em
 }
 
 /**
- * Sign in with Google
+ * Sign in with Google OAuth
+ * Opens Google sign-in popup and creates/updates user in Firestore
+ * Preserves existing user role if user already exists
+ * @param name - Optional name override (usually not needed as Google provides display name)
+ * @returns User object, user data, and role
  */
 export async function signInWithGoogle(name?: string): Promise<{ user: User; userData: UserData; role: UserRole }> {
   try {
@@ -140,6 +167,9 @@ export async function signInWithGoogle(name?: string): Promise<{ user: User; use
 
 /**
  * Resend email verification
+ * Signs in temporarily to send verification email, then signs out
+ * @param email - User's email address
+ * @param password - User's password (required for temporary sign-in)
  */
 export async function resendEmailVerification(email: string, password: string): Promise<void> {
   try {
@@ -163,6 +193,7 @@ export async function resendEmailVerification(email: string, password: string): 
 
 /**
  * Sign out the current user
+ * Clears Firebase Auth session
  */
 export async function signOutUser(): Promise<void> {
   try {
@@ -177,6 +208,9 @@ export async function signOutUser(): Promise<void> {
 
 /**
  * Get user data from Firestore
+ * Retrieves user profile data by UID
+ * @param uid - User's unique identifier
+ * @returns User data or null if not found
  */
 export async function getUserData(uid: string): Promise<UserData | null> {
   try {
@@ -191,6 +225,22 @@ export async function getUserData(uid: string): Promise<UserData | null> {
   } catch (error) {
     throw new Error(
       error instanceof Error ? error.message : "Failed to fetch user data."
+    )
+  }
+}
+
+/**
+ * Send password reset email to user
+ * Uses Firebase Auth's sendPasswordResetEmail function
+ * @param email - User's email address
+ */
+export async function sendPasswordResetEmail(email: string): Promise<void> {
+  try {
+    const auth = getFirebaseAuth()
+    await firebaseSendPasswordResetEmail(auth, email)
+  } catch (error) {
+    throw new Error(
+      error instanceof Error ? error.message : "Failed to send password reset email. Please try again."
     )
   }
 }

@@ -1,12 +1,22 @@
+/**
+ * Firebase Configuration Module
+ * Handles Firebase initialization and provides singleton instances
+ */
+
 import { initializeApp, getApps, type FirebaseApp } from "firebase/app"
 import { getAuth, type Auth, GoogleAuthProvider } from "firebase/auth"
 import { getFirestore, type Firestore } from "firebase/firestore"
 
+// Singleton instances to prevent multiple initializations
 let firebaseApp: FirebaseApp | null = null
 let firebaseAuth: Auth | null = null
 let firebaseFirestore: Firestore | null = null
 let googleProvider: GoogleAuthProvider | null = null
 
+/**
+ * Get or initialize Firebase App instance
+ * @returns Firebase App instance
+ */
 export function getFirebaseApp(): FirebaseApp {
   if (!firebaseApp) {
     const config = {
@@ -32,6 +42,10 @@ export function getFirebaseApp(): FirebaseApp {
   return firebaseApp
 }
 
+/**
+ * Get or initialize Firebase Auth instance
+ * @returns Firebase Auth instance
+ */
 export function getFirebaseAuth(): Auth {
   if (!firebaseAuth) {
     const app = getFirebaseApp()
@@ -41,6 +55,10 @@ export function getFirebaseAuth(): Auth {
   return firebaseAuth
 }
 
+/**
+ * Get or initialize Google Auth Provider instance
+ * @returns Google Auth Provider instance
+ */
 export function getGoogleProvider(): GoogleAuthProvider {
   if (!googleProvider) {
     googleProvider = new GoogleAuthProvider()
@@ -48,6 +66,10 @@ export function getGoogleProvider(): GoogleAuthProvider {
   return googleProvider
 }
 
+/**
+ * Get or initialize Firestore database instance
+ * @returns Firestore database instance
+ */
 export function getFirestoreDB(): Firestore {
   if (!firebaseFirestore) {
     const app = getFirebaseApp()

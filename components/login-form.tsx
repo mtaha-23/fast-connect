@@ -1,5 +1,10 @@
 "use client"
 
+/**
+ * Login Form Component
+ * Handles user authentication with email/password and Google sign-in
+ */
+
 import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
@@ -7,22 +12,28 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
 import { Eye, EyeOff, Loader2, Mail } from "lucide-react"
 
 export function LoginForm() {
   const router = useRouter()
-  const [showPassword, setShowPassword] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-  const [needsVerification, setNeedsVerification] = useState(false)
-  const [isResendingEmail, setIsResendingEmail] = useState(false)
+  
+  // State management for form and UI
+  const [showPassword, setShowPassword] = useState(false) // Toggle password visibility
+  const [isLoading, setIsLoading] = useState(false) // Loading state for form submission
+  const [error, setError] = useState<string | null>(null) // Error message display
+  const [needsVerification, setNeedsVerification] = useState(false) // Email verification required flag
+  const [isResendingEmail, setIsResendingEmail] = useState(false) // Resend verification email loading state
+  
+  // Form data state
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    rememberMe: false,
   })
 
+  /**
+   * Handle form submission for email/password login
+   * Validates email verification and redirects based on user role
+   */
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError(null)
@@ -63,6 +74,10 @@ export function LoginForm() {
     }
   }
 
+  /**
+   * Handle resending email verification
+   * Signs in temporarily to send verification email, then signs out
+   */
   const handleResendVerification = async () => {
     setIsResendingEmail(true)
     setError(null)
@@ -83,6 +98,10 @@ export function LoginForm() {
     }
   }
 
+  /**
+   * Handle Google OAuth sign-in
+   * Opens popup for Google authentication and redirects based on role
+   */
   const handleGoogleSignIn = async () => {
     setError(null)
     setIsLoading(true)
@@ -134,6 +153,7 @@ export function LoginForm() {
           <Label htmlFor="password" className="text-muted-foreground">
             Password
           </Label>
+          {/* Forgot Password Link */}
           <Link href="/forgot-password" className="text-sm text-primary hover:text-primary/80 transition-colors">
             Forgot password?
           </Link>
@@ -148,6 +168,7 @@ export function LoginForm() {
             className="h-12 pr-10 bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20"
             required
           />
+          {/* Password Visibility Toggle */}
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
@@ -156,19 +177,6 @@ export function LoginForm() {
             {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
           </button>
         </div>
-      </div>
-
-      {/* Remember Me */}
-      <div className="flex items-center gap-2">
-        <Checkbox
-          id="remember"
-          checked={formData.rememberMe}
-          onCheckedChange={(checked) => setFormData({ ...formData, rememberMe: checked as boolean })}
-          className="border-border data-[state=checked]:bg-primary data-[state=checked]:border-primary"
-        />
-        <Label htmlFor="remember" className="text-sm font-normal cursor-pointer text-muted-foreground">
-          Remember me for 30 days
-        </Label>
       </div>
 
       {/* Error Message */}
