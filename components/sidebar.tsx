@@ -19,15 +19,12 @@ import {
   Settings,
   LogOut,
   ChevronLeft,
-  User,
-  Bell,
   LayoutDashboard,
 } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -207,15 +204,6 @@ export function Sidebar() {
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56 bg-popover border-border">
-              <DropdownMenuItem className="text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary">
-                <User className="w-4 h-4 mr-2" />
-                Profile
-              </DropdownMenuItem>
-              <DropdownMenuItem className="text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary">
-                <Bell className="w-4 h-4 mr-2" />
-                Notifications
-              </DropdownMenuItem>
-              <DropdownMenuSeparator className="bg-border" />
               <DropdownMenuItem 
                 className="text-destructive hover:text-destructive hover:bg-destructive/10"
                 onClick={handleLogout}
