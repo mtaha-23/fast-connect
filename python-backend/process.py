@@ -2,12 +2,23 @@ import json
 import sys
 from pathlib import Path
 
-import pandas as pd
+try:
+    import pandas as pd
+except ImportError:
+    print(json.dumps({"error": "pandas not installed", "details": "Please install pandas: pip install pandas"}))
+    sys.exit(1)
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_PATH = BASE_DIR / "data.csv"
 
-courses_df = pd.read_csv(DATA_PATH)
+try:
+    if not DATA_PATH.exists():
+        print(json.dumps({"error": "data.csv not found", "details": f"Expected file at: {DATA_PATH}"}))
+        sys.exit(1)
+    courses_df = pd.read_csv(DATA_PATH)
+except Exception as e:
+    print(json.dumps({"error": "failed to load data.csv", "details": str(e)}))
+    sys.exit(1)
 
 
 def ai_batch_advisor(
@@ -148,15 +159,19 @@ def main():
             try:
                 payload = json.loads(raw)
             except Exception as exc:
-                print(json.dumps({"error": "invalid input", "details": str(exc)}))
+                print(json.dumps({"error": "invalid input", "details": str(exc)}), file=sys.stderr)
                 sys.exit(1)
 
     if not payload:
-        print(json.dumps({"error": "no input provided"}))
+        print(json.dumps({"error": "no input provided"}), file=sys.stderr)
         sys.exit(1)
 
-    recs = run_from_payload(payload)
-    print(json.dumps({"recommendations": format_recommendations(recs)}))
+    try:
+        recs = run_from_payload(payload)
+        print(json.dumps({"recommendations": format_recommendations(recs)}))
+    except Exception as exc:
+        print(json.dumps({"error": "processing failed", "details": str(exc)}), file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

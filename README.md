@@ -2,7 +2,32 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+1. **Node.js** - Make sure you have Node.js installed
+2. **Python** - Make sure you have Python 3.7+ installed
+3. **Python Dependencies** - Install required Python packages:
+
+```bash
+cd python-backend
+pip install -r requirements.txt
+```
+
+Or if you're using Python 3 specifically:
+```bash
+cd python-backend
+python3 -m pip install -r requirements.txt
+```
+
+### Running the Development Server
+
+First, install Node.js dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -15,6 +40,16 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Troubleshooting
+
+If you encounter errors when using the Batch Advisor feature:
+
+1. **"pandas not installed"** - Run `pip install pandas` or `pip install -r python-backend/requirements.txt`
+2. **"data.csv not found"** - Make sure `python-backend/data.csv` exists in the project
+3. **"Failed to start Python process"** - Make sure Python is in your PATH. You can set `PYTHON_PATH` environment variable:
+   - Windows: `set PYTHON_PATH=python` or `set PYTHON_PATH=python3`
+   - Linux/Mac: `export PYTHON_PATH=python3`
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

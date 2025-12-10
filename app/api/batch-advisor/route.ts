@@ -34,17 +34,48 @@ async function runPython(payload: AdvisorRequest) {
       stderr += chunk.toString()
     })
 
+    child.on("error", (err) => {
+      reject(
+        new Error(
+          `Failed to start Python process. Make sure Python is installed and accessible as "${PYTHON_CMD}". Error: ${err.message}`,
+        ),
+      )
+    })
+
     child.on("close", (code) => {
       if (code !== 0) {
-        reject(new Error(stderr || `Python exited with code ${code}`))
+        // Try to parse error from stderr or stdout (Python may output errors to either)
+        const errorOutput = stderr || stdout
+        try {
+          const errorJson = JSON.parse(errorOutput)
+          reject(
+            new Error(
+              errorJson.error || errorJson.details || `Python script failed with code ${code}`,
+            ),
+          )
+        } catch {
+          reject(
+            new Error(
+              errorOutput || `Python exited with code ${code}. Make sure pandas is installed: pip install pandas`,
+            ),
+          )
+        }
         return
       }
 
       try {
         const parsed = JSON.parse(stdout)
+        if (parsed.error) {
+          reject(new Error(parsed.error + (parsed.details ? `: ${parsed.details}` : "")))
+          return
+        }
         resolve(parsed)
       } catch (err) {
-        reject(new Error(`Failed to parse Python output: ${err}`))
+        reject(
+          new Error(
+            `Failed to parse Python output. stdout: ${stdout.substring(0, 200)}, stderr: ${stderr.substring(0, 200)}`,
+          ),
+        )
       }
     })
 
