@@ -63,16 +63,7 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <Link href="#services">
-              <Button
-                size="lg"
-                variant="outline"
-                className="px-8 h-14 text-base rounded-xl bg-card/50 border-border text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary dark:hover:border-primary/50 hover:border-border transition-all duration-300"
-              >
-                <Play className="mr-2 w-5 h-5 fill-current" />
-                Watch Demo
-              </Button>
-            </Link>
+           
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-12 border-t border-border">
