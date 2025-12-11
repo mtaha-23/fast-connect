@@ -117,6 +117,31 @@ export default function BatchAdvisorPage() {
     [courseOptions, formData.currentSemester],
   )
 
+  // Remove any selected courses that belong to semesters that are no longer visible
+  useEffect(() => {
+    const allowedIds = new Set<string>()
+    visibleSemesters.forEach((sem) => {
+      ;(courseOptions[sem] || []).forEach((course) => allowedIds.add(course.courseId))
+    })
+
+    const filterByAllowed = (list: string[]) => list.filter((id) => allowedIds.has(id))
+
+    const filteredPassed = filterByAllowed(passedSelected)
+    if (filteredPassed.length !== passedSelected.length) {
+      setPassedSelected(filteredPassed)
+    }
+
+    const filteredFailed = filterByAllowed(failedSelected)
+    if (filteredFailed.length !== failedSelected.length) {
+      setFailedSelected(filteredFailed)
+    }
+
+    const filteredLow = filterByAllowed(lowSelected)
+    if (filteredLow.length !== lowSelected.length) {
+      setLowSelected(filteredLow)
+    }
+  }, [courseOptions, visibleSemesters, passedSelected, failedSelected, lowSelected])
+
   // Filter courses for failed selection (exclude passed courses)
   const getFilteredCoursesForFailed = useMemo(() => {
     const filtered: CourseMap = {}
