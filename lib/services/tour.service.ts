@@ -3,7 +3,7 @@
  * Handles all tour location-related business logic
  */
 
-import { collection, query, orderBy, getDocs, doc, getDoc, Timestamp } from "firebase/firestore"
+import { collection, query, orderBy, getDocs, Timestamp } from "firebase/firestore"
 import { getFirestoreDB } from "@/lib/firebase"
 
 export interface TourLocation {
@@ -91,35 +91,3 @@ export async function getAllTourLocations(): Promise<TourLocation[]> {
   }
 }
 
-/**
- * Get a single tour location by ID
- */
-export async function getTourLocationById(locationId: string): Promise<TourLocation | null> {
-  try {
-    const db = getFirestoreDB()
-    const locationRef = doc(db, "tourLocations", locationId)
-    const locationDoc = await getDoc(locationRef)
-    
-    if (!locationDoc.exists()) {
-      return null
-    }
-    
-    const data = locationDoc.data()
-    const createdAt = data.createdAt || Timestamp.now()
-    
-    return {
-      id: locationDoc.id,
-      name: data.name,
-      description: data.description,
-      image: data.image,
-      icon: data.icon || "MapPin",
-      order: data.order || 0,
-      createdAt: createdAt,
-      updatedAt: data.updatedAt || createdAt,
-    }
-  } catch (error) {
-    throw new Error(
-      error instanceof Error ? error.message : "Failed to fetch tour location."
-    )
-  }
-}

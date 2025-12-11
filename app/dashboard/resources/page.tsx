@@ -200,27 +200,21 @@ export default function ResourcesPage() {
         </Card>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <Card>
-            <CardContent className="pt-6 text-center">
-              <p className="text-3xl font-bold">{resources.length}</p>
-              <p className="text-sm text-muted-foreground">Total Resources</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="pt-6 text-center">
-              <p className="text-3xl font-bold">{resources.filter((r) => r.type === "Past Paper").length}</p>
-              <p className="text-sm text-muted-foreground">Past Papers</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="pt-6 text-center">
-              <p className="text-3xl font-bold">
-                {new Set(resources.map((r) => r.category)).size}
-              </p>
-              <p className="text-sm text-muted-foreground">Categories</p>
-            </CardContent>
-          </Card>
+        <div className="grid grid-cols-3 gap-3">
+          <div className="bg-card border border-border rounded-lg p-4 text-center">
+            <p className="text-2xl font-bold text-primary mb-1">{resources.length}</p>
+            <p className="text-xs text-muted-foreground font-medium">Total Resources</p>
+          </div>
+          <div className="bg-card border border-border rounded-lg p-4 text-center">
+            <p className="text-2xl font-bold text-primary mb-1">{resources.filter((r) => r.type === "Past Paper").length}</p>
+            <p className="text-xs text-muted-foreground font-medium">Past Papers</p>
+          </div>
+          <div className="bg-card border border-border rounded-lg p-4 text-center">
+            <p className="text-2xl font-bold text-primary mb-1">
+              {new Set(resources.map((r) => r.category)).size}
+            </p>
+            <p className="text-xs text-muted-foreground font-medium">Categories</p>
+          </div>
         </div>
 
         {/* Resources Grid */}
@@ -239,7 +233,7 @@ export default function ResourcesPage() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-semibold mb-2 line-clamp-2 min-h-[3rem]">{resource.title}</h3>
+                  <h3 className="text-sm font-semibold mb-2 line-clamp-2 min-h-[2.5rem]">{resource.title}</h3>
 
                   {/* Meta */}
                   <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
@@ -288,43 +282,65 @@ export default function ResourcesPage() {
 
       {/* Preview Dialog */}
       <Dialog open={!!previewResource} onOpenChange={() => setPreviewResource(null)}>
-        <DialogContent className="max-w-2xl">
-          <DialogHeader>
-            <DialogTitle>{previewResource?.title}</DialogTitle>
+        <DialogContent className="max-w-5xl w-[95vw] max-h-[95vh] flex flex-col">
+          <DialogHeader className="flex-shrink-0">
+            <DialogTitle className="line-clamp-2">{previewResource?.title}</DialogTitle>
           </DialogHeader>
-          <div className="space-y-4">
+          <div className="space-y-4 flex-1 overflow-hidden flex flex-col min-h-0">
             {/* Preview Area */}
-            <div className="aspect-[4/3] bg-muted rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                {previewResource && (
-                  (() => {
-                    const IconComponent = getIcon(previewResource.icon)
-                    return <IconComponent className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-                  })()
-                )}
-                <p className="text-muted-foreground">Preview not available. Download to view the full document.</p>
+            {previewResource?.fileUrl ? (
+              <div className="flex-1 min-h-0 border rounded-lg overflow-hidden bg-muted">
+                <iframe
+                  src={(() => {
+                    // Convert Google Drive download URL to preview URL
+                    const url = previewResource.fileUrl!
+                    // Extract file ID from download URL
+                    const downloadMatch = url.match(/[?&]id=([^&]+)/)
+                    if (downloadMatch) {
+                      const fileId = downloadMatch[1]
+                      return `https://drive.google.com/file/d/${fileId}/preview`
+                    }
+                    // If already a view URL, convert to preview
+                    const viewMatch = url.match(/\/file\/d\/([^\/]+)/)
+                    if (viewMatch) {
+                      const fileId = viewMatch[1]
+                      return `https://drive.google.com/file/d/${fileId}/preview`
+                    }
+                    // Fallback to original URL
+                    return url
+                  })()}
+                  className="w-full h-full min-h-[500px]"
+                  title={previewResource.title}
+                  allow="autoplay"
+                />
               </div>
-            </div>
+            ) : (
+              <div className="aspect-[4/3] bg-muted rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="text-center">
+                  {previewResource && (
+                    (() => {
+                      const IconComponent = getIcon(previewResource.icon)
+                      return <IconComponent className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+                    })()
+                  )}
+                  <p className="text-muted-foreground">Preview not available. Download to view the full document.</p>
+                </div>
+              </div>
+            )}
 
             {/* Details */}
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div>
-                <p className="text-muted-foreground">Type</p>
-                <p className="font-medium">{previewResource?.type}</p>
+            {previewResource?.size && (
+              <div className="text-sm flex-shrink-0 pt-2 border-t">
+                <div>
+                  <p className="text-muted-foreground text-xs">Size</p>
+                  <p className="font-medium">{previewResource.size}</p>
+                </div>
               </div>
-              <div>
-                <p className="text-muted-foreground">Category</p>
-                <p className="font-medium">{previewResource?.category}</p>
-              </div>
-              <div>
-                <p className="text-muted-foreground">Size</p>
-                <p className="font-medium">{previewResource?.size}</p>
-              </div>
-            </div>
+            )}
 
             {/* Download Button */}
             <Button 
-              className="w-full"
+              className="w-full flex-shrink-0"
               onClick={() => previewResource && handleDownload(previewResource)}
             >
               <Download className="w-4 h-4 mr-2" />
