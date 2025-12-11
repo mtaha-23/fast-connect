@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
-import { AlertTriangle, Brain, Loader2, ShieldCheck, Sparkles } from "lucide-react"
+import { AlertTriangle, Loader2, Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface Recommendation {
@@ -80,7 +80,6 @@ export default function BatchAdvisorPage() {
     return ""
   }
 
-  const numericSemester = Number(formData.currentSemester || 0)
   const visibleSemesters = useMemo(
     () => {
       // Only show semesters if a valid semester (1-8) is entered
@@ -117,12 +116,26 @@ export default function BatchAdvisorPage() {
   const getFilteredCoursesForLow = useMemo(() => {
     const filtered: CourseMap = {}
     Object.keys(courseOptions).forEach((sem) => {
-      filtered[sem] = (courseOptions[sem] || []).filter((course) =>
+      const passedCoursesInSem = (courseOptions[sem] || []).filter((course) =>
         passedSelected.includes(course.courseId)
       )
+      // Only include semester if it has at least one passed course
+      if (passedCoursesInSem.length > 0) {
+        filtered[sem] = passedCoursesInSem
+      }
     })
     return filtered
   }, [courseOptions, passedSelected])
+
+  // Get semesters that have passed courses for low grade picker
+  const visibleSemestersForLow = useMemo(() => {
+    return visibleSemesters.filter((sem) => {
+      const passedCoursesInSem = (courseOptions[sem] || []).filter((course) =>
+        passedSelected.includes(course.courseId)
+      )
+      return passedCoursesInSem.length > 0
+    })
+  }, [visibleSemesters, courseOptions, passedSelected])
 
   // Remove failed courses that are in passed courses
   useEffect(() => {
@@ -189,7 +202,7 @@ export default function BatchAdvisorPage() {
     } catch (err: any) {
       setError(err.message || "Something went wrong")
     } finally {
-    setIsAnalyzing(false)
+      setIsAnalyzing(false)
     }
   }
 
@@ -362,7 +375,7 @@ export default function BatchAdvisorPage() {
                       <CoursePicker
                         label="Low Grade"
                         help="Improve C or below (only passed courses)"
-                        semesters={visibleSemesters}
+                        semesters={visibleSemestersForLow}
                         allCourses={getFilteredCoursesForLow}
                         selected={lowSelected}
                         onToggle={(id) => toggleCourse(id, lowSelected, setLowSelected)}
@@ -396,7 +409,6 @@ export default function BatchAdvisorPage() {
               </div>
               <div>
                 <h2 className="text-lg font-semibold leading-tight">Recommended courses</h2>
-                
               </div>
             </div>
 
@@ -462,12 +474,9 @@ type CoursePickerProps = {
 }
 
 function CoursePicker({ label, help, semesters, allCourses, selected, onToggle, onSetSelected }: CoursePickerProps) {
-  // Only use semesters if provided, don't fall back to all courses
   const semesterKeys = semesters
   const [openSem, setOpenSem] = useState<string>(() => semesterKeys[0] || "")
   const initialSet = useRef(false)
-
-  const onToggleSem = (ids: string[]) => onSetSelected(ids)
 
   useEffect(() => {
     if (!initialSet.current && semesterKeys[0]) {
@@ -489,61 +498,60 @@ function CoursePicker({ label, help, semesters, allCourses, selected, onToggle, 
             Showing {semesterKeys.length} semesters
           </span>
           <div className="grid grid-cols-1 gap-3 max-h-72 overflow-auto pr-1">
-            {semesterKeys.map((sem) => (
-              <div key={sem} className="rounded-lg border">
-            <button
-              type="button"
-              onClick={() => setOpenSem((prev) => (prev === sem ? "" : sem))}
-              className="flex w-full items-center justify-between px-3 py-2 text-sm font-semibold hover:bg-muted"
-            >
-              <span>Semester {sem}</span>
-              <span className={cn("text-xs transition", openSem === sem ? "rotate-180" : "")}>⌃</span>
-            </button>
-            {openSem === sem && (
-              <div className="space-y-2 px-3 pb-3">
-                <label className="inline-flex items-center gap-2 text-xs text-muted-foreground">
-                  <Checkbox
-                    checked={
-                      (allCourses[sem] || []).length > 0 &&
-                      (allCourses[sem] || []).every((c) => selected.includes(c.courseId))
-                    }
-                    onCheckedChange={() => {
-                      const semIds = (allCourses[sem] || []).map((c) => c.courseId)
-                      const allInSemSelected = semIds.every((id) => selected.includes(id))
-                      if (allInSemSelected) {
-                        // deselect all from this semester
-                        const remaining = selected.filter((id) => !semIds.includes(id))
-                        onToggleSem(remaining)
-                      } else {
-                        // add all from this semester
-                        const merged = Array.from(new Set([...selected, ...semIds]))
-                        onToggleSem(merged)
-                      }
-                    }}
-                  />
-                  <span>Select all in this semester</span>
-                </label>
-                <div className="grid grid-cols-1 gap-2">
-                  {(allCourses[sem] || []).map((course) => (
-                    <label
-                      key={course.courseId}
-                      className="flex items-start gap-3 rounded-lg border p-2.5 hover:border-primary/50 transition bg-card"
-                    >
-                      <Checkbox
-                        checked={selected.includes(course.courseId)}
-                        onCheckedChange={() => onToggle(course.courseId)}
-                      />
-                      <div>
-                        <p className="text-sm font-medium">{course.courseId}</p>
-                        <p className="text-xs text-muted-foreground">{course.courseName}</p>
+            {semesterKeys.map((sem) => {
+              const semesterCourses = allCourses[sem] || []
+              const allInSemSelected = semesterCourses.length > 0 && semesterCourses.every((c) => selected.includes(c.courseId))
+              const semIds = semesterCourses.map((c) => c.courseId)
+
+              return (
+                <div key={sem} className="rounded-lg border">
+                  <button
+                    type="button"
+                    onClick={() => setOpenSem((prev) => (prev === sem ? "" : sem))}
+                    className="flex w-full items-center justify-between px-3 py-2 text-sm font-semibold hover:bg-muted"
+                  >
+                    <span>Semester {sem}</span>
+                    <span className={cn("text-xs transition", openSem === sem ? "rotate-180" : "")}>⌃</span>
+                  </button>
+                  {openSem === sem && (
+                    <div className="space-y-2 px-3 pb-3">
+                      <label className="inline-flex items-center gap-2 text-xs text-muted-foreground">
+                        <Checkbox
+                          checked={allInSemSelected}
+                          onCheckedChange={() => {
+                            if (allInSemSelected) {
+                              const remaining = selected.filter((id) => !semIds.includes(id))
+                              onSetSelected(remaining)
+                            } else {
+                              const merged = Array.from(new Set([...selected, ...semIds]))
+                              onSetSelected(merged)
+                            }
+                          }}
+                        />
+                        <span>Select all in this semester</span>
+                      </label>
+                      <div className="grid grid-cols-1 gap-2">
+                        {semesterCourses.map((course) => (
+                          <label
+                            key={course.courseId}
+                            className="flex items-start gap-3 rounded-lg border p-2.5 hover:border-primary/50 transition bg-card"
+                          >
+                            <Checkbox
+                              checked={selected.includes(course.courseId)}
+                              onCheckedChange={() => onToggle(course.courseId)}
+                            />
+                            <div>
+                              <p className="text-sm font-medium">{course.courseId}</p>
+                              <p className="text-xs text-muted-foreground">{course.courseName}</p>
+                            </div>
+                          </label>
+                        ))}
                       </div>
-                    </label>
-                  ))}
+                    </div>
+                  )}
                 </div>
-              </div>
-            )}
-              </div>
-            ))}
+              )
+            })}
           </div>
         </>
       ) : (
