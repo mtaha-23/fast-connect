@@ -17,15 +17,15 @@ const teamMembers = [
     name: "Sharjeel Khan",
     role: "Developer",
     image: "/Sharjeel Khan.jpg", 
-    linkedin: "https://linkedin.com/in/sharjeel-khan",
-    github: "https://github.com/sharjeel-khan",
+    linkedin: "https://www.linkedin.com/in/sharjeel-khan-9b41b52b1",
+    github: "https://github.com/Sharjeelkhhan",
   },
   {
     name: "Zaid Ahmed",
     role: "Developer",
     image: "/Zaid Ahmed.jpg", 
-    linkedin: "https://linkedin.com/in/zaid-ahmed-123",
-    github: "https://github.com/zaid-ahmed-123",
+    linkedin: undefined,
+    github: "https://github.com/Zaid0205",
   }
 ]
 
@@ -83,26 +83,32 @@ export function AboutSection() {
               <p className="text-sm text-muted-foreground mb-4">{member.role}</p>
 
               {/* Social Links */}
-              <div className="flex items-center justify-center gap-4">
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-card border border-border hover:bg-primary/20 hover:border-primary/50 text-muted-foreground hover:text-primary transition-all"
-                  aria-label={`${member.name}'s LinkedIn`}
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a
-                  href={member.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-card border border-border hover:bg-primary/20 hover:border-primary/50 text-muted-foreground hover:text-primary transition-all"
-                  aria-label={`${member.name}'s GitHub`}
-                >
-                  <Github className="w-5 h-5" />
-                </a>
-              </div>
+              {(member.linkedin || member.github) && (
+                <div className="flex items-center justify-center gap-4">
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-lg bg-card border border-border hover:bg-primary/20 hover:border-primary/50 text-muted-foreground hover:text-primary transition-all"
+                      aria-label={`${member.name}'s LinkedIn`}
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  )}
+                  {member.github && (
+                    <a
+                      href={member.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-lg bg-card border border-border hover:bg-primary/20 hover:border-primary/50 text-muted-foreground hover:text-primary transition-all"
+                      aria-label={`${member.name}'s GitHub`}
+                    >
+                      <Github className="w-5 h-5" />
+                    </a>
+                  )}
+                </div>
+              )}
 
               {/* Hover glow effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />

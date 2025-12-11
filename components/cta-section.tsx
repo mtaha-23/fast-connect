@@ -39,17 +39,25 @@ export function CTASection() {
                 <Link href="/signup">
                   <Button
                     size="lg"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground border-0 px-8 h-14 text-base rounded-xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 group"
+                    className="relative bg-primary hover:bg-primary/90 text-primary-foreground border-0 px-8 h-14 text-base rounded-xl shadow-2xl shadow-primary/30 hover:shadow-primary/60 hover:shadow-[0_20px_50px_rgb(59,130,246,0.4)] dark:hover:shadow-[0_20px_50px_rgb(99,102,241,0.4)] transition-all duration-300 group hover:scale-105 active:scale-100 overflow-hidden"
                   >
-                    Create Free Account
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    {/* Animated background gradient on hover */}
+                    <span className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    {/* Shine effect */}
+                    <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
+                    
+                    <span className="relative z-10 flex items-center">
+                      Create Free Account
+                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
                   </Button>
                 </Link>
                 <Link href="/login">
                   <Button
                     size="lg"
                     variant="outline"
-                    className="px-8 h-14 text-base rounded-xl bg-card/50 border-border text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary dark:hover:border-primary/50 hover:border-border transition-all duration-300"
+                    className="px-8 h-14 text-base rounded-xl bg-card/50 border-border text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary dark:hover:border-primary/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 active:scale-100 hover:shadow-lg"
                   >
                     Sign In
                   </Button>
