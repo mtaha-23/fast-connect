@@ -41,7 +41,9 @@ export default function BatchAdvisorPage() {
   const [fieldErrors, setFieldErrors] = useState({
     currentSemester: "",
     gpa: "",
+    creditEarned: "",
   })
+  const [warnings, setWarnings] = useState<string[]>([])
 
   useEffect(() => {
     const loadCourses = async () => {
@@ -76,6 +78,20 @@ export default function BatchAdvisorPage() {
     const num = Number(value)
     if (Number.isNaN(num) || num < 0 || num > 4) {
       return "CGPA must be between 0 and 4"
+    }
+    return ""
+  }
+
+  const validateCreditEarned = (value: string): string => {
+    if (!value.trim()) {
+      return "Credits earned is required"
+    }
+    const num = Number(value)
+    if (Number.isNaN(num) || num < 0) {
+      return "Credits earned must be 0 or greater"
+    }
+    if (num > 137) {
+      return "Credits earned cannot exceed 137"
     }
     return ""
   }
@@ -153,6 +169,27 @@ export default function BatchAdvisorPage() {
     }
   }, [passedSelected, lowSelected])
 
+  // Check for warnings (credits earned vs current semester)
+  useEffect(() => {
+    const warningsList: string[] = []
+    const currentSem = Number(formData.currentSemester)
+    const credits = Number(formData.creditEarned)
+
+    if (currentSem > 0 && currentSem <= 8 && credits > 0) {
+      // Typical credits per semester: 12-18
+      // Maximum reasonable credits for semester N: N * 20 (allowing some buffer)
+      const maxReasonableCredits = currentSem * 20
+      
+      if (credits > maxReasonableCredits) {
+        warningsList.push(
+          `Credits earned (${credits}) seems unusually high for semester ${currentSem}. Typical range: ${(currentSem - 1) * 15}-${maxReasonableCredits} credits.`
+        )
+      }
+    }
+
+    setWarnings(warningsList)
+  }, [formData.currentSemester, formData.creditEarned])
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsAnalyzing(true)
@@ -161,14 +198,16 @@ export default function BatchAdvisorPage() {
     // Validate fields
     const semesterError = validateCurrentSemester(formData.currentSemester)
     const gpaError = validateGPA(formData.gpa)
+    const creditError = validateCreditEarned(formData.creditEarned)
 
     setFieldErrors({
       currentSemester: semesterError,
       gpa: gpaError,
+      creditEarned: creditError,
     })
 
     // If there are validation errors, don't submit
-    if (semesterError || gpaError) {
+    if (semesterError || gpaError || creditError) {
       setIsAnalyzing(false)
       return
     }
@@ -214,7 +253,8 @@ export default function BatchAdvisorPage() {
     !formData.maxCourses ||
     courseFetchError !== null ||
     fieldErrors.currentSemester !== "" ||
-    fieldErrors.gpa !== ""
+    fieldErrors.gpa !== "" ||
+    fieldErrors.creditEarned !== ""
 
   const toggleCourse = (value: string, list: string[], setter: (v: string[]) => void) => {
     setter(list.includes(value) ? list.filter((c) => c !== value) : [...list, value])
@@ -321,10 +361,31 @@ export default function BatchAdvisorPage() {
                       id="creditEarned"
                       type="number"
                       min={0}
+                      max={137}
                       placeholder="e.g., 80"
                       value={formData.creditEarned}
-                      onChange={(e) => setFormData({ ...formData, creditEarned: e.target.value })}
+                      onChange={(e) => {
+                        const value = e.target.value
+                        setFormData({ ...formData, creditEarned: value })
+                        if (fieldErrors.creditEarned) {
+                          setFieldErrors({ ...fieldErrors, creditEarned: "" })
+                        }
+                      }}
+                      onBlur={(e) => {
+                        const error = validateCreditEarned(e.target.value)
+                        setFieldErrors({ ...fieldErrors, creditEarned: error })
+                      }}
+                      className={fieldErrors.creditEarned ? "border-destructive focus:border-destructive" : ""}
                     />
+                    {fieldErrors.creditEarned && (
+                      <p className="text-xs text-destructive">{fieldErrors.creditEarned}</p>
+                    )}
+                    {!fieldErrors.creditEarned && warnings.length > 0 && (
+                      <p className="text-xs text-yellow-600 dark:text-yellow-400 flex items-center gap-1">
+                        <AlertTriangle className="w-3 h-3" />
+                        {warnings[0]}
+                      </p>
+                    )}
                   </div>
                   <div className="space-y-1.5">
                     <Label htmlFor="maxCourses">Max Courses</Label>
