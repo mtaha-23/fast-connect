@@ -77,5 +77,3 @@ export function getFirestoreDB(): Firestore {
   }
   return firebaseFirestore
 }
-
-

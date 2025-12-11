@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { DashboardHeader } from "@/components/header"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -20,59 +20,68 @@ import {
   Dumbbell,
   FlaskConical,
   Trees,
+  Loader2,
+  LucideIcon,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
+import type { TourLocation } from "@/lib/services/tour.service"
 
-const tourLocations = [
-  {
-    id: 1,
-    name: "Main Building",
-    description: "The central administrative building housing offices, lecture halls, and the library.",
-    image: "/university-main-building.jpg",
-    icon: Building,
-  },
-  {
-    id: 2,
-    name: "Library",
-    description: "State-of-the-art library with digital resources, study areas, and research facilities.",
-    image: "/modern-university-library.png",
-    icon: BookOpen,
-  },
-  {
-    id: 3,
-    name: "Computer Labs",
-    description: "Advanced computing facilities with latest hardware and software for practical learning.",
-    image: "/computer-lab.png",
-    icon: FlaskConical,
-  },
-  {
-    id: 4,
-    name: "Cafeteria",
-    description: "Spacious dining area offering diverse food options for students and faculty.",
-    image: "/university-cafeteria.jpg",
-    icon: Utensils,
-  },
-  {
-    id: 5,
-    name: "Sports Complex",
-    description: "Multi-purpose sports facilities including gymnasium, courts, and playing fields.",
-    image: "/sports-complex.jpg",
-    icon: Dumbbell,
-  },
-  {
-    id: 6,
-    name: "Campus Grounds",
-    description: "Beautiful green spaces and gardens for relaxation and outdoor activities.",
-    image: "/university-campus-grounds.jpg",
-    icon: Trees,
-  },
-]
+// Map icon string names to icon components
+const iconMap: Record<string, LucideIcon> = {
+  Building,
+  BookOpen,
+  Utensils,
+  Dumbbell,
+  FlaskConical,
+  Trees,
+  MapPin,
+}
+
+interface TourLocationWithIcon extends Omit<TourLocation, "icon"> {
+  icon: LucideIcon
+}
 
 export default function TourPage() {
+  const [tourLocations, setTourLocations] = useState<TourLocationWithIcon[]>([])
   const [currentLocation, setCurrentLocation] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
   const [showInfo, setShowInfo] = useState(true)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  // Fetch tour locations from API
+  useEffect(() => {
+    fetchTourLocations()
+  }, [])
+
+  const fetchTourLocations = async () => {
+    try {
+      setLoading(true)
+      setError(null)
+      const response = await fetch("/api/tour-locations")
+      if (!response.ok) {
+        throw new Error("Failed to fetch tour locations")
+      }
+      const data = await response.json()
+      
+      // Map icon strings to icon components
+      const locationsWithIcons: TourLocationWithIcon[] = data.locations.map((loc: TourLocation) => ({
+        ...loc,
+        icon: iconMap[loc.icon] || MapPin,
+      }))
+      
+      setTourLocations(locationsWithIcons)
+      if (locationsWithIcons.length > 0) {
+        setCurrentLocation(0)
+      }
+    } catch (err) {
+      console.error("Error fetching tour locations:", err)
+      setError(err instanceof Error ? err.message : "Failed to load tour locations")
+    } finally {
+      setLoading(false)
+    }
+  }
 
   const location = tourLocations[currentLocation]
 
@@ -82,6 +91,50 @@ export default function TourPage() {
 
   const handleNext = () => {
     setCurrentLocation((prev) => (prev === tourLocations.length - 1 ? 0 : prev + 1))
+  }
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <DashboardHeader title="360° Campus Tour" description="Explore FAST University campus virtually" />
+        <div className="p-6">
+          <div className="max-w-6xl mx-auto flex items-center justify-center py-12">
+            <Loader2 className="w-8 h-8 animate-spin text-primary" />
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-background">
+        <DashboardHeader title="360° Campus Tour" description="Explore FAST University campus virtually" />
+        <div className="p-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-destructive/10 border border-destructive/20 rounded-xl p-6 text-center">
+              <p className="text-destructive mb-4">{error}</p>
+              <Button onClick={fetchTourLocations}>Try Again</Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (tourLocations.length === 0) {
+    return (
+      <div className="min-h-screen bg-background">
+        <DashboardHeader title="360° Campus Tour" description="Explore FAST University campus virtually" />
+        <div className="p-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">No tour locations available yet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -94,8 +147,8 @@ export default function TourPage() {
           <div className="bg-card border border-border rounded-2xl overflow-hidden">
             <div className="relative aspect-video">
               <img
-                src={location.image || "/placeholder.svg"}
-                alt={location.name}
+                src={location?.image || "/placeholder.svg"}
+                alt={location?.name || "Tour location"}
                 className="w-full h-full object-cover"
               />
 
@@ -105,7 +158,7 @@ export default function TourPage() {
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
                   <Badge className="bg-background/80 border-border text-foreground backdrop-blur-sm">
                     <MapPin className="w-3 h-3 mr-1" />
-                    {location.name}
+                    {location?.name || "Unknown Location"}
                   </Badge>
                   <div className="flex items-center gap-2">
                     <Button
@@ -161,7 +214,7 @@ export default function TourPage() {
 
                 {/* Bottom Bar */}
                 <div className="absolute bottom-4 left-4 right-4">
-                  {showInfo && (
+                  {showInfo && location && (
                     <div className="bg-background/80 backdrop-blur-sm rounded-xl p-4 mb-4 border border-border">
                       <h3 className="text-foreground font-semibold text-lg mb-1">{location.name}</h3>
                       <p className="text-muted-foreground text-sm">{location.description}</p>
@@ -204,34 +257,37 @@ export default function TourPage() {
           <div>
             <h2 className="text-xl font-semibold mb-4 text-foreground">Explore Locations</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {tourLocations.map((loc, index) => (
-                <div
-                  key={loc.id}
-                  className={cn(
-                    "cursor-pointer transition-all overflow-hidden rounded-xl border",
-                    currentLocation === index
-                      ? "border-primary/50 ring-2 ring-primary/20"
-                      : "border-border hover:border-primary/30",
-                  )}
-                  onClick={() => setCurrentLocation(index)}
-                >
-                  <div className="aspect-square relative">
-                    <img src={loc.image || "/placeholder.svg"} alt={loc.name} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3">
-                      <div
-                        className={cn(
-                          "w-8 h-8 rounded-lg flex items-center justify-center mb-2",
-                          currentLocation === index ? "bg-primary" : "bg-muted/50",
-                        )}
-                      >
-                        <loc.icon className="w-4 h-4 text-primary-foreground" />
+              {tourLocations.map((loc, index) => {
+                const IconComponent = loc.icon
+                return (
+                  <div
+                    key={loc.id}
+                    className={cn(
+                      "cursor-pointer transition-all overflow-hidden rounded-xl border",
+                      currentLocation === index
+                        ? "border-primary/50 ring-2 ring-primary/20"
+                        : "border-border hover:border-primary/30",
+                    )}
+                    onClick={() => setCurrentLocation(index)}
+                  >
+                    <div className="aspect-square relative">
+                      <img src={loc.image || "/placeholder.svg"} alt={loc.name} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-3">
+                        <div
+                          className={cn(
+                            "w-8 h-8 rounded-lg flex items-center justify-center mb-2",
+                            currentLocation === index ? "bg-primary" : "bg-muted/50",
+                          )}
+                        >
+                          <IconComponent className="w-4 h-4 text-primary-foreground" />
+                        </div>
+                        <p className="text-foreground text-sm font-medium line-clamp-1">{loc.name}</p>
                       </div>
-                      <p className="text-foreground text-sm font-medium line-clamp-1">{loc.name}</p>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
 
