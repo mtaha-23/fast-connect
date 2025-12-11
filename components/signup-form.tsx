@@ -19,6 +19,15 @@ export function SignupForm() {
   const [isLoading, setIsLoading] = useState(false)
   const [showOTP, setShowOTP] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  
+  // Validation errors for individual fields
+  const [fieldErrors, setFieldErrors] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  })
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,13 +36,82 @@ export function SignupForm() {
     acceptTerms: false,
   })
 
+  // Validation functions
+  const validateName = (name: string): string => {
+    if (!name.trim()) {
+      return "Full name is required"
+    }
+    if (name.trim().length < 2) {
+      return "Name must be at least 2 characters"
+    }
+    if (name.trim().length > 100) {
+      return "Name must be less than 100 characters"
+    }
+    return ""
+  }
+
+  const validateEmail = (email: string): string => {
+    if (!email.trim()) {
+      return "Email is required"
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return "Please enter a valid email address"
+    }
+    return ""
+  }
+
+  const validatePassword = (password: string): string => {
+    if (!password) {
+      return "Password is required"
+    }
+    if (password.length < 6) {
+      return "Password must be at least 6 characters"
+    }
+    if (!/[a-zA-Z]/.test(password)) {
+      return "Password must contain at least one letter"
+    }
+    if (!/[0-9]/.test(password)) {
+      return "Password must contain at least one number"
+    }
+    return ""
+  }
+
+  const validateConfirmPassword = (confirmPassword: string, password: string): string => {
+    if (!confirmPassword) {
+      return "Please confirm your password"
+    }
+    if (confirmPassword !== password) {
+      return "Passwords do not match"
+    }
+    return ""
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError(null)
 
-    // Client-side validation
-    if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match.")
+    // Validate all fields
+    const nameError = validateName(formData.name)
+    const emailError = validateEmail(formData.email)
+    const passwordError = validatePassword(formData.password)
+    const confirmPasswordError = validateConfirmPassword(formData.confirmPassword, formData.password)
+
+    setFieldErrors({
+      name: nameError,
+      email: emailError,
+      password: passwordError,
+      confirmPassword: confirmPasswordError,
+    })
+
+    // If there are validation errors, don't submit
+    if (nameError || emailError || passwordError || confirmPasswordError) {
+      return
+    }
+
+    // Check terms acceptance
+    if (!formData.acceptTerms) {
+      setError("You must accept the Terms of Service and Privacy Policy to continue.")
       return
     }
 
@@ -107,12 +185,26 @@ export function SignupForm() {
               type="text"
               placeholder="John Doe"
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="h-11 pl-10"
+              onChange={(e) => {
+                const value = e.target.value
+                setFormData({ ...formData, name: value })
+                // Clear error when user starts typing
+                if (fieldErrors.name) {
+                  setFieldErrors({ ...fieldErrors, name: "" })
+                }
+              }}
+              onBlur={(e) => {
+                const error = validateName(e.target.value)
+                setFieldErrors({ ...fieldErrors, name: error })
+              }}
+              className={`h-11 pl-10 ${fieldErrors.name ? "border-destructive focus:border-destructive" : ""}`}
               required
             />
             <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           </div>
+          {fieldErrors.name && (
+            <p className="text-sm text-destructive">{fieldErrors.name}</p>
+          )}
         </div>
 
         {/* Email Field */}
@@ -124,12 +216,26 @@ export function SignupForm() {
               type="email"
               placeholder="you@example.com"
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="h-11 pl-10"
+              onChange={(e) => {
+                const value = e.target.value
+                setFormData({ ...formData, email: value })
+                // Clear error when user starts typing
+                if (fieldErrors.email) {
+                  setFieldErrors({ ...fieldErrors, email: "" })
+                }
+              }}
+              onBlur={(e) => {
+                const error = validateEmail(e.target.value)
+                setFieldErrors({ ...fieldErrors, email: error })
+              }}
+              className={`h-11 pl-10 ${fieldErrors.email ? "border-destructive focus:border-destructive" : ""}`}
               required
             />
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           </div>
+          {fieldErrors.email && (
+            <p className="text-sm text-destructive">{fieldErrors.email}</p>
+          )}
         </div>
 
         {/* Password Field */}
@@ -139,10 +245,31 @@ export function SignupForm() {
             <Input
               id="password"
               type={showPassword ? "text" : "password"}
-              placeholder="Create a password"
+              placeholder="Create a password (min 6 chars, letter + number)"
               value={formData.password}
-              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              className="h-11 pr-10"
+              onChange={(e) => {
+                const value = e.target.value
+                setFormData({ ...formData, password: value })
+                // Clear errors when user starts typing
+                if (fieldErrors.password) {
+                  setFieldErrors({ ...fieldErrors, password: "" })
+                }
+                // Re-validate confirm password if it has a value
+                if (formData.confirmPassword) {
+                  const confirmError = validateConfirmPassword(formData.confirmPassword, value)
+                  setFieldErrors({ ...fieldErrors, password: "", confirmPassword: confirmError })
+                }
+              }}
+              onBlur={(e) => {
+                const error = validatePassword(e.target.value)
+                setFieldErrors({ ...fieldErrors, password: error })
+                // Also re-validate confirm password
+                if (formData.confirmPassword) {
+                  const confirmError = validateConfirmPassword(formData.confirmPassword, e.target.value)
+                  setFieldErrors((prev) => ({ ...prev, password: error, confirmPassword: confirmError }))
+                }
+              }}
+              className={`h-11 pr-10 ${fieldErrors.password ? "border-destructive focus:border-destructive" : ""}`}
               required
             />
             <button
@@ -153,6 +280,9 @@ export function SignupForm() {
               {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
             </button>
           </div>
+          {fieldErrors.password && (
+            <p className="text-sm text-destructive">{fieldErrors.password}</p>
+          )}
         </div>
 
         {/* Confirm Password */}
@@ -164,8 +294,19 @@ export function SignupForm() {
               type={showConfirmPassword ? "text" : "password"}
               placeholder="Confirm your password"
               value={formData.confirmPassword}
-              onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-              className="h-11 pr-10"
+              onChange={(e) => {
+                const value = e.target.value
+                setFormData({ ...formData, confirmPassword: value })
+                // Clear error when user starts typing
+                if (fieldErrors.confirmPassword) {
+                  setFieldErrors({ ...fieldErrors, confirmPassword: "" })
+                }
+              }}
+              onBlur={(e) => {
+                const error = validateConfirmPassword(e.target.value, formData.password)
+                setFieldErrors({ ...fieldErrors, confirmPassword: error })
+              }}
+              className={`h-11 pr-10 ${fieldErrors.confirmPassword ? "border-destructive focus:border-destructive" : ""}`}
               required
             />
             <button
@@ -176,6 +317,9 @@ export function SignupForm() {
               {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
             </button>
           </div>
+          {fieldErrors.confirmPassword && (
+            <p className="text-sm text-destructive">{fieldErrors.confirmPassword}</p>
+          )}
         </div>
 
         {/* Terms Checkbox */}

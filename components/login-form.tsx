@@ -24,11 +24,36 @@ export function LoginForm() {
   const [needsVerification, setNeedsVerification] = useState(false) // Email verification required flag
   const [isResendingEmail, setIsResendingEmail] = useState(false) // Resend verification email loading state
   
+  // Validation errors for individual fields
+  const [fieldErrors, setFieldErrors] = useState({
+    email: "",
+    password: "",
+  })
+  
   // Form data state
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   })
+
+  // Validation functions
+  const validateEmail = (email: string): string => {
+    if (!email.trim()) {
+      return "Email is required"
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return "Please enter a valid email address"
+    }
+    return ""
+  }
+
+  const validatePassword = (password: string): string => {
+    if (!password) {
+      return "Password is required"
+    }
+    return ""
+  }
 
   /**
    * Handle form submission for email/password login
@@ -38,6 +63,21 @@ export function LoginForm() {
     e.preventDefault()
     setError(null)
     setNeedsVerification(false)
+
+    // Validate all fields
+    const emailError = validateEmail(formData.email)
+    const passwordError = validatePassword(formData.password)
+
+    setFieldErrors({
+      email: emailError,
+      password: passwordError,
+    })
+
+    // If there are validation errors, don't submit
+    if (emailError || passwordError) {
+      return
+    }
+
     setIsLoading(true)
 
     try {
@@ -139,12 +179,28 @@ export function LoginForm() {
             type="email"
             placeholder="you@example.com"
             value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="h-12 pl-10 bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20"
+            onChange={(e) => {
+              const value = e.target.value
+              setFormData({ ...formData, email: value })
+              // Clear error when user starts typing
+              if (fieldErrors.email) {
+                setFieldErrors({ ...fieldErrors, email: "" })
+              }
+            }}
+            onBlur={(e) => {
+              const error = validateEmail(e.target.value)
+              setFieldErrors({ ...fieldErrors, email: error })
+            }}
+            className={`h-12 pl-10 bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 ${
+              fieldErrors.email ? "border-destructive focus:border-destructive" : ""
+            }`}
             required
           />
           <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
         </div>
+        {fieldErrors.email && (
+          <p className="text-sm text-destructive">{fieldErrors.email}</p>
+        )}
       </div>
 
       {/* Password Field */}
@@ -158,8 +214,21 @@ export function LoginForm() {
             type={showPassword ? "text" : "password"}
             placeholder="Enter your password"
             value={formData.password}
-            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-            className="h-12 pr-10 bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20"
+            onChange={(e) => {
+              const value = e.target.value
+              setFormData({ ...formData, password: value })
+              // Clear error when user starts typing
+              if (fieldErrors.password) {
+                setFieldErrors({ ...fieldErrors, password: "" })
+              }
+            }}
+            onBlur={(e) => {
+              const error = validatePassword(e.target.value)
+              setFieldErrors({ ...fieldErrors, password: error })
+            }}
+            className={`h-12 pr-10 bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 ${
+              fieldErrors.password ? "border-destructive focus:border-destructive" : ""
+            }`}
             required
           />
           {/* Password Visibility Toggle */}
@@ -171,6 +240,9 @@ export function LoginForm() {
             {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
           </button>
         </div>
+        {fieldErrors.password && (
+          <p className="text-sm text-destructive">{fieldErrors.password}</p>
+        )}
         {/* Forgot Password Link */}
         <div className="flex justify-end">
           <Link href="/forgot-password" className="text-sm text-primary hover:text-primary/80 transition-colors">
