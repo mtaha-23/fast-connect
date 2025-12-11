@@ -38,6 +38,10 @@ export default function BatchAdvisorPage() {
   const [passedSelected, setPassedSelected] = useState<string[]>([])
   const [failedSelected, setFailedSelected] = useState<string[]>([])
   const [lowSelected, setLowSelected] = useState<string[]>([])
+  const [fieldErrors, setFieldErrors] = useState({
+    currentSemester: "",
+    gpa: "",
+  })
 
   useEffect(() => {
     const loadCourses = async () => {
@@ -53,6 +57,29 @@ export default function BatchAdvisorPage() {
     loadCourses()
   }, [])
 
+  // Validation functions
+  const validateCurrentSemester = (value: string): string => {
+    if (!value.trim()) {
+      return "Current semester is required"
+    }
+    const num = Number(value)
+    if (Number.isNaN(num) || num < 1 || num > 8) {
+      return "Current semester must be between 1 and 8"
+    }
+    return ""
+  }
+
+  const validateGPA = (value: string): string => {
+    if (!value.trim()) {
+      return "CGPA is required"
+    }
+    const num = Number(value)
+    if (Number.isNaN(num) || num < 0 || num > 4) {
+      return "CGPA must be between 0 and 4"
+    }
+    return ""
+  }
+
   const numericSemester = Number(formData.currentSemester || 0)
   const visibleSemesters = useMemo(
     () =>
@@ -66,10 +93,63 @@ export default function BatchAdvisorPage() {
     [courseOptions, numericSemester],
   )
 
+  // Filter courses for failed selection (exclude passed courses)
+  const getFilteredCoursesForFailed = useMemo(() => {
+    const filtered: CourseMap = {}
+    Object.keys(courseOptions).forEach((sem) => {
+      filtered[sem] = (courseOptions[sem] || []).filter(
+        (course) => !passedSelected.includes(course.courseId)
+      )
+    })
+    return filtered
+  }, [courseOptions, passedSelected])
+
+  // Filter courses for low grade selection (only include passed courses)
+  const getFilteredCoursesForLow = useMemo(() => {
+    const filtered: CourseMap = {}
+    Object.keys(courseOptions).forEach((sem) => {
+      filtered[sem] = (courseOptions[sem] || []).filter((course) =>
+        passedSelected.includes(course.courseId)
+      )
+    })
+    return filtered
+  }, [courseOptions, passedSelected])
+
+  // Remove failed courses that are in passed courses
+  useEffect(() => {
+    const filtered = failedSelected.filter((id) => !passedSelected.includes(id))
+    if (filtered.length !== failedSelected.length) {
+      setFailedSelected(filtered)
+    }
+  }, [passedSelected, failedSelected])
+
+  // Remove low grade courses that are not in passed courses
+  useEffect(() => {
+    const filtered = lowSelected.filter((id) => passedSelected.includes(id))
+    if (filtered.length !== lowSelected.length) {
+      setLowSelected(filtered)
+    }
+  }, [passedSelected, lowSelected])
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsAnalyzing(true)
     setError(null)
+
+    // Validate fields
+    const semesterError = validateCurrentSemester(formData.currentSemester)
+    const gpaError = validateGPA(formData.gpa)
+
+    setFieldErrors({
+      currentSemester: semesterError,
+      gpa: gpaError,
+    })
+
+    // If there are validation errors, don't submit
+    if (semesterError || gpaError) {
+      setIsAnalyzing(false)
+      return
+    }
 
     try {
       const payload = {
@@ -110,7 +190,9 @@ export default function BatchAdvisorPage() {
     !formData.gpa ||
     !formData.creditEarned ||
     !formData.maxCourses ||
-    courseFetchError !== null
+    courseFetchError !== null ||
+    fieldErrors.currentSemester !== "" ||
+    fieldErrors.gpa !== ""
 
   const toggleCourse = (value: string, list: string[], setter: (v: string[]) => void) => {
     setter(list.includes(value) ? list.filter((c) => c !== value) : [...list, value])
@@ -151,8 +233,22 @@ export default function BatchAdvisorPage() {
                       max={8}
                       placeholder="e.g., 5"
                       value={formData.currentSemester}
-                      onChange={(e) => setFormData({ ...formData, currentSemester: e.target.value })}
+                      onChange={(e) => {
+                        const value = e.target.value
+                        setFormData({ ...formData, currentSemester: value })
+                        if (fieldErrors.currentSemester) {
+                          setFieldErrors({ ...fieldErrors, currentSemester: "" })
+                        }
+                      }}
+                      onBlur={(e) => {
+                        const error = validateCurrentSemester(e.target.value)
+                        setFieldErrors({ ...fieldErrors, currentSemester: error })
+                      }}
+                      className={fieldErrors.currentSemester ? "border-destructive focus:border-destructive" : ""}
                     />
+                    {fieldErrors.currentSemester && (
+                      <p className="text-xs text-destructive">{fieldErrors.currentSemester}</p>
+                    )}
                   </div>
                   <div className="space-y-1.5">
                     <Label htmlFor="gpa">CGPA</Label>
@@ -164,8 +260,22 @@ export default function BatchAdvisorPage() {
                       max={4}
                       placeholder="e.g., 2.9"
                       value={formData.gpa}
-                      onChange={(e) => setFormData({ ...formData, gpa: e.target.value })}
+                      onChange={(e) => {
+                        const value = e.target.value
+                        setFormData({ ...formData, gpa: value })
+                        if (fieldErrors.gpa) {
+                          setFieldErrors({ ...fieldErrors, gpa: "" })
+                        }
+                      }}
+                      onBlur={(e) => {
+                        const error = validateGPA(e.target.value)
+                        setFieldErrors({ ...fieldErrors, gpa: error })
+                      }}
+                      className={fieldErrors.gpa ? "border-destructive focus:border-destructive" : ""}
                     />
+                    {fieldErrors.gpa && (
+                      <p className="text-xs text-destructive">{fieldErrors.gpa}</p>
+                    )}
                   </div>
                   <div className="space-y-1.5">
                     <Label htmlFor="warningCount">Active Warnings</Label>
@@ -233,18 +343,18 @@ export default function BatchAdvisorPage() {
                       />
                       <CoursePicker
                         label="Failed / Retake"
-                        help="Needs a repeat"
+                        help="Needs a repeat (excludes passed courses)"
                         semesters={visibleSemesters}
-                        allCourses={courseOptions}
+                        allCourses={getFilteredCoursesForFailed}
                         selected={failedSelected}
                         onToggle={(id) => toggleCourse(id, failedSelected, setFailedSelected)}
                         onSetSelected={(ids) => setFailedSelected(ids)}
                       />
                       <CoursePicker
                         label="Low Grade"
-                        help="Improve C or below"
+                        help="Improve C or below (only passed courses)"
                         semesters={visibleSemesters}
-                        allCourses={courseOptions}
+                        allCourses={getFilteredCoursesForLow}
                         selected={lowSelected}
                         onToggle={(id) => toggleCourse(id, lowSelected, setLowSelected)}
                         onSetSelected={(ids) => setLowSelected(ids)}
