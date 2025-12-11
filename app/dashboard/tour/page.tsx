@@ -299,7 +299,7 @@ export default function TourPage() {
                 <p className="text-sm text-muted-foreground">Buildings</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-primary">100+</p>
+                <p className="text-3xl font-bold text-primary">22</p>
                 <p className="text-sm text-muted-foreground">Acres</p>
               </div>
               <div>
