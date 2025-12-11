@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Loader2, Mail, CheckCircle, ArrowLeft } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { getFirebaseErrorMessage } from "@/lib/utils/firebase-errors"
 
 export function ForgotPasswordForm() {
   // State management
@@ -20,6 +20,23 @@ export function ForgotPasswordForm() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
+  
+  // Validation errors for individual fields
+  const [fieldErrors, setFieldErrors] = useState({
+    email: "",
+  })
+
+  // Validation functions
+  const validateEmail = (email: string): string => {
+    if (!email.trim()) {
+      return "Email is required"
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return "Please enter a valid email address"
+    }
+    return ""
+  }
 
   /**
    * Handle form submission
@@ -29,6 +46,16 @@ export function ForgotPasswordForm() {
     e.preventDefault()
     setError(null)
     setSuccess(false)
+
+    // Validate email field
+    const emailError = validateEmail(email)
+    setFieldErrors({ email: emailError })
+
+    // If there are validation errors, don't submit
+    if (emailError) {
+      return
+    }
+
     setIsLoading(true)
 
     try {
@@ -50,8 +77,7 @@ export function ForgotPasswordForm() {
       setSuccess(true)
       setEmail("") // Clear email field
     } catch (err: unknown) {
-      const message =
-        err instanceof Error ? err.message : "Failed to send password reset email. Please try again."
+      const message = getFirebaseErrorMessage(err)
       setError(message)
     } finally {
       setIsLoading(false)
@@ -62,29 +88,11 @@ export function ForgotPasswordForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Success Message */}
       {success && (
-        <Card className="border-green-500/30 bg-green-50 dark:bg-green-950/20">
-          <CardContent className="flex items-start gap-3 py-4">
-            <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 shrink-0 mt-0.5" />
-            <div className="space-y-1">
-              <p className="text-sm font-medium text-green-900 dark:text-green-100">
-                Password reset email sent!
-              </p>
-              <p className="text-xs text-green-700 dark:text-green-300">
-                If an account exists with this email, you'll receive a password reset link shortly. 
-                Please check your inbox and spam folder.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Error Message */}
-      {error && (
-        <Card className="border-destructive/30 bg-destructive/10">
-          <CardContent className="py-3">
-            <p className="text-sm text-destructive">{error}</p>
-          </CardContent>
-        </Card>
+        <div className="space-y-3">
+          <p className="text-sm bg-green-500/10 border border-green-500/30 text-green-700 dark:text-green-400 rounded-lg px-3 py-2">
+            Password reset email sent! If an account exists with this email, you'll receive a password reset link shortly. Please check your inbox and spam folder.
+          </p>
+        </div>
       )}
 
       {/* Email Field */}
@@ -98,17 +106,47 @@ export function ForgotPasswordForm() {
             type="email"
             placeholder="you@example.com"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="h-12 pl-10 bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20"
+            onChange={(e) => {
+              const value = e.target.value
+              setEmail(value)
+              // Clear error when user starts typing
+              if (fieldErrors.email) {
+                setFieldErrors({ email: "" })
+              }
+              if (error) {
+                setError(null)
+              }
+            }}
+            onBlur={(e) => {
+              const error = validateEmail(e.target.value)
+              setFieldErrors({ email: error })
+            }}
+            className={`h-12 pl-10 bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 ${
+              fieldErrors.email ? "border-destructive focus:border-destructive" : ""
+            }`}
             required
             disabled={isLoading || success}
           />
           <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
         </div>
-        <p className="text-xs text-muted-foreground">
-          Enter the email address associated with your account
-        </p>
+        {fieldErrors.email && (
+          <p className="text-sm text-destructive">{fieldErrors.email}</p>
+        )}
+        {!fieldErrors.email && (
+          <p className="text-xs text-muted-foreground">
+            Enter the email address associated with your account
+          </p>
+        )}
       </div>
+
+      {/* Error Message */}
+      {error && (
+        <div className="space-y-3">
+          <p className="text-sm text-destructive bg-destructive/10 border border-destructive/30 rounded-lg px-3 py-2">
+            {error}
+          </p>
+        </div>
+      )}
 
       {/* Submit Button */}
       <Button

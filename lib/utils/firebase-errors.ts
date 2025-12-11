@@ -27,6 +27,7 @@ export function getFirebaseErrorMessage(error: unknown): string {
     "requires-recent-login": "This operation requires recent authentication. Please sign in again.",
     "network-request-failed": "Network error. Please check your internet connection and try again.",
     "internal-error": "An internal error occurred. Please try again later.",
+    "missing-email": "Email address is required. Please enter your email address.",
   }
 
   return errorMessages[errorCode] || errorMessage
