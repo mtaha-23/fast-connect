@@ -3,11 +3,11 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import { signOutUser } from "@/lib/services/auth.service"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { useTheme } from "next-themes"
 import {
   Bot,
   GraduationCap,
@@ -16,10 +16,11 @@ import {
   Users,
   Brain,
   Home,
-  Settings,
   LogOut,
   ChevronLeft,
   LayoutDashboard,
+  Moon,
+  Sun,
 } from "lucide-react"
 import {
   DropdownMenu,
@@ -78,6 +79,8 @@ export function Sidebar() {
   const router = useRouter()
   const [isCollapsed, setIsCollapsed] = useState(false)
   const { userData } = useAuth()
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
   
   // Get user display info
   const userName = userData?.name || "User"
@@ -98,6 +101,10 @@ export function Sidebar() {
     }
   }
 
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
     <aside
       className={cn(
@@ -107,10 +114,10 @@ export function Sidebar() {
     >
       <div className="flex h-full flex-col">
         {/* Header */}
-        <div className="flex h-16 items-center justify-between border-b border-border px-4">
+        <div className={cn("flex h-16 items-center border-b border-border px-4 relative", isCollapsed ? "justify-center" : "justify-between")}>
           <Link
-            href="/dashboard"
-            className={cn("flex items-center gap-3 transition-opacity", isCollapsed && "opacity-0")}
+            href="/"
+            className={cn("flex items-center gap-3", isCollapsed && "justify-center")}
           >
             <div className="relative">
               <div className="w-9 h-9 rounded-xl bg-card backdrop-blur-sm border border-border flex items-center justify-center shrink-0 shadow-lg dark:shadow-black/20 overflow-hidden">
@@ -124,22 +131,29 @@ export function Sidebar() {
               </div>
               <div className="absolute inset-0 rounded-xl bg-primary/20 blur-lg opacity-50 transition-opacity" />
             </div>
-            <span className="font-bold text-lg whitespace-nowrap text-sidebar-foreground">
+            <span className={cn(
+              "font-bold text-lg whitespace-nowrap text-sidebar-foreground transition-opacity duration-300",
+              isCollapsed ? "opacity-0 w-0 overflow-hidden" : "opacity-100"
+            )}>
               FAST<span className="text-primary">Connect</span>
             </span>
           </Link>
 
-          <div className="flex items-center gap-1">
-            <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              className="shrink-0 text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary"
-              onClick={() => setIsCollapsed(!isCollapsed)}
-            >
-              <ChevronLeft className={cn("w-5 h-5 transition-transform", isCollapsed && "rotate-180")} />
-            </Button>
-          </div>
+          {/* Collapse button - moves to sidebar edge when collapsed */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className={cn(
+              "shrink-0 text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary transition-all duration-300",
+              isCollapsed 
+                ? "absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-50 bg-sidebar border border-border rounded-full shadow-lg hover:bg-accent dark:hover:bg-primary/30" 
+                : "relative"
+            )}
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+          >
+            <ChevronLeft className={cn("w-5 h-5 transition-transform duration-300", isCollapsed && "rotate-180")} />
+          </Button>
         </div>
 
         {/* Navigation */}
@@ -168,17 +182,32 @@ export function Sidebar() {
 
         {/* Footer */}
         <div className="border-t border-border p-3 space-y-2">
-          <Link
-            href="/dashboard/settings"
+          {/* Theme Toggle */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className={cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all",
+              "flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm font-medium transition-all",
               "hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary text-muted-foreground hover:text-foreground",
               isCollapsed && "justify-center px-2",
             )}
+            disabled={!mounted}
+            aria-label="Toggle theme"
           >
-            <Settings className="w-5 h-5 shrink-0" />
-            {!isCollapsed && <span>Settings</span>}
-          </Link>
+            {mounted ? (
+              <>
+                <div className="relative w-5 h-5 shrink-0">
+                  <Sun className="absolute h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                  <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                </div>
+                {!isCollapsed && <span>Theme</span>}
+              </>
+            ) : (
+              <>
+                <Sun className="w-5 h-5 shrink-0" />
+                {!isCollapsed && <span>Theme</span>}
+              </>
+            )}
+          </button>
 
           {/* User Menu */}
           <DropdownMenu>
