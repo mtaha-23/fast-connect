@@ -82,15 +82,24 @@ export default function BatchAdvisorPage() {
 
   const numericSemester = Number(formData.currentSemester || 0)
   const visibleSemesters = useMemo(
-    () =>
-      Object.keys(courseOptions).filter((sem) => {
+    () => {
+      // Only show semesters if a valid semester (1-8) is entered
+      // Don't show any semesters by default - wait for user input
+      if (!formData.currentSemester || !formData.currentSemester.trim()) {
+        return []
+      }
+      const semesterNum = Number(formData.currentSemester)
+      if (Number.isNaN(semesterNum) || semesterNum < 1 || semesterNum > 8) {
+        return []
+      }
+      // If student is in semester N, only show semesters strictly before N
+      return Object.keys(courseOptions).filter((sem) => {
         const num = Number(sem)
         if (Number.isNaN(num)) return false
-        // If student is in semester N, only show semesters strictly before N
-        if (numericSemester && numericSemester > 0) return num < numericSemester
-        return true
-      }),
-    [courseOptions, numericSemester],
+        return num < semesterNum
+      })
+    },
+    [courseOptions, formData.currentSemester],
   )
 
   // Filter courses for failed selection (exclude passed courses)
@@ -342,7 +351,7 @@ export default function BatchAdvisorPage() {
                         onSetSelected={(ids) => setPassedSelected(ids)}
                       />
                       <CoursePicker
-                        label="Failed / Retake"
+                        label="Failed"
                         help="Needs a repeat (excludes passed courses)"
                         semesters={visibleSemesters}
                         allCourses={getFilteredCoursesForFailed}
@@ -453,7 +462,8 @@ type CoursePickerProps = {
 }
 
 function CoursePicker({ label, help, semesters, allCourses, selected, onToggle, onSetSelected }: CoursePickerProps) {
-  const semesterKeys = semesters.length ? semesters : Object.keys(allCourses)
+  // Only use semesters if provided, don't fall back to all courses
+  const semesterKeys = semesters
   const [openSem, setOpenSem] = useState<string>(() => semesterKeys[0] || "")
   const initialSet = useRef(false)
 
@@ -473,12 +483,14 @@ function CoursePicker({ label, help, semesters, allCourses, selected, onToggle, 
   return (
     <CollapsibleSection title={label} badgeText={`${selected.length} selected`}>
       <p className="text-sm text-muted-foreground mb-2">{help}</p>
-      <span className="text-xs text-muted-foreground block mb-3">
-        Showing {semesterKeys.length || 0} semesters
-      </span>
-      <div className="grid grid-cols-1 gap-3 max-h-72 overflow-auto pr-1">
-        {semesterKeys.map((sem) => (
-          <div key={sem} className="rounded-lg border">
+      {semesterKeys.length > 0 ? (
+        <>
+          <span className="text-xs text-muted-foreground block mb-3">
+            Showing {semesterKeys.length} semesters
+          </span>
+          <div className="grid grid-cols-1 gap-3 max-h-72 overflow-auto pr-1">
+            {semesterKeys.map((sem) => (
+              <div key={sem} className="rounded-lg border">
             <button
               type="button"
               onClick={() => setOpenSem((prev) => (prev === sem ? "" : sem))}
@@ -530,13 +542,15 @@ function CoursePicker({ label, help, semesters, allCourses, selected, onToggle, 
                 </div>
               </div>
             )}
+              </div>
+            ))}
           </div>
-        ))}
-
-        {semesterKeys.length === 0 && (
-          <p className="text-sm text-muted-foreground">No courses available from the catalog.</p>
-        )}
-      </div>
+        </>
+      ) : (
+        <p className="text-sm text-muted-foreground mb-3">
+          Please enter your current semester to view available courses.
+        </p>
+      )}
     </CollapsibleSection>
   )
 }
