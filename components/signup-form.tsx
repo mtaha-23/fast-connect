@@ -11,6 +11,8 @@ import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Eye, EyeOff, Loader2, Mail, User } from "lucide-react"
 import { OTPModal } from "./otp-modal"
+import { ErrorModal } from "@/components/error-modal"
+import { getFirebaseErrorMessage } from "@/lib/utils/firebase-errors"
 
 export function SignupForm() {
   const router = useRouter()
@@ -19,6 +21,7 @@ export function SignupForm() {
   const [isLoading, setIsLoading] = useState(false)
   const [showOTP, setShowOTP] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [showErrorModal, setShowErrorModal] = useState(false)
   
   // Validation errors for individual fields
   const [fieldErrors, setFieldErrors] = useState({
@@ -46,6 +49,9 @@ export function SignupForm() {
     }
     if (name.trim().length > 100) {
       return "Name must be less than 100 characters"
+    }
+    if (/[0-9]/.test(name)) {
+      return "Name cannot contain numbers"
     }
     return ""
   }
@@ -141,9 +147,9 @@ export function SignupForm() {
       // Show verification modal after successful signup
       setShowOTP(true)
     } catch (err: unknown) {
-      const message =
-        err instanceof Error ? err.message : "Failed to create account. Please try again."
+      const message = getFirebaseErrorMessage(err)
       setError(message)
+      setShowErrorModal(true)
     } finally {
       setIsLoading(false)
     }
@@ -165,9 +171,9 @@ export function SignupForm() {
         router.push("/dashboard")
       }
     } catch (err: unknown) {
-      const message =
-        err instanceof Error ? err.message : "Google sign-up failed. Please try again."
+      const message = getFirebaseErrorMessage(err)
       setError(message)
+      setShowErrorModal(true)
     } finally {
       setIsLoading(false)
     }
@@ -407,6 +413,14 @@ export function SignupForm() {
 
       {/* OTP Modal */}
       <OTPModal open={showOTP} onOpenChange={setShowOTP} email={formData.email} />
+
+      {/* Error Modal */}
+      <ErrorModal
+        open={showErrorModal}
+        onOpenChange={setShowErrorModal}
+        title="Sign Up Error"
+        message={error || "An error occurred. Please try again."}
+      />
     </>
   )
 }
