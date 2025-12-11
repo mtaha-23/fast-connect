@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Bot, GraduationCap, FileText, Globe, Users, Brain, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { ScrollAnimate } from "@/components/scroll-animate"
 
 const modules = [
   {
@@ -69,27 +70,32 @@ export function ModulesSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-            Services
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-foreground">
-            Everything we{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80">
-              provide
+        <ScrollAnimate animationId="modules-header" direction="up">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+              Services
             </span>
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Explore our comprehensive suite of services designed to support your journey to FAST University.
-          </p>
-        </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-foreground">
+              Everything we{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80">
+                provide
+              </span>
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Explore our comprehensive suite of services designed to support your journey to FAST University.
+            </p>
+          </div>
+        </ScrollAnimate>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {modules.map((module) => (
-            <div
+          {modules.map((module, index) => (
+            <ScrollAnimate
               key={module.title}
-              className="group relative bg-card/50 border border-border rounded-2xl p-6 hover:border-primary/30 transition-all duration-500 flex flex-col"
+              animationId={`module-${module.title}`}
+              direction="up"
+              delay={index * 100}
             >
+              <div className="group relative bg-card/50 border border-border rounded-2xl p-6 hover:border-primary/30 transition-all duration-500 flex flex-col">
               {/* Content area that grows */}
               <div className="flex-1">
                 {/* Icon & Title */}
@@ -133,7 +139,8 @@ export function ModulesSection() {
 
               {/* Hover glow */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-            </div>
+              </div>
+            </ScrollAnimate>
           ))}
         </div>
       </div>
