@@ -96,7 +96,7 @@ export default function ResourcesPage() {
   }
 
   const filteredResources = resources.filter((resource) => {
-    const matchesSearch = resource.title.toLowerCase().includes(searchQuery.toLowerCase())
+    const matchesSearch = resource.title?.toLowerCase().includes(searchQuery.toLowerCase()) ?? false
     const matchesCategory = selectedCategory === "All" || resource.category === selectedCategory
     const matchesType = selectedType === "All Types" || resource.type === selectedType
     return matchesSearch && matchesCategory && matchesType

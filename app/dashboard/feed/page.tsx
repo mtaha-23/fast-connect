@@ -131,17 +131,19 @@ export default function FeedPage() {
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <Avatar className="w-10 h-10 border border-border">
-                        <AvatarImage src={post.author.avatar} />
+                        <AvatarImage src={post.author?.avatar} />
                         <AvatarFallback className="bg-gradient-to-br from-blue-500 to-indigo-600 text-primary-foreground">
-                          {post.author.name.charAt(0).toUpperCase()}
+                          {post.author?.name?.charAt(0).toUpperCase() || "?"}
                         </AvatarFallback>
                       </Avatar>
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="font-semibold text-foreground">{post.author.name}</span>
-                          <Badge variant="secondary" className="text-xs bg-muted text-muted-foreground border-0">
-                            {post.author.role}
-                          </Badge>
+                          <span className="font-semibold text-foreground">{post.author?.name || "Unknown Author"}</span>
+                          {post.author?.role && (
+                            <Badge variant="secondary" className="text-xs bg-muted text-muted-foreground border-0">
+                              {post.author.role}
+                            </Badge>
+                          )}
                         </div>
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
                           <Clock className="w-3 h-3" />
