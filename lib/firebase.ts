@@ -6,11 +6,13 @@
 import { initializeApp, getApps, type FirebaseApp } from "firebase/app"
 import { getAuth, type Auth, GoogleAuthProvider } from "firebase/auth"
 import { getFirestore, type Firestore } from "firebase/firestore"
+import { getStorage, type FirebaseStorage } from "firebase/storage"
 
 // Singleton instances to prevent multiple initializations
 let firebaseApp: FirebaseApp | null = null
 let firebaseAuth: Auth | null = null
 let firebaseFirestore: Firestore | null = null
+let firebaseStorage: FirebaseStorage | null = null
 let googleProvider: GoogleAuthProvider | null = null
 
 /**
@@ -76,4 +78,16 @@ export function getFirestoreDB(): Firestore {
     firebaseFirestore = getFirestore(app)
   }
   return firebaseFirestore
+}
+
+/**
+ * Get or initialize Firebase Storage instance
+ * @returns Firebase Storage instance
+ */
+export function getFirebaseStorage(): FirebaseStorage {
+  if (!firebaseStorage) {
+    const app = getFirebaseApp()
+    firebaseStorage = getStorage(app)
+  }
+  return firebaseStorage
 }

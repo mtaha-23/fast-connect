@@ -45,6 +45,7 @@ export async function POST(request: NextRequest) {
       author: body.author,
       content: body.content,
       image: body.image,
+      imagePublicId: body.imagePublicId,
       type: body.type,
       isPinned: body.isPinned || false,
     })

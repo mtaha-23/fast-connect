@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, type ChangeEvent } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
@@ -47,9 +47,11 @@ export default function AdminPostsPage() {
   const [formData, setFormData] = useState({
     content: "",
     image: "",
+    imagePublicId: "",
     type: "announcement" as "announcement" | "event" | "news" | "update",
     isPinned: false,
   })
+  const [imageFile, setImageFile] = useState<File | null>(null)
   const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
@@ -76,9 +78,11 @@ export default function AdminPostsPage() {
     setFormData({
       content: "",
       image: "",
+      imagePublicId: "",
       type: "announcement",
       isPinned: false,
     })
+    setImageFile(null)
     setIsCreateDialogOpen(true)
   }
 
@@ -87,15 +91,58 @@ export default function AdminPostsPage() {
     setFormData({
       content: post.content,
       image: post.image || "",
+      imagePublicId: (post as any).imagePublicId || "",
       type: post.type,
       isPinned: post.isPinned || false,
     })
+    setImageFile(null)
     setIsEditDialogOpen(true)
   }
 
   const handleDelete = (post: Post) => {
     setSelectedPost(post)
     setIsDeleteDialogOpen(true)
+  }
+
+  const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (file) {
+      const maxBytes = 5 * 1024 * 1024 // 5MB
+      if (file.size > maxBytes) {
+        alert("Image is too large. Maximum size is 5 MB.")
+        event.target.value = ""
+        setImageFile(null)
+        return
+      }
+      setImageFile(file)
+    } else {
+      setImageFile(null)
+    }
+  }
+
+  const resolveImage = async (): Promise<{ image: string; imagePublicId?: string }> => {
+    // If a new file is selected, upload it to Cloudinary
+    if (imageFile) {
+      const formDataToSend = new FormData()
+      formDataToSend.append("file", imageFile)
+
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formDataToSend,
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => null)
+        const message = errorData?.error || "Failed to upload image"
+        throw new Error(message)
+      }
+
+      const data = await response.json()
+      return { image: (data.url as string) || "", imagePublicId: data.publicId as string | undefined }
+    }
+
+    // Otherwise, fall back to the URL in the text field (if any)
+    return { image: formData.image.trim(), imagePublicId: formData.imagePublicId || undefined }
   }
 
   const submitCreate = async () => {
@@ -110,6 +157,8 @@ export default function AdminPostsPage() {
         avatar: userData.photoURL || undefined,
       }
 
+      const { image, imagePublicId } = await resolveImage()
+
       const response = await fetch("/api/posts", {
         method: "POST",
         headers: {
@@ -118,6 +167,8 @@ export default function AdminPostsPage() {
         body: JSON.stringify({
           author,
           ...formData,
+          image,
+          imagePublicId,
         }),
       })
 
@@ -126,6 +177,7 @@ export default function AdminPostsPage() {
       }
 
       setIsCreateDialogOpen(false)
+      setImageFile(null)
       fetchPosts()
     } catch (error) {
       console.error("Error creating post:", error)
@@ -140,12 +192,18 @@ export default function AdminPostsPage() {
 
     try {
       setSubmitting(true)
+      const { image, imagePublicId } = await resolveImage()
+
       const response = await fetch(`/api/posts/${selectedPost.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          image,
+          imagePublicId,
+        }),
       })
 
       if (!response.ok) {
@@ -154,6 +212,7 @@ export default function AdminPostsPage() {
 
       setIsEditDialogOpen(false)
       setSelectedPost(null)
+      setImageFile(null)
       fetchPosts()
     } catch (error) {
       console.error("Error updating post:", error)
@@ -254,8 +313,12 @@ export default function AdminPostsPage() {
                     <p className="text-sm text-muted-foreground mb-3">{post.timestamp}</p>
                     <p className="text-foreground whitespace-pre-line mb-3">{post.content}</p>
                     {post.image && (
-                      <div className="rounded-xl overflow-hidden mb-3 max-w-md">
-                        <img src={post.image} alt="Post" className="w-full h-auto object-cover" />
+                      <div className="rounded-xl overflow-hidden mb-3 inline-block max-w-full">
+                        <img
+                          src={post.image}
+                          alt="Post"
+                          className="w-full h-auto max-h-80 object-contain"
+                        />
                       </div>
                     )}
                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -315,6 +378,17 @@ export default function AdminPostsPage() {
                 className="mt-1"
                 placeholder="https://example.com/image.jpg"
               />
+            </div>
+            <div>
+              <Label htmlFor="image-file">Or upload image (optional)</Label>
+              <Input
+                id="image-file"
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                className="mt-1"
+              />
+              <p className="text-xs text-muted-foreground mt-1">Max image size: 5 MB.</p>
             </div>
             <div>
               <Label htmlFor="type">Type</Label>
@@ -391,6 +465,17 @@ export default function AdminPostsPage() {
                 className="mt-1"
                 placeholder="https://example.com/image.jpg"
               />
+            </div>
+            <div>
+              <Label htmlFor="edit-image-file">Or upload image (optional)</Label>
+              <Input
+                id="edit-image-file"
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                className="mt-1"
+              />
+              <p className="text-xs text-muted-foreground mt-1">Max image size: 5 MB.</p>
             </div>
             <div>
               <Label htmlFor="edit-type">Type</Label>

@@ -18,6 +18,7 @@ export interface Post {
   author: PostAuthor
   content: string
   image?: string
+  imagePublicId?: string
   timestamp: string
   createdAt: Timestamp
   likes: number
@@ -48,6 +49,7 @@ export async function getAllPosts(): Promise<Post[]> {
         author: data.author,
         content: data.content,
         image: data.image,
+        imagePublicId: data.imagePublicId,
         timestamp: formatTimestamp(createdAt),
         createdAt: createdAt,
         likes: data.likes || 0,
@@ -125,6 +127,7 @@ export async function createPost(data: {
   author: PostAuthor
   content: string
   image?: string
+  imagePublicId?: string
   type: "announcement" | "event" | "news" | "update"
   isPinned?: boolean
 }): Promise<string> {
@@ -136,6 +139,7 @@ export async function createPost(data: {
       author: data.author,
       content: data.content,
       image: data.image || null,
+      imagePublicId: data.imagePublicId || null,
       type: data.type,
       isPinned: data.isPinned || false,
       likes: 0,
@@ -162,6 +166,7 @@ export async function updatePost(
   data: {
     content?: string
     image?: string
+    imagePublicId?: string
     type?: "announcement" | "event" | "news" | "update"
     isPinned?: boolean
   }
@@ -181,6 +186,7 @@ export async function updatePost(
     
     if (data.content !== undefined) updateData.content = data.content
     if (data.image !== undefined) updateData.image = data.image || null
+    if (data.imagePublicId !== undefined) updateData.imagePublicId = data.imagePublicId || null
     if (data.type !== undefined) updateData.type = data.type
     if (data.isPinned !== undefined) updateData.isPinned = data.isPinned
     
@@ -234,6 +240,7 @@ export async function getPostById(postId: string): Promise<Post | null> {
       author: data.author,
       content: data.content,
       image: data.image,
+      imagePublicId: data.imagePublicId,
       timestamp: formatTimestamp(createdAt),
       createdAt: createdAt,
       likes: data.likes || 0,

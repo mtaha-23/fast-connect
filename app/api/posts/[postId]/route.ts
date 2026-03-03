@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { updatePost, deletePost, getPostById } from "@/lib/services/post.service"
+import { cloudinary } from "@/lib/cloudinary"
 
 /**
  * GET /api/posts/[postId]
@@ -66,8 +67,20 @@ export async function DELETE(
 ) {
   try {
     const { postId } = await params
+
+    // Fetch post to get Cloudinary public ID (if any)
+    const post = await getPostById(postId)
+
+    if (post && (post as any).imagePublicId) {
+      try {
+        await cloudinary.uploader.destroy((post as any).imagePublicId as string)
+      } catch (err) {
+        console.error("Failed to delete Cloudinary image:", err)
+      }
+    }
+
     await deletePost(postId)
-    
+
     return NextResponse.json({ success: true, message: "Post deleted successfully" }, { status: 200 })
   } catch (error) {
     console.error("Error deleting post:", error)

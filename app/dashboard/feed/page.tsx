@@ -160,8 +160,12 @@ export default function FeedPage() {
                   <p className="text-sm text-foreground whitespace-pre-line mb-4">{post.content}</p>
 
                   {post.image && (
-                    <div className="rounded-xl overflow-hidden mb-4">
-                      <img src={post.image || "/placeholder.svg"} alt="Post" className="w-full h-auto object-cover" />
+                    <div className="rounded-xl overflow-hidden mb-4 inline-block max-w-full">
+                      <img
+                        src={post.image || "/placeholder.svg"}
+                        alt="Post"
+                        className="w-full h-auto max-h-80 object-contain"
+                      />
                     </div>
                   )}
 
