@@ -102,18 +102,23 @@ async function getCourseCatalog() {
   const lines = raw.split(/\r?\n/).filter((l) => l.trim().length > 0)
   const [, ...rows] = lines
 
-  const bySemester: Record<string, { courseId: string; courseName: string }[]> = {}
+  const bySemester: Record<
+    string,
+    { courseId: string; courseName: string; creditHours?: number }
+  > = {}
 
   rows.forEach((row) => {
     const cols = row.split(",")
     const courseId = cols[0]?.trim()
     const courseName = cols[1]?.trim()
     const sem = cols[2]?.trim()
+    const creditHoursRaw = cols[3]?.trim()
+    const creditHours = creditHoursRaw ? Number(creditHoursRaw) : undefined
     if (!courseId || !courseName || !sem) return
 
     const semKey = sem.split("-")[0]
     if (!bySemester[semKey]) bySemester[semKey] = []
-    bySemester[semKey].push({ courseId, courseName })
+    bySemester[semKey].push({ courseId, courseName, creditHours })
   })
 
   return bySemester

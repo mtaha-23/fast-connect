@@ -19,7 +19,19 @@ interface Recommendation {
   isCore?: boolean
 }
 
-type CourseMap = Record<string, { courseId: string; courseName: string }[]>
+type Course = {
+  courseId: string
+  courseName: string
+  creditHours?: number
+}
+
+type CourseMap = Record<string, Course[]>
+
+function formatCreditHours(creditHours?: number) {
+  if (!creditHours || Number.isNaN(creditHours)) return ""
+  if (creditHours === 4) return "(3+1 CH)"
+  return `(${creditHours} CH)`
+}
 
 export default function BatchAdvisorPage() {
   const [isAnalyzing, setIsAnalyzing] = useState(false)
@@ -44,6 +56,16 @@ export default function BatchAdvisorPage() {
     creditEarned: "",
   })
   const [warnings, setWarnings] = useState<string[]>([])
+
+  const courseById = useMemo(() => {
+    const map = new Map<string, Course>()
+    Object.values(courseOptions).forEach((courses) => {
+      courses.forEach((course) => {
+        map.set(course.courseId, course)
+      })
+    })
+    return map
+  }, [courseOptions])
 
   useEffect(() => {
     const loadCourses = async () => {
@@ -526,7 +548,10 @@ export default function BatchAdvisorPage() {
                               <span className="text-sm font-medium">{rec.courseId}</span>
                             </td>
                             <td className="px-4 py-3">
-                              <span className="text-sm text-muted-foreground">{rec.courseName}</span>
+                              <span className="text-sm text-muted-foreground">
+                                {rec.courseName}{" "}
+                                {formatCreditHours(courseById.get(rec.courseId)?.creditHours)}
+                              </span>
                             </td>
                           </tr>
                         ))}
@@ -628,7 +653,9 @@ function CoursePicker({ label, help, semesters, allCourses, selected, onToggle, 
                             />
                             <div>
                               <p className="text-sm font-medium">{course.courseId}</p>
-                              <p className="text-xs text-muted-foreground">{course.courseName}</p>
+                              <p className="text-xs text-muted-foreground">
+                                {course.courseName} {formatCreditHours(course.creditHours)}
+                              </p>
                             </div>
                           </label>
                         ))}
