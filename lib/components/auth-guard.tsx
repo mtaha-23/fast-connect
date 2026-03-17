@@ -4,6 +4,7 @@ import { useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { useAuth } from "@/lib/hooks/use-auth"
 import type { UserRole } from "@/lib/services/auth.service"
+import { signOutUser } from "@/lib/services/auth.service"
 
 interface AuthGuardProps {
   children: React.ReactNode
@@ -36,6 +37,14 @@ export function AuthGuard({ children, requiredRole, redirectTo = "/login" }: Aut
 
     // Wait for userData to load before checking role
     if (!userData) return
+
+    // Block deactivated users (Firestore flag)
+    if ((userData as any).disabled) {
+      // Best-effort sign-out, then redirect.
+      signOutUser().catch(() => {})
+      router.push("/login?error=account-deactivated")
+      return
+    }
 
     // Check role if required
     if (requiredRole && userData.role !== requiredRole) {

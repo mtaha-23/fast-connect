@@ -53,6 +53,8 @@ export interface UserData {
   photoURL?: string | null
   createdAt: string
   updatedAt: string
+  disabled?: boolean
+  deactivatedAt?: string | null
 }
 
 /**
