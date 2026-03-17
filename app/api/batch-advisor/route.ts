@@ -104,7 +104,7 @@ async function getCourseCatalog() {
 
   const bySemester: Record<
     string,
-    { courseId: string; courseName: string; creditHours?: number }
+    { courseId: string; courseName: string; creditHours?: number }[]
   > = {}
 
   rows.forEach((row) => {

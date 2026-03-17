@@ -45,6 +45,7 @@ interface Resource {
   icon: string
   color: string
   fileUrl?: string
+  fileName?: string
 }
 
 const categories = ["All", "Entry Test", "Mathematics", "English", "CS", "Analytical", "General"]
@@ -86,13 +87,45 @@ export default function ResourcesPage() {
   const handleDownload = async (resource: Resource) => {
     try {
       if (resource.fileUrl) {
-        window.open(resource.fileUrl, "_blank")
+        // Always download through our API to enforce correct filename/extension
+        window.open(`/api/resources/${resource.id}/download`, "_blank")
       } else {
         console.log("No file URL available for download")
       }
     } catch (err) {
       console.error("Error opening resource:", err)
     }
+  }
+
+  const getPreviewUrl = (url: string) => {
+    // Google Drive -> convert to preview embed
+    const downloadMatch = url.match(/[?&]id=([^&]+)/)
+    if (downloadMatch) {
+      const fileId = downloadMatch[1]
+      return `https://drive.google.com/file/d/${fileId}/preview`
+    }
+    const viewMatch = url.match(/\/file\/d\/([^\/]+)/)
+    if (viewMatch) {
+      const fileId = viewMatch[1]
+      return `https://drive.google.com/file/d/${fileId}/preview`
+    }
+
+    // Otherwise just use the direct URL (Cloudinary, S3, etc.)
+    return url
+  }
+
+  const inferExt = (resource: Resource) => {
+    const name = resource.fileName || ""
+    const nameMatch = name.match(/\.([a-z0-9]+)$/i)
+    if (nameMatch) return nameMatch[1].toLowerCase()
+    const url = resource.fileUrl || ""
+    const urlMatch = url.match(/\.([a-z0-9]+)(?:\?|$)/i)
+    return urlMatch?.[1]?.toLowerCase()
+  }
+
+  const isPreviewable = (resource: Resource) => {
+    const ext = inferExt(resource)
+    return ext === "pdf" || ext === "png" || ext === "jpg" || ext === "jpeg" || ext === "webp" || ext === "gif"
   }
 
   const filteredResources = resources.filter((resource) => {
@@ -290,29 +323,40 @@ export default function ResourcesPage() {
             {/* Preview Area */}
             {previewResource?.fileUrl ? (
               <div className="flex-1 min-h-0 border rounded-lg overflow-hidden bg-muted">
-                <iframe
-                  src={(() => {
-                    // Convert Google Drive download URL to preview URL
-                    const url = previewResource.fileUrl!
-                    // Extract file ID from download URL
-                    const downloadMatch = url.match(/[?&]id=([^&]+)/)
-                    if (downloadMatch) {
-                      const fileId = downloadMatch[1]
-                      return `https://drive.google.com/file/d/${fileId}/preview`
-                    }
-                    // If already a view URL, convert to preview
-                    const viewMatch = url.match(/\/file\/d\/([^\/]+)/)
-                    if (viewMatch) {
-                      const fileId = viewMatch[1]
-                      return `https://drive.google.com/file/d/${fileId}/preview`
-                    }
-                    // Fallback to original URL
-                    return url
-                  })()}
-                  className="w-full h-full min-h-[500px]"
-                  title={previewResource.title}
-                  allow="autoplay"
-                />
+                {(() => {
+                  const url = previewResource.fileUrl!
+                  const isDrive = url.includes("drive.google.com") || url.includes("docs.google.com")
+
+                  if (isDrive) {
+                    return (
+                      <iframe
+                        src={getPreviewUrl(url)}
+                        className="w-full h-full min-h-[500px]"
+                        title={previewResource.title}
+                        allow="autoplay"
+                      />
+                    )
+                  }
+
+                  if (!isPreviewable(previewResource)) {
+                    return (
+                      <div className="h-full w-full flex items-center justify-center p-8 text-center">
+                        <p className="text-muted-foreground">
+                          Preview is not available for this file type. Please use Download.
+                        </p>
+                      </div>
+                    )
+                  }
+
+                  // Inline render via our API (PDF/images)
+                  return (
+                    <iframe
+                      src={`/api/resources/${previewResource.id}/download?inline=1`}
+                      className="w-full h-full min-h-[500px]"
+                      title={previewResource.title}
+                    />
+                  )
+                })()}
               </div>
             ) : (
               <div className="aspect-[4/3] bg-muted rounded-lg flex items-center justify-center flex-shrink-0">

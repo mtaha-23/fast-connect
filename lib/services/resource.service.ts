@@ -18,6 +18,8 @@ export interface Resource {
   icon: string // Icon name as string (e.g., "FileText", "Calculator")
   color: string // Tailwind color class (e.g., "bg-blue-500")
   fileUrl?: string // URL to the actual file
+  filePublicId?: string // Cloudinary public ID for cleanup
+  fileName?: string // Original filename (for correct downloads)
   createdAt: Timestamp
   updatedAt: Timestamp
 }
@@ -46,10 +48,12 @@ export async function getAllResources(): Promise<Resource[]> {
         subject: data.subject,
         date: data.date,
         downloads: data.downloads || 0,
-        size: data.size,
+        size: data.size || "",
         icon: data.icon || "FileText",
         color: data.color || "bg-blue-500",
         fileUrl: data.fileUrl,
+        filePublicId: data.filePublicId,
+        fileName: data.fileName,
         createdAt: createdAt,
         updatedAt: data.updatedAt || createdAt,
       })
@@ -87,10 +91,12 @@ export async function getResourceById(resourceId: string): Promise<Resource | nu
       subject: data.subject,
       date: data.date,
       downloads: data.downloads || 0,
-      size: data.size,
+      size: data.size || "",
       icon: data.icon || "FileText",
       color: data.color || "bg-blue-500",
       fileUrl: data.fileUrl,
+      filePublicId: data.filePublicId,
+      fileName: data.fileName,
       createdAt: createdAt,
       updatedAt: data.updatedAt || createdAt,
     }
@@ -110,10 +116,12 @@ export async function createResource(data: {
   category: "Entry Test" | "Mathematics" | "English" | "CS" | "Analytical" | "General"
   subject: string
   date: string
-  size: string
+  size?: string
   icon?: string
   color?: string
   fileUrl?: string
+  filePublicId?: string
+  fileName?: string
 }): Promise<string> {
   try {
     const db = getFirestoreDB()
@@ -125,10 +133,12 @@ export async function createResource(data: {
       category: data.category,
       subject: data.subject,
       date: data.date,
-      size: data.size,
+      size: data.size || "",
       icon: data.icon || "FileText",
       color: data.color || "bg-blue-500",
       fileUrl: data.fileUrl || null,
+      filePublicId: data.filePublicId || null,
+      fileName: data.fileName || null,
       createdAt: Timestamp.now(),
       updatedAt: Timestamp.now(),
     }
@@ -157,6 +167,8 @@ export async function updateResource(
     icon?: string
     color?: string
     fileUrl?: string
+    filePublicId?: string
+    fileName?: string
   }
 ): Promise<void> {
   try {
@@ -181,6 +193,8 @@ export async function updateResource(
     if (data.icon !== undefined) updateData.icon = data.icon
     if (data.color !== undefined) updateData.color = data.color
     if (data.fileUrl !== undefined) updateData.fileUrl = data.fileUrl || null
+    if (data.filePublicId !== undefined) updateData.filePublicId = data.filePublicId || null
+    if (data.fileName !== undefined) updateData.fileName = data.fileName || null
     
     await updateDoc(resourceRef, updateData)
   } catch (error) {

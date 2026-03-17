@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getResourceById, updateResource, deleteResource } from "@/lib/services/resource.service"
+import { cloudinary } from "@/lib/cloudinary"
 
 /**
  * GET /api/resources/[resourceId]
@@ -70,6 +71,21 @@ export async function DELETE(
 ) {
   try {
     const { resourceId } = await params
+    // Fetch resource to get Cloudinary public ID (if any)
+    const resource = await getResourceById(resourceId)
+
+    if (resource && resource.filePublicId) {
+      try {
+        // Resources can be uploaded as "raw" (pdf/docx) or "image"
+        const rawResult = await cloudinary.uploader.destroy(resource.filePublicId, { resource_type: "raw" })
+        if (rawResult?.result === "not found") {
+          await cloudinary.uploader.destroy(resource.filePublicId, { resource_type: "image" })
+        }
+      } catch (err) {
+        console.error("Failed to delete Cloudinary file for resource:", err)
+      }
+    }
+
     await deleteResource(resourceId)
     
     return NextResponse.json({ success: true, message: "Resource deleted successfully" }, { status: 200 })

@@ -34,10 +34,18 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
     
-    // Validate required fields
-    if (!body.title || !body.type || !body.category || !body.subject || !body.date || !body.size) {
+    // Basic validation
+    if (!body.title || !body.type || !body.category) {
       return NextResponse.json(
-        { error: "Title, type, category, subject, date, and size are required" },
+        { error: "Title, type, and category are required" },
+        { status: 400 }
+      )
+    }
+
+    // Require either a direct file URL or an uploaded file (represented by filePublicId)
+    if (!body.fileUrl && !body.filePublicId) {
+      return NextResponse.json(
+        { error: "Either a file link or an uploaded file is required" },
         { status: 400 }
       )
     }
@@ -46,12 +54,14 @@ export async function POST(request: NextRequest) {
       title: body.title,
       type: body.type,
       category: body.category,
-      subject: body.subject,
-      date: body.date,
+      subject: body.subject ?? "",
+      date: body.date ?? "",
       size: body.size,
       icon: body.icon,
       color: body.color,
       fileUrl: body.fileUrl,
+      filePublicId: body.filePublicId,
+      fileName: body.fileName,
     })
     
     return NextResponse.json({ success: true, resourceId, message: "Resource created successfully" }, { status: 201 })
