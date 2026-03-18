@@ -32,6 +32,8 @@ import {
 } from "@/components/ui/select"
 import { Plus, Edit, Trash2, Loader2, FileText } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useAuth } from "@/lib/hooks/use-auth"
+import { logAnalyticsEvent } from "@/lib/services/analytics.service"
 
 type ResourceType = "Past Paper" | "Study Guide" | "Notes" | "Practice Set" | "Official Document"
 type ResourceCategory = "Entry Test" | "Mathematics" | "English" | "CS" | "Analytical" | "General"
@@ -96,6 +98,7 @@ export default function AdminResourcesPage() {
   const [resources, setResources] = useState<AdminResource[]>([])
   const [loading, setLoading] = useState(true)
   const [submitting, setSubmitting] = useState(false)
+  const { user } = useAuth()
 
   const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false)
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
@@ -272,6 +275,12 @@ export default function AdminResourcesPage() {
         throw new Error("Failed to create resource")
       }
 
+      await logAnalyticsEvent({
+        type: "resource.created",
+        actorUid: user?.uid ?? undefined,
+        actorEmail: user?.email ?? undefined,
+        meta: { title: formData.title, type: formData.type, category: formData.category },
+      })
       setIsCreateDialogOpen(false)
       setFile(null)
       await fetchResources()
@@ -324,6 +333,13 @@ export default function AdminResourcesPage() {
         throw new Error("Failed to update resource")
       }
 
+      await logAnalyticsEvent({
+        type: "resource.updated",
+        actorUid: user?.uid ?? undefined,
+        actorEmail: user?.email ?? undefined,
+        targetId: selectedResource.id,
+        meta: { title: formData.title, type: formData.type, category: formData.category },
+      })
       setIsEditDialogOpen(false)
       setSelectedResource(null)
       setFile(null)
@@ -349,6 +365,13 @@ export default function AdminResourcesPage() {
         throw new Error("Failed to delete resource")
       }
 
+      await logAnalyticsEvent({
+        type: "resource.deleted",
+        actorUid: user?.uid ?? undefined,
+        actorEmail: user?.email ?? undefined,
+        targetId: selectedResource.id,
+        meta: { title: selectedResource.title, type: selectedResource.type, category: selectedResource.category },
+      })
       setIsDeleteDialogOpen(false)
       setSelectedResource(null)
       await fetchResources()

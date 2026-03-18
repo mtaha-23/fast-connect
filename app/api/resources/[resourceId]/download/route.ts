@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getResourceById } from "@/lib/services/resource.service"
+import { getResourceById, incrementResourceDownloads } from "@/lib/services/resource.service"
 import { cloudinary } from "@/lib/cloudinary"
+import { logAnalyticsEvent } from "@/lib/services/analytics.service"
 
 export const runtime = "nodejs"
 
@@ -50,6 +51,17 @@ export async function GET(
     if (!resource) {
       return NextResponse.json({ error: "Resource not found" }, { status: 404 })
     }
+
+    // Best-effort download tracking (do not fail the download if tracking fails)
+    incrementResourceDownloads(resourceId)
+      .then(() =>
+        logAnalyticsEvent({
+          type: "resource.downloaded",
+          targetId: resourceId,
+          meta: { title: resource.title, fileName: resource.fileName ?? null },
+        }),
+      )
+      .catch(() => {})
 
     const extFromName = resource.fileName ? inferExtFromName(resource.fileName) : undefined
 
@@ -133,7 +145,7 @@ export async function GET(
 
 /**
  * POST /api/resources/[resourceId]/download
- * No-op endpoint (downloads are not tracked)
+ * No-op endpoint (downloads are tracked on GET)
  */
 export async function POST(
   request: NextRequest,
@@ -141,7 +153,7 @@ export async function POST(
 ) {
   try {
     await params
-    return NextResponse.json({ success: true, message: "Downloads are not tracked" }, { status: 200 })
+    return NextResponse.json({ success: true, message: "Downloads are tracked on GET" }, { status: 200 })
   } catch (error) {
     console.error("Error handling download:", error)
     return NextResponse.json(

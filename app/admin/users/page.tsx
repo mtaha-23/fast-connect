@@ -19,6 +19,7 @@ import { Loader2, Trash2, UserX, UserCheck, Search } from "lucide-react"
 import { useAuth } from "@/lib/hooks/use-auth"
 import { collection, getDocs, limit, orderBy, query as fsQuery, updateDoc, deleteDoc, doc } from "firebase/firestore"
 import { getFirestoreDB } from "@/lib/firebase"
+import { logAnalyticsEvent } from "@/lib/services/analytics.service"
 
 type AdminUser = {
   uid: string
@@ -101,6 +102,13 @@ export default function AdminUsersPage() {
         deactivatedAt: nextDisabled ? now : null,
         updatedAt: now,
       })
+      await logAnalyticsEvent({
+        type: nextDisabled ? "user.deactivated" : "user.reactivated",
+        actorUid: user.uid,
+        actorEmail: user.email ?? undefined,
+        targetUid: u.uid,
+        meta: { email: u.email, name: u.name },
+      })
       await fetchUsers()
     } finally {
       setSubmittingUid(null)
@@ -112,8 +120,16 @@ export default function AdminUsersPage() {
     if (!user) return
     setSubmittingUid(uid)
     try {
+      const victim = users.find((x) => x.uid === uid) ?? null
       const db = getFirestoreDB()
       await deleteDoc(doc(db, "users", uid))
+      await logAnalyticsEvent({
+        type: "user.deleted",
+        actorUid: user.uid,
+        actorEmail: user.email ?? undefined,
+        targetUid: uid,
+        meta: victim ? { email: victim.email, name: victim.name } : undefined,
+      })
       await fetchUsers()
     } finally {
       setSubmittingUid(null)

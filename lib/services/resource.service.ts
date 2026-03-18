@@ -3,7 +3,7 @@
  * Handles all resource-related business logic
  */
 
-import { collection, query, orderBy, getDocs, doc, getDoc, updateDoc, deleteDoc, addDoc, Timestamp } from "firebase/firestore"
+import { collection, query, orderBy, getDocs, doc, getDoc, updateDoc, deleteDoc, addDoc, Timestamp, increment } from "firebase/firestore"
 import { getFirestoreDB } from "@/lib/firebase"
 
 export interface Resource {
@@ -223,5 +223,17 @@ export async function deleteResource(resourceId: string): Promise<void> {
       error instanceof Error ? error.message : "Failed to delete resource."
     )
   }
+}
+
+/**
+ * Increment resource downloads counter.
+ */
+export async function incrementResourceDownloads(resourceId: string): Promise<void> {
+  const db = getFirestoreDB()
+  const ref = doc(db, "resources", resourceId)
+  await updateDoc(ref, {
+    downloads: increment(1),
+    updatedAt: Timestamp.now(),
+  })
 }
 

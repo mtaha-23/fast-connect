@@ -8,6 +8,10 @@ import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
 import { Clock, ChevronLeft, ChevronRight, Flag, CheckCircle2, XCircle, AlertCircle } from "lucide-react"
+import { addDoc, collection, Timestamp } from "firebase/firestore"
+import { getFirestoreDB } from "@/lib/firebase"
+import { useAuth } from "@/lib/hooks/use-auth"
+import { logAnalyticsEvent } from "@/lib/services/analytics.service"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -59,6 +63,7 @@ const sampleQuestions = [
 
 export default function QuizPage() {
   const router = useRouter()
+  const { user } = useAuth()
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState<(number | null)[]>(new Array(sampleQuestions.length).fill(null))
   const [flagged, setFlagged] = useState<boolean[]>(new Array(sampleQuestions.length).fill(false))
@@ -103,9 +108,36 @@ export default function QuizPage() {
     setFlagged(newFlagged)
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setIsSubmitted(true)
     setShowSubmitDialog(false)
+
+    try {
+      const db = getFirestoreDB()
+      const correct = answers.filter((a, i) => a === sampleQuestions[i].correct).length
+      const answeredCount = answers.filter((a) => a !== null).length
+      const score = Math.round((correct / sampleQuestions.length) * 100)
+
+      const payload = {
+        uid: user?.uid ?? null,
+        score,
+        correct,
+        totalQuestions: sampleQuestions.length,
+        answeredCount,
+        durationSeconds: 30 * 60 - timeLeft,
+        createdAt: Timestamp.now(),
+      }
+
+      await addDoc(collection(db, "testAttempts"), payload)
+      await logAnalyticsEvent({
+        type: "test.submitted",
+        actorUid: user?.uid ?? undefined,
+        actorEmail: user?.email ?? undefined,
+        meta: { score, correct, totalQuestions: sampleQuestions.length },
+      })
+    } catch (e) {
+      console.error("Failed to store test attempt:", e)
+    }
   }
 
   const calculateScore = () => {
