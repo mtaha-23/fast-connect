@@ -45,9 +45,18 @@ export function getAIResponse(userMessage: string): string {
  * In production, this would make an API call to an AI service
  */
 export async function processChatMessage(userMessage: string): Promise<string> {
-  // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 1500))
-  
-  return getAIResponse(userMessage)
+  const r = await fetch("/api/chat", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ message: userMessage }),
+  })
+
+  const data = (await r.json().catch(() => null)) as { reply?: string; error?: string } | null
+
+  if (!r.ok) {
+    throw new Error(data?.error || "Chat request failed.")
+  }
+
+  return (data?.reply || "").trim() || "I'm sorry, I don't have information on that."
 }
 
