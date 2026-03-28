@@ -5,6 +5,7 @@ export type AnalyticsEventType =
   | "user.deactivated"
   | "user.reactivated"
   | "user.deleted"
+  | "user.role_changed"
   | "resource.created"
   | "resource.updated"
   | "resource.deleted"

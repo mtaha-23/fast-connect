@@ -1,10 +1,12 @@
 /**
  * Firebase Admin initialization (server-only).
  *
- * Env options (choose one):
- * - FIREBASE_ADMIN_CREDENTIALS: JSON string (service account)
- * - FIREBASE_ADMIN_PROJECT_ID, FIREBASE_ADMIN_CLIENT_EMAIL, FIREBASE_ADMIN_PRIVATE_KEY
- * - GOOGLE_APPLICATION_CREDENTIALS: path (handled by firebase-admin automatically)
+ * For API routes that use Firestore/Auth Admin (e.g. role changes), you need:
+ * - FIREBASE_ADMIN_CREDENTIALS: full service account JSON as one line, OR
+ * - FIREBASE_ADMIN_PROJECT_ID + FIREBASE_ADMIN_CLIENT_EMAIL + FIREBASE_ADMIN_PRIVATE_KEY
+ *
+ * Project ID also falls back to NEXT_PUBLIC_FIREBASE_PROJECT_ID so Firestore can resolve the project.
+ * Without service account credentials, use GOOGLE_APPLICATION_CREDENTIALS or `gcloud auth application-default login`.
  */
 import "server-only"
 
@@ -40,17 +42,47 @@ function getCredentialFromEnv() {
   return undefined
 }
 
+/** Project ID for Admin SDK (Firestore / Auth). Required for Firestore; falls back to client config. */
+function resolveAdminProjectId(): string | undefined {
+  const fromServiceAccountJson = (): string | undefined => {
+    const raw = process.env.FIREBASE_ADMIN_CREDENTIALS
+    if (!raw) return undefined
+    try {
+      const parsed = JSON.parse(raw) as { project_id?: string }
+      return typeof parsed.project_id === "string" ? parsed.project_id : undefined
+    } catch {
+      return undefined
+    }
+  }
+
+  return (
+    process.env.FIREBASE_ADMIN_PROJECT_ID ||
+    process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ||
+    fromServiceAccountJson() ||
+    undefined
+  )
+}
+
 export function getFirebaseAdminApp() {
   const existing = admin.apps[0]
   if (existing) return existing
 
+  const projectId = resolveAdminProjectId()
   const credential = getCredentialFromEnv()
 
   if (credential) {
-    return admin.initializeApp({ credential })
+    return admin.initializeApp({
+      credential,
+      ...(projectId ? { projectId } : {}),
+    })
   }
 
-  // Falls back to Application Default Credentials (e.g. GOOGLE_APPLICATION_CREDENTIALS).
+  if (projectId) {
+    // Uses Application Default Credentials (e.g. GOOGLE_APPLICATION_CREDENTIALS or gcloud ADC).
+    // For local dev without ADC, add FIREBASE_ADMIN_CREDENTIALS or the three FIREBASE_ADMIN_* vars above.
+    return admin.initializeApp({ projectId })
+  }
+
   return admin.initializeApp()
 }
 

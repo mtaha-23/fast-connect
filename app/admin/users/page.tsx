@@ -20,6 +20,8 @@ import { useAuth } from "@/lib/hooks/use-auth"
 import { collection, getDocs, limit, orderBy, query as fsQuery, updateDoc, deleteDoc, doc } from "firebase/firestore"
 import { getFirestoreDB } from "@/lib/firebase"
 import { logAnalyticsEvent } from "@/lib/services/analytics.service"
+import { isSuperAdminEmail } from "@/lib/constants/super-admin"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 type AdminUser = {
   uid: string
@@ -43,6 +45,7 @@ export default function AdminUsersPage() {
 
   const [users, setUsers] = useState<AdminUser[]>([])
   const [query, setQuery] = useState("")
+  const [roleError, setRoleError] = useState<string | null>(null)
 
   const [confirmDeleteUid, setConfirmDeleteUid] = useState<string | null>(null)
   const [confirmToggleUid, setConfirmToggleUid] = useState<string | null>(null)
@@ -88,6 +91,43 @@ export default function AdminUsersPage() {
     if (!q) return users
     return users.filter((u) => (u.name ?? "").toLowerCase().includes(q) || (u.email ?? "").toLowerCase().includes(q))
   }, [query, users])
+
+  const canChangeRoles = isSuperAdminEmail(user?.email ?? null)
+
+  const changeRole = async (target: AdminUser, nextRole: "admin" | "student") => {
+    if (!user || !canChangeRoles) return
+    if (target.uid === user.uid) return
+    const previousRole = target.role === "admin" ? "admin" : "student"
+    if (previousRole === nextRole) return
+    setRoleError(null)
+    setSubmittingUid(target.uid)
+    try {
+      const db = getFirestoreDB()
+      const userRef = doc(db, "users", target.uid)
+      const now = new Date().toISOString()
+      await updateDoc(userRef, {
+        role: nextRole,
+        updatedAt: now,
+      })
+      await logAnalyticsEvent({
+        type: "user.role_changed",
+        actorUid: user.uid,
+        actorEmail: user.email ?? undefined,
+        targetUid: target.uid,
+        meta: {
+          previousRole,
+          newRole: nextRole,
+          email: target.email,
+          name: target.name,
+        },
+      })
+      await fetchUsers()
+    } catch (e) {
+      setRoleError(e instanceof Error ? e.message : "Failed to update role.")
+    } finally {
+      setSubmittingUid(null)
+    }
+  }
 
   const toggleDeactivate = async (u: AdminUser) => {
     if (!user) return
@@ -143,7 +183,9 @@ export default function AdminUsersPage() {
         <div className="flex items-center justify-between h-16 px-6">
           <div>
             <h1 className="text-xl font-semibold text-foreground">Users</h1>
-            <p className="text-sm text-muted-foreground">Manage users: deactivate or delete accounts</p>
+            <p className="text-sm text-muted-foreground">
+              Deactivate or delete accounts. Changing roles is limited to the designated super admin.
+            </p>
           </div>
         </div>
       </header>
@@ -169,6 +211,13 @@ export default function AdminUsersPage() {
           <div className="rounded-2xl border border-destructive/30 bg-destructive/10 text-destructive px-4 py-3">
             <div className="font-medium">Couldn’t load users</div>
             <div className="text-sm opacity-90">{error}</div>
+          </div>
+        ) : null}
+
+        {roleError ? (
+          <div className="rounded-2xl border border-destructive/30 bg-destructive/10 text-destructive px-4 py-3">
+            <div className="font-medium">Role update failed</div>
+            <div className="text-sm opacity-90">{roleError}</div>
           </div>
         ) : null}
 
@@ -212,7 +261,26 @@ export default function AdminUsersPage() {
                         >
                           {isDisabled ? "deactivated" : "active"}
                         </Badge>
-                        <Badge className="bg-primary/15 text-primary border-primary/30">{u.role || "student"}</Badge>
+                        {canChangeRoles ? (
+                          <Select
+                            value={u.role === "admin" ? "admin" : "student"}
+                            onValueChange={(v) => changeRole(u, v as "admin" | "student")}
+                          >
+                            <SelectTrigger
+                              className="h-8 w-[118px] text-xs bg-card/80 border-border"
+                              disabled={isBusy || u.uid === user?.uid}
+                              title={u.uid === user?.uid ? "You cannot change your own role here" : undefined}
+                            >
+                              <SelectValue placeholder="Role" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="student">student</SelectItem>
+                              <SelectItem value="admin">admin</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        ) : (
+                          <Badge className="bg-primary/15 text-primary border-primary/30">{u.role || "student"}</Badge>
+                        )}
                       </div>
                       <p className="text-sm text-muted-foreground truncate">{u.email}</p>
                     </div>

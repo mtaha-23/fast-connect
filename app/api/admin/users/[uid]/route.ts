@@ -7,6 +7,8 @@ import { requireAdmin } from "@/lib/server/admin-auth"
  * Admin-only: deactivate/reactivate user (Auth disabled + Firestore flags).
  *
  * Body: { disabled: boolean }
+ *
+ * Role changes are done from the admin UI via Firestore (users.role), same as other profile fields.
  */
 export async function PATCH(req: NextRequest, { params }: { params: Promise<{ uid: string }> }) {
   const guard = await requireAdmin(req)
@@ -17,27 +19,32 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ ui
 
   try {
     const body = (await req.json()) as { disabled?: boolean }
-    const disabled = Boolean(body.disabled)
 
-    await getAdminAuth().updateUser(uid, { disabled })
+    if (body.disabled !== undefined) {
+      const disabled = Boolean(body.disabled)
 
-    const now = new Date().toISOString()
-    await getAdminDB()
-      .collection("users")
-      .doc(uid)
-      .set(
-        {
-          disabled,
-          deactivatedAt: disabled ? now : null,
-          updatedAt: now,
-        },
-        { merge: true },
+      await getAdminAuth().updateUser(uid, { disabled })
+
+      const now = new Date().toISOString()
+      await getAdminDB()
+        .collection("users")
+        .doc(uid)
+        .set(
+          {
+            disabled,
+            deactivatedAt: disabled ? now : null,
+            updatedAt: now,
+          },
+          { merge: true },
+        )
+
+      return NextResponse.json(
+        { success: true, message: disabled ? "User deactivated." : "User reactivated." },
+        { status: 200 },
       )
+    }
 
-    return NextResponse.json(
-      { success: true, message: disabled ? "User deactivated." : "User reactivated." },
-      { status: 200 },
-    )
+    return NextResponse.json({ error: "Provide 'disabled'." }, { status: 400 })
   } catch (e) {
     console.error("Admin update user error:", e)
     return NextResponse.json(

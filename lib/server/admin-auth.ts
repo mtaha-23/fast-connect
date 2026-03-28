@@ -39,7 +39,7 @@ export async function requireAdmin(req: NextRequest) {
       return { ok: false as const, status: 403 as const, error: "Admin access required." }
     }
 
-    return { ok: true as const, uid }
+    return { ok: true as const, uid, email: decoded.email ?? undefined }
   } catch (e) {
     return {
       ok: false as const,
