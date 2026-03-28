@@ -11,7 +11,7 @@ export default function DashboardLayout({
     <AuthGuard requiredRole="student">
       <div className="min-h-screen bg-background">
         <Sidebar />
-        <main className="pl-[260px] transition-all duration-300">{children}</main>
+        <main className="min-w-0 w-full pl-0 md:pl-[260px] transition-all duration-300">{children}</main>
       </div>
     </AuthGuard>
   )

@@ -19,8 +19,10 @@ import {
   LogOut,
   ChevronLeft,
   LayoutDashboard,
+  Menu,
   Moon,
   Sun,
+  X,
 } from "lucide-react"
 import {
   DropdownMenu,
@@ -78,6 +80,7 @@ export function Sidebar() {
   const pathname = usePathname()
   const router = useRouter()
   const [isCollapsed, setIsCollapsed] = useState(false)
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const { userData } = useAuth()
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
@@ -105,19 +108,68 @@ export function Sidebar() {
     setMounted(true)
   }, [])
 
+  useEffect(() => {
+    setMobileNavOpen(false)
+  }, [pathname])
+
+  useEffect(() => {
+    if (!mobileNavOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [mobileNavOpen])
+
   return (
-    <aside
-      className={cn(
-        "fixed left-0 top-0 z-40 h-screen border-r border-border bg-sidebar transition-all duration-300",
-        isCollapsed ? "w-[70px]" : "w-[260px]",
+    <>
+      <Button
+        type="button"
+        variant="outline"
+        size="icon"
+        className={cn(
+          "fixed left-3 top-3 z-[60] h-10 w-10 shadow-md bg-background/95 backdrop-blur-sm border-border md:hidden",
+          mobileNavOpen && "pointer-events-none opacity-0",
+        )}
+        onClick={() => {
+          setIsCollapsed(false)
+          setMobileNavOpen(true)
+        }}
+        aria-label="Open navigation menu"
+        aria-expanded={mobileNavOpen}
+      >
+        <Menu className="h-5 w-5" />
+      </Button>
+
+      {mobileNavOpen && (
+        <button
+          type="button"
+          className="fixed inset-0 z-[35] bg-black/50 md:hidden"
+          aria-label="Close navigation menu"
+          onClick={() => setMobileNavOpen(false)}
+        />
       )}
-    >
+
+      <aside
+        className={cn(
+          "fixed left-0 top-0 z-40 h-screen border-r border-border bg-sidebar transition-all duration-300 ease-out",
+          isCollapsed ? "w-[70px]" : "w-[260px]",
+          "max-md:w-[min(100vw,280px)] max-md:shadow-2xl",
+          mobileNavOpen ? "max-md:translate-x-0" : "max-md:-translate-x-full",
+        )}
+      >
       <div className="flex h-full flex-col">
         {/* Header */}
-        <div className={cn("flex h-16 items-center border-b border-border px-4 relative", isCollapsed ? "justify-center" : "justify-between")}>
+        <div
+          className={cn(
+            "flex h-16 items-center border-b border-border px-4 relative gap-2",
+            isCollapsed ? "md:justify-center" : "justify-between",
+          )}
+        >
           <Link
             href="/"
-            className={cn("flex items-center gap-3", isCollapsed && "justify-center")}
+            className={cn("flex items-center gap-3 min-w-0 flex-1", isCollapsed && "md:justify-center")}
+            onClick={() => setMobileNavOpen(false)}
           >
             <div className="relative">
               <div className="w-9 h-9 rounded-xl bg-card backdrop-blur-sm border border-border flex items-center justify-center shrink-0 shadow-lg dark:shadow-black/20 overflow-hidden">
@@ -139,15 +191,25 @@ export function Sidebar() {
             </span>
           </Link>
 
-          {/* Collapse button - moves to sidebar edge when collapsed */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="shrink-0 text-muted-foreground hover:text-foreground hover:bg-accent/50 md:hidden"
+            onClick={() => setMobileNavOpen(false)}
+            aria-label="Close navigation menu"
+          >
+            <X className="w-5 h-5" />
+          </Button>
+
+          {/* Collapse button - desktop only */}
           <Button
             variant="ghost"
             size="icon"
             className={cn(
-              "shrink-0 text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary transition-all duration-300",
-              isCollapsed 
-                ? "absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-50 bg-sidebar border border-border rounded-full shadow-lg hover:bg-accent dark:hover:bg-primary/30" 
-                : "relative"
+              "hidden md:inline-flex shrink-0 text-muted-foreground hover:text-foreground hover:bg-accent/50 dark:hover:bg-primary/20 dark:hover:text-primary transition-all duration-300",
+              isCollapsed
+                ? "absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-50 bg-sidebar border border-border rounded-full shadow-lg hover:bg-accent dark:hover:bg-primary/30"
+                : "relative",
             )}
             onClick={() => setIsCollapsed(!isCollapsed)}
             aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
@@ -164,6 +226,7 @@ export function Sidebar() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={() => setMobileNavOpen(false)}
                 className={cn(
                   "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200",
                   isActive
@@ -245,5 +308,6 @@ export function Sidebar() {
         </div>
       </div>
     </aside>
+    </>
   )
 }

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FASTConnect · 360° Campus Tour</title>
+  <meta charset="utf-8">
+  <meta name="description" content="360° Virtual Tour of FAST National University Campus">
+  <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+  <style> @-ms-viewport { width: device-width; } </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/reset.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="multiple-scenes">
+
+  <!-- Loading Screen -->
+  <div id="loadingScreen">
+    <div class="loading-content">
+      <div class="loading-logo">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="30" r="28" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+          <circle cx="30" cy="30" r="20" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <ellipse cx="30" cy="30" rx="28" ry="14" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <line x1="2" y1="30" x2="58" y2="30" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <circle cx="30" cy="30" r="3" fill="white"/>
+        </svg>
+      </div>
+      <h1 class="loading-title">FASTConnect</h1>
+      <p class="loading-subtitle">360° Campus Tour</p>
+      <div class="loading-spinner">
+        <div class="spinner-ring"></div>
+      </div>
+      <p class="loading-hint">Loading panoramic scenes&hellip;</p>
+    </div>
+  </div>
+
+  <!-- 360° Panorama Viewer -->
+  <div id="pano"></div>
+
+  <!-- Top Title Bar -->
+  <div id="titleBar">
+    <div class="title-left">
+      <button id="menuToggleBtn" aria-label="Toggle scene menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+    <div class="title-center">
+      <span class="title-main">FASTConnect · Campus Tour</span>
+      <span class="title-scene" id="currentSceneName"></span>
+    </div>
+    <div class="title-right">
+      <a href="javascript:void(0)" id="autorotateToggle" title="Toggle autorotate">
+        <img class="icon off" src="img/play.png" alt="Play">
+        <img class="icon on" src="img/pause.png" alt="Pause">
+      </a>
+      <a href="javascript:void(0)" id="fullscreenToggle" title="Toggle fullscreen">
+        <img class="icon off" src="img/fullscreen.png" alt="Fullscreen">
+        <img class="icon on" src="img/windowed.png" alt="Exit Fullscreen">
+      </a>
+    </div>
+  </div>
+
+  <!-- Left Scene Menu Panel -->
+  <div id="menuPanel">
+    <div class="menu-header">
+      <svg class="menu-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+        <ellipse cx="12" cy="12" rx="10" ry="5" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      <span>Campus Locations</span>
+    </div>
+    <ul class="scenes" id="sceneList">
+      <a href="javascript:void(0)" class="scene" data-id="0-dhaba-inside_upscale-1" id="btn-scene-0">
+        <li class="scene-item">
+          <span class="scene-dot"></span>
+          <span class="text">Dhaba Inside</span>
+        </li>
+      </a>
+      <a href="javascript:void(0)" class="scene" data-id="1-fitness_upscale-1" id="btn-scene-1">
+        <li class="scene-item">
+          <span class="scene-dot"></span>
+          <span class="text">Fitness Center</span>
+        </li>
+      </a>
+      <a href="javascript:void(0)" class="scene" data-id="2-football-ground_upscale-1" id="btn-scene-2">
+        <li class="scene-item">
+          <span class="scene-dot"></span>
+          <span class="text">Football Ground</span>
+        </li>
+      </a>
+      <a href="javascript:void(0)" class="scene" data-id="3-fsm-2_upscale-1" id="btn-scene-3">
+        <li class="scene-item">
+          <span class="scene-dot"></span>
+          <span class="text">FSM Block – Ground Floor</span>
+        </li>
+      </a>
+      <a href="javascript:void(0)" class="scene" data-id="4-fsm-2nd-floor-2_upscale-1" id="btn-scene-4">
+        <li class="scene-item">
+          <span class="scene-dot"></span>
+          <span class="text">FSM Block – 2nd Floor (B)</span>
+        </li>
+      </a>
+      <a href="javascript:void(0)" class="scene" data-id="5-fsm-2nd-floor_upscale1" id="btn-scene-5">
+        <li class="scene-item">
+          <span class="scene-dot"></span>
+          <span class="text">FSM Block – 2nd Floor (A)</span>
+        </li>
+      </a>
+      <a href="javascript:void(0)" class="scene" data-id="6-fsm-3_upscale1" id="btn-scene-6">
+        <li class="scene-item">
+          <span class="scene-dot"></span>
+          <span class="text">FSM Block – Entrance</span>
+        </li>
+      </a>
+      <a href="javascript:void(0)" class="scene" data-id="7-tennis-court_upscale1" id="btn-scene-7">
+        <li class="scene-item">
+          <span class="scene-dot"></span>
+          <span class="text">Tennis Court</span>
+        </li>
+      </a>
+      <a href="javascript:void(0)" class="scene" data-id="8-walkway-between-tennis-n-football-ground_upscale1" id="btn-scene-8">
+        <li class="scene-item">
+          <span class="scene-dot"></span>
+          <span class="text">Walkway (Sports Area)</span>
+        </li>
+      </a>
+    </ul>
+    <div class="menu-footer">
+      <span>9 Locations &nbsp;·&nbsp; 360° View</span>
+    </div>
+  </div>
+
+  <!-- View Control Buttons -->
+  <div id="viewControls">
+    <a href="javascript:void(0)" id="viewUp"    class="viewControlButton viewControlButton-1" title="Look Up">
+      <img class="icon" src="img/up.png" alt="Up">
+    </a>
+    <a href="javascript:void(0)" id="viewDown"  class="viewControlButton viewControlButton-2" title="Look Down">
+      <img class="icon" src="img/down.png" alt="Down">
+    </a>
+    <a href="javascript:void(0)" id="viewLeft"  class="viewControlButton viewControlButton-3" title="Look Left">
+      <img class="icon" src="img/left.png" alt="Left">
+    </a>
+    <a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4" title="Look Right">
+      <img class="icon" src="img/right.png" alt="Right">
+    </a>
+    <a href="javascript:void(0)" id="viewIn"    class="viewControlButton viewControlButton-5" title="Zoom In">
+      <img class="icon" src="img/plus.png" alt="Zoom In">
+    </a>
+    <a href="javascript:void(0)" id="viewOut"   class="viewControlButton viewControlButton-6" title="Zoom Out">
+      <img class="icon" src="img/minus.png" alt="Zoom Out">
+    </a>
+  </div>
+
+  <!-- Scene counter badge -->
+  <div id="sceneCounter">
+    <span id="sceneCounterText">1 / 9</span>
+  </div>
+
+  <!-- Drag hint (shown briefly on first load) -->
+  <div id="dragHint">
+    <div class="drag-hint-inner">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="15" stroke="white" stroke-width="1" opacity="0.5"/>
+        <path d="M10 16 L22 16 M18 12 L22 16 L18 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22 16 A6 6 0 1 1 16 10" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span>Drag to look around</span>
+    </div>
+  </div>
+
+  <!-- Marzipano required: legacy sceneListToggle (hidden, kept for JS compatibility) -->
+  <a href="javascript:void(0)" id="sceneListToggle" style="display:none;">
+    <img class="icon off" src="img/expand.png">
+    <img class="icon on" src="img/collapse.png">
+  </a>
+
+  <script src="vendor/screenfull.min.js"></script>
+  <script src="vendor/bowser.min.js"></script>
+  <script src="vendor/marzipano.js"></script>
+
+  <script src="data.js"></script>
+  <script src="index.js"></script>
+
+</body>
+</html>
