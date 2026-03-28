@@ -38,41 +38,7 @@ export default function TourPage() {
             />
           </div>
 
-          <div className="flex flex-col gap-3 px-0.5 sm:px-1">
-            <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl leading-relaxed">
-              <span className="md:hidden">Use the menu (☰) in the tour&apos;s top bar for locations. Drag to look around.</span>
-              <span className="hidden md:inline">
-                Open the menu (top-left) to jump between locations. Drag to look around; use hotspots to move between
-                scenes. Fullscreen works best for immersion.
-              </span>
-            </p>
-            <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto sm:flex-wrap">
-              <Button variant="outline" size="sm" className="w-full sm:w-auto shrink-0" asChild>
-                <a href="/virtual-tour/index.html" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2 shrink-0" />
-                  Open in new tab
-                </a>
-              </Button>
-              <Button
-                variant="secondary"
-                size="sm"
-                type="button"
-                className="w-full sm:w-auto shrink-0"
-                onClick={() => {
-                  const el = iframeRef.current
-                  if (!el) return
-                  if (document.fullscreenElement === el) {
-                    void document.exitFullscreen()
-                  } else {
-                    void el.requestFullscreen()
-                  }
-                }}
-              >
-                <Maximize2 className="h-4 w-4 mr-2 shrink-0" />
-                Fullscreen
-              </Button>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
