@@ -4736,6 +4736,1030 @@
     ]
   },
   {
+    "id": "fast_nu_hostel_rules_facilities_1",
+    "category": "other",
+    "title": "The FAST-NUCES Chiniot-Faisalabad campus hostel is available exclusively to enrolled students of the campus",
+    "applicable_campus": "The FAST-NUCES Chiniot-Faisalabad campus",
+    "applicable_program": "be",
+    "content": "The FAST-NUCES Chiniot-Faisalabad campus hostel is available exclusively to enrolled students of the campus. Students who wish to reside in the hostel must apply through the prescribed hostel application form. Only students who are currently enrolled at the campus are eligible for accommodation, and the hostel is not open to external applicants or non-enrolled individuals.",
+    "keywords": [
+      "hostel",
+      "students",
+      "campus",
+      "enrolled",
+      "who",
+      "fast-nuces"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_2",
+    "category": "other",
+    "title": "Both the boys and girls hostels at the campus operate on a shared room arrangement",
+    "applicable_campus": "Both the boys and girls hostels at the campus",
+    "applicable_program": "ms",
+    "content": "Both the boys and girls hostels at the campus operate on a shared room arrangement. Each room accommodates exactly six students. Rooms are not allocated to fewer than six occupants. Students may submit roommate preferences, but these preferences are only considered if all six students mutually agree and submit their request together as a complete group. Partial group requests are not accommodated.",
+    "keywords": [
+      "six",
+      "room",
+      "not",
+      "students",
+      "submit",
+      "preferences"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_3",
+    "category": "other",
+    "title": "Priority in hostel seat allocation is given to students who reside in cities other than Chiniot and Faisalabad and who d",
+    "applicable_campus": "de in cities other than Chiniot and Faisalabad and who do not have access to the campus",
+    "applicable_program": "be",
+    "content": "Priority in hostel seat allocation is given to students who reside in cities other than Chiniot and Faisalabad and who do not have access to the campus transport facility. Students who belong to Chiniot or Faisalabad city and can use campus transport are given the lowest priority when seats are being allocated, considering the limited total hostel capacity available.",
+    "keywords": [
+      "who",
+      "priority",
+      "hostel",
+      "given",
+      "students",
+      "chiniot"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_4",
+    "category": "other",
+    "title": "Room allotments in the hostel are made by the respective Warden",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "Room allotments in the hostel are made by the respective Warden. The hostel is managed on a non-profit basis, and accommodation charges are periodically revised by the competent authority on the recommendations of the Hostel Management Committee. Revisions are made based on anticipated expenses rather than for profit.",
+    "keywords": [
+      "hostel",
+      "made",
+      "room",
+      "allotments",
+      "respective",
+      "warden."
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_5",
+    "category": "other",
+    "title": "A refundable security deposit of Rs 23,000 is payable at the time of hostel admission",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "A refundable security deposit of Rs 23,000 is payable at the time of hostel admission. This amount is paid only once and is refunded when the student formally vacates the hostel, provided no outstanding dues or damages exist. Hostel charges are deposited online into the designated bank account, and the payment receipt must be uploaded through the Google Form provided by the hostel management.",
+    "keywords": [
+      "hostel",
+      "provided",
+      "refundable",
+      "security",
+      "deposit",
+      "rs"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_6",
+    "category": "other",
+    "title": "The hostel operates on a semester-based allotment cycle",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "The hostel operates on a semester-based allotment cycle. The first allotment period covers the Fall semester from August to January. The second allotment period covers the Spring semester from February to July. Allotment of students is done at the end of every semester for the following period. Students must reapply each semester through the hostel management process.",
+    "keywords": [
+      "allotment",
+      "semester",
+      "hostel",
+      "period",
+      "covers",
+      "students"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_7",
+    "category": "other",
+    "title": "No refund of accommodation charges is made if a student voluntarily leaves the hostel mid-semester or is expelled from t",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "No refund of accommodation charges is made if a student voluntarily leaves the hostel mid-semester or is expelled from the hostel for disciplinary reasons. Students who leave early are not entitled to a partial refund of the fees already paid for that allotment period.",
+    "keywords": [
+      "refund",
+      "hostel",
+      "no",
+      "accommodation",
+      "charges",
+      "made"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_8",
+    "category": "other",
+    "title": "The university may provide generator or UPS backup in the event of electricity load shedding",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The university may provide generator or UPS backup in the event of electricity load shedding. Fuel charges for the generator may be shared among students and met from hostel funds. This provision is subject to availability and is not guaranteed at all times.",
+    "keywords": [
+      "may",
+      "generator",
+      "university",
+      "provide",
+      "ups",
+      "backup"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_9",
+    "category": "other",
+    "title": "The Warden has the authority to shift a student to a different room at any time during the semester without providing a",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "The Warden has the authority to shift a student to a different room at any time during the semester without providing a reason, if adjustments are required for management or disciplinary purposes. Students are expected to comply with any such room reassignment instructions. Unauthorized room occupation or room swapping without permission from the hostel administration is a serious violation that is dealt with by the Hostel Disciplinary Committee.",
+    "keywords": [
+      "room",
+      "any",
+      "without",
+      "disciplinary",
+      "hostel",
+      "warden"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_10",
+    "category": "other",
+    "title": "Room furniture and all electrical fittings in the hostel must be maintained in good condition by the occupants of the ro",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "Room furniture and all electrical fittings in the hostel must be maintained in good condition by the occupants of the room. Students are collectively responsible for any loss or damage to hostel property within their room. In the event of damage to university equipment, appliances, furniture, or other fixtures, the university reserves the right to charge the responsible students for the full or partial cost of repair or replacement.",
+    "keywords": [
+      "furniture",
+      "hostel",
+      "room.",
+      "students",
+      "responsible",
+      "damage"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_11",
+    "category": "other",
+    "title": "Parents or guardians are not permitted to stay overnight in the hostel",
+    "applicable_campus": null,
+    "applicable_program": "bs",
+    "content": "Parents or guardians are not permitted to stay overnight in the hostel. Visitors must register in the visitors register maintained at the hostel gate. Guests and visitors are not allowed inside the hostel premises without prior permission from the Warden. Any undesirable activity or misconduct observed by students must be reported to the concerned Warden immediately.",
+    "keywords": [
+      "visitors",
+      "not",
+      "must",
+      "register",
+      "hostel",
+      "parents"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_12",
+    "category": "other",
+    "title": "Male students residing in the hostel must not be absent from the hostel between 10:00 PM and 6:30 AM without obtaining p",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "Male students residing in the hostel must not be absent from the hostel between 10:00 PM and 6:30 AM without obtaining prior permission from the hostel administration. Female students must be inside the hostel before 5:30 PM and are not permitted to leave the hostel after this time without prior permission. Unauthorized absence from the hostel at night is treated as an act of indiscipline and may result in disciplinary action.",
+    "keywords": [
+      "hostel",
+      "students",
+      "must",
+      "not",
+      "pm",
+      "30"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_13",
+    "category": "other",
+    "title": "Student attendance at the hostel is recorded electronically after the hostel gate closes each evening",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "Student attendance at the hostel is recorded electronically after the hostel gate closes each evening. Students are required to present their RFID card at the gate and scan it on the designated computer terminal when entering the hostel. This automated attendance system is used to monitor the presence of residents within the hostel premises.",
+    "keywords": [
+      "hostel",
+      "attendance",
+      "gate",
+      "student",
+      "recorded",
+      "electronically"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_14",
+    "category": "other",
+    "title": "Ragging of any kind is strictly prohibited in the hostel and will result in immediate expulsion from the hostel",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "Ragging of any kind is strictly prohibited in the hostel and will result in immediate expulsion from the hostel. Any student found engaging in ragging against fellow residents will face mandatory removal from the hostel without exception. The hostel administration treats ragging as a zero-tolerance offense.",
+    "keywords": [
+      "ragging",
+      "hostel",
+      "any",
+      "kind",
+      "strictly",
+      "prohibited"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_15",
+    "category": "other",
+    "title": "Possession of any type of weapon, whether licensed or unlicensed, inside the hostel is treated as a criminal offense",
+    "applicable_campus": "d within the hostel premises and may result in expulsion from the hostel and the campus",
+    "applicable_program": null,
+    "content": "Possession of any type of weapon, whether licensed or unlicensed, inside the hostel is treated as a criminal offense. Such cases are reported directly to the police. Similarly, consumption, storage, or supply of liquor, narcotics, illegal drugs, or any intoxicant is strictly prohibited within the hostel premises and may result in expulsion from the hostel and the campus.",
+    "keywords": [
+      "hostel",
+      "any",
+      "possession",
+      "type",
+      "weapon",
+      "whether"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_16",
+    "category": "other",
+    "title": "The FAST-NUCES CFD campus hostels are designated as complete no-smoking zones",
+    "applicable_campus": "The FAST-NUCES CFD campus",
+    "applicable_program": "ms",
+    "content": "The FAST-NUCES CFD campus hostels are designated as complete no-smoking zones. All forms of tobacco consumption, including cigarettes and e-cigarettes such as vapes, are strictly prohibited inside and outside the hostel buildings. This policy is aligned with the HEC Policy on Drug and Tobacco Abuse 2021 and the FAST Anti-Drug and Tobacco Rules.",
+    "keywords": [
+      "tobacco",
+      "policy",
+      "fast-nuces",
+      "cfd",
+      "campus",
+      "hostels"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_17",
+    "category": "other",
+    "title": "Violations of the no-smoking and anti-drug policy in the hostel may result in a fine ranging from Rs 10,000 to Rs 20,000",
+    "applicable_campus": "ing from Rs 10,000 to Rs 20,000, suspension from the hostel, suspension from the campus",
+    "applicable_program": "be",
+    "content": "Violations of the no-smoking and anti-drug policy in the hostel may result in a fine ranging from Rs 10,000 to Rs 20,000, suspension from the hostel, suspension from the campus, or all of the above combined. Cases of serious violations may be referred to the Hostel Management Committee and the Anti-Drug and Tobacco Committee for further action. The identity of students who report violations is kept confidential by the hostel management.",
+    "keywords": [
+      "hostel",
+      "violations",
+      "anti-drug",
+      "may",
+      "rs",
+      "000"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_18",
+    "category": "other",
+    "title": "All residents are collectively responsible for ensuring that no smoking or drug-related activity occurs in their shared",
+    "applicable_campus": null,
+    "applicable_program": "bs",
+    "content": "All residents are collectively responsible for ensuring that no smoking or drug-related activity occurs in their shared room. If any smoking material or evidence of drug use is found in a room during an inspection, the Hostel Management Committee may take action against all occupants of that room. Students are therefore advised to report any violation they observe in their room immediately to the Head Warden or Hostel Supervisor.",
+    "keywords": [
+      "all",
+      "smoking",
+      "their",
+      "room.",
+      "any",
+      "room"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_19",
+    "category": "other",
+    "title": "Use of unauthorized electrical appliances in the hostel rooms is prohibited",
+    "applicable_campus": null,
+    "applicable_program": "ms",
+    "content": "Use of unauthorized electrical appliances in the hostel rooms is prohibited. Fans and lights must be switched off when students leave their rooms to conserve energy. Playing music or videos inside rooms in a manner that disturbs other residents is also prohibited. Running torrents on the hostel internet connection is not allowed unless explicitly permitted by the Warden.",
+    "keywords": [
+      "rooms",
+      "hostel",
+      "prohibited.",
+      "use",
+      "unauthorized",
+      "electrical"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_20",
+    "category": "other",
+    "title": "Ballgames are not permitted inside the hostel building",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "Ballgames are not permitted inside the hostel building. Functions or private parties in the hostel premises require prior permission from the Warden. Personal servants are not allowed inside the hostel. Jumping over hostel walls is strictly prohibited. Grouping, lobbying, and social media campaigns targeting other residents or the hostel administration are not allowed.",
+    "keywords": [
+      "hostel",
+      "not",
+      "inside",
+      "ballgames",
+      "permitted",
+      "building."
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_21",
+    "category": "other",
+    "title": "No discrimination based on region, caste, or religion is permitted within the hostel community",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "No discrimination based on region, caste, or religion is permitted within the hostel community. Students are expected to maintain peace, respect, and harmony among all residents. Controversial discussions of a political or divisive nature are not allowed within the hostel. Students must maintain a friendly and quiet environment that is conducive to studying.",
+    "keywords": [
+      "within",
+      "students",
+      "maintain",
+      "no",
+      "discrimination",
+      "based"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_22",
+    "category": "other",
+    "title": "Valuables should not be kept in hostel rooms",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "Valuables should not be kept in hostel rooms. Room inspections may be conducted by the hostel administration at any time without prior notice. Students must cooperate fully with any room inspection carried out by the Warden or authorized hostel staff. Maintenance complaints should be submitted to the Hostel Representative, who then coordinates with the hostel management team.",
+    "keywords": [
+      "hostel",
+      "should",
+      "room",
+      "any",
+      "valuables",
+      "not"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_23",
+    "category": "other",
+    "title": "Abusive language or behavior toward any hostel resident, staff member, or administration representative will not be tole",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "Abusive language or behavior toward any hostel resident, staff member, or administration representative will not be tolerated. Gatherings in unauthorized areas of the hostel are prohibited. Students must maintain personal hygiene and appropriate attire at all times within the hostel. Stickers must not be pasted on hostel walls or windows, and walls must not be defaced in any way.",
+    "keywords": [
+      "hostel",
+      "not",
+      "must",
+      "any",
+      "walls",
+      "abusive"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_24",
+    "category": "other",
+    "title": "Male visitors are not permitted to enter the female hostel under any circumstances",
+    "applicable_campus": null,
+    "applicable_program": "ms",
+    "content": "Male visitors are not permitted to enter the female hostel under any circumstances. Female visitors are not permitted inside the girls hostel after 5:30 PM. Female students must be back in the hostel before 5:30 PM and must obtain formal permission from the hostel administration whenever they wish to leave the hostel premises. Female visitors are also not permitted in the boys hostel.",
+    "keywords": [
+      "hostel",
+      "female",
+      "visitors",
+      "not",
+      "permitted",
+      "30"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_25",
+    "category": "other",
+    "title": "Parents and guardians of female students must provide the hostel administration with a list of approved guests who are p",
+    "applicable_campus": "Before leaving for the campus",
+    "applicable_program": "Be",
+    "content": "Parents and guardians of female students must provide the hostel administration with a list of approved guests who are permitted to visit or pick up the student. Before leaving for the campus from the hostel, all female students must strictly follow the campus dress code policy in place at the time.",
+    "keywords": [
+      "female",
+      "students",
+      "must",
+      "hostel",
+      "campus",
+      "parents"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_26",
+    "category": "other",
+    "title": "The mess facility in the hostel is optional for students",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The mess facility in the hostel is optional for students. Students who wish to use the mess must fill out the mess Google form for the following day before 11:59 PM on the current day. Students must present or scan their RFID card in the mess hall to record their attendance for each meal. Students must indicate their meal preferences in advance through the online system.",
+    "keywords": [
+      "mess",
+      "students",
+      "must",
+      "their",
+      "facility",
+      "hostel"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_27",
+    "category": "other",
+    "title": "Mess timings must be strictly observed by all participating students",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "Mess timings must be strictly observed by all participating students. The menu for each day is decided by the mess committee and is not individually customizable. Utensils from the mess hall are not to be taken outside the mess premises. The use of the kitchen for private cooking is not allowed. Students must dine only in the designated hostel mess and not in their rooms.",
+    "keywords": [
+      "mess",
+      "not",
+      "must",
+      "timings",
+      "strictly",
+      "observed"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_28",
+    "category": "other",
+    "title": "Mess dues must be paid before the stipulated payment date each month",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "Mess dues must be paid before the stipulated payment date each month. The average monthly cost of the mess at the hostel is approximately Rs 8,000 per month. A deep freezer and oven are available in the mess facility for students who bring cooked food from home and wish to reheat it. Students may store food items in the deep freezer, but only in containers of maximum 4 by 4 inches in size. Each student is allowed to store only one week's worth of food in the deep freezer at a time and must not displace another student's stored items.",
+    "keywords": [
+      "mess",
+      "deep",
+      "freezer",
+      "food",
+      "must",
+      "each"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_29",
+    "category": "other",
+    "title": "Only plastic body air coolers are permitted in hostel rooms",
+    "applicable_campus": null,
+    "applicable_program": "ms",
+    "content": "Only plastic body air coolers are permitted in hostel rooms. Lahori air coolers and steel body air coolers are strictly prohibited because their usage can cause short circuits and pose a safety hazard. Students who wish to bring a plastic body air cooler must submit an online application through the designated Google Form to start or close the air cooler facility. No application submitted in physical form is entertained for this request.",
+    "keywords": [
+      "air",
+      "body",
+      "coolers",
+      "plastic",
+      "cooler",
+      "application"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_30",
+    "category": "other",
+    "title": "Students who use an air cooler in their room must pay an advance monthly electricity charge as defined by the hostel man",
+    "applicable_campus": null,
+    "applicable_program": "Be",
+    "content": "Students who use an air cooler in their room must pay an advance monthly electricity charge as defined by the hostel management. The exact amount of this charge is communicated by the management at the time of approval. Before installation of any cooling appliance, students must also pay a security deposit of Rs 10,000 against the electricity bill. This amount is submitted through a request to the Hall Warden using the general request form.",
+    "keywords": [
+      "students",
+      "must",
+      "pay",
+      "electricity",
+      "charge",
+      "amount"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_31",
+    "category": "other",
+    "title": "Air conditioners may be installed in hostel rooms with prior written approval from the Warden",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "Air conditioners may be installed in hostel rooms with prior written approval from the Warden. All students sharing the room must sign the formal application before an AC can be approved. Only Split or Inverter-type air conditioners with a minimum 3-star energy efficiency rating are permitted. Window-type air conditioners and other non-compliant types are strictly not allowed in any hostel room.",
+    "keywords": [
+      "air",
+      "conditioners",
+      "hostel",
+      "may",
+      "installed",
+      "rooms"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_32",
+    "category": "other",
+    "title": "The air conditioner must be registered in the name of one student who will act as the primary responsible party",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The air conditioner must be registered in the name of one student who will act as the primary responsible party. This registered student is responsible for ensuring compliance with all hostel rules related to the AC, timely payment of electricity bills, maintenance and repairs, and resolving any disputes related to AC usage among roommates. The registered student must be an actively enrolled and residing occupant of the room in which the AC is installed.",
+    "keywords": [
+      "registered",
+      "student",
+      "ac",
+      "must",
+      "responsible",
+      "related"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_33",
+    "category": "other",
+    "title": "A refundable security deposit of Rs 25,000 must be paid to the hostel office before the installation of an air condition",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "A refundable security deposit of Rs 25,000 must be paid to the hostel office before the installation of an air conditioner. This deposit may be adjusted against electricity bills or any damages caused by the installation or operation of the AC. The deposit is refunded only after all dues have been cleared and the AC has been properly removed without causing any damage to hostel property.",
+    "keywords": [
+      "deposit",
+      "hostel",
+      "installation",
+      "any",
+      "been",
+      "refundable"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_34",
+    "category": "other",
+    "title": "Each AC-equipped room must have exactly six students",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "Each AC-equipped room must have exactly six students. If a group of five students wishes to install an AC and the sixth roommate is unwilling, the hostel management reserves the right to allocate the sixth spot to any other suitable student in order to maintain fairness and optimal room occupancy. Individual room shifts are not permitted. Only a complete group of six occupants may request a room swap, subject to approval by the hostel administration.",
+    "keywords": [
+      "room",
+      "six",
+      "group",
+      "sixth",
+      "hostel",
+      "each"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_35",
+    "category": "other",
+    "title": "Monthly electricity billing for air conditioners is issued in the name of the registered student and must be paid before",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "Monthly electricity billing for air conditioners is issued in the name of the registered student and must be paid before the 10th of every month. Delay in payment may result in disconnection of the AC's electricity supply, deduction from the security deposit, and disciplinary action. Maintenance of the AC unit is the sole responsibility of the student group, and any damage to walls, wiring, or other hostel infrastructure caused during installation or removal must be repaired at the students' expense.",
+    "keywords": [
+      "electricity",
+      "student",
+      "must",
+      "ac",
+      "monthly",
+      "billing"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_36",
+    "category": "other",
+    "title": "Submeters are installed in hostel rooms to measure electricity consumption by individually owned appliances such as room",
+    "applicable_campus": null,
+    "applicable_program": "ms",
+    "content": "Submeters are installed in hostel rooms to measure electricity consumption by individually owned appliances such as room fridges and air conditioners. Monthly electricity bills for these appliances are calculated based on the actual meter reading and units consumed. This system ensures that each student group pays only for the electricity their personal appliances consume.",
+    "keywords": [
+      "electricity",
+      "appliances",
+      "submeters",
+      "installed",
+      "hostel",
+      "rooms"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_37",
+    "category": "other",
+    "title": "Students may bring their own refrigerators to the hostel room with the consent of all roommates",
+    "applicable_campus": null,
+    "applicable_program": "Be",
+    "content": "Students may bring their own refrigerators to the hostel room with the consent of all roommates. Before installation of a room fridge, students must pay a security deposit of Rs 10,000 against the electricity bill. The request for fridge installation is submitted to the Hall Warden through the general request form. Monthly electricity charges for the fridge are then billed based on submeter readings.",
+    "keywords": [
+      "fridge",
+      "students",
+      "room",
+      "installation",
+      "electricity",
+      "request"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_38",
+    "category": "other",
+    "title": "The hostel has a Physical Fitness Center available to resident students",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The hostel has a Physical Fitness Center available to resident students. The registration fee for the fitness center is Rs 500 and is charged only once. The semester fee for use of the fitness center is Rs 3,000 per semester. Students are required to re-rack weights and maintain cleanliness in the fitness center after each workout session. Loud music, foul language, misbehavior toward instructors or support staff, and fighting are all strictly prohibited inside the fitness center.",
+    "keywords": [
+      "fitness",
+      "center",
+      "fee",
+      "rs",
+      "hostel",
+      "has"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_39",
+    "category": "other",
+    "title": "Smoking is not permitted inside the fitness center",
+    "applicable_campus": null,
+    "applicable_program": "bs",
+    "content": "Smoking is not permitted inside the fitness center. Use of supplements and anabolic substances is also not allowed within the fitness center premises. Violation of fitness center rules may result in cancellation of membership or additional disciplinary action depending on the severity of the incident. Religious or political discussions are not permitted within the fitness center premises.",
+    "keywords": [
+      "fitness",
+      "not",
+      "center",
+      "permitted",
+      "within",
+      "premises."
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_40",
+    "category": "other",
+    "title": "The campus has a Medical Center that is available to hostel residents at all times",
+    "applicable_campus": "The campus",
+    "applicable_program": null,
+    "content": "The campus has a Medical Center that is available to hostel residents at all times. The medical staff is on duty 24 hours a day, 7 days a week. The first medical consultation and the first dose of any medication are provided to students free of charge. No consultation fee is charged to hostel residents for visits to the medical center.",
+    "keywords": [
+      "medical",
+      "hostel",
+      "residents",
+      "first",
+      "consultation",
+      "campus"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_41",
+    "category": "other",
+    "title": "In the event of a medical emergency where the campus doctor recommends hospitalization, a transport facility is made ava",
+    "applicable_campus": "In the event of a medical emergency where the campus",
+    "applicable_program": null,
+    "content": "In the event of a medical emergency where the campus doctor recommends hospitalization, a transport facility is made available by the hostel administration to shift the student to a hospital. This emergency transport service is part of the campus's commitment to student welfare and is coordinated through the hostel administration and medical center staff.",
+    "keywords": [
+      "medical",
+      "emergency",
+      "campus",
+      "transport",
+      "hostel",
+      "administration"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_42",
+    "category": "other",
+    "title": "Complaints related to hostel matters, other students, or hostel staff can be submitted in writing to the Warden",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "Complaints related to hostel matters, other students, or hostel staff can be submitted in writing to the Warden. Complaints can also be submitted through the online complaint management portal available at the address provided by the hostel management. All formal complaints are handled through the established hostel grievance process and are not entertained verbally.",
+    "keywords": [
+      "hostel",
+      "complaints",
+      "can",
+      "submitted",
+      "through",
+      "related"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_43",
+    "category": "other",
+    "title": "The Hostel Management Committee, referred to as the HMC, is the governing body responsible for overseeing all hostel pol",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "The Hostel Management Committee, referred to as the HMC, is the governing body responsible for overseeing all hostel policies, disciplinary matters, and decisions related to accommodation, electricity usage, and facility management. The Warden and hostel management reserve the right to modify, suspend, or cancel any facility or permission at any time. Updated rules and regulations are communicated to residents as and when changes are made.",
+    "keywords": [
+      "hostel",
+      "management",
+      "facility",
+      "any",
+      "committee",
+      "referred"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_44",
+    "category": "other",
+    "title": "The hostel offers three types of room occupancy arrangements to students",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The hostel offers three types of room occupancy arrangements to students. The standard shared room accommodates six students and is the most common room type available. A semi-private room option accommodates two students. A private single-occupancy room is also available for students who prefer to live alone. Each room type carries a different per-semester fee structure based on the number of occupants.",
+    "keywords": [
+      "room",
+      "students.",
+      "accommodates",
+      "students",
+      "type",
+      "hostel"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_45",
+    "category": "other",
+    "title": "The per-semester accommodation fee for a six-person shared room is Rs 44,000",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "The per-semester accommodation fee for a six-person shared room is Rs 44,000. The per-semester accommodation fee for a two-person room is Rs 60,000. The per-semester accommodation fee for a single-occupancy private room is Rs 64,000. These semester fees cover the cost of accommodation only and do not include the security deposit, mess charges, or any utility charges for personal appliances such as air coolers, air conditioners, or refrigerators.",
+    "keywords": [
+      "accommodation",
+      "per-semester",
+      "fee",
+      "room",
+      "rs",
+      "000."
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_46",
+    "category": "other",
+    "title": "The security deposit for hostel admission is charged separately from the semester accommodation fee",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The security deposit for hostel admission is charged separately from the semester accommodation fee. This security deposit is a one-time refundable payment made at the time of initial hostel admission and is not included in the per-semester room charges. Students must ensure both the security deposit and the semester accommodation fee are paid through the designated payment process before occupying their allocated room.",
+    "keywords": [
+      "security",
+      "deposit",
+      "hostel",
+      "admission",
+      "semester",
+      "accommodation"
+    ]
+  },
+  {
+    "id": "fast_nu_hostel_rules_facilities_47",
+    "category": "other",
+    "title": "Each hostel room, regardless of the occupancy type, is furnished with standard furniture items for every occupant",
+    "applicable_campus": null,
+    "applicable_program": "ms",
+    "content": "Each hostel room, regardless of the occupancy type, is furnished with standard furniture items for every occupant. Each student in the room is provided with a single bed, a study table, a chair, and a personal cupboard for storing belongings. These furniture items are the property of the university and must be maintained in good condition throughout the student's stay. Any damage to the provided furniture is the financial responsibility of the room's occupants.",
+    "keywords": [
+      "room",
+      "furniture",
+      "each",
+      "items",
+      "student",
+      "provided"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_1",
+    "category": "admission_test",
+    "title": "FAST-NUCES maintains separate merit lists for each test type used in the admission process",
+    "applicable_campus": "Candidates who qualify through both routes should contact their preferred campus",
+    "applicable_program": null,
+    "content": "FAST-NUCES maintains separate merit lists for each test type used in the admission process. A candidate who applies through both the NTS NAT and the FAST NU admission test is evaluated under each test category separately. While a candidate may apply through multiple routes by paying the relevant fees, admission is ultimately granted on the basis of one test result. Candidates who qualify through both routes should contact their preferred campus directly for the most current guidance on how selection is handled in overlapping cases.",
+    "keywords": [
+      "test",
+      "admission",
+      "through",
+      "each",
+      "candidate",
+      "who"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_2",
+    "category": "admission_test",
+    "title": "The NTS NAT merit cutoff at FAST-NUCES tends to be higher than the cutoff for the FAST NU test",
+    "applicable_campus": "equence of the smaller number of seats allocated to the NTS NAT category at each campus",
+    "applicable_program": "be",
+    "content": "The NTS NAT merit cutoff at FAST-NUCES tends to be higher than the cutoff for the FAST NU test. This is not a deliberate policy to discourage NTS applicants but is a consequence of the smaller number of seats allocated to the NTS NAT category at each campus. Because fewer seats are available for NAT applicants, the competition within that pool is more intense and the resulting cutoff is naturally higher. For competitive programs such as BS Computer Science, NTS NAT closing aggregates have historically reached between 80 and 85 percentile.",
+    "keywords": [
+      "nts",
+      "nat",
+      "cutoff",
+      "applicants",
+      "seats",
+      "merit"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_3",
+    "category": "admission_test",
+    "title": "When a candidate applies to FAST-NUCES with multiple campus preferences, priority is given to the campus that the candid",
+    "applicable_campus": "When a candidate applies to FAST-NUCES with multiple campus",
+    "applicable_program": null,
+    "content": "When a candidate applies to FAST-NUCES with multiple campus preferences, priority is given to the campus that the candidate listed as their first preference. Candidates who listed a specific campus as their first preference are evaluated first for that campus's merit list. If a candidate does not qualify for their first preference campus, they are then considered for their second preference campus only if they meet that campus's merit requirements. First preference applicants at each campus are given priority over candidates who listed that campus as a lower preference.",
+    "keywords": [
+      "campus",
+      "first",
+      "their",
+      "preference",
+      "candidate",
+      "listed"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_4",
+    "category": "admission_test",
+    "title": "A candidate cannot change their campus preference list or degree program preference after they have seen their FAST NU t",
+    "applicable_campus": "A candidate cannot change their campus",
+    "applicable_program": "didate cannot change their campus preference list or degree program",
+    "content": "A candidate cannot change their campus preference list or degree program preference after they have seen their FAST NU test score. The preference list submitted at the time of application is final. Changes to campus or program preferences are not accepted after the test is completed and before the merit list is released. Candidates are therefore strongly advised to carefully finalize their preferences before submitting the application.",
+    "keywords": [
+      "their",
+      "preference",
+      "list",
+      "campus",
+      "program",
+      "after"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_5",
+    "category": "admission_test",
+    "title": "FAST-NUCES does not officially publish a waiting list in the traditional sense",
+    "applicable_campus": "process is based on seat availability and is not guaranteed for every program or campus",
+    "applicable_program": "be",
+    "content": "FAST-NUCES does not officially publish a waiting list in the traditional sense. If seats become available after the first merit list, the university issues a second call for admission, commonly referred to among students as the second merit list or second cutoff. Candidates who fall just below the first cutoff may receive an email notification if their merit qualifies under the second cutoff. This process is based on seat availability and is not guaranteed for every program or campus.",
+    "keywords": [
+      "second",
+      "list",
+      "merit",
+      "not",
+      "if",
+      "first"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_6",
+    "category": "admission_test",
+    "title": "If a candidate is selected for a program that was not their first preference, they are not required to pay the full admi",
+    "applicable_campus": "should monitor their admissions portal and email for any notifications from the campus",
+    "applicable_program": "If a candidate is selected for a program",
+    "content": "If a candidate is selected for a program that was not their first preference, they are not required to pay the full admission fee simply to maintain eligibility for a higher-preference program if a second merit list is issued. Candidates in this situation should monitor their admissions portal and email for any notifications from the campus regarding subsequent merit list calls. Specific procedural guidance on this situation should be sought directly from the relevant campus admissions office.",
+    "keywords": [
+      "if",
+      "program",
+      "not",
+      "their",
+      "merit",
+      "list"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_7",
+    "category": "admission_test",
+    "title": "If a candidate receives admission, pays the required fees, and subsequently receives their FSc Part 2 result showing les",
+    "applicable_campus": null,
+    "applicable_program": "bs",
+    "content": "If a candidate receives admission, pays the required fees, and subsequently receives their FSc Part 2 result showing less than the required minimum percentage, the university will cancel the admission. In such a case, a full refund of the tuition fee and other applicable charges is provided to the candidate. The admission test fee, however, is non-refundable under all circumstances. The admission fee and security deposit refund process follows HEC guidelines.",
+    "keywords": [
+      "admission",
+      "fee",
+      "receives",
+      "required",
+      "refund",
+      "if"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_8",
+    "category": "admission_test",
+    "title": "A-Level students who apply to FAST-NUCES before their final A-Level results are available can use their O-Level equivale",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "A-Level students who apply to FAST-NUCES before their final A-Level results are available can use their O-Level equivalence percentage as calculated by IBCC in the application form. The O-Level equivalence percentage serves as a provisional substitute for the HSSC result. Once the A-Level results are declared, the candidate must obtain the IBCC A-Level equivalence certificate and submit it within the time period specified by the university. This certificate is required to confirm that the candidate meets the minimum academic eligibility criteria for their chosen program. Failure to provide the A-Level equivalence certificate by the stated deadline will result in cancellation of admission.",
+    "keywords": [
+      "a-level",
+      "equivalence",
+      "their",
+      "certificate",
+      "results",
+      "o-level"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_9",
+    "category": "admission_test",
+    "title": "Candidates who apply to FAST-NUCES from outside Pakistan and cannot appear in the NU test in person may apply using thei",
+    "applicable_campus": null,
+    "applicable_program": "he minimum SAT score required for Computing and Engineering programs",
+    "content": "Candidates who apply to FAST-NUCES from outside Pakistan and cannot appear in the NU test in person may apply using their SAT scores. The minimum SAT score required for Computing and Engineering programs is 1200, and for BBA and Business programs it is 1000. SAT scores are treated as a separate merit category and candidates applying on this basis compete among other SAT applicants for the seats allocated to that category.",
+    "keywords": [
+      "sat",
+      "candidates",
+      "apply",
+      "programs",
+      "who",
+      "fast-nuces"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_10",
+    "category": "admission_test",
+    "title": "The FAST-NUCES test result is typically announced approximately one week after the completion of the testing window",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The FAST-NUCES test result is typically announced approximately one week after the completion of the testing window. Candidates can check their result by logging into the admissions portal at admissions.nu.edu.pk. On the day of result announcement, the portal may be slower than usual due to high concurrent traffic from many users. Candidates who experience delays are advised to wait a few hours and try again. Results are also communicated via SMS and email to registered contacts.",
+    "keywords": [
+      "result",
+      "candidates",
+      "portal",
+      "fast-nuces",
+      "test",
+      "typically"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_11",
+    "category": "admission_test",
+    "title": "After results are announced, FAST-NUCES publishes merit lists for each program and campus",
+    "applicable_campus": "ter results are announced, FAST-NUCES publishes merit lists for each program and campus",
+    "applicable_program": "FAST-NUCES publishes merit lists for each program",
+    "content": "After results are announced, FAST-NUCES publishes merit lists for each program and campus. Candidates who are selected are informed via SMS and email and are given a deadline by which they must confirm their seat by paying the required fees and submitting the necessary documents. Missing the confirmation deadline results in automatic cancellation of the offered seat with no possibility of reinstatement.",
+    "keywords": [
+      "results",
+      "deadline",
+      "seat",
+      "after",
+      "announced",
+      "fast-nuces"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_12",
+    "category": "admission_test",
+    "title": "A candidate who is selected for admission at FAST-NUCES and confirms their seat but later decides to withdraw before cla",
+    "applicable_campus": null,
+    "applicable_program": "ms",
+    "content": "A candidate who is selected for admission at FAST-NUCES and confirms their seat but later decides to withdraw before classes begin may apply for a fee refund. The refund amount depends on the timing of the withdrawal and is governed by the Higher Education Commission refund policy. The one-time non-refundable admission fee of Rs 30,000 is not refunded under any circumstances regardless of when the withdrawal is made. The security deposit and tuition fee refund eligibility depend on the specific withdrawal date relative to the semester start date.",
+    "keywords": [
+      "fee",
+      "refund",
+      "withdrawal",
+      "admission",
+      "candidate",
+      "who"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_13",
+    "category": "admission_test",
+    "title": "Students who have questions about specific admission scenarios, unusual circumstances, or edge cases that are not clearl",
+    "applicable_campus": "rsity website are encouraged to contact the admissions office of their preferred campus",
+    "applicable_program": "ms",
+    "content": "Students who have questions about specific admission scenarios, unusual circumstances, or edge cases that are not clearly answered by the information published on the university website are encouraged to contact the admissions office of their preferred campus directly. The university helpline is reachable at 111-128-128 and the general admissions email is admissions@nu.edu.pk. Campus-specific email addresses are also listed on each campus website for direct inquiries.",
+    "keywords": [
+      "admissions",
+      "university",
+      "website",
+      "campus",
+      "email",
+      "students"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_14",
+    "category": "admission_test",
+    "title": "FAST-NUCES does not release official closing aggregate data or merit list cutoffs publicly on its website or official so",
+    "applicable_campus": "Students who need historical closing merit information for a specific campus",
+    "applicable_program": "bs",
+    "content": "FAST-NUCES does not release official closing aggregate data or merit list cutoffs publicly on its website or official social media platforms. Students who need historical closing merit information for a specific campus and program can contact the relevant campus admissions office, which will provide this information upon request. Unofficial closing merit data available on student forums or third-party websites should be treated as approximate and may not reflect the actual cutoffs for any given year.",
+    "keywords": [
+      "closing",
+      "merit",
+      "not",
+      "official",
+      "data",
+      "cutoffs"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_15",
+    "category": "admission_test",
+    "title": "The FAST admission test is the same for BS Computer Science and BS Software Engineering programs",
+    "applicable_campus": null,
+    "applicable_program": "he same for BS Computer Science and BS Software Engineering programs",
+    "content": "The FAST admission test is the same for BS Computer Science and BS Software Engineering programs. The test pattern for all computing programs and all engineering programs is identical, covering English, Analytical Skills and IQ, Basic Mathematics, and Advanced Mathematics sections. The BBA, BS Accounting and Finance, BS Business Analytics, and BS FinTech test pattern is different and replaces the Advanced Mathematics section with an Essay Writing section. Candidates must select the correct test type corresponding to their desired program at the time of registration.",
+    "keywords": [
+      "bs",
+      "test",
+      "mathematics",
+      "engineering",
+      "pattern",
+      "all"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_16",
+    "category": "admission_test",
+    "title": "A candidate who applies to FAST-NUCES and is not selected for their chosen program in the first merit list is not automa",
+    "applicable_campus": "am in the first merit list is not automatically redirected to another program or campus",
+    "applicable_program": "applies to FAST-NUCES and is not selected for their chosen program",
+    "content": "A candidate who applies to FAST-NUCES and is not selected for their chosen program in the first merit list is not automatically redirected to another program or campus. Each program and campus has its own independent merit list. A candidate who is not selected for BS Computer Science is not automatically placed on the merit list for BBA or BS Electrical Engineering. If the candidate wishes to be considered for multiple programs, they must have indicated this during the application process and paid the corresponding additional fees.",
+    "keywords": [
+      "not",
+      "candidate",
+      "program",
+      "merit",
+      "who",
+      "selected"
+    ]
+  },
+  {
+    "id": "fast_nu_merit_preferences_posttest_17",
+    "category": "admission_test",
+    "title": "A candidate who wishes to apply to multiple campuses of FAST-NUCES must pay an additional fee of Rs 500 per additional c",
+    "applicable_campus": "A candidate who wishes to apply to multiple campuses",
+    "applicable_program": null,
+    "content": "A candidate who wishes to apply to multiple campuses of FAST-NUCES must pay an additional fee of Rs 500 per additional campus at the time of application. The single application form and test result apply across all selected campuses, but the candidate is evaluated separately against each campus's merit list. Candidates should not assume that clearing the merit for one campus automatically qualifies them for another.",
+    "keywords": [
+      "campus",
+      "candidate",
+      "apply",
+      "campuses",
+      "additional",
+      "merit"
+    ]
+  },
+  {
     "id": "fast_nu_pre_admission_complete_guide_1",
     "category": "admission_test",
     "title": "FAST National University of Computer and Emerging Sciences, commonly known as FAST-NUCES or FAST-NU, is a federally char",
@@ -6477,6 +7501,566 @@
       "fast-nuces",
       "led",
       "team"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_1",
+    "category": "other",
+    "title": "Pre-medical students who studied FSc with Biology, Physics, and Chemistry without additional Mathematics are not eligibl",
+    "applicable_campus": null,
+    "applicable_program": "nal Mathematics are not eligible for admission in Computing programs",
+    "content": "Pre-medical students who studied FSc with Biology, Physics, and Chemistry without additional Mathematics are not eligible for admission in Computing programs at FAST-NUCES through the NTS NAT route or any other route without additional Mathematics. Additional Mathematics is a mandatory requirement for admission into Computing programs. Pre-medical students who have passed or are awaiting results of an additional Mathematics examination may apply, but those without any Mathematics qualification are only eligible for BBA and business-related programs.",
+    "keywords": [
+      "additional",
+      "mathematics",
+      "without",
+      "pre-medical",
+      "students",
+      "who"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_2",
+    "category": "other",
+    "title": "FAST-NUCES opens undergraduate admissions exclusively in the Fall semester",
+    "applicable_campus": "There is no Spring intake for any undergraduate program at any campus",
+    "applicable_program": "There is no Spring intake for any undergraduate program",
+    "content": "FAST-NUCES opens undergraduate admissions exclusively in the Fall semester. There is no Spring intake for any undergraduate program at any campus. Students who wish to apply for BS, BBA, or any other undergraduate degree must wait for the Fall admission cycle. This policy applies uniformly across all FAST campuses including Islamabad, Lahore, Karachi, Peshawar, Chiniot-Faisalabad, and Multan.",
+    "keywords": [
+      "undergraduate",
+      "any",
+      "fall",
+      "fast-nuces",
+      "opens",
+      "admissions"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_3",
+    "category": "other",
+    "title": "ECAT is accepted as an alternative admission route for engineering and computing programs at FAST-NUCES",
+    "applicable_campus": "However, the number of seats allocated to ECAT applicants at each campus",
+    "applicable_program": "n alternative admission route for engineering and computing programs",
+    "content": "ECAT is accepted as an alternative admission route for engineering and computing programs at FAST-NUCES. However, the number of seats allocated to ECAT applicants at each campus is limited and significantly fewer than the seats available for FAST NU test applicants. Students who are serious about securing admission are advised to appear for the FAST NU test as their primary route, as it offers access to a larger pool of available seats and results in a stronger competitive position.",
+    "keywords": [
+      "seats",
+      "ecat",
+      "admission",
+      "route",
+      "available",
+      "fast"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_4",
+    "category": "other",
+    "title": "Both the Basic Mathematics and the Advanced Mathematics sections of the FAST admission test are important and neither sh",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "Both the Basic Mathematics and the Advanced Mathematics sections of the FAST admission test are important and neither should be neglected during preparation. However, the best starting point for preparation is the Advanced Mathematics section, as it carries approximately 50 percent of the total marks in the computing and engineering test. After building a strong foundation in Advanced Mathematics, candidates should give attention to Basic Mathematics, Analytical Skills, and English.",
+    "keywords": [
+      "mathematics",
+      "advanced",
+      "basic",
+      "should",
+      "both",
+      "sections"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_5",
+    "category": "other",
+    "title": "The content studied in FSc Part 1 and Part 2, commonly referred to as 11th and 12th grade mathematics, is sufficient pre",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The content studied in FSc Part 1 and Part 2, commonly referred to as 11th and 12th grade mathematics, is sufficient preparation for the Advanced Mathematics section of the FAST entry test. Students do not need to study topics beyond the standard FSc mathematics curriculum. The same applies to candidates who have studied A-Level mathematics, as the content covered in A-Level mathematics aligns with the level tested in the Advanced Mathematics section.",
+    "keywords": [
+      "mathematics",
+      "content",
+      "studied",
+      "fsc",
+      "part",
+      "advanced"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_6",
+    "category": "other",
+    "title": "The tuition fee at FAST-NUCES is charged on a per-credit-hour basis",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The tuition fee at FAST-NUCES is charged on a per-credit-hour basis. For the academic year 2025 to 2026, the tuition fee is Rs 11,000 per credit hour. A standard semester typically involves 17 to 19 credit hours, making the approximate per-semester tuition cost between Rs 187,000 and Rs 209,000 depending on the number of registered credit hours. Students can calculate their exact semester fee by multiplying the total credit hours they register for by the current per-credit-hour rate. The latest per-credit-hour fee can always be verified on the official FAST-NUCES fee structure page at nu.edu.pk/Admissions/FeeStructure.",
+    "keywords": [
+      "fee",
+      "credit",
+      "tuition",
+      "per-credit-hour",
+      "rs",
+      "000"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_7",
+    "category": "other",
+    "title": "The one-time admission fee at FAST-NUCES is Rs 30,000",
+    "applicable_campus": null,
+    "applicable_program": "d again if the student is later admitted to a higher degree program",
+    "content": "The one-time admission fee at FAST-NUCES is Rs 30,000. This fee is non-refundable and is paid only at the time of initial enrollment. It is not charged again if the student is later admitted to a higher degree program at the same university. The admission fee is separate from the per-semester tuition fee and the refundable security deposit.",
+    "keywords": [
+      "fee",
+      "admission",
+      "one-time",
+      "fast-nuces",
+      "rs",
+      "30"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_8",
+    "category": "other",
+    "title": "The FAST-NUCES admission test is conducted at all campuses across Pakistan simultaneously during the announced testing w",
+    "applicable_campus": "The FAST-NUCES admission test is conducted at all campuses",
+    "applicable_program": null,
+    "content": "The FAST-NUCES admission test is conducted at all campuses across Pakistan simultaneously during the announced testing window. A candidate who applies for admission at Islamabad or Lahore campus can appear for the test at the Peshawar campus, or any other campus that is nearest or most convenient. The test result is the same regardless of which campus location the test was taken at. Campus preference is selected during registration and does not affect where the candidate physically sits the test.",
+    "keywords": [
+      "campus",
+      "test",
+      "admission",
+      "during",
+      "candidate",
+      "fast-nuces"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_9",
+    "category": "other",
+    "title": "A candidate who gives the FAST admission test at one campus can apply for and receive admission at any other campus, pro",
+    "applicable_campus": "A candidate who gives the FAST admission test at one campus",
+    "applicable_program": "be",
+    "content": "A candidate who gives the FAST admission test at one campus can apply for and receive admission at any other campus, provided their merit qualifies for that campus. The test is universal and the result is used across all campus merit lists based on the preferences selected during the application. Students should ensure they have applied for all campuses they wish to be considered for, as results from one campus test application do not automatically transfer to unapplied campuses.",
+    "keywords": [
+      "campus",
+      "test",
+      "admission",
+      "one",
+      "merit",
+      "all"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_10",
+    "category": "other",
+    "title": "There is no official hostel facility at the FAST-NUCES Islamabad campus",
+    "applicable_campus": "There is no official hostel facility at the FAST-NUCES Islamabad campus",
+    "applicable_program": null,
+    "content": "There is no official hostel facility at the FAST-NUCES Islamabad campus. Students who gain admission to the Islamabad campus and require accommodation must arrange private housing in nearby areas of the city. Several private hostels are available in sectors such as G-10, G-11, I-8, and I-9, which are close to the campus in H-11/4. Students can also use the Islamabad Metro Bus Service and other public transport for commuting from these areas to the campus.",
+    "keywords": [
+      "islamabad",
+      "campus.",
+      "students",
+      "campus",
+      "private",
+      "areas"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_11",
+    "category": "other",
+    "title": "Documents required to bring on the day of the admission test are specified on the admit card that each applicant prints",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "Documents required to bring on the day of the admission test are specified on the admit card that each applicant prints after paying the application fee. Candidates should carefully read all instructions mentioned on their admit card before the test day. The admit card itself is the primary document required at the test center. The test dates for each admission cycle are announced on the official FAST-NUCES website at nu.edu.pk and the admissions portal at admissions.nu.edu.pk.",
+    "keywords": [
+      "test",
+      "admit",
+      "card",
+      "required",
+      "admission",
+      "each"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_12",
+    "category": "other",
+    "title": "Students wishing to transfer between FAST-NUCES campuses must appear for the FAST entry test and qualify on the merit of",
+    "applicable_campus": "Students wishing to transfer between FAST-NUCES campuses",
+    "applicable_program": "be",
+    "content": "Students wishing to transfer between FAST-NUCES campuses must appear for the FAST entry test and qualify on the merit of their desired destination campus. After qualifying, the student's previously completed courses are reviewed for credit transfer. Courses in which the student earned a grade of C or above are eligible for transfer. Courses with grades below C are not transferred and must be repeated at the new campus. Students planning a campus transfer should contact the admissions office of the destination campus for specific procedural guidance.",
+    "keywords": [
+      "courses",
+      "students",
+      "transfer",
+      "must",
+      "destination",
+      "campus."
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_13",
+    "category": "other",
+    "title": "In certain situations, a student who has completed at least two semesters and was originally eligible for a specific pro",
+    "applicable_campus": "t two semesters and was originally eligible for a specific program at a specific campus",
+    "applicable_program": "st two semesters and was originally eligible for a specific program",
+    "content": "In certain situations, a student who has completed at least two semesters and was originally eligible for a specific program at a specific campus may be able to transfer to that campus without retaking the admission test. This exception is subject to conditions and must be confirmed directly with the admissions office of the relevant campus. The general rule remains that a test is required for campus transfers, and the exception applies only to specific qualifying circumstances.",
+    "keywords": [
+      "specific",
+      "campus",
+      "exception",
+      "certain",
+      "situations",
+      "student"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_14",
+    "category": "other",
+    "title": "Merit scholarships at FAST-NUCES are awarded to the top three position holders of each provincial examination board in t",
+    "applicable_campus": "to the top three position holders on the FAST-NUCES admission merit list of each campus",
+    "applicable_program": null,
+    "content": "Merit scholarships at FAST-NUCES are awarded to the top three position holders of each provincial examination board in the year of admission. Scholarships are also offered to the top three position holders on the FAST-NUCES admission merit list of each campus. The merit scholarship covers the full tuition fee for four years of uninterrupted undergraduate studies, provided the student maintains a semester GPA of 3.0 or higher in every semester. The scholarship is not available for courses taken in summer semesters or for repeated courses.",
+    "keywords": [
+      "merit",
+      "scholarships",
+      "fast-nuces",
+      "top",
+      "three",
+      "position"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_15",
+    "category": "other",
+    "title": "FAST-NUCES also provides need-based financial assistance in the form of interest-free loans",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "FAST-NUCES also provides need-based financial assistance in the form of interest-free loans. This assistance is limited to tuition fees and is renewed every semester based on the student's academic performance and financial need. Students with a household financial situation that cannot be verified through formal salary slips, such as those with parents in informal employment or private businesses without documented income, can still apply for financial assistance. The assessment is conducted through an interview process and the financial aid committee evaluates each case individually. Complete details of the scholarship and financial assistance programs are available at nu.edu.pk/Admissions/Scholarship.",
+    "keywords": [
+      "financial",
+      "assistance",
+      "through",
+      "fast-nuces",
+      "also",
+      "provides"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_16",
+    "category": "other",
+    "title": "For preparation of the FAST admission test, the YouTube channel Mathflix by Hashim Zia is recommended for mathematics pr",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "For preparation of the FAST admission test, the YouTube channel Mathflix by Hashim Zia is recommended for mathematics preparation. For the English section, the IQ Series by Amin Education is a useful resource. Past papers and study material for the FAST entry test are also available through FAST Vault, which can be accessed at fastvault.vercel.app. Practicing with past papers helps candidates understand the question format, time pressure, and difficulty level of the actual test.",
+    "keywords": [
+      "fast",
+      "test",
+      "past",
+      "papers",
+      "preparation",
+      "admission"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_17",
+    "category": "other",
+    "title": "The difficulty level of the FAST admission test is moderate on average",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "The difficulty level of the FAST admission test is moderate on average. The perceived difficulty varies from student to student depending on how thoroughly they have studied the FSc or equivalent curriculum and how much practice they have done with test-format questions. Candidates who are well-prepared in the subjects of Advanced Mathematics, Basic Mathematics, and analytical reasoning typically find the test manageable within the given time. Consistent practice with timed past papers is the most effective way to build both speed and accuracy.",
+    "keywords": [
+      "difficulty",
+      "test",
+      "student",
+      "how",
+      "they",
+      "have"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_18",
+    "category": "other",
+    "title": "Candidates who are still appearing in their board examinations and have not yet completed their FSc should ideally begin",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "Candidates who are still appearing in their board examinations and have not yet completed their FSc should ideally begin test preparation early without waiting for board results. Balancing preparation for both board exams and the FAST entry test simultaneously is possible with a structured study schedule. Starting early gives candidates more time to cover the full Advanced Mathematics syllabus, which carries the highest weightage. Waiting until after board results to begin test preparation significantly reduces available preparation time, as the FAST test is typically held in July.",
+    "keywords": [
+      "board",
+      "test",
+      "preparation",
+      "candidates",
+      "their",
+      "begin"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_19",
+    "category": "other",
+    "title": "Students who have a strong SAT score and are weighing whether to apply through the SAT route or the FAST NU test route s",
+    "applicable_campus": "r SAT applicants depend on the pool of SAT applicants for that specific year and campus",
+    "applicable_program": "be",
+    "content": "Students who have a strong SAT score and are weighing whether to apply through the SAT route or the FAST NU test route should be aware that closing merits for SAT applicants depend on the pool of SAT applicants for that specific year and campus. Historical merit trends for the SAT category at specific campuses are not officially published by FAST-NUCES. Students with high SAT scores and strong O-Level equivalence percentages can consider applying through both routes simultaneously by paying the applicable fees, and will then compete on whichever merit list yields the better outcome for them.",
+    "keywords": [
+      "sat",
+      "students",
+      "strong",
+      "through",
+      "route",
+      "applicants"
+    ]
+  },
+  {
+    "id": "fast_nu_survey_qa_rag_20",
+    "category": "other",
+    "title": "If a candidate does not make the merit for their first preference campus, they will be considered for their second prefe",
+    "applicable_campus": "If a candidate does not make the merit for their first preference campus",
+    "applicable_program": "be",
+    "content": "If a candidate does not make the merit for their first preference campus, they will be considered for their second preference campus only if they applied for it and their merit qualifies under that campus's cutoff. First-preference applicants at each campus are given priority over second or third-preference applicants competing for the same seats. Whether a candidate qualifies for their second campus is determined independently by that campus's merit list and is not automatic.",
+    "keywords": [
+      "campus",
+      "their",
+      "merit",
+      "second",
+      "if",
+      "candidate"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_1",
+    "category": "admission_test",
+    "title": "The FAST-NUCES admission test is a computer-based test conducted at specialized computer laboratories at each campus",
+    "applicable_campus": "is a computer-based test conducted at specialized computer laboratories at each campus",
+    "applicable_program": null,
+    "content": "The FAST-NUCES admission test is a computer-based test conducted at specialized computer laboratories at each campus. Each candidate is assigned an individual computer terminal for the duration of the test. The interface is simple and straightforward, displaying the current question, the remaining time for the active section, and five answer options for each multiple-choice question. Candidates do not need any prior experience with specialized software to navigate the test interface.",
+    "keywords": [
+      "test",
+      "each",
+      "specialized",
+      "computer",
+      "fast-nuces",
+      "admission"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_2",
+    "category": "admission_test",
+    "title": "The test interface displays a running timer that is clearly visible to the candidate throughout each section",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The test interface displays a running timer that is clearly visible to the candidate throughout each section. The timer counts down the remaining time for the active section in real time. There is no separate warning bell or alarm, but since the timer is always visible on screen, candidates can monitor their remaining time and manage their pace accordingly throughout each section.",
+    "keywords": [
+      "timer",
+      "visible",
+      "throughout",
+      "each",
+      "section.",
+      "remaining"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_3",
+    "category": "admission_test",
+    "title": "The FAST admission test is divided into sections, each with its own dedicated timer",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The FAST admission test is divided into sections, each with its own dedicated timer. Once a section's timer runs out, the system automatically moves the candidate to the next section. Candidates cannot jump freely between sections during the test. The order in which sections appear is randomized for each candidate, so the sequence of sections may differ from one test-taker to another.",
+    "keywords": [
+      "sections",
+      "each",
+      "candidate",
+      "fast",
+      "admission",
+      "test"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_4",
+    "category": "admission_test",
+    "title": "Within a single active section, candidates are allowed to skip a question and return to it later before the section time",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "Within a single active section, candidates are allowed to skip a question and return to it later before the section timer expires. A candidate who finds a question difficult, such as a challenging Advanced Mathematics problem, can move past it and come back to attempt it before the section ends. However, once the time for a section runs out, the candidate cannot return to that section under any circumstances.",
+    "keywords": [
+      "section",
+      "question",
+      "return",
+      "before",
+      "candidate",
+      "within"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_5",
+    "category": "admission_test",
+    "title": "There is no built-in on-screen calculator available during the FAST admission test",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "There is no built-in on-screen calculator available during the FAST admission test. All calculations must be performed manually without any digital or physical calculator aid. Bringing a personal calculator to the test center is not permitted. Candidates are expected to solve all mathematical problems including those in the Advanced Mathematics section entirely by hand.",
+    "keywords": [
+      "calculator",
+      "all",
+      "there",
+      "no",
+      "built-in",
+      "on-screen"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_6",
+    "category": "admission_test",
+    "title": "The test center provides candidates with blank sheets for rough work during the test",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "The test center provides candidates with blank sheets for rough work during the test. Candidates are not permitted to bring their own stationery including personal blank paper, clipboards, pencils, or erasers. All materials needed for rough work are provided by the university on the day of the test. Only one blank sheet is provided per candidate, and additional sheets are not issued during the test, so candidates should use their rough work space efficiently.",
+    "keywords": [
+      "candidates",
+      "blank",
+      "rough",
+      "work",
+      "test",
+      "sheets"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_7",
+    "category": "admission_test",
+    "title": "If a mathematical equation or text appears small on the screen during the test, candidates are not expected to encounter",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "If a mathematical equation or text appears small on the screen during the test, candidates are not expected to encounter a significant readability issue as the interface is designed to display questions clearly. Candidates who face any technical difficulty during the test should immediately notify the invigilator present in the examination hall for assistance.",
+    "keywords": [
+      "during",
+      "test",
+      "candidates",
+      "if",
+      "mathematical",
+      "equation"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_8",
+    "category": "admission_test",
+    "title": "There is no advantage or disadvantage to taking the FAST admission test on any particular day within the testing window",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "There is no advantage or disadvantage to taking the FAST admission test on any particular day within the testing window. The question bank used in the test operates on a randomized but defined selection pattern. Questions are not exhausted or made more difficult based on the day or sequence of the test. Candidates appearing on the first day face the same difficulty distribution as those appearing on the last day of the testing window.",
+    "keywords": [
+      "day",
+      "test",
+      "testing",
+      "window.",
+      "appearing",
+      "there"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_9",
+    "category": "admission_test",
+    "title": "The difficulty level of the FAST admission test does not vary based on which campus a candidate has selected as their fi",
+    "applicable_campus": "The difficulty level of the FAST admission test does not vary based on which campus",
+    "applicable_program": null,
+    "content": "The difficulty level of the FAST admission test does not vary based on which campus a candidate has selected as their first preference. All candidates, regardless of campus preference, take the same standardized test with the same difficulty level and section structure. Campus preference only affects which merit list the candidate is placed on after results are announced.",
+    "keywords": [
+      "campus",
+      "difficulty",
+      "level",
+      "test",
+      "candidate",
+      "preference"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_10",
+    "category": "admission_test",
+    "title": "Negative marking in the FAST admission test is applied only when a candidate selects an incorrect answer",
+    "applicable_campus": null,
+    "applicable_program": null,
+    "content": "Negative marking in the FAST admission test is applied only when a candidate selects an incorrect answer. If a candidate leaves a question completely unanswered, no marks are deducted for that question. A blank or skipped question receives zero marks. Candidates who are uncertain about an answer should consider leaving it blank rather than guessing, to avoid the negative marking penalty.",
+    "keywords": [
+      "negative",
+      "marking",
+      "candidate",
+      "question",
+      "blank",
+      "fast"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_11",
+    "category": "admission_test",
+    "title": "The negative marking rules differ between sections",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The negative marking rules differ between sections. In the Advanced Mathematics, Basic Mathematics, and Analytical Skills and IQ sections, one mark is deducted for every four incorrect answers, meaning each wrong answer costs 0.25 marks. In the English section, one mark is deducted for every twelve incorrect answers, making the English penalty significantly lighter. Unanswered questions in all sections receive zero marks and no deduction.",
+    "keywords": [
+      "mathematics",
+      "sections",
+      "one",
+      "mark",
+      "deducted",
+      "every"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_12",
+    "category": "admission_test",
+    "title": "The Basic Mathematics section of the FAST admission test focuses on formula-based and logical problem-solving",
+    "applicable_campus": null,
+    "applicable_program": "ms",
+    "content": "The Basic Mathematics section of the FAST admission test focuses on formula-based and logical problem-solving. Topics in Basic Mathematics include ratios, percentages, profit and loss, arithmetic, basic algebra, cost and price calculations, and other practical quantitative reasoning problems. These questions are more straightforward in nature and are based on concepts from secondary school level mathematics.",
+    "keywords": [
+      "basic",
+      "mathematics",
+      "section",
+      "fast",
+      "admission",
+      "test"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_13",
+    "category": "admission_test",
+    "title": "The Advanced Mathematics section of the FAST admission test covers topics from FSc Part 1 and Part 2 mathematics",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The Advanced Mathematics section of the FAST admission test covers topics from FSc Part 1 and Part 2 mathematics. These include sets, matrices, integration, differentiation, trigonometry, permutation and combination, probability, analytic geometry, vectors, and complex numbers. The Advanced Mathematics section is distinct from Basic Mathematics in that it tests deep knowledge of college-level mathematical concepts rather than practical arithmetic reasoning.",
+    "keywords": [
+      "mathematics",
+      "advanced",
+      "section",
+      "part",
+      "fast",
+      "admission"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_14",
+    "category": "admission_test",
+    "title": "The Advanced Mathematics section carries the highest number of questions in the computing and engineering version of the",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "The Advanced Mathematics section carries the highest number of questions in the computing and engineering version of the FAST admission test, with approximately 50 questions. This makes it the longest and most time-consuming section for most candidates. Time management within this section is critical. If a candidate becomes stuck on a difficult problem, it is advisable to skip it and move on rather than spending disproportionate time on a single question.",
+    "keywords": [
+      "section",
+      "most",
+      "time",
+      "advanced",
+      "mathematics",
+      "carries"
+    ]
+  },
+  {
+    "id": "fast_nu_test_interface_logistics_15",
+    "category": "admission_test",
+    "title": "A strong time management strategy for the FAST admission test is to attempt easier and more familiar questions first wit",
+    "applicable_campus": null,
+    "applicable_program": "be",
+    "content": "A strong time management strategy for the FAST admission test is to attempt easier and more familiar questions first within each section and return to harder ones before the section timer ends. Since each section has its own locked timer and candidates cannot revisit a section after it closes, the focus during each section should be entirely on completing as many questions as accurately as possible within the allocated time.",
+    "keywords": [
+      "section",
+      "each",
+      "questions",
+      "within",
+      "timer",
+      "strong"
     ]
   },
   {
