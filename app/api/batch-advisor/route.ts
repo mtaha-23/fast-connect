@@ -3,7 +3,10 @@ import { spawn } from "child_process"
 import fs from "fs/promises"
 import path from "path"
 
+type Department = "AI" | "CS"
+
 type AdvisorRequest = {
+  department: Department
   currentSemester: number
   passedCourses: string[]
   failedCourses: string[]
@@ -17,7 +20,15 @@ type AdvisorRequest = {
 const PYTHON_CMD = process.env.PYTHON_PATH || "python"
 const SCRIPT_PATH = path.join(process.cwd(), "python-backend", "process.py")
 const WORK_DIR = path.join(process.cwd(), "python-backend")
-const DATA_PATH = path.join(WORK_DIR, "data.csv")
+
+function catalogPath(department: Department) {
+  return path.join(WORK_DIR, department === "AI" ? "ai_courses.csv" : "cs_courses.csv")
+}
+
+function normalizeDepartment(value: unknown): Department {
+  const s = String(value ?? "CS").trim().toUpperCase()
+  return s === "AI" ? "AI" : "CS"
+}
 
 async function runPython(payload: AdvisorRequest) {
   return new Promise<{ recommendations: any[] }>((resolve, reject) => {
@@ -97,8 +108,8 @@ function sanitizeList(value: unknown) {
   return []
 }
 
-async function getCourseCatalog() {
-  const raw = await fs.readFile(DATA_PATH, "utf-8")
+async function getCourseCatalog(department: Department) {
+  const raw = await fs.readFile(catalogPath(department), "utf-8")
   const lines = raw.split(/\r?\n/).filter((l) => l.trim().length > 0)
   const [, ...rows] = lines
 
@@ -124,10 +135,11 @@ async function getCourseCatalog() {
   return bySemester
 }
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   try {
-    const semesters = await getCourseCatalog()
-    return NextResponse.json({ semesters })
+    const department = normalizeDepartment(req.nextUrl.searchParams.get("department"))
+    const semesters = await getCourseCatalog(department)
+    return NextResponse.json({ semesters, department })
   } catch (error: any) {
     return NextResponse.json({ error: "Failed to load courses", details: error?.message }, { status: 500 })
   }
@@ -138,6 +150,7 @@ export async function POST(req: NextRequest) {
     const body = (await req.json()) as Partial<AdvisorRequest>
 
     const payload: AdvisorRequest = {
+      department: normalizeDepartment(body.department),
       currentSemester: Number(body.currentSemester ?? 0),
       passedCourses: sanitizeList(body.passedCourses),
       failedCourses: sanitizeList(body.failedCourses),

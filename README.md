@@ -46,7 +46,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 If you encounter errors when using the Batch Advisor feature:
 
 1. **"pandas not installed"** - Run `pip install pandas` or `pip install -r python-backend/requirements.txt`
-2. **"data.csv not found"** - Make sure `python-backend/data.csv` exists in the project
+2. **"cs_courses.csv not found"** - Make sure `python-backend/cs_courses.csv` exists in the project
 3. **"Failed to start Python process"** - Make sure Python is in your PATH. You can set `PYTHON_PATH` environment variable:
    - Windows: `set PYTHON_PATH=python` or `set PYTHON_PATH=python3`
    - Linux/Mac: `export PYTHON_PATH=python3`

@@ -12,8 +12,7 @@ export interface ChatMessage {
 
 /**
  * Get AI response based on user message
- * This is a placeholder - in production, this would call an actual AI API
- */
+ * This is a placeholder*/
 export function getAIResponse(userMessage: string): string {
   const lowerMessage = userMessage.toLowerCase()
 

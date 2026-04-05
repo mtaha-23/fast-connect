@@ -27,6 +27,8 @@ type Course = {
 
 type CourseMap = Record<string, Course[]>
 
+type Department = "CS" | "AI"
+
 function formatCreditHours(creditHours?: number) {
   if (!creditHours || Number.isNaN(creditHours)) return ""
   if (creditHours === 4) return "(3+1 CH)"
@@ -38,6 +40,7 @@ export default function BatchAdvisorPage() {
   const [showResults, setShowResults] = useState(false)
   const [recommendations, setRecommendations] = useState<Recommendation[]>([])
   const [error, setError] = useState<string | null>(null)
+  const [department, setDepartment] = useState<Department>("CS")
   const [courseOptions, setCourseOptions] = useState<CourseMap>({})
   const [courseFetchError, setCourseFetchError] = useState<string | null>(null)
   const [formData, setFormData] = useState({
@@ -69,8 +72,9 @@ export default function BatchAdvisorPage() {
 
   useEffect(() => {
     const loadCourses = async () => {
+      setCourseFetchError(null)
       try {
-        const res = await fetch("/api/batch-advisor")
+        const res = await fetch(`/api/batch-advisor?department=${encodeURIComponent(department)}`)
         if (!res.ok) throw new Error("Could not load course list")
         const data = await res.json()
         setCourseOptions(data.semesters || {})
@@ -79,7 +83,13 @@ export default function BatchAdvisorPage() {
       }
     }
     loadCourses()
-  }, [])
+  }, [department])
+
+  useEffect(() => {
+    setPassedSelected([])
+    setFailedSelected([])
+    setLowSelected([])
+  }, [department])
 
   // Validation functions
   const validateCurrentSemester = (value: string): string => {
@@ -261,6 +271,7 @@ export default function BatchAdvisorPage() {
 
     try {
       const payload = {
+        department,
         currentSemester: Number(formData.currentSemester || 0),
         gpa: Number(formData.gpa || 0),
         warningCount: Number(formData.warningCount || 0),
@@ -333,6 +344,24 @@ export default function BatchAdvisorPage() {
                   <CardDescription className="text-xs">Fill only what applies.</CardDescription>
                 </CardHeader>
                 <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+                  <div className="space-y-1.5 md:col-span-3">
+                    <Label htmlFor="department">Department</Label>
+                    <Select
+                      value={department}
+                      onValueChange={(value) => setDepartment(value as Department)}
+                    >
+                      <SelectTrigger id="department">
+                        <SelectValue placeholder="Department" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="CS">Computer Science (CS)</SelectItem>
+                        <SelectItem value="AI">Artificial Intelligence (AI)</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <p className="text-xs text-muted-foreground">
+                      Course catalog and recommendations use the program you select.
+                    </p>
+                  </div>
                   <div className="space-y-1.5">
                     <Label htmlFor="currentSemester">Current Semester</Label>
                     <Input
