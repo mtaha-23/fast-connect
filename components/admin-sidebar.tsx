@@ -6,7 +6,7 @@ import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { signOutUser } from "@/lib/services/auth.service"
 import { Button } from "@/components/ui/button"
-import { Home, Users, FileText, MessageSquare, Settings, LogOut, ChevronLeft, BarChart3, Shield } from "lucide-react"
+import { Home, Users, FileText, MessageSquare, Settings, LogOut, ChevronLeft, Shield } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import {
   DropdownMenu,
@@ -23,7 +23,6 @@ const navItems = [
   { title: "Users", href: "/admin/users", icon: Users },
   { title: "Posts", href: "/admin/posts", icon: MessageSquare },
   { title: "Resources", href: "/admin/resources", icon: FileText },
-  { title: "Analytics", href: "/admin/analytics", icon: BarChart3 },
 ]
 
 export function Sidebar() {
