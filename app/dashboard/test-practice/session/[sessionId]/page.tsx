@@ -133,7 +133,7 @@ export default function TestSessionPage() {
     [currentAnswers],
   )
 
-  const handleSelectOption = (optionIndex: number) => {
+  const handleSelectOption = (optionIndex: number | null) => {
     if (!currentSectionKey || phase !== "active" || submitting) return
     setAnswersBySection((prev) => {
       const next = { ...prev }

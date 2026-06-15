@@ -4,7 +4,7 @@ import type { PublicQuestion } from "@/lib/types/test.types"
 type QuestionCardProps = {
   question: PublicQuestion
   selectedOption: number | null
-  onSelect: (index: number) => void
+  onSelect: (index: number | null) => void
   reviewMode?: boolean
   correctOptionIndex?: number
   disabled?: boolean
@@ -43,7 +43,7 @@ export function QuestionCard({
               key={index}
               type="button"
               disabled={disabled || reviewMode}
-              onClick={() => onSelect(index)}
+              onClick={() => onSelect(isSelected ? null : index)}
               className={cn(
                 "w-full p-4 rounded-xl border-2 text-left transition-all",
                 !reviewMode && "hover:border-primary/50 hover:bg-primary/5",
@@ -75,6 +75,16 @@ export function QuestionCard({
           )
         })}
       </div>
+
+      {!reviewMode && selectedOption !== null && !disabled ? (
+        <button
+          type="button"
+          onClick={() => onSelect(null)}
+          className="text-sm text-muted-foreground hover:text-foreground underline-offset-4 hover:underline"
+        >
+          Clear selection
+        </button>
+      ) : null}
     </div>
   )
 }
