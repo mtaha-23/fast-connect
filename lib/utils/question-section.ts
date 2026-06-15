@@ -17,15 +17,13 @@ export const LEGACY_SECTION_VALUES: Record<SectionKey, string[]> = {
 export function resolveQuestionBankSection(question: Question, bankSection: SectionKey): Question | null {
   if (question.status !== "approved") return null
 
-  if (question.section === bankSection) {
+  const rawSection = question.section as string
+
+  if (rawSection === bankSection) {
     return { ...question, section: bankSection }
   }
 
-  if (question.section === "mathematics" && bankSection === "advanced_maths") {
-    return { ...question, section: "advanced_maths" }
-  }
-
-  if (question.section === "iq_and_basic_math") {
+  if (rawSection === "iq_and_basic_math") {
     if (bankSection === "basic_maths" && question.topic === "basic_math") {
       return { ...question, section: "basic_maths" }
     }
@@ -35,7 +33,7 @@ export function resolveQuestionBankSection(question: Question, bankSection: Sect
     return null
   }
 
-  if (LEGACY_SECTION_VALUES[bankSection].includes(question.section)) {
+  if (LEGACY_SECTION_VALUES[bankSection].includes(rawSection)) {
     return { ...question, section: bankSection }
   }
 
