@@ -1,0 +1,3042 @@
+[
+  {
+    "id": "basic_arith_001",
+    "section": "basic_maths",
+    "topic": "arithmetic",
+    "subtopic": "addition",
+    "difficulty": "easy",
+    "questionText": "What is 248 + 376?",
+    "options": ["614", "624", "634", "604"],
+    "correctOptionIndex": 1,
+    "explanation": "248 + 376 = 624.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["arithmetic"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_arith_002",
+    "section": "basic_maths",
+    "topic": "arithmetic",
+    "subtopic": "multiplication",
+    "difficulty": "easy",
+    "questionText": "What is 15 × 12?",
+    "options": ["150", "170", "180", "190"],
+    "correctOptionIndex": 2,
+    "explanation": "15 × 12 = 180.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["arithmetic"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_arith_003",
+    "section": "basic_maths",
+    "topic": "arithmetic",
+    "subtopic": "division",
+    "difficulty": "easy",
+    "questionText": "What is 144 ÷ 12?",
+    "options": ["10", "11", "12", "14"],
+    "correctOptionIndex": 2,
+    "explanation": "144 ÷ 12 = 12.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["arithmetic"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_arith_004",
+    "section": "basic_maths",
+    "topic": "arithmetic",
+    "subtopic": "order_of_operations",
+    "difficulty": "medium",
+    "questionText": "What is 8 + 2 × 5?",
+    "options": ["50", "18", "40", "16"],
+    "correctOptionIndex": 1,
+    "explanation": "Multiplication first: 2×5=10, then 8+10=18.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["arithmetic", "bodmas"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_arith_005",
+    "section": "basic_maths",
+    "topic": "arithmetic",
+    "subtopic": "fractions",
+    "difficulty": "medium",
+    "questionText": "What is 3/4 + 1/2?",
+    "options": ["4/6", "5/4", "1/4", "7/8"],
+    "correctOptionIndex": 1,
+    "explanation": "3/4 + 2/4 = 5/4.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["arithmetic", "fractions"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_pct_001",
+    "section": "basic_maths",
+    "topic": "percentages",
+    "subtopic": "basic_percent",
+    "difficulty": "easy",
+    "questionText": "What is 20% of 250?",
+    "options": ["40", "50", "60", "75"],
+    "correctOptionIndex": 1,
+    "explanation": "20% of 250 = 0.20 × 250 = 50.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["percentages"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_pct_002",
+    "section": "basic_maths",
+    "topic": "percentages",
+    "subtopic": "increase",
+    "difficulty": "medium",
+    "questionText": "A price increases from 400 to 500. The percentage increase is:",
+    "options": ["20%", "25%", "30%", "50%"],
+    "correctOptionIndex": 1,
+    "explanation": "Increase = 100. Percentage = (100/400)×100 = 25%.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["percentages"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_pct_003",
+    "section": "basic_maths",
+    "topic": "percentages",
+    "subtopic": "discount",
+    "difficulty": "medium",
+    "questionText": "After a 10% discount, an item costs 900. What was the original price?",
+    "options": ["990", "1000", "1100", "1200"],
+    "correctOptionIndex": 1,
+    "explanation": "900 = 90% of original, so original = 900/0.9 = 1000.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["percentages", "discount"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_pct_004",
+    "section": "basic_maths",
+    "topic": "percentages",
+    "subtopic": "conversion",
+    "difficulty": "easy",
+    "questionText": "0.75 as a percentage is:",
+    "options": ["7.5%", "75%", "0.75%", "750%"],
+    "correctOptionIndex": 1,
+    "explanation": "0.75 × 100 = 75%.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["percentages"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_pct_005",
+    "section": "basic_maths",
+    "topic": "percentages",
+    "subtopic": "profit_loss",
+    "difficulty": "hard",
+    "questionText": "A shopkeeper buys an item for 800 and sells it for 920. Profit percentage is:",
+    "options": ["12%", "15%", "18%", "20%"],
+    "correctOptionIndex": 1,
+    "explanation": "Profit = 120. Percentage = (120/800)×100 = 15%.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["percentages", "profit"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_ratio_001",
+    "section": "basic_maths",
+    "topic": "ratios",
+    "subtopic": "simplification",
+    "difficulty": "easy",
+    "questionText": "The ratio 18:24 in simplest form is:",
+    "options": ["2:3", "3:4", "4:3", "6:8"],
+    "correctOptionIndex": 1,
+    "explanation": "Divide both by 6: 18:24 = 3:4.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["ratios"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_ratio_002",
+    "section": "basic_maths",
+    "topic": "ratios",
+    "subtopic": "sharing",
+    "difficulty": "medium",
+    "questionText": "Divide 120 in the ratio 2:3. The larger share is:",
+    "options": ["48", "60", "72", "80"],
+    "correctOptionIndex": 2,
+    "explanation": "Total parts = 5. Larger share = (3/5)×120 = 72.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["ratios"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_ratio_003",
+    "section": "basic_maths",
+    "topic": "ratios",
+    "subtopic": "proportion",
+    "difficulty": "medium",
+    "questionText": "If 3:x = 6:10, then x equals:",
+    "options": ["4", "5", "6", "8"],
+    "correctOptionIndex": 1,
+    "explanation": "Cross multiply: 6x = 30, so x = 5.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["ratios", "proportion"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_ratio_004",
+    "section": "basic_maths",
+    "topic": "ratios",
+    "subtopic": "speed",
+    "difficulty": "hard",
+    "questionText": "A car travels 180 km in 3 hours. Its speed is:",
+    "options": ["50 km/h", "55 km/h", "60 km/h", "65 km/h"],
+    "correctOptionIndex": 2,
+    "explanation": "Speed = distance/time = 180/3 = 60 km/h.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["ratios", "speed"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "basic_ratio_005",
+    "section": "basic_maths",
+    "topic": "ratios",
+    "subtopic": "map_scale",
+    "difficulty": "hard",
+    "questionText": "On a map, 2 cm represents 10 km. How many km does 7 cm represent?",
+    "options": ["25 km", "30 km", "35 km", "40 km"],
+    "correctOptionIndex": 2,
+    "explanation": "1 cm = 5 km, so 7 cm = 35 km.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["ratios", "scale"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_001",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "percentages",
+    "difficulty": "easy",
+    "questionText": "What is 20% of 30% of 500?",
+    "options": [
+      "20",
+      "30",
+      "40",
+      "50"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Convert percentages to decimals: 0.20 * 0.30 * 500 = 0.06 * 500 = 30.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "percentages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_002",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "percentages",
+    "difficulty": "medium",
+    "questionText": "If a shirt costs $40 after a 20% discount, what was its original price?",
+    "options": [
+      "$48",
+      "$50",
+      "$60",
+      "$45"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Let original price be x. 80% of x = 40. Therefore, x = 40 / 0.8 = 50.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "percentages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_003",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "percentages",
+    "difficulty": "hard",
+    "questionText": "A population increases by 10% in the first year and decreases by 10% in the second year. What is the net change?",
+    "options": [
+      "0% change",
+      "1% increase",
+      "1% decrease",
+      "10% decrease"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Let initial be 100. After 10% increase = 110. After 10% decrease of 110 = 110 - 11 = 99. Net change is 100 to 99, which is a 1% decrease.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "percentages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_004",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "percentages",
+    "difficulty": "medium",
+    "questionText": "What is 5% of 5% of 100?",
+    "options": [
+      "0.05",
+      "0.25",
+      "0.5",
+      "2.5"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "0.05 * 0.05 * 100 = 0.0025 * 100 = 0.25.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "percentages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_005",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "percentages",
+    "difficulty": "easy",
+    "questionText": "A student scores 45 out of 60. What is his percentage?",
+    "options": [
+      "70%",
+      "75%",
+      "80%",
+      "85%"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "(45 / 60) * 100 = 0.75 * 100 = 75%.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "percentages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_006",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "profit_loss",
+    "difficulty": "easy",
+    "questionText": "If a trader makes a 25% profit on an item that cost him $200, what is the selling price?",
+    "options": [
+      "$225",
+      "$240",
+      "$250",
+      "$275"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Profit = 25% of 200 = 50. Selling price = 200 + 50 = $250.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "profit_loss"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_007",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "percentages",
+    "difficulty": "easy",
+    "questionText": "30 is what percent of 150?",
+    "options": [
+      "15%",
+      "20%",
+      "25%",
+      "30%"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "(30 / 150) * 100 = (1 / 5) * 100 = 20%.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "percentages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_008",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "percentages",
+    "difficulty": "medium",
+    "questionText": "A number increased by 20% becomes 60. What is the number?",
+    "options": [
+      "48",
+      "50",
+      "52",
+      "54"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Let the number be x. 1.20 * x = 60. x = 60 / 1.20 = 50.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "percentages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_009",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "percentages",
+    "difficulty": "medium",
+    "questionText": "If 15% of x is 45, what is the value of x?",
+    "options": [
+      "200",
+      "300",
+      "400",
+      "500"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "0.15 * x = 45. x = 45 / 0.15 = 300.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "percentages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_010",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "profit_loss",
+    "difficulty": "medium",
+    "questionText": "An article costing $80 is sold for $100. What is the profit percentage?",
+    "options": [
+      "20%",
+      "25%",
+      "30%",
+      "15%"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Profit = 100 - 80 = 20. Profit % = (20 / 80) * 100 = 25%.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "profit_loss"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_011",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ratios",
+    "difficulty": "easy",
+    "questionText": "The ratio of boys to girls in a class is 3:2. If there are 50 students in total, how many boys are there?",
+    "options": [
+      "20",
+      "25",
+      "30",
+      "35"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Total parts = 3 + 2 = 5. Value of 1 part = 50 / 5 = 10. Number of boys = 3 * 10 = 30.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ratios"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_012",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ratios",
+    "difficulty": "easy",
+    "questionText": "Divide 100 in the ratio 1:4. What is the value of the smaller part?",
+    "options": [
+      "10",
+      "20",
+      "25",
+      "40"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Total parts = 1 + 4 = 5. One part = 100 / 5 = 20. Smaller part = 1 * 20 = 20.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ratios"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_013",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ages",
+    "difficulty": "medium",
+    "questionText": "A is 5 years older than B. Their total age is 35. What is the age of A?",
+    "options": [
+      "15",
+      "20",
+      "25",
+      "30"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Let B's age be x. A's age = x + 5. x + x + 5 = 35 -> 2x = 30 -> x = 15. A's age = 15 + 5 = 20.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_014",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ages",
+    "difficulty": "hard",
+    "questionText": "10 years ago, P was half of Q in age. Today Q is 40. What is P's age today?",
+    "options": [
+      "20",
+      "25",
+      "30",
+      "35"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Today Q is 40. 10 years ago, Q was 30. P was half of Q, so P was 15. Today, P is 15 + 10 = 25.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_015",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ratios",
+    "difficulty": "medium",
+    "questionText": "The ratio of two ages is 4:5 and their sum is 81. What is the difference between their ages?",
+    "options": [
+      "8",
+      "9",
+      "10",
+      "12"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Total parts = 9. One part = 81 / 9 = 9. The difference is 5 - 4 = 1 part, which equals 9.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ratios"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_016",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ratios",
+    "difficulty": "medium",
+    "questionText": "Three numbers are in the ratio 1:2:3 and their sum is 60. What is the largest number?",
+    "options": [
+      "10",
+      "20",
+      "30",
+      "40"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Total parts = 1+2+3 = 6. One part = 60 / 6 = 10. Largest part = 3 * 10 = 30.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ratios"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_017",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ratios",
+    "difficulty": "hard",
+    "questionText": "If x:y = 2:3 and y:z = 4:5, what is x:z?",
+    "options": [
+      "8:15",
+      "2:5",
+      "6:15",
+      "8:12"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "Make y common. x:y = 8:12 (multiplied by 4), y:z = 12:15 (multiplied by 3). Therefore, x:z = 8:15.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ratios"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_018",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ages",
+    "difficulty": "hard",
+    "questionText": "A father is 3 times as old as his son. In 10 years, he will be 2 times as old. What is the son's present age?",
+    "options": [
+      "5",
+      "10",
+      "15",
+      "20"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Let son=x, father=3x. 3x + 10 = 2(x + 10) -> 3x + 10 = 2x + 20 -> x = 10.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_019",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ratios",
+    "difficulty": "medium",
+    "questionText": "A bag has red and blue balls in the ratio 5:7. If there are 84 balls in total, how many blue balls are there?",
+    "options": [
+      "35",
+      "42",
+      "49",
+      "56"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Total parts = 12. 1 part = 84 / 12 = 7. Blue balls = 7 parts = 7 * 7 = 49.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ratios"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_020",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ratios",
+    "difficulty": "hard",
+    "questionText": "Two numbers are in the ratio 3:4. If 5 is added to both, the ratio becomes 4:5. What is the smaller number?",
+    "options": [
+      "10",
+      "12",
+      "15",
+      "18"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Let numbers be 3x and 4x. (3x + 5)/(4x + 5) = 4/5. 15x + 25 = 16x + 20 -> x = 5. Smaller number = 3 * 5 = 15.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ratios"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_021",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "speed_distance",
+    "difficulty": "easy",
+    "questionText": "If a car travels at a speed of 60 km/h, what distance does it cover in 15 minutes?",
+    "options": [
+      "10 km",
+      "12 km",
+      "15 km",
+      "20 km"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "15 mins is 1/4 of an hour. Distance = Speed * Time = 60 * (1/4) = 15 km.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "speed_distance"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_022",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "work_time",
+    "difficulty": "medium",
+    "questionText": "A can do a piece of work in 10 days, and B can do it in 15 days. How long will they take if they work together?",
+    "options": [
+      "5 days",
+      "6 days",
+      "8 days",
+      "12 days"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Combined rate = 1/10 + 1/15 = 3/30 + 2/30 = 5/30 = 1/6. Thus, it takes them 6 days together.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "work_time"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_023",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "speed_distance",
+    "difficulty": "medium",
+    "questionText": "A 100m long train is moving at 36 km/h. How long will it take to cross a stationary pole?",
+    "options": [
+      "8 sec",
+      "10 sec",
+      "12 sec",
+      "15 sec"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Speed in m/s = 36 * (5/18) = 10 m/s. Time = Distance / Speed = 100 / 10 = 10 seconds.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "speed_distance"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_024",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "speed_distance",
+    "difficulty": "easy",
+    "questionText": "A car covers 200 km in 4 hours. What is its average speed?",
+    "options": [
+      "40 km/h",
+      "50 km/h",
+      "60 km/h",
+      "80 km/h"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Speed = Distance / Time = 200 / 4 = 50 km/h.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "speed_distance"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_025",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "speed_distance",
+    "difficulty": "hard",
+    "questionText": "Walking at 3/4 of his usual speed, a man is 10 minutes late. What is his usual travel time?",
+    "options": [
+      "20 mins",
+      "30 mins",
+      "40 mins",
+      "45 mins"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Speed becomes 3/4, so time becomes 4/3 of usual. Extra time = 1/3 of usual time = 10 mins. Usual time = 30 mins.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "speed_distance"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_026",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "work_time",
+    "difficulty": "medium",
+    "questionText": "5 pipes can fill a tank in 20 minutes. How long will it take 4 pipes to fill the same tank?",
+    "options": [
+      "16 mins",
+      "24 mins",
+      "25 mins",
+      "30 mins"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Inverse proportion: Pipes * Time = Constant. 5 * 20 = 100. 4 * x = 100 -> x = 25 minutes.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "work_time"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_027",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "work_time",
+    "difficulty": "hard",
+    "questionText": "A is twice as fast as B. Together they can finish a job in 12 days. In how many days can A alone finish it?",
+    "options": [
+      "16 days",
+      "18 days",
+      "24 days",
+      "36 days"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Combined rate = 3x (A is 2x, B is x). Total work = 12 * 3 = 36 units. A's time = 36 / 2 = 18 days.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "work_time"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_028",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "speed_distance",
+    "difficulty": "medium",
+    "questionText": "A man rows upstream at 10 km/h and downstream at 14 km/h. What is the speed of the stream?",
+    "options": [
+      "2 km/h",
+      "3 km/h",
+      "4 km/h",
+      "12 km/h"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "Speed of stream = (Downstream - Upstream) / 2 = (14 - 10) / 2 = 4 / 2 = 2 km/h.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "speed_distance"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_029",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "speed_distance",
+    "difficulty": "easy",
+    "questionText": "If distance is 300 km and speed is 60 km/h, what is the time taken?",
+    "options": [
+      "3 hours",
+      "4 hours",
+      "5 hours",
+      "6 hours"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Time = Distance / Speed = 300 / 60 = 5 hours.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "speed_distance"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_030",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "work_time",
+    "difficulty": "medium",
+    "questionText": "If 12 men can do a job in 8 days, how many days will 16 men take to do the same job?",
+    "options": [
+      "4 days",
+      "5 days",
+      "6 days",
+      "10 days"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Men * Days = Work. 12 * 8 = 96. 16 * x = 96 -> x = 6 days.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "work_time"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_031",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "algebra",
+    "difficulty": "medium",
+    "questionText": "What is the sum of the first 10 odd numbers?",
+    "options": [
+      "90",
+      "100",
+      "110",
+      "120"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The sum of the first n odd numbers is always n^2. Here, n=10, so 10^2 = 100.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "algebra"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_032",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "algebra",
+    "difficulty": "hard",
+    "questionText": "If (a+b)=5 and ab=6, what is the value of a^2 + b^2?",
+    "options": [
+      "11",
+      "12",
+      "13",
+      "25"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "(a+b)^2 = a^2 + b^2 + 2ab. 25 = a^2 + b^2 + 12. a^2 + b^2 = 13.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "algebra"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_033",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "averages",
+    "difficulty": "medium",
+    "questionText": "What is the average of the first 5 multiples of 3?",
+    "options": [
+      "6",
+      "9",
+      "12",
+      "15"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Multiples are 3, 6, 9, 12, 15. The average of an evenly spaced odd set is the middle number: 9.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "averages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_034",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "algebra",
+    "difficulty": "easy",
+    "questionText": "Solve for x: 3x - 5 = 16.",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "3x = 16 + 5 = 21. x = 21 / 3 = 7.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "algebra"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_035",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "algebra",
+    "difficulty": "hard",
+    "questionText": "If x/y = 4/5, what is the value of (2x+y)/(x+2y)?",
+    "options": [
+      "13/14",
+      "12/15",
+      "14/15",
+      "13/15"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "Substitute x=4, y=5. (2(4)+5)/(4+2(5)) = (8+5)/(4+10) = 13/14.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "algebra"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_036",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "numbers",
+    "difficulty": "easy",
+    "questionText": "What is the LCM of 12 and 15?",
+    "options": [
+      "30",
+      "45",
+      "60",
+      "120"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Multiples of 15: 15, 30, 45, 60. 60 is the first one divisible by 12.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "numbers"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_037",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "numbers",
+    "difficulty": "easy",
+    "questionText": "What is the HCF of 18 and 24?",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "8"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The largest number that perfectly divides both 18 and 24 is 6.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "numbers"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_038",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "algebra",
+    "difficulty": "easy",
+    "questionText": "What is the difference between the square of 10 and the square of 8?",
+    "options": [
+      "36",
+      "40",
+      "64",
+      "100"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "10^2 - 8^2 = 100 - 64 = 36.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "algebra"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_039",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "numbers",
+    "difficulty": "medium",
+    "questionText": "The product of two numbers is 120 and their LCM is 60. What is their HCF?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "Formula: Product = LCM * HCF. 120 = 60 * HCF. HCF = 120 / 60 = 2.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "numbers"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_040",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "algebra",
+    "difficulty": "medium",
+    "questionText": "If x + y = 10 and x - y = 4, what is the value of x * y?",
+    "options": [
+      "16",
+      "21",
+      "24",
+      "25"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Adding both equations: 2x = 14 -> x = 7. y = 3. Product x*y = 7 * 3 = 21.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "algebra"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_041",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "geometry",
+    "difficulty": "easy",
+    "questionText": "What is the area of a circle with a radius of 7?",
+    "options": [
+      "14pi",
+      "28pi",
+      "49pi",
+      "98pi"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Area = pi * r^2. 7^2 = 49, so 49pi.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "geometry"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_042",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "geometry",
+    "difficulty": "easy",
+    "questionText": "What is the perimeter of a rectangle with length 10 and width 5?",
+    "options": [
+      "15",
+      "30",
+      "40",
+      "50"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Perimeter = 2(L + W) = 2(10 + 5) = 2(15) = 30.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "geometry"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_043",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "geometry",
+    "difficulty": "medium",
+    "questionText": "What is the hypotenuse of a right-angled triangle with legs of length 3 and 4?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "Using Pythagorean theorem: sqrt(3^2 + 4^2) = sqrt(9 + 16) = sqrt(25) = 5.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "geometry"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_044",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "geometry",
+    "difficulty": "easy",
+    "questionText": "What is the volume of a cube with a side length of 3?",
+    "options": [
+      "9",
+      "18",
+      "27",
+      "36"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Volume of a cube = side^3 = 3^3 = 27.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "geometry"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_045",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "fractions",
+    "difficulty": "easy",
+    "questionText": "What is the sum of 1/2 and 1/3?",
+    "options": [
+      "2/5",
+      "1/6",
+      "5/6",
+      "1/5"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Common denominator is 6. 3/6 + 2/6 = 5/6.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "fractions"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_046",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "fractions",
+    "difficulty": "easy",
+    "questionText": "What is 3/4 of 120?",
+    "options": [
+      "80",
+      "90",
+      "100",
+      "110"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "(3/4) * 120 = 3 * 30 = 90.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "fractions"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_047",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "geometry",
+    "difficulty": "medium",
+    "questionText": "What is the sum of the interior angles of a hexagon?",
+    "options": [
+      "360",
+      "540",
+      "720",
+      "900"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Sum = (n - 2) * 180. For a hexagon, n=6. (6 - 2) * 180 = 4 * 180 = 720.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "geometry"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_048",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "geometry",
+    "difficulty": "easy",
+    "questionText": "What is the area of a triangle with base 10 and height 5?",
+    "options": [
+      "25",
+      "50",
+      "75",
+      "100"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "Area = 1/2 * base * height = 1/2 * 10 * 5 = 25.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "geometry"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_049",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "geometry",
+    "difficulty": "medium",
+    "questionText": "What is the total surface area of a cube with a side length of 2?",
+    "options": [
+      "8",
+      "12",
+      "16",
+      "24"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Surface area = 6 * side^2 = 6 * (2^2) = 6 * 4 = 24.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "geometry"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_050",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "fractions",
+    "difficulty": "easy",
+    "questionText": "What is 0.25 expressed as a fraction in its simplest form?",
+    "options": [
+      "1/2",
+      "1/4",
+      "1/5",
+      "2/5"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "0.25 = 25/100, which reduces to 1/4.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "fractions"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_051",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "probability",
+    "difficulty": "medium",
+    "questionText": "If a fair coin is tossed twice, what is the probability of getting at least one Head?",
+    "options": [
+      "1/4",
+      "1/2",
+      "3/4",
+      "1"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The sample space is {HH, HT, TH, TT}. The outcomes with at least one head are HH, HT, TH (3 outcomes). Probability = 3/4.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "probability"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_052",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "probability",
+    "difficulty": "easy",
+    "questionText": "What is the probability of rolling a prime number on a standard six-sided die?",
+    "options": [
+      "1/6",
+      "1/3",
+      "1/2",
+      "2/3"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The prime numbers on a die are 2, 3, and 5. That is 3 outcomes out of 6. 3/6 = 1/2.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "probability"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_053",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "probability",
+    "difficulty": "hard",
+    "questionText": "Two dice are rolled. What is the probability that the sum of the numbers is 8?",
+    "options": [
+      "1/9",
+      "5/36",
+      "1/6",
+      "7/36"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The pairs that sum to 8 are (2,6), (3,5), (4,4), (5,3), and (6,2). There are 5 such pairs out of 36 total possible outcomes. So, 5/36.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "probability"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_054",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "permutations",
+    "difficulty": "medium",
+    "questionText": "In how many ways can the letters of the word 'FAST' be arranged?",
+    "options": [
+      "12",
+      "16",
+      "24",
+      "48"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The word 'FAST' has 4 distinct letters. The number of arrangements is 4! = 4 * 3 * 2 * 1 = 24.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "permutations"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_055",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "permutations",
+    "difficulty": "hard",
+    "questionText": "In how many ways can the letters of the word 'APPLE' be arranged?",
+    "options": [
+      "60",
+      "120",
+      "24",
+      "48"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "There are 5 letters in 'APPLE', with 'P' repeating 2 times. Formula: n! / p!. 5! / 2! = 120 / 2 = 60.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "permutations"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_056",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "combinations",
+    "difficulty": "medium",
+    "questionText": "In how many ways can a team of 2 members be selected from a group of 5 people?",
+    "options": [
+      "5",
+      "10",
+      "15",
+      "20"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This is a combination problem. 5C2 = 5! / (2!(5-2)!) = (5 * 4) / (2 * 1) = 10.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "combinations"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_057",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "averages",
+    "difficulty": "easy",
+    "questionText": "What is the average of the first 10 positive even numbers?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "15"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The average of the first n even numbers is always n + 1. For n = 10, the average is 11.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "averages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_058",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "averages",
+    "difficulty": "medium",
+    "questionText": "The average of 5 numbers is 20. If one number is excluded, the average becomes 18. What is the excluded number?",
+    "options": [
+      "24",
+      "26",
+      "28",
+      "30"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Total sum of 5 numbers = 5 * 20 = 100. Total sum of 4 numbers = 4 * 18 = 72. Excluded number = 100 - 72 = 28.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "averages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_059",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "averages",
+    "difficulty": "hard",
+    "questionText": "The average age of 30 students in a class is 15 years. If the teacher's age is included, the average becomes 16 years. What is the teacher's age?",
+    "options": [
+      "42",
+      "44",
+      "46",
+      "48"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Sum of 30 students = 30 * 15 = 450. Sum of 31 people (including teacher) = 31 * 16 = 496. Teacher's age = 496 - 450 = 46.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "averages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_060",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "numbers",
+    "difficulty": "easy",
+    "questionText": "What is the sum of the first 20 natural numbers?",
+    "options": [
+      "190",
+      "200",
+      "210",
+      "420"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Formula for sum of first n natural numbers is n(n+1)/2. For n=20: 20(21)/2 = 210.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "numbers"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_061",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "numbers",
+    "difficulty": "medium",
+    "questionText": "What is the difference between the place value and face value of the digit 5 in the number 6543?",
+    "options": [
+      "495",
+      "45",
+      "4950",
+      "0"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "In 6543, the place value of 5 is 500. Its face value is 5. Difference = 500 - 5 = 495.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "numbers"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_062",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "fractions",
+    "difficulty": "easy",
+    "questionText": "Which of the following fractions is the largest?",
+    "options": [
+      "1/2",
+      "2/3",
+      "3/4",
+      "4/5"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Convert to decimals or percentages: 1/2=50%, 2/3=66.6%, 3/4=75%, 4/5=80%. 4/5 is the largest.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "fractions"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_063",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "fractions",
+    "difficulty": "medium",
+    "questionText": "If 2/3 of a number is 40, what is the number?",
+    "options": [
+      "50",
+      "60",
+      "70",
+      "80"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "(2/3) * x = 40. Therefore, x = 40 * (3/2) = 60.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "fractions"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_064",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "decimals",
+    "difficulty": "easy",
+    "questionText": "What is the product of 0.04 and 0.05?",
+    "options": [
+      "0.2",
+      "0.02",
+      "0.002",
+      "0.0002"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Multiply the whole numbers: 4 * 5 = 20. Count decimal places: 2 + 2 = 4 total decimal places. Moving the decimal 4 places left gives 0.0020 (or 0.002).",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "decimals"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_065",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "interest",
+    "difficulty": "medium",
+    "questionText": "What is the Simple Interest on $1000 at a rate of 5% per annum for 2 years?",
+    "options": [
+      "$50",
+      "$100",
+      "$150",
+      "$200"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Simple Interest formula: SI = (P * R * T) / 100. SI = (1000 * 5 * 2) / 100 = 10000 / 100 = $100.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "interest"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_066",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "interest",
+    "difficulty": "hard",
+    "questionText": "What is the Compound Interest on $1000 at a rate of 10% per annum for 2 years (compounded annually)?",
+    "options": [
+      "$100",
+      "$200",
+      "$210",
+      "$220"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Amount = P(1 + R/100)^T = 1000(1 + 10/100)^2 = 1000(1.1)^2 = 1000(1.21) = 1210. Compound Interest = Amount - Principal = 1210 - 1000 = $210.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "interest"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_067",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "profit_loss",
+    "difficulty": "medium",
+    "questionText": "A shopkeeper buys an item for $150 and sells it for $180. What is his profit percentage?",
+    "options": [
+      "10%",
+      "15%",
+      "20%",
+      "25%"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Profit = SP - CP = 180 - 150 = 30. Profit % = (Profit / CP) * 100 = (30 / 150) * 100 = 20%.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "profit_loss"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_068",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "profit_loss",
+    "difficulty": "hard",
+    "questionText": "By selling a watch for $240, a man incurs a loss of 20%. What was the cost price of the watch?",
+    "options": [
+      "$260",
+      "$280",
+      "$300",
+      "$320"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "SP = $240. Loss = 20%, meaning SP is 80% of CP. 0.8 * CP = 240. CP = 240 / 0.8 = $300.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "profit_loss"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_069",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "work_time",
+    "difficulty": "hard",
+    "questionText": "A can finish a work in 12 days. B is 60% more efficient than A. How many days will B take to complete the same work?",
+    "options": [
+      "6.5 days",
+      "7 days",
+      "7.5 days",
+      "8 days"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "If A is 100% efficient, B is 160% efficient. Time taken is inversely proportional to efficiency. B's time = 12 / 1.6 = 7.5 days.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "work_time"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_070",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "work_time",
+    "difficulty": "medium",
+    "questionText": "If 10 men can complete a project in 12 days, how long will it take 15 men to complete the same project?",
+    "options": [
+      "6 days",
+      "8 days",
+      "9 days",
+      "10 days"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Men * Days is constant. 10 * 12 = 120 man-days. 15 * x = 120, so x = 120 / 15 = 8 days.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "work_time"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_071",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "work_time",
+    "difficulty": "hard",
+    "questionText": "A and B can do a piece of work together in 8 days. A alone can do it in 12 days. How long will B alone take to do it?",
+    "options": [
+      "16 days",
+      "20 days",
+      "24 days",
+      "30 days"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "A+B's 1 day work = 1/8. A's 1 day work = 1/12. B's 1 day work = 1/8 - 1/12 = 3/24 - 2/24 = 1/24. Thus, B takes 24 days.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "work_time"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_072",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "pipes_cisterns",
+    "difficulty": "medium",
+    "questionText": "Pipe A can fill a tank in 10 hours, and Pipe B can fill it in 15 hours. If both pipes are opened together, how long will it take to fill the tank?",
+    "options": [
+      "5 hours",
+      "6 hours",
+      "8 hours",
+      "12 hours"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Combined rate = 1/10 + 1/15 = 3/30 + 2/30 = 5/30 = 1/6 of the tank per hour. Therefore, they fill it in 6 hours.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "pipes_cisterns"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_073",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "pipes_cisterns",
+    "difficulty": "hard",
+    "questionText": "Pipe A can fill a tank in 10 hours, but due to a leak (Pipe B), it takes 15 hours to fill. How long will the leak take to empty the full tank alone?",
+    "options": [
+      "20 hours",
+      "25 hours",
+      "30 hours",
+      "40 hours"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Effective rate = 1/10 - 1/Leak = 1/15. So, 1/Leak = 1/10 - 1/15 = 3/30 - 2/30 = 1/30. The leak takes 30 hours to empty the tank.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "pipes_cisterns"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_074",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "speed_distance",
+    "difficulty": "medium",
+    "questionText": "A car travels 180 km in 3 hours. What is its speed in meters per second (m/s)?",
+    "options": [
+      "15.5 m/s",
+      "16.67 m/s",
+      "20 m/s",
+      "25 m/s"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Speed = 180 km / 3 h = 60 km/h. To convert to m/s, multiply by 5/18. 60 * 5/18 = 300/18 = 50/3 = 16.67 m/s.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "speed_distance"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_075",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "speed_distance",
+    "difficulty": "easy",
+    "questionText": "A train crosses a 100-meter platform in 10 seconds. What is its speed?",
+    "options": [
+      "10 m/s",
+      "15 m/s",
+      "20 m/s",
+      "Cannot be determined"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Speed = (Length of train + Length of platform) / time. Since the length of the train is not given, the speed cannot be determined.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "speed_distance"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_076",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "speed_distance",
+    "difficulty": "hard",
+    "questionText": "Two trains, 100 meters and 100 meters long, are moving in opposite directions at speeds of 36 km/h and 54 km/h. How long will it take them to completely cross each other?",
+    "options": [
+      "6 seconds",
+      "8 seconds",
+      "10 seconds",
+      "12 seconds"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Total distance = 100 + 100 = 200 m. Relative speed = 36 + 54 = 90 km/h. Convert to m/s: 90 * (5/18) = 25 m/s. Time = 200 / 25 = 8 seconds.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "speed_distance"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_077",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "algebra",
+    "difficulty": "easy",
+    "questionText": "What are the roots of the quadratic equation x^2 - 5x + 6 = 0?",
+    "options": [
+      "-2, -3",
+      "2, -3",
+      "-2, 3",
+      "2, 3"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Factoring the equation: x^2 - 3x - 2x + 6 = 0 -> (x-3)(x-2) = 0. Roots are x = 2 and x = 3.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "algebra"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_078",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "algebra",
+    "difficulty": "medium",
+    "questionText": "If 2x + 3y = 12 and x - y = 1, what is the value of x?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "From the second equation, x = y + 1. Substitute into the first: 2(y + 1) + 3y = 12. 5y + 2 = 12, so 5y = 10 and y = 2. x = 2 + 1 = 3.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "algebra"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_079",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "algebra",
+    "difficulty": "hard",
+    "questionText": "If x^2 + 1/x^2 = 7, what is the positive value of (x + 1/x)?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "9"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "We know (x + 1/x)^2 = x^2 + 1/x^2 + 2(x)(1/x) = 7 + 2 = 9. Taking the square root gives 3.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "algebra"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_080",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "algebra",
+    "difficulty": "easy",
+    "questionText": "Simplify the expression: (x^3 * x^4) / x^2",
+    "options": [
+      "x^4",
+      "x^5",
+      "x^6",
+      "x^9"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "When multiplying, add exponents: x^(3+4) = x^7. When dividing, subtract exponents: x^(7-2) = x^5.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "algebra"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_081",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "geometry",
+    "difficulty": "easy",
+    "questionText": "The area of a square is 64 square units. What is its perimeter?",
+    "options": [
+      "16",
+      "24",
+      "32",
+      "64"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Area = side^2 = 64, so side = 8. Perimeter = 4 * side = 4 * 8 = 32.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "geometry"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_082",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "geometry",
+    "difficulty": "medium",
+    "questionText": "The circumference of a circle is 44 pi. What is its radius?",
+    "options": [
+      "11",
+      "22",
+      "44",
+      "88"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Circumference = 2 * pi * r = 44 * pi. Therefore, 2r = 44, which means r = 22.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "geometry"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_083",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "geometry",
+    "difficulty": "medium",
+    "questionText": "What is the volume of a right circular cylinder with a base radius of 3 and a height of 5?",
+    "options": [
+      "15 pi",
+      "30 pi",
+      "45 pi",
+      "90 pi"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Volume of a cylinder = pi * r^2 * h = pi * (3^2) * 5 = pi * 9 * 5 = 45 pi.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "geometry"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_084",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "geometry",
+    "difficulty": "hard",
+    "questionText": "The diagonals of a rhombus are 6 cm and 8 cm. What is its area?",
+    "options": [
+      "14 cm^2",
+      "24 cm^2",
+      "48 cm^2",
+      "100 cm^2"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Area of a rhombus = (1/2) * d1 * d2 = (1/2) * 6 * 8 = 24 cm^2.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "geometry"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_085",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "probability",
+    "difficulty": "easy",
+    "questionText": "A card is drawn from a standard deck of 52 cards. What is the probability of drawing an Ace?",
+    "options": [
+      "1/52",
+      "1/26",
+      "1/13",
+      "1/4"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "There are 4 Aces in a deck of 52 cards. Probability = 4/52 = 1/13.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "probability"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_086",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "probability",
+    "difficulty": "medium",
+    "questionText": "A card is drawn from a standard deck. What is the probability that it is a red card OR a King?",
+    "options": [
+      "1/2",
+      "7/13",
+      "15/26",
+      "8/13"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "There are 26 red cards, which already includes the 2 red Kings. There are 2 additional black Kings. Total desired outcomes = 26 + 2 = 28. Probability = 28/52 = 7/13.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "probability"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_087",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ratios",
+    "difficulty": "medium",
+    "questionText": "If A:B = 3:4 and B:C = 8:9, what is the ratio of A:C?",
+    "options": [
+      "1:2",
+      "2:3",
+      "3:4",
+      "4:5"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Multiply A:B by 2 to make B uniform across ratios. A:B becomes 6:8. Now B matches (8). So A:B:C = 6:8:9. The ratio A:C is 6:9, which simplifies to 2:3.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ratios"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_088",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "mixtures",
+    "difficulty": "hard",
+    "questionText": "A 60L mixture of milk and water contains them in a 2:1 ratio. How much water must be added to make the ratio 1:2?",
+    "options": [
+      "20L",
+      "40L",
+      "60L",
+      "80L"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Initial mix: Milk = 40L, Water = 20L. We want Milk:Water = 1:2. Since Milk remains 40L, Water must become 80L (to make 40:80). Thus, 80L - 20L = 60L of water must be added.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "mixtures"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_089",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ratios",
+    "difficulty": "easy",
+    "questionText": "What is the fourth proportional to 2, 4, and 8?",
+    "options": [
+      "10",
+      "12",
+      "14",
+      "16"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Proportion formula: a/b = c/d -> 2/4 = 8/x -> 1/2 = 8/x. Therefore, x = 16.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ratios"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_090",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ages",
+    "difficulty": "hard",
+    "questionText": "A mother is three times as old as her daughter. Five years ago, she was four times as old as her daughter. What is the present age of the mother?",
+    "options": [
+      "30",
+      "35",
+      "40",
+      "45"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Let daughter be D, mother be 3D. 5 yrs ago: 3D - 5 = 4(D - 5). 3D - 5 = 4D - 20, meaning D = 15. The mother's current age is 3D = 45.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_091",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "ages",
+    "difficulty": "medium",
+    "questionText": "The sum of the ages of 5 children born at intervals of 3 years each is 50 years. What is the age of the youngest child?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "8"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "Let ages be x, x+3, x+6, x+9, x+12. Sum = 5x + 30 = 50. 5x = 20, so x = 4. The youngest child is 4.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "ages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_092",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "numbers",
+    "difficulty": "easy",
+    "questionText": "Which of the following numbers is completely divisible by 9?",
+    "options": [
+      "4561",
+      "5436",
+      "6541",
+      "7891"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "A number is divisible by 9 if the sum of its digits is divisible by 9. Sum for 5436 = 5+4+3+6 = 18. 18 is divisible by 9.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "numbers"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_093",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "numbers",
+    "difficulty": "easy",
+    "questionText": "What is the Least Common Multiple (LCM) of 4, 6, and 8?",
+    "options": [
+      "12",
+      "16",
+      "24",
+      "48"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Multiples of 8 are 8, 16, 24. 24 is cleanly divisible by both 4 and 6, making it the LCM.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "numbers"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_094",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "numbers",
+    "difficulty": "medium",
+    "questionText": "What is the Highest Common Factor (HCF) of 12, 15, and 21?",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "12"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "The prime factors: 12 (3x4), 15 (3x5), 21 (3x7). The only common prime factor among all three is 3.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "numbers"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_095",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "percentages",
+    "difficulty": "hard",
+    "questionText": "The price of sugar increases by 25%. By what percentage should a household decrease its consumption so that the expenditure remains the same?",
+    "options": [
+      "15%",
+      "20%",
+      "25%",
+      "30%"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Formula: (R / (100 + R)) * 100. (25 / 125) * 100 = (1/5) * 100 = 20%.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "percentages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_096",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "percentages",
+    "difficulty": "hard",
+    "questionText": "The passing marks for an exam are 40%. A student gets 40 marks and fails by 40 marks. What are the maximum marks for the exam?",
+    "options": [
+      "100",
+      "150",
+      "200",
+      "250"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Passing marks = 40 + 40 = 80. If 40% = 80, then 100% = (80 / 40) * 100 = 200.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "percentages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_097",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "percentages",
+    "difficulty": "medium",
+    "questionText": "If 60% of A is equal to 3/4 of B, what is the ratio of A to B?",
+    "options": [
+      "4:5",
+      "5:4",
+      "3:4",
+      "4:3"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "60% = 3/5. So, (3/5)A = (3/4)B. Solving for A/B gives (3/4) * (5/3) = 5/4, which is the ratio 5:4.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "percentages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_098",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "profit_loss",
+    "difficulty": "hard",
+    "questionText": "A vendor sells 5 pens for the exact same total price that it cost him to buy 6 pens. What is his profit percentage?",
+    "options": [
+      "10%",
+      "15%",
+      "16.6%",
+      "20%"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Cost Price of 6 = Selling Price of 5. Profit is 1 pen on the sale of 5. (1/5) * 100 = 20%.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "profit_loss"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_099",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "profit_loss",
+    "difficulty": "easy",
+    "questionText": "An item marked at $500 is sold after a 10% discount. What is the selling price?",
+    "options": [
+      "$400",
+      "$450",
+      "$490",
+      "$510"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Discount = 10% of 500 = 50. Selling price = Marked Price - Discount = 500 - 50 = 450.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "profit_loss"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_bmath_100",
+    "section": "iq_and_basic_math",
+    "topic": "basic_math",
+    "subtopic": "interest",
+    "difficulty": "medium",
+    "questionText": "At what rate of simple interest per annum will a principal amount double itself in 10 years?",
+    "options": [
+      "5%",
+      "8%",
+      "10%",
+      "12%"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "For the amount to double, Simple Interest = Principal. SI = (P*R*T)/100 -> P = (P*R*10)/100 -> 100 = 10R -> R = 10%.",
+    "source": {
+      "type": "manual",
+      "reference": "Standard Basic Math"
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "basic_math",
+      "interest"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  }
+]

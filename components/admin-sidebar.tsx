@@ -23,6 +23,7 @@ const navItems = [
   { title: "Users", href: "/admin/users", icon: Users },
   { title: "Posts", href: "/admin/posts", icon: MessageSquare },
   { title: "Resources", href: "/admin/resources", icon: FileText },
+  { title: "Question Import", href: "/admin/question-import", icon: Shield },
 ]
 
 export function Sidebar() {

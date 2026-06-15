@@ -41,8 +41,7 @@ export function getAIResponse(userMessage: string): string {
 
 /**
  * Process chat message and return AI response
- * In production, this would make an API call to an AI service
- */
+**/
 export async function processChatMessage(userMessage: string): Promise<string> {
   const r = await fetch("/api/chat", {
     method: "POST",

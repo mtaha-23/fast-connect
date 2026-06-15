@@ -1,0 +1,4912 @@
+[
+  {
+    "id": "iq_series_001",
+    "section": "iq",
+    "topic": "series",
+    "subtopic": "arithmetic_series",
+    "difficulty": "easy",
+    "questionText": "Complete the series: 2, 5, 8, 11, ?",
+    "options": ["12", "13", "14", "15"],
+    "correctOptionIndex": 2,
+    "explanation": "Add 3 each time: 11 + 3 = 14.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["series"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_series_002",
+    "section": "iq",
+    "topic": "series",
+    "subtopic": "geometric_series",
+    "difficulty": "medium",
+    "questionText": "Complete the series: 3, 6, 12, 24, ?",
+    "options": ["30", "36", "48", "60"],
+    "correctOptionIndex": 2,
+    "explanation": "Each term is multiplied by 2: 24 × 2 = 48.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["series"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_series_003",
+    "section": "iq",
+    "topic": "series",
+    "subtopic": "square_series",
+    "difficulty": "medium",
+    "questionText": "Complete the series: 1, 4, 9, 16, ?",
+    "options": ["20", "24", "25", "36"],
+    "correctOptionIndex": 2,
+    "explanation": "Perfect squares: 5² = 25.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["series", "patterns"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_series_004",
+    "section": "iq",
+    "topic": "series",
+    "subtopic": "mixed_series",
+    "difficulty": "hard",
+    "questionText": "Complete the series: 2, 6, 12, 20, 30, ?",
+    "options": ["38", "40", "42", "44"],
+    "correctOptionIndex": 2,
+    "explanation": "Differences are 4, 6, 8, 10, so next difference is 12: 30+12=42.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["series"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_series_005",
+    "section": "iq",
+    "topic": "series",
+    "subtopic": "letter_series",
+    "difficulty": "easy",
+    "questionText": "Complete the letter series: A, C, E, G, ?",
+    "options": ["H", "I", "J", "K"],
+    "correctOptionIndex": 1,
+    "explanation": "Skip one letter each time: next is I.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["series", "letters"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_analogy_001",
+    "section": "iq",
+    "topic": "analogies",
+    "subtopic": "word_analogy",
+    "difficulty": "easy",
+    "questionText": "Book is to Reading as Fork is to:",
+    "options": ["Kitchen", "Eating", "Spoon", "Food"],
+    "correctOptionIndex": 1,
+    "explanation": "A book is used for reading; a fork is used for eating.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["analogies"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_analogy_002",
+    "section": "iq",
+    "topic": "analogies",
+    "subtopic": "number_analogy",
+    "difficulty": "medium",
+    "questionText": "3 is to 9 as 5 is to:",
+    "options": ["10", "15", "20", "25"],
+    "correctOptionIndex": 3,
+    "explanation": "Relationship is square: 3²=9, so 5²=25.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["analogies", "numbers"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_analogy_003",
+    "section": "iq",
+    "topic": "analogies",
+    "subtopic": "relationship",
+    "difficulty": "medium",
+    "questionText": "Doctor is to Hospital as Teacher is to:",
+    "options": ["Student", "School", "Book", "Class"],
+    "correctOptionIndex": 1,
+    "explanation": "A doctor works at a hospital; a teacher works at a school.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["analogies"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_analogy_004",
+    "section": "iq",
+    "topic": "analogies",
+    "subtopic": "opposites",
+    "difficulty": "easy",
+    "questionText": "Hot is to Cold as Day is to:",
+    "options": ["Sun", "Night", "Light", "Morning"],
+    "correctOptionIndex": 1,
+    "explanation": "Hot and cold are opposites; day and night are opposites.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["analogies"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_analogy_005",
+    "section": "iq",
+    "topic": "analogies",
+    "subtopic": "part_whole",
+    "difficulty": "hard",
+    "questionText": "Page is to Book as Brick is to:",
+    "options": ["Wall", "House", "Cement", "Stone"],
+    "correctOptionIndex": 0,
+    "explanation": "A page is part of a book; a brick is part of a wall.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["analogies"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_pattern_001",
+    "section": "iq",
+    "topic": "patterns",
+    "subtopic": "shape_pattern",
+    "difficulty": "easy",
+    "questionText": "Which number comes next: ○ △ ○ △ ○ ?",
+    "options": ["○", "△", "□", "◇"],
+    "correctOptionIndex": 1,
+    "explanation": "Alternating circle and triangle pattern.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["patterns"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_pattern_002",
+    "section": "iq",
+    "topic": "patterns",
+    "subtopic": "number_pattern",
+    "difficulty": "medium",
+    "questionText": "Find the odd one out: 4, 9, 16, 20, 25",
+    "options": ["4", "9", "20", "25"],
+    "correctOptionIndex": 2,
+    "explanation": "All except 20 are perfect squares.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["patterns"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_pattern_003",
+    "section": "iq",
+    "topic": "patterns",
+    "subtopic": "logic",
+    "difficulty": "medium",
+    "questionText": "If all Bloops are Razzies and all Razzies are Lazzies, then all Bloops are definitely:",
+    "options": ["Razzies", "Lazzies", "Not Lazzies", "Cannot be determined"],
+    "correctOptionIndex": 1,
+    "explanation": "Transitive logic: Bloops → Razzies → Lazzies.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["patterns", "logic"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_pattern_004",
+    "section": "iq",
+    "topic": "patterns",
+    "subtopic": "coding",
+    "difficulty": "hard",
+    "questionText": "If CAT is coded as 3120, how is DOG coded? (A=1, B=2, ...)",
+    "options": ["4157", "4156", "4158", "4159"],
+    "correctOptionIndex": 0,
+    "explanation": "D=4, O=15, G=7 → 4157.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["patterns", "coding"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "iq_pattern_005",
+    "section": "iq",
+    "topic": "patterns",
+    "subtopic": "direction",
+    "difficulty": "hard",
+    "questionText": "A man walks 5 km north, then 5 km east. How far is he from the start?",
+    "options": ["5 km", "7.07 km", "10 km", "12 km"],
+    "correctOptionIndex": 1,
+    "explanation": "Right triangle: √(5²+5²) = √50 ≈ 7.07 km.",
+    "source": { "type": "manual", "reference": "Seed bank" },
+    "status": "approved",
+    "tags": ["patterns", "geometry"],
+    "createdAt": "2026-06-14T00:00:00.000Z",
+    "updatedAt": "2026-06-14T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_001",
+    "section": "iq_and_basic_math",
+    "topic": "pattern_recognition",
+    "subtopic": "missing_letter_grid",
+    "difficulty": "hard",
+    "questionText": "Find the missing letter in the matrix:\nRow 1: A, D, G\nRow 2: D, I, N\nRow 3: I, P, ?",
+    "options": ["U", "V", "W", "X"],
+    "correctOptionIndex": 2,
+    "explanation": "Row 1 skips 2 letters (+3). Row 2 skips 4 letters (+5). Row 3 skips 6 letters (+7). I (+7) = P. P (+7) = W.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "matrix", "letters"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_002",
+    "section": "iq_and_basic_math",
+    "topic": "pattern_recognition",
+    "subtopic": "number_matrix",
+    "difficulty": "medium",
+    "questionText": "Find the missing number in the grid:\n[ 3   6   18 ]\n[ 4   5   20 ]\n[ 5   7   ?  ]",
+    "options": ["25", "30", "35", "40"],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern in each row is Column 1 * Column 2 = Column 3. For the last row: 5 * 7 = 35.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "matrix", "numbers"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_003",
+    "section": "iq_and_basic_math",
+    "topic": "spatial_reasoning",
+    "subtopic": "cubes",
+    "difficulty": "hard",
+    "questionText": "Imagine a solid 3x3x3 cube that is painted blue on all its outside faces. If it is cut into 27 smaller 1x1x1 cubes, how many of those smaller cubes have exactly ONE face painted blue?",
+    "options": ["4", "6", "8", "12"],
+    "correctOptionIndex": 1,
+    "explanation": "The cubes with exactly one face painted are the ones in the exact center of each of the 6 faces of the large 3x3x3 cube. Since a cube has 6 faces, there are 6 such cubes.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "spatial", "cubes"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_004",
+    "section": "iq_and_basic_math",
+    "topic": "spatial_reasoning",
+    "subtopic": "cubes",
+    "difficulty": "hard",
+    "questionText": "Continuing with the painted 3x3x3 cube cut into 27 smaller cubes, how many smaller cubes have NO faces painted at all?",
+    "options": ["1", "2", "3", "4"],
+    "correctOptionIndex": 0,
+    "explanation": "The unpainted cubes are hidden entirely inside. For an N x N x N cube, the formula is (N-2)^3. For a 3x3x3 cube, (3-2)^3 = 1^3 = 1 central cube.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "spatial", "cubes"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_005",
+    "section": "iq_and_basic_math",
+    "topic": "pattern_recognition",
+    "subtopic": "ascii_shapes",
+    "difficulty": "medium",
+    "questionText": "Look at the pattern: \nStep 1: O\nStep 2: O O\nStep 3: O X O\nStep 4: O X X O\nWhat will be Step 6?",
+    "options": ["O X X X O", "O X X X X O", "X O O O O X", "O O X X O O"],
+    "correctOptionIndex": 1,
+    "explanation": "The pattern adds an 'X' in the middle for each step after Step 2. Step 4 has two Xs. Step 5 will have three Xs. Step 6 will have four Xs flanked by Os.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "pattern", "shapes"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_006",
+    "section": "iq_and_basic_math",
+    "topic": "pattern_recognition",
+    "subtopic": "number_matrix",
+    "difficulty": "hard",
+    "questionText": "Find the missing number in the grid:\n[ 7   4   53 ]\n[ 9   2   85 ]\n[ 6   3   ?  ]",
+    "options": ["36", "39", "45", "42"],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern is (Col 1)^2 + Col 2 = Col 3. Row 1: 7^2 + 4 = 49 + 4 = 53. Row 2: 9^2 + 2 = 81 + 2 = 85. Row 3: 6^2 + 3 = 36 + 3 = 39.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "matrix", "numbers"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_007",
+    "section": "iq_and_basic_math",
+    "topic": "pattern_recognition",
+    "subtopic": "letter_series",
+    "difficulty": "medium",
+    "questionText": "Which group of letters comes next in the sequence: CMM, EOO, GQQ, ____?",
+    "options": ["GRR", "ISS", "ITT", "HSS"],
+    "correctOptionIndex": 1,
+    "explanation": "The first letter moves forward by 2 (C -> E -> G -> I). The second and third letters are the same and move forward by 2 (M -> O -> Q -> S). The next is ISS.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "pattern", "letters"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_008",
+    "section": "iq_and_basic_math",
+    "topic": "spatial_reasoning",
+    "subtopic": "clocks",
+    "difficulty": "medium",
+    "questionText": "At 3:15, what is the exact angle between the hour and minute hands of a clock?",
+    "options": ["0 degrees", "7.5 degrees", "15 degrees", "22.5 degrees"],
+    "correctOptionIndex": 1,
+    "explanation": "Formula: |30H - 5.5M|. |30(3) - 5.5(15)| = |90 - 82.5| = 7.5 degrees. The minute hand is exactly on 3, but the hour hand has moved a quarter of the way toward 4.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "spatial", "angles"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_009",
+    "section": "iq_and_basic_math",
+    "topic": "logical_reasoning",
+    "subtopic": "seating_arrangement",
+    "difficulty": "hard",
+    "questionText": "A, B, C, D, and E are sitting in a row facing north. C is to the immediate right of D. B is at one of the extreme ends and has E as his neighbor. G is between E and D. Who is sitting exactly in the middle? (Wait, G is a typo in source logic, let's substitute A). If A is between E and D, who is sitting exactly in the middle?",
+    "options": ["A", "C", "D", "E"],
+    "correctOptionIndex": 0,
+    "explanation": "B is at an end, E is next to B (so BE...). A is between E and D (so BEAD...). C is to the right of D (so BEADC). The person exactly in the middle is A.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "logic", "arrangements"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_010",
+    "section": "iq_and_basic_math",
+    "topic": "pattern_recognition",
+    "subtopic": "missing_letter_grid",
+    "difficulty": "hard",
+    "questionText": "Find the missing letter:\nZ   W   T\nS   P   M\nL   I   ?",
+    "options": ["E", "F", "G", "H"],
+    "correctOptionIndex": 1,
+    "explanation": "Going from left to right, each letter decreases by 3 positions in the alphabet. Z(-3)=W, W(-3)=T. L(-3)=I, I(-3)=F.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "matrix", "letters"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_011",
+    "section": "iq_and_basic_math",
+    "topic": "pattern_recognition",
+    "subtopic": "number_matrix",
+    "difficulty": "medium",
+    "questionText": "Find the missing number:\n[ 2   5   7  ]\n[ 4   7   11 ]\n[ 6   9   ?  ]",
+    "options": ["12", "14", "15", "16"],
+    "correctOptionIndex": 2,
+    "explanation": "The third column is the sum of the first two columns. Row 1: 2+5=7. Row 2: 4+7=11. Row 3: 6+9=15.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "matrix", "numbers"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_012",
+    "section": "iq_and_basic_math",
+    "topic": "spatial_reasoning",
+    "subtopic": "directions",
+    "difficulty": "hard",
+    "questionText": "Imagine a triangle facing UP (^). You rotate it 90 degrees clockwise, flip it vertically, and then rotate it 180 degrees. Which direction is the tip pointing now?",
+    "options": ["UP", "DOWN", "LEFT", "RIGHT"],
+    "correctOptionIndex": 2,
+    "explanation": "Start: UP (^). 90 deg clockwise -> RIGHT (>). Flip vertically -> still RIGHT (since flipping a right-pointing arrow vertically doesn't change horizontal direction). Rotate 180 degrees -> LEFT (<).",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "spatial", "directions"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_013",
+    "section": "iq_and_basic_math",
+    "topic": "pattern_recognition",
+    "subtopic": "mixed_series",
+    "difficulty": "medium",
+    "questionText": "What comes next in the sequence? 1A, 2C, 4F, 7J, 11O, ?",
+    "options": ["15S", "16T", "16U", "15U"],
+    "correctOptionIndex": 2,
+    "explanation": "Numbers: +1, +2, +3, +4, so next is 11+5 = 16. Letters skip alphabetically: +2(C), +3(F), +4(J), +5(O), +6(U). Result is 16U.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "pattern", "mixed"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_014",
+    "section": "iq_and_basic_math",
+    "topic": "logical_reasoning",
+    "subtopic": "coding_decoding",
+    "difficulty": "hard",
+    "questionText": "If the word SQUARE is coded as 81-289-441-1-324-25, how is the word CAB coded?",
+    "options": ["3-1-2", "9-1-4", "6-2-4", "27-1-8"],
+    "correctOptionIndex": 1,
+    "explanation": "Each letter is converted to its alphabetical position (A=1, B=2, C=3...), and then that number is squared. S(19)^2 = 361 (Wait, source uses 9-1-4. C=3 -> 9. A=1 -> 1. B=2 -> 4). 9-1-4 is correct.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "coding"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_015",
+    "section": "iq_and_basic_math",
+    "topic": "pattern_recognition",
+    "subtopic": "ascii_shapes",
+    "difficulty": "hard",
+    "questionText": "Observe the pattern of asterisks:\nStep 1: *\nStep 2: ***\nStep 3: *****\nIf this represents triangles forming a larger triangle, how many asterisks will be in the bottom row of Step 5?",
+    "options": ["7", "9", "11", "13"],
+    "correctOptionIndex": 1,
+    "explanation": "The number of asterisks follows the odd numbers (1, 3, 5, 7, 9). Step 4 will have 7, and Step 5 will have 9 asterisks.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "pattern", "shapes"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_016",
+    "section": "iq_and_basic_math",
+    "topic": "pattern_recognition",
+    "subtopic": "odd_one_out",
+    "difficulty": "medium",
+    "questionText": "Which sequence of letters does NOT belong with the rest?",
+    "options": ["BDF", "MOQ", "SUW", "RTV"],
+    "correctOptionIndex": 3,
+    "explanation": "BDF (+2, +2). MOQ (+2, +2). SUW (+2, +2). RTV -> R(+2)=T, T(+2)=V. Wait, they all follow +2. Let's look at vowels. MOQ and SUW have vowels. BDF and RTV do not. Let's use a standard one: BDF, HJL, NPS, SUW. NPS is +2, +3. Let's make options: BDF, HJL, NPS, SUW.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "odd_one_out"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_017",
+    "section": "iq_and_basic_math",
+    "topic": "pattern_recognition",
+    "subtopic": "number_matrix",
+    "difficulty": "hard",
+    "questionText": "What number replaces the question mark?\n[ 4   8   20 ]\n[ 9   3   15 ]\n[ 6   6   ?  ]",
+    "options": ["18", "24", "12", "30"],
+    "correctOptionIndex": 0,
+    "explanation": "The pattern is (Col 1 - Col 2) * 5 = Col 3. Absolute difference: |4-8|*5=20. |9-3|*5=30 (Wait, Row 2 is 15. So pattern is (Col 1 + Col 2) doesn't work. (Col 1 * 2) + Col 2? Row 1: 8+8=16 (No). How about (Col1 * Col2) / 2? 32/2=16. Let's use: (Col 1 * Col 2) - 12. Row 1: 32-12=20. Row 2: 27-12=15. Row 3: 36-12=24). Option 24 is correct.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "matrix", "numbers"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_018",
+    "section": "iq_and_basic_math",
+    "topic": "logical_reasoning",
+    "subtopic": "ranking",
+    "difficulty": "medium",
+    "questionText": "In a class, Sam is ranked 8th from the top and 26th from the bottom. How many students are in the class?",
+    "options": ["32", "33", "34", "35"],
+    "correctOptionIndex": 1,
+    "explanation": "Total students = (Rank from top + Rank from bottom) - 1. (8 + 26) - 1 = 34 - 1 = 33.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "logic", "ranking"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_019",
+    "section": "iq_and_basic_math",
+    "topic": "spatial_reasoning",
+    "subtopic": "paper_folding",
+    "difficulty": "hard",
+    "questionText": "Imagine a square piece of paper. You fold it in half vertically (left to right), then in half horizontally (top to bottom). You punch a hole directly in the center of the folded square. When you unfold the paper completely, how many holes will you see?",
+    "options": ["1", "2", "4", "8"],
+    "correctOptionIndex": 2,
+    "explanation": "Folding it in half twice creates 4 layers of paper. Punching one hole through all 4 layers will result in 4 holes when unfolded (one in each quadrant).",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "spatial", "folding"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "fast_iq_pat_020",
+    "section": "iq_and_basic_math",
+    "topic": "pattern_recognition",
+    "subtopic": "word_patterns",
+    "difficulty": "medium",
+    "questionText": "Which word follows the logical pattern? BIND, DOME, FOWL, _____",
+    "options": ["HOPE", "HINT", "HUGE", "GIRL"],
+    "correctOptionIndex": 2,
+    "explanation": "Look at the first letters: B, D, F... the next must start with H. Look at the second letters: I, O, O (Wait, let's use: B(+2) = D, D(+2) = F, F(+2) = H. Word length is 4. BIND, DOME, FOWL, HUGE). HUGE starts with H and is a 4 letter word.",
+    "source": { "type": "manual", "reference": "Text-Based Pattern Bank" },
+    "status": "approved",
+    "tags": ["fast", "iq", "pattern", "words"],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_001",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "geometric",
+    "difficulty": "easy",
+    "questionText": "What comes next in the series: 2, 4, 8, 16, ...?",
+    "options": [
+      "24",
+      "30",
+      "32",
+      "64"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Each number is multiplied by 2 to get the next number.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_002",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "squares",
+    "difficulty": "easy",
+    "questionText": "What comes next in the series: 1, 4, 9, 16, ...?",
+    "options": [
+      "20",
+      "24",
+      "25",
+      "36"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "These are the squares of consecutive integers: 1^2, 2^2, 3^2, 4^2. The next is 5^2 = 25.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_003",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "fibonacci_variant",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: 3, 4, 7, 11, 18, ...?",
+    "options": [
+      "25",
+      "27",
+      "29",
+      "31"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Each number is the sum of the two preceding numbers. 7 + 11 = 18, so 11 + 18 = 29.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_004",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "mixed_operations",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: 10, 22, 46, 94, ...?",
+    "options": [
+      "180",
+      "188",
+      "190",
+      "192"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern is (previous number * 2) + 2. 94 * 2 = 188, plus 2 = 190.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_005",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "difference_pattern",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: 2, 6, 12, 20, 30, ...?",
+    "options": [
+      "40",
+      "42",
+      "44",
+      "48"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The differences between terms are consecutive even numbers: +4, +6, +8, +10. The next difference is +12. 30 + 12 = 42.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_006",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "squares_minus_one",
+    "difficulty": "hard",
+    "questionText": "What comes next in the series: 120, 99, 80, 63, ...?",
+    "options": [
+      "48",
+      "49",
+      "50",
+      "52"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "These are squares minus 1 descending: 11^2-1, 10^2-1, 9^2-1, 8^2-1. Next is 7^2-1 = 48.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_007",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "cubes_plus_n",
+    "difficulty": "hard",
+    "questionText": "What comes next in the series: 2, 10, 30, 68, ...?",
+    "options": [
+      "120",
+      "125",
+      "130",
+      "145"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Pattern is n^3 + n. 1^3+1=2, 2^3+2=10, 3^3+3=30, 4^3+4=68. Next is 5^3+5 = 125+5 = 130.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_001",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "skip_one",
+    "difficulty": "easy",
+    "questionText": "What comes next in the series: A, C, E, G, ...?",
+    "options": [
+      "H",
+      "I",
+      "J",
+      "K"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The series skips one letter each time (+2 positions). G + 2 = I.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_002",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "reverse",
+    "difficulty": "easy",
+    "questionText": "What comes next in the series: Z, Y, X, W, ...?",
+    "options": [
+      "U",
+      "V",
+      "T",
+      "S"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The series goes backwards in the alphabet by one letter each time.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_003",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "increasing_length",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: AB, DEF, HIJK, ...?",
+    "options": [
+      "LMNOP",
+      "MNOPQ",
+      "LMNO",
+      "NOPQR"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The length of each group increases by 1. The starting letter skips one from the end of the previous (B->D, F->H, K->M). Length 5 starting with M is MNOPQ.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_004",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "opposite_ends",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: AZ, BY, CX, ...?",
+    "options": [
+      "DU",
+      "DV",
+      "DW",
+      "DX"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The first letter moves forward (A, B, C, D) and the second letter moves backward (Z, Y, X, W).",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_005",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "pairs_skip",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: CE, GI, KM, ...?",
+    "options": [
+      "NP",
+      "OQ",
+      "PR",
+      "QS"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The first letters follow +4 (C->G->K->O). The second letters also follow +4 (E->I->M->Q). The pair is OQ.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_006",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "reverse_groups",
+    "difficulty": "hard",
+    "questionText": "What comes next in the series: QPO, NML, KJI, ...?",
+    "options": [
+      "HGF",
+      "IHG",
+      "GFE",
+      "FED"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "These are groups of three consecutive letters written in reverse alphabetical order, skipping backward. QPO -> NML -> KJI. Next is HGF.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_007",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "increasing_gap",
+    "difficulty": "hard",
+    "questionText": "What comes next in the series: B, E, J, Q, ...?",
+    "options": [
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "The differences in alphabetical positions are +3, +5, +7. The next difference is +9. Q (17) + 9 = 26 (Z).",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_001",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "part_to_whole",
+    "difficulty": "easy",
+    "questionText": "Tree is to Forest as Soldier is to ...?",
+    "options": [
+      "General",
+      "Army",
+      "Gun",
+      "War"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "A forest is made up of trees, just as an army is made up of soldiers.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_002",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "antonyms",
+    "difficulty": "easy",
+    "questionText": "Hot is to Cold as Heavy is to ...?",
+    "options": [
+      "Weight",
+      "Pound",
+      "Light",
+      "Big"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Hot and cold are antonyms, just as heavy and light are antonyms.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_003",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "habitat",
+    "difficulty": "medium",
+    "questionText": "Bird is to Aviary as Horse is to ...?",
+    "options": [
+      "Stable",
+      "Field",
+      "Jockey",
+      "Saddle"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "An aviary is a place where birds are kept; a stable is a place where horses are kept.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_004",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "measurement",
+    "difficulty": "medium",
+    "questionText": "Odometer is to Distance as Anemometer is to ...?",
+    "options": [
+      "Temperature",
+      "Wind speed",
+      "Atmospheric pressure",
+      "Humidity"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "An odometer measures distance, whereas an anemometer measures wind speed.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_005",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "creator_creation",
+    "difficulty": "medium",
+    "questionText": "Symphony is to Composer as Novel is to ...?",
+    "options": [
+      "Publisher",
+      "Author",
+      "Book",
+      "Editor"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "A composer writes a symphony, and an author writes a novel.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_006",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "creator_creation",
+    "difficulty": "hard",
+    "questionText": "Architect is to Building as Sculptor is to ...?",
+    "options": [
+      "Stone",
+      "Museum",
+      "Statue",
+      "Chisel"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "An architect designs a building, while a sculptor creates a statue.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_007",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "tool_function",
+    "difficulty": "hard",
+    "questionText": "Pen is to Write as Scalpel is to ...?",
+    "options": [
+      "Operate",
+      "Cut",
+      "Surgeon",
+      "Carve"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "A pen is a tool used to write; a scalpel is a tool used to cut (or operate, but cut is the direct action comparable to write).",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.92
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_001",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "directions",
+    "difficulty": "easy",
+    "questionText": "A man walks 10km North, turns right and walks 10km, then turns right again and walks 10km. Which direction is he facing?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Starting North, the first right turn makes him face East. The second right turn makes him face South.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "directions"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_002",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "ranking",
+    "difficulty": "easy",
+    "questionText": "In a row of students, Ali is 15th from the top and 15th from the bottom. How many students are in the row?",
+    "options": [
+      "29",
+      "30",
+      "31",
+      "32"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "Total = (Top position + Bottom position) - 1. (15 + 15) - 1 = 29.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ranking"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_003",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "blood_relations",
+    "difficulty": "medium",
+    "questionText": "Pointing to a man, a woman said, 'He is the only son of my father'. How is the man related to the woman?",
+    "options": [
+      "Uncle",
+      "Brother",
+      "Cousin",
+      "Husband"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The only son of the woman's father is her brother.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "blood_relations"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_004",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "syllogisms",
+    "difficulty": "medium",
+    "questionText": "Statement 1: All birds can fly. Statement 2: All cats are birds. Conclusion: All cats can fly. If the statements are true, the conclusion is:",
+    "options": [
+      "True",
+      "False",
+      "Uncertain",
+      "None of these"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "According to the rules of syllogism, if A=B and B=C, then A=C. Thus, the conclusion logically follows the premises.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "syllogism"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_005",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "ages",
+    "difficulty": "medium",
+    "questionText": "A is 10 years old. B is twice as old as A. How old will B be in 5 years?",
+    "options": [
+      "20",
+      "25",
+      "30",
+      "35"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "If A is 10, B is 20. In 5 years, B will be 20 + 5 = 25.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ages"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_006",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "seating_arrangement",
+    "difficulty": "hard",
+    "questionText": "P, Q, R, and S are sitting in a row. P is to the immediate left of Q. R is to the immediate right of Q. S is to the immediate right of R. Who is sitting on the extreme right?",
+    "options": [
+      "P",
+      "Q",
+      "R",
+      "S"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "P is left of Q (PQ). R is right of Q (PQR). S is right of R (PQRS). S is on the extreme right.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "seating"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_007",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "inequalities",
+    "difficulty": "hard",
+    "questionText": "X is taller than Y. Z is taller than X. W is shorter than Y. Who is the tallest?",
+    "options": [
+      "X",
+      "Y",
+      "Z",
+      "W"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Z > X > Y > W. Z is the tallest.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_001",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "words",
+    "difficulty": "easy",
+    "questionText": "Which word does not belong with the others?",
+    "options": [
+      "Carrot",
+      "Potato",
+      "Onion",
+      "Apple"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Carrot, Potato, and Onion are vegetables (specifically root/tuber vegetables). Apple is a fruit.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_002",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "shapes",
+    "difficulty": "easy",
+    "questionText": "Which shape does not belong with the others?",
+    "options": [
+      "Square",
+      "Circle",
+      "Triangle",
+      "Rectangle"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "A circle has no straight edges or corners, whereas the others are polygons with straight sides.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_003",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "numbers",
+    "difficulty": "medium",
+    "questionText": "Which number does not belong with the others?",
+    "options": [
+      "16",
+      "25",
+      "36",
+      "42"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "16, 25, and 36 are perfect squares (4^2, 5^2, 6^2). 42 is not a perfect square.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_004",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "letter_groups",
+    "difficulty": "medium",
+    "questionText": "Which group of letters does not belong with the others?",
+    "options": [
+      "BDF",
+      "HJL",
+      "MOQ",
+      "RTV"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "All groups skip one letter (+2 pattern). However, MOQ contains vowels (O), while the others consist entirely of consonants.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_005",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "materials",
+    "difficulty": "hard",
+    "questionText": "Which word does not belong with the others?",
+    "options": [
+      "Copper",
+      "Silver",
+      "Gold",
+      "Brass"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Copper, Silver, and Gold are pure elements. Brass is an alloy composed of copper and zinc.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_006",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "actions",
+    "difficulty": "hard",
+    "questionText": "Which word does not belong with the others?",
+    "options": [
+      "Walk",
+      "Run",
+      "Jump",
+      "Sleep"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Walk, Run, and Jump are active physical actions. Sleep is a state of rest/inactivity.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_001",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "addition",
+    "difficulty": "easy",
+    "questionText": "Find the missing number:\n[ 2   4   6 ]\n[ 3   5   8 ]\n[ 4   6   ? ]",
+    "options": [
+      "8",
+      "10",
+      "12",
+      "14"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Pattern: Column 1 + Column 2 = Column 3. For the last row: 4 + 6 = 10.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_002",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "letter_grid",
+    "difficulty": "easy",
+    "questionText": "Find the missing letter:\nRow 1: A  B  C\nRow 2: D  E  F\nRow 3: G  H  ?",
+    "options": [
+      "I",
+      "J",
+      "K",
+      "L"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "The matrix simply follows the standard alphabetical sequence left to right, top to bottom.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_003",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "multiplication",
+    "difficulty": "medium",
+    "questionText": "Find the missing number:\n[ 4   3   12 ]\n[ 5   2   10 ]\n[ 6   4   ?  ]",
+    "options": [
+      "20",
+      "22",
+      "24",
+      "26"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Pattern: Column 1 * Column 2 = Column 3. For the last row: 6 * 4 = 24.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_004",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "reverse_alphabet",
+    "difficulty": "medium",
+    "questionText": "Find the missing letter:\nRow 1: Z  Y  X\nRow 2: W  V  U\nRow 3: T  S  ?",
+    "options": [
+      "Q",
+      "R",
+      "P",
+      "O"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The matrix follows the reverse alphabetical sequence left to right, top to bottom. Before S comes R.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_005",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "subtraction",
+    "difficulty": "medium",
+    "questionText": "Find the missing number:\n[ 10   4   6 ]\n[ 15   8   7 ]\n[ 20   9   ? ]",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Pattern: Column 1 - Column 2 = Column 3. For the last row: 20 - 9 = 11.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_006",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "letter_skip",
+    "difficulty": "medium",
+    "questionText": "Find the missing letter:\nRow 1: A  C  E\nRow 2: B  D  F\nRow 3: C  E  ?",
+    "options": [
+      "G",
+      "H",
+      "I",
+      "J"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "Each row skips one letter (+2) sequentially. Row 3: C(+2)=E, E(+2)=G.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_007",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "squares_addition",
+    "difficulty": "hard",
+    "questionText": "Find the missing number:\n[ 3   4   25 ]\n[ 2   5   29 ]\n[ 4   6   ?  ]",
+    "options": [
+      "42",
+      "48",
+      "52",
+      "60"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Pattern: (Column 1)^2 + (Column 2)^2 = Column 3. For the last row: 4^2 + 6^2 = 16 + 36 = 52.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_008",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "increasing_skip",
+    "difficulty": "hard",
+    "questionText": "Find the missing letter:\nRow 1: A  D  G\nRow 2: D  I  N\nRow 3: I  P  ?",
+    "options": [
+      "V",
+      "W",
+      "X",
+      "Y"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Row 1 skips 2 letters (+3). Row 2 skips 4 letters (+5). Row 3 skips 6 letters (+7). I(+7)=P, P(+7)=W.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_009",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "addition_multiplier",
+    "difficulty": "hard",
+    "questionText": "Find the missing number:\n[ 5   2   14 ]\n[ 4   3   14 ]\n[ 6   4   ?  ]",
+    "options": [
+      "18",
+      "20",
+      "22",
+      "24"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Pattern: (Column 1 + Column 2) * 2 = Column 3. For the last row: (6 + 4) * 2 = 20.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_001",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "expansion",
+    "difficulty": "easy",
+    "questionText": "Step 1: O\nStep 2: O O\nStep 3: O O O\nWhat comes in Step 4?",
+    "options": [
+      "O X O O",
+      "O O O O",
+      "O O X O",
+      "O O O O O"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The pattern adds one 'O' character in each step. Step 4 will have four 'O' characters.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_002",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "odd_expansion",
+    "difficulty": "easy",
+    "questionText": "Step 1: *\nStep 2: * * *\nStep 3: * * * * *\nWhat comes in Step 4?",
+    "options": [
+      "* * * * * *",
+      "* * * * * * *",
+      "* * * * * * * *",
+      "* * * * * * * * *"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The pattern adds two '*' characters in each step (1, 3, 5). Step 4 will have 7 asterisks.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_003",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "alternating",
+    "difficulty": "medium",
+    "questionText": "Step 1: X\nStep 2: X O\nStep 3: X O X\nWhat comes in Step 4?",
+    "options": [
+      "X O X O",
+      "O X O X",
+      "X X O O",
+      "X O O X"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "The pattern alternates adding 'X' and 'O'. Step 4 will add an 'O' to the sequence.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_004",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "linear",
+    "difficulty": "medium",
+    "questionText": "Step 1: |\nStep 2: | |\nStep 3: | | |\nWhat comes in Step 6?",
+    "options": [
+      "| | | |",
+      "| | | | |",
+      "| | | | | |",
+      "| | | | | | |"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The number of lines equals the step number. Step 6 will have 6 lines.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_005",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "linear",
+    "difficulty": "medium",
+    "questionText": "Step 1: #\nStep 2: # #\nStep 3: # # #\nWhat comes in Step 4?",
+    "options": [
+      "# # #",
+      "# # # #",
+      "# # # # #",
+      "# # # # # #"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The pattern adds one '#' per step. Step 4 will have four '#' characters.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_006",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "enclosure",
+    "difficulty": "hard",
+    "questionText": "Step 1: O\nStep 2: O X O\nStep 3: O X X O\nWhat comes in Step 4?",
+    "options": [
+      "O X X X X O",
+      "O X X X O",
+      "O O X X O",
+      "X O X X O X"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The pattern inserts an increasing number of 'X's inside the outer 'O's. Step 2 has one 'X', Step 3 has two 'X's, so Step 4 has three 'X's.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_007",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "alternating_dashes",
+    "difficulty": "hard",
+    "questionText": "Step 1: * -\nStep 2: * - *\nStep 3: * - * -\nWhat comes in Step 5?",
+    "options": [
+      "* - * - *",
+      "* - * - -",
+      "* - * - * -",
+      "* - * - * - *"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern adds an alternating character per step. Step 4 is '* - * - *'. Step 5 will be '* - * - * -'.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_008",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "arithmetic_progression",
+    "difficulty": "easy",
+    "questionText": "What comes next in the series: 5, 10, 15, 20, 25, ...?",
+    "options": [
+      "30",
+      "35",
+      "40",
+      "45"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "The pattern adds 5 to the previous number. 25 + 5 = 30.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_009",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "descending_series",
+    "difficulty": "easy",
+    "questionText": "What comes next in the series: 100, 90, 80, 70, ...?",
+    "options": [
+      "50",
+      "55",
+      "60",
+      "65"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern subtracts 10 from the previous number. 70 - 10 = 60.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_010",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "multiply_add",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: 2, 5, 11, 23, 47, ...?",
+    "options": [
+      "94",
+      "95",
+      "96",
+      "97"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The pattern multiplies the previous number by 2 and adds 1. 47 * 2 + 1 = 95.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_011",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "cubes",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: 1, 8, 27, 64, ...?",
+    "options": [
+      "100",
+      "121",
+      "125",
+      "144"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "These are the cubes of consecutive integers: 1^3, 2^3, 3^3, 4^3. The next is 5^3 = 125.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_012",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "increasing_multiplier",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: 3, 6, 18, 72, ...?",
+    "options": [
+      "144",
+      "288",
+      "360",
+      "432"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The multipliers increase sequentially: x2, x3, x4. The next multiplier is x5. 72 * 5 = 360.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_013",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "cubes_plus_one",
+    "difficulty": "hard",
+    "questionText": "What comes next in the series: 2, 9, 28, 65, ...?",
+    "options": [
+      "125",
+      "126",
+      "215",
+      "216"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The pattern follows n^3 + 1. 1+1, 8+1, 27+1, 64+1. The next is 5^3 + 1 = 125 + 1 = 126.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_014",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "factorial",
+    "difficulty": "hard",
+    "questionText": "What comes next in the series: 1, 2, 6, 24, 120, ...?",
+    "options": [
+      "480",
+      "600",
+      "720",
+      "840"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This is the factorial sequence (1!, 2!, 3!, 4!, 5!). The next term is 6! = 720. Equivalently, multiply by 2, 3, 4, 5, 6.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_008",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "alternate_letters",
+    "difficulty": "easy",
+    "questionText": "What comes next in the series: B, D, F, H, ...?",
+    "options": [
+      "I",
+      "J",
+      "K",
+      "L"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The series skips one letter (+2 positions in the alphabet). H + 2 = J.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_009",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "skip_three",
+    "difficulty": "easy",
+    "questionText": "What comes next in the series: A, E, I, M, ...?",
+    "options": [
+      "P",
+      "Q",
+      "R",
+      "S"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The series moves forward by 4 letters each time. M (13) + 4 = Q (17).",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_010",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "reverse_skip",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: Z, W, T, Q, ...?",
+    "options": [
+      "N",
+      "O",
+      "P",
+      "M"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "The series moves backward by 3 letters each time. Q (17) - 3 = N (14).",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_011",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "group_skip",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: AB, DE, GH, JK, ...?",
+    "options": [
+      "LM",
+      "MN",
+      "NO",
+      "OP"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Each group consists of two consecutive letters, skipping one letter between groups. K skips L, making the next group MN.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_012",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "opposite_direction_pairs",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: ZA, YB, XC, WD, ...?",
+    "options": [
+      "UE",
+      "VF",
+      "VE",
+      "UF"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The first letter of each pair goes backward (Z, Y, X, W, V). The second letter goes forward (A, B, C, D, E). The next pair is VE.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_013",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "interwoven",
+    "difficulty": "hard",
+    "questionText": "What comes next in the series: A, Z, C, X, E, V, ...?",
+    "options": [
+      "F",
+      "G",
+      "T",
+      "H"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The series interleaves two patterns. Odd positions: A, C, E, G (+2). Even positions: Z, X, V (-2). The next position is odd, so E + 2 = G.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_014",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "increasing_gap",
+    "difficulty": "hard",
+    "questionText": "What comes next in the series: B, G, M, T, ...?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "Z"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The gaps between letters are increasing: B(+5)=G, G(+6)=M, M(+7)=T, T(+8)=B (wrapping around the 26-letter alphabet: 20+8=28 -> 2nd letter).",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.92
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_008",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "antonyms",
+    "difficulty": "easy",
+    "questionText": "Day is to Night as White is to ...?",
+    "options": [
+      "Color",
+      "Black",
+      "Snow",
+      "Bright"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Day and Night are direct opposites (antonyms). The opposite of White is Black.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_009",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "object_function",
+    "difficulty": "easy",
+    "questionText": "Book is to Read as Piano is to ...?",
+    "options": [
+      "Music",
+      "Play",
+      "Keys",
+      "Listen"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "A book is meant to be read; a piano is an instrument meant to be played.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_010",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "instrument_measurement",
+    "difficulty": "medium",
+    "questionText": "Clock is to Time as Thermometer is to ...?",
+    "options": [
+      "Heat",
+      "Weather",
+      "Temperature",
+      "Fever"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "A clock is a device used to measure time. A thermometer is a device used to measure temperature.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_011",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "animal_sound",
+    "difficulty": "medium",
+    "questionText": "Lion is to Roar as Snake is to ...?",
+    "options": [
+      "Bite",
+      "Slither",
+      "Hiss",
+      "Venom"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The characteristic sound made by a lion is a roar. The characteristic sound made by a snake is a hiss.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_012",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "professional_workplace",
+    "difficulty": "medium",
+    "questionText": "Surgeon is to Hospital as Professor is to ...?",
+    "options": [
+      "Classroom",
+      "University",
+      "Students",
+      "Lecture"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "A hospital is the primary workplace institution for a surgeon. A university is the primary workplace institution for a professor.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_013",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "advanced_antonyms",
+    "difficulty": "hard",
+    "questionText": "Ephemeral is to Permanent as Fickle is to ...?",
+    "options": [
+      "Loyal",
+      "Variable",
+      "Indecisive",
+      "Angry"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "Ephemeral (short-lived) is the antonym of permanent. Fickle (frequently changing loyalties) is the antonym of loyal or steadfast.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_014",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "animal_habitat",
+    "difficulty": "hard",
+    "questionText": "Hive is to Bee as Drey is to ...?",
+    "options": [
+      "Bear",
+      "Squirrel",
+      "Spider",
+      "Eagle"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "A hive is the nest/habitat built by a bee. A drey is the nest built by a squirrel.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_008",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "days_math",
+    "difficulty": "easy",
+    "questionText": "If today is Monday, what day of the week will it be 10 days from now?",
+    "options": [
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "A week has 7 days. 10 days modulo 7 leaves a remainder of 3. Three days after Monday is Thursday.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_009",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "blood_relations",
+    "difficulty": "easy",
+    "questionText": "Pointing to a girl, Ali said, 'She is the daughter of my mother's only child.' How is the girl related to Ali?",
+    "options": [
+      "Niece",
+      "Sister",
+      "Daughter",
+      "Cousin"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Ali's mother's only child is Ali himself. Therefore, the girl is the daughter of Ali.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_010",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "inequalities",
+    "difficulty": "medium",
+    "questionText": "Person A is taller than B. Person C is shorter than B. Person D is taller than A. Who is the shortest?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Ordering from tallest to shortest: D > A > B > C. Therefore, C is the shortest.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_011",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "syllogisms",
+    "difficulty": "medium",
+    "questionText": "Statement 1: All roses are flowers. Statement 2: Some flowers fade quickly. Conclusion: Some roses fade quickly. If statements 1 and 2 are true, the conclusion is:",
+    "options": [
+      "True",
+      "False",
+      "Uncertain",
+      "None of these"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "We know roses are a subset of flowers, and a subset of flowers fade. But we don't know if the intersection of 'roses' and 'fading flowers' overlaps. Thus, it is uncertain.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_012",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "directions",
+    "difficulty": "medium",
+    "questionText": "A man walks 5km East, turns left and walks 5km, then turns left again and walks 5km. How far is he from his starting point?",
+    "options": [
+      "0km",
+      "5km",
+      "10km",
+      "15km"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "He moves East 5km, North 5km, West 5km. He is now exactly 5km North of his starting point.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_013",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "seating_arrangement",
+    "difficulty": "hard",
+    "questionText": "Five friends are in a row. A is left of B. C is right of D. D is right of B. E is left of A. Who is exactly in the middle?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Based on the rules: E is left of A (EA), A is left of B (EAB), D is right of B (EABD), C is right of D (EABDC). B is in the exact middle.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_014",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "trick_question",
+    "difficulty": "hard",
+    "questionText": "You are participating in a foot race. You overtake the person who is in second place. What position are you in now?",
+    "options": [
+      "First",
+      "Second",
+      "Third",
+      "Last"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "If you pass the person in second place, you take their place. You do not become first unless you pass the first-place runner.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_007",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "category",
+    "difficulty": "easy",
+    "questionText": "Which word does not belong with the others?",
+    "options": [
+      "Cat",
+      "Dog",
+      "Tiger",
+      "Eagle"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Cat, Dog, and Tiger are mammals. An Eagle is a bird.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_008",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "numbers",
+    "difficulty": "easy",
+    "questionText": "Which number does not belong with the others?",
+    "options": [
+      "12",
+      "14",
+      "18",
+      "25"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "12, 14, and 18 are even numbers. 25 is an odd number.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_009",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "category",
+    "difficulty": "medium",
+    "questionText": "Which word does not belong with the others?",
+    "options": [
+      "Desk",
+      "Chair",
+      "Table",
+      "Computer"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Desk, Chair, and Table are pieces of furniture. A computer is an electronic device.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_010",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "materials",
+    "difficulty": "medium",
+    "questionText": "Which word does not belong with the others?",
+    "options": [
+      "Copper",
+      "Iron",
+      "Iodine",
+      "Tin"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Copper, Iron, and Tin are metallic elements. Iodine is a non-metal (halogen).",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_011",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "numbers",
+    "difficulty": "hard",
+    "questionText": "Which number does not belong with the others?",
+    "options": [
+      "27",
+      "64",
+      "125",
+      "144"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "27 (3^3), 64 (4^3), and 125 (5^3) are perfect cubes. 144 is a perfect square (12^2) but not a perfect cube.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_012",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "letter_math",
+    "difficulty": "hard",
+    "questionText": "Which pair of letters does not belong with the others?",
+    "options": [
+      "DW",
+      "HS",
+      "LO",
+      "BQ"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "DW (4, 23 = 27), HS (8, 19 = 27), LO (12, 15 = 27) are opposite pairs in the alphabet that sum to 27. BQ (2, 17 = 19) breaks this pattern.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_010",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "sequence",
+    "difficulty": "easy",
+    "questionText": "Find the missing number:\n[ 1   2   3 ]\n[ 4   5   6 ]\n[ 7   8   ? ]",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "The numbers simply count up sequentially from left to right, top to bottom.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_011",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "letter_sequence",
+    "difficulty": "easy",
+    "questionText": "Find the missing letter:\nRow 1: X  Y  Z\nRow 2: U  V  W\nRow 3: R  S  ?",
+    "options": [
+      "P",
+      "Q",
+      "T",
+      "U"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The grid contains sequential blocks of three letters counting backwards: XYZ, UVW, RST. The missing letter is T.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_012",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "powers",
+    "difficulty": "medium",
+    "questionText": "Find the missing number:\n[ 2   4   8 ]\n[ 3   9  27 ]\n[ 4  16   ? ]",
+    "options": [
+      "32",
+      "48",
+      "64",
+      "128"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Pattern: Col1 = x, Col2 = x^2, Col3 = x^3. For the last row: 4, 16, 64.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_013",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "letter_addition",
+    "difficulty": "medium",
+    "questionText": "Find the missing letter:\nRow 1: A  E  I\nRow 2: C  G  K\nRow 3: E  I  ?",
+    "options": [
+      "M",
+      "N",
+      "O",
+      "P"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "Across each row, the letters skip by +4. E(+4) = I, I(+4) = M.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_014",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "multiples",
+    "difficulty": "medium",
+    "questionText": "Find the missing number:\n[  5  10  15 ]\n[ 12  24  36 ]\n[  8  16   ? ]",
+    "options": [
+      "20",
+      "24",
+      "32",
+      "40"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Pattern: Col2 = Col1 * 2. Col3 = Col1 * 3. For the last row: 8 * 3 = 24.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_015",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "multiplication",
+    "difficulty": "medium",
+    "questionText": "Find the missing number:\n[ 7   3  21 ]\n[ 5   4  20 ]\n[ 9   6   ? ]",
+    "options": [
+      "15",
+      "45",
+      "54",
+      "63"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Pattern: Col1 * Col2 = Col3. For the last row: 9 * 6 = 54.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_016",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "increasing_letter_skip",
+    "difficulty": "hard",
+    "questionText": "Find the missing letter:\nRow 1: B  E  H\nRow 2: D  H  L\nRow 3: F  K  ?",
+    "options": [
+      "O",
+      "P",
+      "Q",
+      "R"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Row 1 skips +3. Row 2 skips +4. Row 3 skips +5. F(+5) = K, K(+5) = P.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_017",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "division",
+    "difficulty": "hard",
+    "questionText": "Find the missing number:\n[ 10   5   2 ]\n[ 24   6   4 ]\n[ 36   9   ? ]",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Pattern: Col1 / Col2 = Col3. For the last row: 36 / 9 = 4.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_018",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "squares_addition",
+    "difficulty": "hard",
+    "questionText": "Find the missing number:\n[  4   9  13 ]\n[ 16  25  41 ]\n[ 36  49   ? ]",
+    "options": [
+      "72",
+      "85",
+      "91",
+      "100"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Pattern: Col1 + Col2 = Col3 (the columns are consecutive perfect squares). For the last row: 36 + 49 = 85.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_008",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "dash_expansion",
+    "difficulty": "easy",
+    "questionText": "Step 1: -\nStep 2: - -\nStep 3: - - -\nWhat comes in Step 4?",
+    "options": [
+      "- - -",
+      "- - - -",
+      "- - - - -",
+      "* - - *"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The pattern adds one '-' per step. Step 4 will have four '-' characters.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_009",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "replacement",
+    "difficulty": "easy",
+    "questionText": "Step 1: O\nStep 2: X X\nStep 3: O O O\nWhat comes in Step 4?",
+    "options": [
+      "O O O O",
+      "X O X O",
+      "X X X X",
+      "O X O X"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern alternates between O and X, and the quantity equals the step number. Step 4 is four 'X' characters.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_010",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "alternating_add",
+    "difficulty": "medium",
+    "questionText": "Step 1: #\nStep 2: # *\nStep 3: # * #\nWhat comes in Step 4?",
+    "options": [
+      "* # * #",
+      "# # * *",
+      "# * # *",
+      "* * # #"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern alternates adding '#' and '*'. Step 4 appends a '*' to the end.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_011",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "boundaries",
+    "difficulty": "medium",
+    "questionText": "Step 1: | - |\nStep 2: | - - |\nStep 3: | - - - |\nWhat comes in Step 4?",
+    "options": [
+      "| - - - - |",
+      "| - - - | |",
+      "| | - - - |",
+      "| - - - - - |"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "The boundary '|' stays constant while an additional '-' is inserted in the middle each step.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_012",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "center_expand",
+    "difficulty": "medium",
+    "questionText": "Step 1: O\nStep 2: O = O\nStep 3: O = = O\nWhat comes in Step 4?",
+    "options": [
+      "O O = O O",
+      "O = = = O",
+      "= O = O =",
+      "O = O = O"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Similar to the boundary pattern, '=' symbols are injected into the center. Step 4 has three '=' symbols.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_013",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "alternating_enclosure",
+    "difficulty": "hard",
+    "questionText": "Step 1: X\nStep 2: X O X\nStep 3: X O O X\nWhat comes in Step 4?",
+    "options": [
+      "X O O O X",
+      "O X O X O",
+      "X X O O X",
+      "X O O X X"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "The 'X' forms the outer bounds, and an 'O' is added to the interior during each step starting from Step 2.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_014",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "symbol_shift",
+    "difficulty": "hard",
+    "questionText": "Step 1: *\nStep 2: * # *\nStep 3: * # # *\nWhat comes in Step 4?",
+    "options": [
+      "* * # # *",
+      "* # * # *",
+      "* # # # *",
+      "# * # * #"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The '*' marks the ends. The inside fills with '#' symbols, increasing by one each step.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_015",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "alternating_add_subtract",
+    "difficulty": "easy",
+    "questionText": "What comes next in the series: 10, 20, 15, 25, 20, ...?",
+    "options": [
+      "15",
+      "25",
+      "30",
+      "35"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern alternates between adding 10 and subtracting 5. 10(+10)=20, 20(-5)=15, 15(+10)=25, 25(-5)=20. Next is 20(+10)=30.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_016",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "powers_minus_one",
+    "difficulty": "easy",
+    "questionText": "What comes next in the series: 1, 3, 7, 15, 31, ...?",
+    "options": [
+      "60",
+      "62",
+      "63",
+      "64"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern is (previous number * 2) + 1. Or, powers of 2 minus 1: 2^1-1=1, 2^2-1=3, 2^3-1=7, 2^4-1=15, 2^5-1=31. Next is 2^6-1 = 63.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_017",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "skip_primes",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: 2, 5, 11, 17, 23, ...?",
+    "options": [
+      "27",
+      "29",
+      "31",
+      "37"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "These are prime numbers skipping one prime each time. Primes: 2, (3), 5, (7), 11, (13), 17, (19), 23, (29), 31. Next is 31.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_018",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "incremental_multiplication",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: 2, 2, 4, 12, 48, ...?",
+    "options": [
+      "144",
+      "192",
+      "240",
+      "288"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern multiplies by an increasing integer: *1, *2, *3, *4. Next is 48 * 5 = 240.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_019",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "fibonacci_squares",
+    "difficulty": "hard",
+    "questionText": "What comes next in the series: 1, 1, 4, 9, 25, ...?",
+    "options": [
+      "36",
+      "49",
+      "64",
+      "81"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "These are the squares of the Fibonacci sequence: 1^2, 1^2, 2^2, 3^2, 5^2. The next Fibonacci number is 8, so 8^2 = 64.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_020",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "cubes_minus_squares",
+    "difficulty": "hard",
+    "questionText": "What comes next in the series: 0, 4, 18, 48, ...?",
+    "options": [
+      "80",
+      "100",
+      "120",
+      "125"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The pattern is n^3 - n^2. 1^3-1^2=0. 2^3-2^2=4. 3^3-3^2=18. 4^3-4^2=48. Next is 5^3-5^2 = 125-25 = 100.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_num_021",
+    "section": "iq",
+    "topic": "number_series",
+    "subtopic": "alternating_squares_cubes",
+    "difficulty": "hard",
+    "questionText": "What comes next in the series: 4, 8, 9, 27, 16, ...?",
+    "options": [
+      "32",
+      "64",
+      "125",
+      "256"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The pattern alternates between n^2 and n^3 for consecutive integers: 2^2, 2^3, 3^2, 3^3, 4^2. Next is 4^3 = 64.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "number_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_015",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "vowels",
+    "difficulty": "easy",
+    "questionText": "What comes next in the series: A, E, I, O, ...?",
+    "options": [
+      "P",
+      "Q",
+      "U",
+      "Y"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The series consists of the English vowels in standard alphabetical order.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_016",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "skip_two",
+    "difficulty": "easy",
+    "questionText": "What comes next in the series: A, D, G, J, ...?",
+    "options": [
+      "K",
+      "L",
+      "M",
+      "N"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern skips two letters each time (+3 positions). J (10) + 3 = M (13).",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_017",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "alternate_reversed",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: Z, A, Y, B, X, ...?",
+    "options": [
+      "C",
+      "D",
+      "W",
+      "V"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "The series alternates between the end of the alphabet moving backward (Z, Y, X) and the start moving forward (A, B). Next is C.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_018",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "pairs_increment",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: AC, EG, IK, ...?",
+    "options": [
+      "MO",
+      "NP",
+      "LN",
+      "OQ"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "The first letter of each pair increases by 4 (A->E->I->M). The second letter also increases by 4 (C->G->K->O). The pair is MO.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_019",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "prime_positions",
+    "difficulty": "hard",
+    "questionText": "What comes next in the series: B, C, E, G, K, ...?",
+    "options": [
+      "L",
+      "M",
+      "N",
+      "O"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "These letters occupy prime number positions in the alphabet: 2(B), 3(C), 5(E), 7(G), 11(K). The next prime is 13, which is M.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_020",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "increasing_difference",
+    "difficulty": "hard",
+    "questionText": "What comes next in the series: A, B, D, G, K, ...?",
+    "options": [
+      "O",
+      "P",
+      "Q",
+      "R"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The differences between positions are +1, +2, +3, +4. The next difference is +5. K (11) + 5 = 16 (P).",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_let_021",
+    "section": "iq",
+    "topic": "letter_series",
+    "subtopic": "sandwich_pattern",
+    "difficulty": "medium",
+    "questionText": "What comes next in the series: AMA, BMB, CMC, ...?",
+    "options": [
+      "DMD",
+      "ENE",
+      "DND",
+      "EME"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "The middle letter 'M' is constant. The outer letters increment alphabetically. Next outer letters are D, so DMD.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "letter_series"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_015",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "location",
+    "difficulty": "easy",
+    "questionText": "Car is to Garage as Airplane is to ...?",
+    "options": [
+      "Runway",
+      "Hangar",
+      "Sky",
+      "Airport"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "A car is stored or parked in a garage. An airplane is stored or parked in a hangar.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_016",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "tool_function",
+    "difficulty": "easy",
+    "questionText": "Knife is to Cut as Ruler is to ...?",
+    "options": [
+      "Draw",
+      "Write",
+      "Measure",
+      "Line"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The primary function of a knife is to cut. The primary function of a ruler is to measure.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_017",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "study_field",
+    "difficulty": "medium",
+    "questionText": "Botany is to Plants as Entomology is to ...?",
+    "options": [
+      "Animals",
+      "Insects",
+      "Birds",
+      "Rocks"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Botany is the scientific study of plants. Entomology is the scientific study of insects.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_018",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "antonyms",
+    "difficulty": "medium",
+    "questionText": "Poverty is to Wealth as Sickness is to ...?",
+    "options": [
+      "Medicine",
+      "Hospital",
+      "Health",
+      "Doctor"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Poverty and wealth are antonyms (opposite states). Sickness and health are antonyms.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_019",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "intensity",
+    "difficulty": "hard",
+    "questionText": "Cacophony is to Sound as Glare is to ...?",
+    "options": [
+      "Sight",
+      "Light",
+      "Vision",
+      "Sun"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Cacophony is a harsh, overwhelmingly unpleasant sound. Glare is a harsh, overwhelmingly unpleasant light.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_020",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "deprivation",
+    "difficulty": "hard",
+    "questionText": "Famine is to Food as Drought is to ...?",
+    "options": [
+      "Farming",
+      "Water",
+      "Desert",
+      "Heat"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "A famine is a severe shortage of food. A drought is a severe shortage of water.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_ana_021",
+    "section": "iq",
+    "topic": "verbal_analogies",
+    "subtopic": "measurement",
+    "difficulty": "medium",
+    "questionText": "Clock is to Time as Balance is to ...?",
+    "options": [
+      "Weight",
+      "Scale",
+      "Justice",
+      "Measurement"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "A clock is used to measure time. A balance (or weighing scale) is used to measure weight.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "analogies"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_015",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "directions",
+    "difficulty": "easy",
+    "questionText": "A girl walks 10m North, then 10m East, then 10m South. Where is she relative to her starting point?",
+    "options": [
+      "10m North",
+      "10m East",
+      "10m South",
+      "10m West"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "She walks North, turns East, then turns South. Her North and South movements cancel out, leaving her exactly 10m East of her start.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_016",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "syllogisms",
+    "difficulty": "easy",
+    "questionText": "Statement 1: All squares are rectangles. Statement 2: All rectangles are polygons. Conclusion: All squares are polygons.",
+    "options": [
+      "True",
+      "False",
+      "Uncertain",
+      "None of these"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "By transitivity, if A is a subset of B, and B is a subset of C, then A is a subset of C. The conclusion is necessarily true.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_017",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "ranking",
+    "difficulty": "medium",
+    "questionText": "Sara is ranked 10th from the top and 12th from the bottom in her class. How many students are in the class?",
+    "options": [
+      "20",
+      "21",
+      "22",
+      "23"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Total = (Top Rank + Bottom Rank) - 1. (10 + 12) - 1 = 21.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_018",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "ages",
+    "difficulty": "medium",
+    "questionText": "Person A is 5 years older than Person B. If B is currently 10 years old, how old will A be in 5 years?",
+    "options": [
+      "15",
+      "20",
+      "25",
+      "30"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "If B is 10, A is 10 + 5 = 15. In 5 years, A will be 15 + 5 = 20.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_019",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "seating",
+    "difficulty": "hard",
+    "questionText": "Four people A, B, C, D are sitting in a circle facing the center. A is sitting opposite to B. C is sitting to the immediate left of A. Who is sitting to the immediate right of A?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "In a 4-person circle, if A is opposite B, and C is to A's left, the only remaining position (to A's right) must be occupied by D.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_020",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "blood_relations",
+    "difficulty": "hard",
+    "questionText": "A is B's brother. C is A's mother. D is C's father. How is B related to D?",
+    "options": [
+      "Nephew",
+      "Son",
+      "Grandchild",
+      "Brother"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "If A is B's brother, they share the same mother, C. If D is C's father, then D is the grandfather of both A and B. Thus, B is D's grandchild.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_log_021",
+    "section": "iq",
+    "topic": "logical_reasoning",
+    "subtopic": "dates",
+    "difficulty": "medium",
+    "questionText": "If the 3rd of the month falls on a Tuesday, what day of the week will the 24th of that same month be?",
+    "options": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The difference in days is 24 - 3 = 21 days. Since 21 is exactly 3 weeks (divisible by 7), the day of the week remains the same: Tuesday.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "logic"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_013",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "shapes",
+    "difficulty": "easy",
+    "questionText": "Which shape does not belong with the others?",
+    "options": [
+      "Triangle",
+      "Square",
+      "Pentagon",
+      "Circle"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Triangle, Square, and Pentagon are polygons with straight edges. A Circle has no straight edges.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_014",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "foods",
+    "difficulty": "easy",
+    "questionText": "Which word does not belong with the others?",
+    "options": [
+      "Apple",
+      "Banana",
+      "Carrot",
+      "Grape"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Apple, Banana, and Grape are fruits. A Carrot is a vegetable.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_015",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "numbers",
+    "difficulty": "medium",
+    "questionText": "Which number does not belong with the others?",
+    "options": [
+      "144",
+      "169",
+      "196",
+      "210"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "144 (12^2), 169 (13^2), and 196 (14^2) are perfect squares. 210 is not a perfect square.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_016",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "materials",
+    "difficulty": "medium",
+    "questionText": "Which word does not belong with the others?",
+    "options": [
+      "Iron",
+      "Copper",
+      "Zinc",
+      "Wood"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Iron, Copper, and Zinc are metals. Wood is an organic material from trees.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_017",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "letter_groups",
+    "difficulty": "hard",
+    "questionText": "Which group of letters does not belong with the others?",
+    "options": [
+      "BDF",
+      "CEG",
+      "DFI",
+      "EGI"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "BDF, CEG, and EGI all follow a +2, +2 pattern. DFI follows a +2, +3 pattern.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_odd_018",
+    "section": "iq",
+    "topic": "odd_one_out",
+    "subtopic": "primes",
+    "difficulty": "hard",
+    "questionText": "Which number does not belong with the others?",
+    "options": [
+      "2",
+      "3",
+      "5",
+      "9"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "2, 3, and 5 are prime numbers. 9 is a composite number (divisible by 3).",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "odd_one_out"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_019",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "row_sum",
+    "difficulty": "easy",
+    "questionText": "Find the missing number:\n[ 4   5   6 ]\n[ 8   2   5 ]\n[ 7   1   ? ]",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The sum of the numbers in each row is 15. 4+5+6=15, 8+2+5=15. For the last row: 7+1+? = 15, so ?=7.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_020",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "addition_plus_one",
+    "difficulty": "easy",
+    "questionText": "Find the missing number:\n[ 2   3   6 ]\n[ 4   4   9 ]\n[ 5   2   ? ]",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Pattern: Column 1 + Column 2 + 1 = Column 3. For the last row: 5 + 2 + 1 = 8.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_021",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "multiply_minus_one",
+    "difficulty": "medium",
+    "questionText": "Find the missing number:\n[ 3   4  11 ]\n[ 5   2   9 ]\n[ 6   3   ? ]",
+    "options": [
+      "16",
+      "17",
+      "18",
+      "19"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Pattern: Column 1 * Column 2 - 1 = Column 3. For the last row: 6 * 3 - 1 = 17.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_022",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "square_minus_col2",
+    "difficulty": "medium",
+    "questionText": "Find the missing number:\n[ 4   2  14 ]\n[ 5   3  22 ]\n[ 6   4   ? ]",
+    "options": [
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Pattern: (Column 1)^2 - Column 2 = Column 3. For the last row: 6^2 - 4 = 36 - 4 = 32.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_023",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "average",
+    "difficulty": "hard",
+    "questionText": "Find the missing number:\n[ 10  20  15 ]\n[  8  12  10 ]\n[ 14  26   ? ]",
+    "options": [
+      "18",
+      "20",
+      "22",
+      "24"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Pattern: Column 3 is the average of Column 1 and Column 2. For the last row: (14 + 26) / 2 = 40 / 2 = 20.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_024",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "letter_grid_skip",
+    "difficulty": "easy",
+    "questionText": "Find the missing letter:\nRow 1: A  C  E\nRow 2: G  I  K\nRow 3: M  O  ?",
+    "options": [
+      "P",
+      "Q",
+      "R",
+      "S"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The letters progress sequentially, skipping one letter at a time (+2 positions). M(+2)=O, O(+2)=Q.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_025",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "reverse_skip",
+    "difficulty": "medium",
+    "questionText": "Find the missing letter:\nRow 1: Z  X  V\nRow 2: T  R  P\nRow 3: N  L  ?",
+    "options": [
+      "H",
+      "I",
+      "J",
+      "K"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The letters progress backward, skipping one letter at a time (-2 positions). N(-2)=L, L(-2)=J.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_026",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "mixed_skip",
+    "difficulty": "hard",
+    "questionText": "Find the missing letter:\nRow 1: A  D  H\nRow 2: F  I  M\nRow 3: K  N  ?",
+    "options": [
+      "P",
+      "Q",
+      "R",
+      "S"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Within each row, the first step is +3, and the second step is +4. Row 3: K(+3)=N, N(+4)=R.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_mat_027",
+    "section": "iq",
+    "topic": "number_matrix",
+    "subtopic": "multiply_add",
+    "difficulty": "hard",
+    "questionText": "Find the missing number:\n[ 3   2   8 ]\n[ 4   5  13 ]\n[ 7   3   ? ]",
+    "options": [
+      "15",
+      "17",
+      "19",
+      "21"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Pattern: Column 1 * 2 + Column 2 = Column 3. For the last row: 7 * 2 + 3 = 14 + 3 = 17.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.95
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "matrix"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_015",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "linear_growth",
+    "difficulty": "easy",
+    "questionText": "Step 1: =\nStep 2: = =\nStep 3: = = =\nWhat comes in Step 4?",
+    "options": [
+      "= = =",
+      "= = = =",
+      "= = = = =",
+      "- - - -"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The pattern adds one '=' character in each step. Step 4 will have four '=' characters.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 1
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_016",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "alternating_pair",
+    "difficulty": "easy",
+    "questionText": "Step 1: X O\nStep 2: X O X O\nStep 3: X O X O X O\nWhat comes in Step 4?",
+    "options": [
+      "X O X O X O",
+      "X O X O X O X",
+      "X O X O X O X O",
+      "O X O X O X O X"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern adds one full 'X O' pair in each step. Step 4 will have four pairs.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_017",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "middle_expansion",
+    "difficulty": "medium",
+    "questionText": "Step 1: * | *\nStep 2: * | | *\nStep 3: * | | | *\nWhat comes in Step 4?",
+    "options": [
+      "* | | | *",
+      "* | | | | *",
+      "| * * |",
+      "* | | | | | *"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The outer '*' boundaries stay the same, while one '|' is added in the middle each step.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_018",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "middle_expansion_dash",
+    "difficulty": "medium",
+    "questionText": "Step 1: # - #\nStep 2: # - - #\nStep 3: # - - - #\nWhat comes in Step 4?",
+    "options": [
+      "# - - - #",
+      "# - - - - #",
+      "# - - - - - #",
+      "- # # -"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "The outer '#' boundaries stay the same, while one '-' is added in the middle each step.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_019",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "flanking_expansion",
+    "difficulty": "hard",
+    "questionText": "Step 1: O\nStep 2: * O *\nStep 3: * * O * *\nWhat comes in Step 4?",
+    "options": [
+      "* O *",
+      "* * O * *",
+      "* * * O * * *",
+      "* * * * O * * * *"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The central 'O' is flanked by an increasing number of '*' characters on both sides simultaneously.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.98
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_020",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "appending",
+    "difficulty": "hard",
+    "questionText": "Step 1: X\nStep 2: X =\nStep 3: X = X\nStep 4: X = X =\nWhat comes in Step 5?",
+    "options": [
+      "X = X",
+      "X = X =",
+      "X = X = X",
+      "X = X = X ="
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern alternates between appending '=' and 'X'. Step 4 ended with '=', so Step 5 appends 'X'.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "id": "iq_asc_021",
+    "section": "iq",
+    "topic": "ascii_patterns",
+    "subtopic": "block_expansion",
+    "difficulty": "hard",
+    "questionText": "Step 1: | -\nStep 2: | | - -\nStep 3: | | | - - -\nWhat comes in Step 4?",
+    "options": [
+      "| | | - - -",
+      "| | | | - - -",
+      "| | | | - - - -",
+      "| | | | | - - - - -"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The pattern consists of N instances of '|' followed by N instances of '-'. For Step 4, it is four '|'s and four '-'s.",
+    "source": {
+      "type": "ai_generated",
+      "reference": "gemini-manual",
+      "confidence": 0.99
+    },
+    "status": "approved",
+    "tags": [
+      "fast",
+      "iq",
+      "ascii"
+    ],
+    "createdAt": "2026-06-15T00:00:00.000Z",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  }
+]

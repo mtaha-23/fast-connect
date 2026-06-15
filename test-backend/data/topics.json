@@ -1,0 +1,762 @@
+{
+  "version": "1.0",
+  "description": "FAST test topic taxonomy for topic-based question sampling. Use the exact topic string when querying questionBank.",
+  "generatedAt": "2026-06-15T09:03:46.284039+00:00",
+  "sections": {
+    "advanced_maths": {
+      "label": "Advanced Mathematics",
+      "questions": 50,
+      "durationMin": 50,
+      "maxMarks": 50,
+      "topics": [
+        {
+          "topic": "algebra",
+          "subtopics": [
+            "binomial_theorem",
+            "equations",
+            "expressions",
+            "means",
+            "partial_fractions",
+            "polynomials",
+            "powers",
+            "quadratics",
+            "ratios"
+          ],
+          "questionCount": 11
+        },
+        {
+          "topic": "analytical_geometry",
+          "subtopics": [
+            "coordinates",
+            "distance",
+            "lines",
+            "shapes"
+          ],
+          "questionCount": 5
+        },
+        {
+          "topic": "arithmetic",
+          "subtopics": [
+            "evaluations"
+          ],
+          "questionCount": 1
+        },
+        {
+          "topic": "calculus",
+          "subtopics": [
+            "definitions",
+            "derivatives",
+            "integration",
+            "optimization"
+          ],
+          "questionCount": 10
+        },
+        {
+          "topic": "complex_numbers",
+          "subtopics": [
+            "coordinates",
+            "operations",
+            "roots_of_unity"
+          ],
+          "questionCount": 6
+        },
+        {
+          "topic": "conic_sections",
+          "subtopics": [
+            "definitions",
+            "ellipse",
+            "hyperbola",
+            "pair_of_lines",
+            "parabola"
+          ],
+          "questionCount": 7
+        },
+        {
+          "topic": "Differentiation",
+          "subtopics": [
+            "Derivatives"
+          ],
+          "questionCount": 25
+        },
+        {
+          "topic": "functions",
+          "subtopics": [
+            "domain",
+            "inverses",
+            "logarithms",
+            "properties"
+          ],
+          "questionCount": 4
+        },
+        {
+          "topic": "Functions & Limits",
+          "subtopics": [
+            "Domains",
+            "Functions",
+            "Limits"
+          ],
+          "questionCount": 25
+        },
+        {
+          "topic": "Fundamentals of Trigonometry",
+          "subtopics": [
+            "Angles",
+            "Circular Measure",
+            "Fundamental Identities",
+            "Properties of Functions",
+            "Signs of Trigonometric Functions",
+            "Trigonometric Values",
+            "Units of Angle Measurement"
+          ],
+          "questionCount": 40
+        },
+        {
+          "topic": "geometry",
+          "subtopics": [
+            "angles",
+            "circles",
+            "polygons",
+            "ratios",
+            "similarity",
+            "squares",
+            "triangles"
+          ],
+          "questionCount": 12
+        },
+        {
+          "topic": "Integration",
+          "subtopics": [
+            "Integrals"
+          ],
+          "questionCount": 25
+        },
+        {
+          "topic": "linear_programming",
+          "subtopics": [
+            "solutions"
+          ],
+          "questionCount": 1
+        },
+        {
+          "topic": "Mathematical Induction and Binomial Theorem",
+          "subtopics": [
+            "Binomial Approximations",
+            "Binomial Coefficients",
+            "Binomial Expansion",
+            "General Term",
+            "Mathematical Induction",
+            "Middle Term"
+          ],
+          "questionCount": 38
+        },
+        {
+          "topic": "matrices",
+          "subtopics": [
+            "multiplication"
+          ],
+          "questionCount": 1
+        },
+        {
+          "topic": "Matrices & Determinants",
+          "subtopics": [
+            "Adjoint of a Matrix",
+            "Determinant Evaluation",
+            "Determinant Properties",
+            "Matrix Equations",
+            "Matrix Inverses",
+            "Matrix Multiplication",
+            "Matrix Operations",
+            "Matrix Properties",
+            "Matrix Types",
+            "Minors and Cofactors",
+            "Singular Matrices",
+            "System of Linear Equations"
+          ],
+          "questionCount": 40
+        },
+        {
+          "topic": "Number System",
+          "subtopics": [
+            "Closure Properties",
+            "Complex Numbers",
+            "Decimals",
+            "Equality Properties",
+            "Inequalities",
+            "Polar Coordinates",
+            "Powers of i",
+            "Properties of Real Numbers",
+            "Rational and Irrational Numbers",
+            "Real Numbers Properties",
+            "Roots of Equation",
+            "Set Classifications",
+            "Sets"
+          ],
+          "questionCount": 50
+        },
+        {
+          "topic": "Partial Fractions",
+          "subtopics": [
+            "Decomposition",
+            "Decomposition Formats",
+            "Equation Properties",
+            "Equation Types",
+            "Fraction Types",
+            "Improper Fractions",
+            "Proper Fractions",
+            "Recomposition"
+          ],
+          "questionCount": 15
+        },
+        {
+          "topic": "Permutation, Combination and Probability",
+          "subtopics": [
+            "Combinations",
+            "Factorials",
+            "Permutations",
+            "Probability"
+          ],
+          "questionCount": 40
+        },
+        {
+          "topic": "permutations",
+          "subtopics": [
+            "arrangements"
+          ],
+          "questionCount": 1
+        },
+        {
+          "topic": "probability",
+          "subtopics": [
+            "dice",
+            "events",
+            "rules"
+          ],
+          "questionCount": 3
+        },
+        {
+          "topic": "Quadratic Equations",
+          "subtopics": [
+            "Completing the Square",
+            "Definitions",
+            "Forming Equations",
+            "Nature of Roots",
+            "Polynomials",
+            "Remainder Theorem",
+            "Roots of Equation",
+            "Roots of Unity",
+            "System of Equations",
+            "Types of Equations",
+            "Word Problems"
+          ],
+          "questionCount": 40
+        },
+        {
+          "topic": "real_numbers",
+          "subtopics": [
+            "evaluations",
+            "fractions",
+            "properties"
+          ],
+          "questionCount": 4
+        },
+        {
+          "topic": "Sequences & Series",
+          "subtopics": [
+            "Arithmetic Progression",
+            "Geometric Progression",
+            "Harmonic Progression",
+            "Infinite Series",
+            "Means",
+            "Recurring Decimals"
+          ],
+          "questionCount": 25
+        },
+        {
+          "topic": "sequences_series",
+          "subtopics": [
+            "arithmetic",
+            "geometric",
+            "harmonic",
+            "means",
+            "summation"
+          ],
+          "questionCount": 6
+        },
+        {
+          "topic": "sets",
+          "subtopics": [
+            "properties",
+            "subsets",
+            "unions"
+          ],
+          "questionCount": 3
+        },
+        {
+          "topic": "Sets Functions and Group",
+          "subtopics": [
+            "Binary Operations",
+            "Functions",
+            "Groups",
+            "Logic",
+            "Sets"
+          ],
+          "questionCount": 50
+        },
+        {
+          "topic": "Trigonometric Identities",
+          "subtopics": [
+            "Addition Formulas",
+            "Allied Angles",
+            "Double Angle Formulas",
+            "Half Angle Formulas",
+            "Multiple Angle Formulas",
+            "Product to Sum Formulas",
+            "Sum to Product Formulas"
+          ],
+          "questionCount": 24
+        },
+        {
+          "topic": "trigonometry",
+          "subtopics": [
+            "angles",
+            "equations",
+            "functions",
+            "identities",
+            "inverse_functions",
+            "periods",
+            "simplification",
+            "values"
+          ],
+          "questionCount": 25
+        }
+      ],
+      "totalApprovedQuestions": 537
+    },
+    "basic_maths": {
+      "label": "Basic Mathematics",
+      "questions": 20,
+      "durationMin": 20,
+      "maxMarks": 20,
+      "topics": [
+        {
+          "topic": "arithmetic",
+          "subtopics": [
+            "addition",
+            "division",
+            "fractions",
+            "multiplication",
+            "order_of_operations"
+          ],
+          "questionCount": 5
+        },
+        {
+          "topic": "basic_math",
+          "subtopics": [
+            "ages",
+            "algebra",
+            "averages",
+            "combinations",
+            "decimals",
+            "fractions",
+            "geometry",
+            "interest",
+            "mixtures",
+            "numbers",
+            "percentages",
+            "permutations",
+            "pipes_cisterns",
+            "probability",
+            "profit_loss",
+            "ratios",
+            "speed_distance",
+            "work_time"
+          ],
+          "questionCount": 100
+        },
+        {
+          "topic": "percentages",
+          "subtopics": [
+            "basic_percent",
+            "conversion",
+            "discount",
+            "increase",
+            "profit_loss"
+          ],
+          "questionCount": 5
+        },
+        {
+          "topic": "ratios",
+          "subtopics": [
+            "map_scale",
+            "proportion",
+            "sharing",
+            "simplification",
+            "speed"
+          ],
+          "questionCount": 5
+        }
+      ],
+      "totalApprovedQuestions": 115
+    },
+    "iq": {
+      "label": "IQ & Analytical",
+      "questions": 20,
+      "durationMin": 20,
+      "maxMarks": 20,
+      "topics": [
+        {
+          "topic": "analogies",
+          "subtopics": [
+            "number_analogy",
+            "opposites",
+            "part_whole",
+            "relationship",
+            "word_analogy"
+          ],
+          "questionCount": 5
+        },
+        {
+          "topic": "ascii_patterns",
+          "subtopics": [
+            "alternating",
+            "alternating_add",
+            "alternating_dashes",
+            "alternating_enclosure",
+            "alternating_pair",
+            "appending",
+            "block_expansion",
+            "boundaries",
+            "center_expand",
+            "dash_expansion",
+            "enclosure",
+            "expansion",
+            "flanking_expansion",
+            "linear",
+            "linear_growth",
+            "middle_expansion",
+            "middle_expansion_dash",
+            "odd_expansion",
+            "replacement",
+            "symbol_shift"
+          ],
+          "questionCount": 21,
+          "questionType": "ascii_patterns",
+          "format": "formatted"
+        },
+        {
+          "topic": "letter_series",
+          "subtopics": [
+            "alternate_letters",
+            "alternate_reversed",
+            "group_skip",
+            "increasing_difference",
+            "increasing_gap",
+            "increasing_length",
+            "interwoven",
+            "opposite_direction_pairs",
+            "opposite_ends",
+            "pairs_increment",
+            "pairs_skip",
+            "prime_positions",
+            "reverse",
+            "reverse_groups",
+            "reverse_skip",
+            "sandwich_pattern",
+            "skip_one",
+            "skip_three",
+            "skip_two",
+            "vowels"
+          ],
+          "questionCount": 21,
+          "questionType": "letter_series",
+          "format": "plain"
+        },
+        {
+          "topic": "logical_reasoning",
+          "subtopics": [
+            "ages",
+            "blood_relations",
+            "coding_decoding",
+            "dates",
+            "days_math",
+            "directions",
+            "inequalities",
+            "ranking",
+            "seating",
+            "seating_arrangement",
+            "syllogisms",
+            "trick_question"
+          ],
+          "questionCount": 24,
+          "questionType": "logical_reasoning",
+          "format": "plain"
+        },
+        {
+          "topic": "number_matrix",
+          "subtopics": [
+            "addition",
+            "addition_multiplier",
+            "addition_plus_one",
+            "average",
+            "division",
+            "increasing_letter_skip",
+            "increasing_skip",
+            "letter_addition",
+            "letter_grid",
+            "letter_grid_skip",
+            "letter_sequence",
+            "letter_skip",
+            "mixed_skip",
+            "multiples",
+            "multiplication",
+            "multiply_add",
+            "multiply_minus_one",
+            "powers",
+            "reverse_alphabet",
+            "reverse_skip",
+            "row_sum",
+            "sequence",
+            "square_minus_col2",
+            "squares_addition",
+            "subtraction"
+          ],
+          "questionCount": 27,
+          "questionType": "number_matrix",
+          "format": "formatted"
+        },
+        {
+          "topic": "number_series",
+          "subtopics": [
+            "alternating_add_subtract",
+            "alternating_squares_cubes",
+            "arithmetic_progression",
+            "cubes",
+            "cubes_minus_squares",
+            "cubes_plus_n",
+            "cubes_plus_one",
+            "descending_series",
+            "difference_pattern",
+            "factorial",
+            "fibonacci_squares",
+            "fibonacci_variant",
+            "geometric",
+            "increasing_multiplier",
+            "incremental_multiplication",
+            "mixed_operations",
+            "multiply_add",
+            "powers_minus_one",
+            "skip_primes",
+            "squares",
+            "squares_minus_one"
+          ],
+          "questionCount": 21,
+          "questionType": "number_series",
+          "format": "plain"
+        },
+        {
+          "topic": "odd_one_out",
+          "subtopics": [
+            "actions",
+            "category",
+            "foods",
+            "letter_groups",
+            "letter_math",
+            "materials",
+            "numbers",
+            "primes",
+            "shapes",
+            "words"
+          ],
+          "questionCount": 18,
+          "questionType": "odd_one_out",
+          "format": "plain"
+        },
+        {
+          "topic": "pattern_recognition",
+          "subtopics": [
+            "ascii_shapes",
+            "letter_series",
+            "missing_letter_grid",
+            "mixed_series",
+            "number_matrix",
+            "odd_one_out",
+            "word_patterns"
+          ],
+          "questionCount": 12
+        },
+        {
+          "topic": "patterns",
+          "subtopics": [
+            "coding",
+            "direction",
+            "logic",
+            "number_pattern",
+            "shape_pattern"
+          ],
+          "questionCount": 5
+        },
+        {
+          "topic": "series",
+          "subtopics": [
+            "arithmetic_series",
+            "geometric_series",
+            "letter_series",
+            "mixed_series",
+            "square_series"
+          ],
+          "questionCount": 5
+        },
+        {
+          "topic": "spatial_reasoning",
+          "subtopics": [
+            "clocks",
+            "cubes",
+            "directions",
+            "paper_folding"
+          ],
+          "questionCount": 5
+        },
+        {
+          "topic": "verbal_analogies",
+          "subtopics": [
+            "advanced_antonyms",
+            "animal_habitat",
+            "animal_sound",
+            "antonyms",
+            "creator_creation",
+            "deprivation",
+            "habitat",
+            "instrument_measurement",
+            "intensity",
+            "location",
+            "measurement",
+            "object_function",
+            "part_to_whole",
+            "professional_workplace",
+            "study_field",
+            "tool_function"
+          ],
+          "questionCount": 21,
+          "questionType": "verbal_analogies",
+          "format": "plain"
+        }
+      ],
+      "totalApprovedQuestions": 185
+    },
+    "english": {
+      "label": "English",
+      "questions": 30,
+      "durationMin": 30,
+      "maxMarks": 10,
+      "topics": [
+        {
+          "topic": "grammar",
+          "subtopics": [
+            "articles",
+            "conditionals",
+            "general",
+            "prepositions",
+            "subject_verb_agreement",
+            "tenses"
+          ],
+          "questionCount": 105
+        },
+        {
+          "topic": "Grammar & Structure",
+          "subtopics": [
+            "Agreement Mistakes",
+            "Combination Mistakes",
+            "Miscellaneous Mistakes"
+          ],
+          "questionCount": 39
+        },
+        {
+          "topic": "Parts of Speech",
+          "subtopics": [
+            "Adjectives",
+            "Adverbs",
+            "Articles",
+            "Nouns",
+            "Prepositions",
+            "Pronouns",
+            "Verbs"
+          ],
+          "questionCount": 72
+        },
+        {
+          "topic": "sentence_correction",
+          "subtopics": [
+            "error_spotting",
+            "modifiers",
+            "parallelism",
+            "pronouns",
+            "redundancy"
+          ],
+          "questionCount": 5
+        },
+        {
+          "topic": "vocabulary",
+          "subtopics": [
+            "antonyms",
+            "one_word_substitution",
+            "synonyms"
+          ],
+          "questionCount": 5
+        },
+        {
+          "topic": "Vocabulary & Sentence Completion",
+          "subtopics": [
+            "Sentence Completion",
+            "Synonyms"
+          ],
+          "questionCount": 13
+        }
+      ],
+      "totalApprovedQuestions": 239
+    }
+  },
+  "iqQuestionTypes": [
+    {
+      "type": "number_series",
+      "topic": "number_series",
+      "label": "Number Series",
+      "format": "plain"
+    },
+    {
+      "type": "letter_series",
+      "topic": "letter_series",
+      "label": "Letter Series",
+      "format": "plain"
+    },
+    {
+      "type": "verbal_analogies",
+      "topic": "verbal_analogies",
+      "label": "Verbal Analogies",
+      "format": "plain"
+    },
+    {
+      "type": "logical_reasoning",
+      "topic": "logical_reasoning",
+      "label": "Logical Reasoning",
+      "format": "plain"
+    },
+    {
+      "type": "odd_one_out",
+      "topic": "odd_one_out",
+      "label": "Odd One Out",
+      "format": "plain"
+    },
+    {
+      "type": "number_matrix",
+      "topic": "number_matrix",
+      "label": "Number/Letter Matrix",
+      "format": "formatted"
+    },
+    {
+      "type": "ascii_patterns",
+      "topic": "ascii_patterns",
+      "label": "ASCII Art Patterns",
+      "format": "formatted"
+    }
+  ]
+}
