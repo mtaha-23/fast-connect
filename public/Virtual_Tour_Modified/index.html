@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>FAST University Virtual Tour</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="multiple-scenes">
+
+<div id="pano" aria-label="360 degree virtual tour viewer"></div>
+
+<div id="loadingScreen" class="loading-screen" role="status" aria-live="polite">
+  <div class="loading-panel">
+    <div class="loading-mark"></div>
+    <p>Loading virtual tour</p>
+  </div>
+</div>
+
+<header id="titleBar" class="top-bar">
+  <button id="sceneListToggle" class="icon-button sidebar-toggle" type="button" aria-label="Toggle scene navigation" aria-expanded="false">
+    <img class="icon off" src="img/expand.png" alt="">
+    <img class="icon on" src="img/collapse.png" alt="">
+  </button>
+  <div class="tour-title">
+    <span class="tour-name">FAST University Virtual Tour</span>
+    <span class="sceneName"></span>
+  </div>
+  <div class="top-actions">
+    <button id="homeButton" class="icon-button" type="button" aria-label="Return to starting scene" title="Home">
+      <span aria-hidden="true">H</span>
+    </button>
+    <button id="autorotateToggle" class="icon-button" type="button" aria-label="Toggle autorotation" title="Autorotate">
+      <img class="icon off" src="img/play.png" alt="">
+      <img class="icon on" src="img/pause.png" alt="">
+    </button>
+    <button id="fullscreenToggle" class="icon-button" type="button" aria-label="Toggle fullscreen" title="Fullscreen">
+      <img class="icon off" src="img/fullscreen.png" alt="">
+      <img class="icon on" src="img/windowed.png" alt="">
+    </button>
+  </div>
+</header>
+
+<nav id="sceneList" class="sidebar" aria-label="Scene navigation">
+  <div class="sidebar-header">
+    <span>Campus Locations</span>
+  </div>
+  <ul class="scenes"></ul>
+</nav>
+
+<div id="viewControls" class="view-controls" aria-label="View controls">
+  <button id="viewUp" class="viewControlButton viewControlButton-1" type="button" aria-label="Look up">
+    <img class="icon" src="img/up.png" alt="">
+  </button>
+  <button id="viewDown" class="viewControlButton viewControlButton-2" type="button" aria-label="Look down">
+    <img class="icon" src="img/down.png" alt="">
+  </button>
+  <button id="viewLeft" class="viewControlButton viewControlButton-3" type="button" aria-label="Look left">
+    <img class="icon" src="img/left.png" alt="">
+  </button>
+  <button id="viewRight" class="viewControlButton viewControlButton-4" type="button" aria-label="Look right">
+    <img class="icon" src="img/right.png" alt="">
+  </button>
+  <button id="viewIn" class="viewControlButton viewControlButton-5" type="button" aria-label="Zoom in">
+    <img class="icon" src="img/plus.png" alt="">
+  </button>
+  <button id="viewOut" class="viewControlButton viewControlButton-6" type="button" aria-label="Zoom out">
+    <img class="icon" src="img/minus.png" alt="">
+  </button>
+</div>
+
+<script src="vendor/screenfull.min.js"></script>
+<script src="vendor/bowser.min.js"></script>
+<script src="vendor/marzipano.js"></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
